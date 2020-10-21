@@ -1,0 +1,1125 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NodeMap &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C" href="c_arena.html"/>
+        <link rel="next" title="Buffer" href="c_arena_buffer.html"/>
+        <link rel="prev" title="Arena" href="c_arena_arena.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_device.html">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+      <li>NodeMap</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nodemap">
+<h1>NodeMap<a class="headerlink" href="#nodemap" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acnodemapgetnode">
+<h2>acNodeMapGetNode<a class="headerlink" href="#acnodemapgetnode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1ab8f6193a1b48f58fcb77eec5caa61baa"></span><code class="descname">AC_ERROR AC_API acNodeMapGetNode(acNodeMap hNodeMap, const char * pNodeName, acNode * phNode)</code></dt>
+<dd><p><strong> acNodeMapGetNode </strong> retrieves a node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node to retrieve</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phNode</span></code>: <ul>
+<li>Type: acNode*</li>
+<li>[Out] parameter</li>
+<li>The node</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapgetnodeandaccessmode">
+<h2>acNodeMapGetNodeAndAccessMode<a class="headerlink" href="#acnodemapgetnodeandaccessmode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1a2af8c3dae7dbd17faaa53bf377e1aa29"></span><code class="descname">AC_ERROR AC_API acNodeMapGetNodeAndAccessMode(acNodeMap hNodeMap, const char * pNodeName, acNode * phNode, AC_ACCESS_MODE * pNodeAccess)</code></dt>
+<dd><p><strong> acNodeMapGetNodeAndAccessMode </strong> retrieves a node with its access mode. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node to retrieve</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phNode</span></code>: <ul>
+<li>Type: acNode*</li>
+<li>[Out] parameter</li>
+<li>The node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeAccess</span></code>: <ul>
+<li>Type: AC_ACCESS_MODE*</li>
+<li>[Out] parameter</li>
+<li>The node’s access mode</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapinvalidatenodes">
+<h2>acNodeMapInvalidateNodes<a class="headerlink" href="#acnodemapinvalidatenodes" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1acead25a20017c285bdafd87da95b4fc2"></span><code class="descname">AC_ERROR AC_API acNodeMapInvalidateNodes(acNodeMap hNodeMap)</code></dt>
+<dd><p><strong> acNodeMapInvalidateNodes </strong> invalidates all of its nodes. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapgetdevicename">
+<h2>acNodeMapGetDeviceName<a class="headerlink" href="#acnodemapgetdevicename" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1af890181fd9f1ea7e42b0a1ba829bf81c"></span><code class="descname">AC_ERROR AC_API acNodeMapGetDeviceName(acNodeMap hNodeMap, char * pDeviceNameBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acNodeMapGetDeviceName </strong> retrieves the node map’s device name. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pDeviceNameBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Name of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemappoll">
+<h2>acNodeMapPoll<a class="headerlink" href="#acnodemappoll" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1a9d845a208124a6d4120492ffb251b349"></span><code class="descname">AC_ERROR AC_API acNodeMapPoll(acNodeMap hNodeMap, int64_t elapsedTime)</code></dt>
+<dd><p><strong> acNodeMapPoll </strong> polls the node map. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">elapsedTime</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>Unit: milliseconds</li>
+<li>[In] parameter</li>
+<li>Time since the last poll</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemaplock">
+<h2>acNodeMapLock<a class="headerlink" href="#acnodemaplock" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1a1e01f4a26dc16816dd23bba112f8299c"></span><code class="descname">AC_ERROR AC_API acNodeMapLock(acNodeMap hNodeMap)</code></dt>
+<dd><p><strong> acNodeMapGetNode </strong> locks the node map. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapunlock">
+<h2>acNodeMapUnlock<a class="headerlink" href="#acnodemapunlock" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1af6d24c3013df7bfd0306af087e917414"></span><code class="descname">AC_ERROR AC_API acNodeMapUnlock(acNodeMap hNodeMap)</code></dt>
+<dd><p><strong> acNodeMapGetNode </strong> unlocks the node map. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemaptrylock">
+<h2>acNodeMapTryLock<a class="headerlink" href="#acnodemaptrylock" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1aac08fbd120f89a71fd873443734aa098"></span><code class="descname">AC_ERROR AC_API acNodeMapTryLock(acNodeMap hNodeMap, bool8_t * pLocked)</code></dt>
+<dd><p><strong> acNodeMapGetNode </strong> tries to lock the node map, returning whether or not the call succeeded. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pLocked</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if the lock succeeded</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapgetnumnodes">
+<h2>acNodeMapGetNumNodes<a class="headerlink" href="#acnodemapgetnumnodes" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1a21ab62b0d5241a88491f82bdfbfe3298"></span><code class="descname">AC_ERROR AC_API acNodeMapGetNumNodes(acNodeMap hNodeMap, uint64_t * pNumNodes)</code></dt>
+<dd><p><strong> acNodeMapGetNode </strong> retrieves the number of nodes in the node map. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNumNodes</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>[Out] parameter</li>
+<li>Total number of nodes in the node map</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapgetnodebyindex">
+<h2>acNodeMapGetNodeByIndex<a class="headerlink" href="#acnodemapgetnodebyindex" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1a6ee0f135919b1ff24687feb91d4234b5"></span><code class="descname">AC_ERROR AC_API acNodeMapGetNodeByIndex(acNodeMap hNodeMap, size_t index, acNode * phNode)</code></dt>
+<dd><p><strong> acNodeMapGetNode </strong> retrieves a node by its index. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phNode</span></code>: <ul>
+<li>Type: acNode*</li>
+<li>[Out] parameter</li>
+<li>The node</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapgetnodebyindexandaccessmode">
+<h2>acNodeMapGetNodeByIndexAndAccessMode<a class="headerlink" href="#acnodemapgetnodebyindexandaccessmode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1afb92acdac2983bd2ab7b78976c1e9d57"></span><code class="descname">AC_ERROR AC_API acNodeMapGetNodeByIndexAndAccessMode(acNodeMap hNodeMap, size_t index, acNode * phNode, AC_ACCESS_MODE * pNodeAccess)</code></dt>
+<dd><p><strong> acNodeMapGetNode </strong> retrieves a node by its index along with its access mode. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phNode</span></code>: <ul>
+<li>Type: acNode*</li>
+<li>[Out] parameter</li>
+<li>The node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeAccess</span></code>: <ul>
+<li>Type: AC_ACCESS_MODE*</li>
+<li>[Out] parameter</li>
+<li>The node’s access mode</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapgetstringvalue">
+<h2>acNodeMapGetStringValue<a class="headerlink" href="#acnodemapgetstringvalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1ae479b3a51d5aaf925f44c8b8bc0d0863"></span><code class="descname">AC_ERROR AC_API acNodeMapGetStringValue(acNodeMap hNodeMap, const char * pNodeName, char * pValueBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acNodeMapGetStringValue </strong> acts as a shortcut for retrieving the value of a string node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pValueBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Value of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapgetintegervalue">
+<h2>acNodeMapGetIntegerValue<a class="headerlink" href="#acnodemapgetintegervalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1a53a0d39fd6eaf954547aaa055612d39c"></span><code class="descname">AC_ERROR AC_API acNodeMapGetIntegerValue(acNodeMap hNodeMap, const char * pNodeName, int64_t * pValue)</code></dt>
+<dd><p><strong> acNodeMapGetIntegerValue </strong> acts as a shortcut for retrieving the value of an integer node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pValue</span></code>: <ul>
+<li>Type: int64_t*</li>
+<li>[Out] parameter</li>
+<li>Value of the node</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapgetfloatvalue">
+<h2>acNodeMapGetFloatValue<a class="headerlink" href="#acnodemapgetfloatvalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1abbfac19dfc5417a6f327300bd71b2119"></span><code class="descname">AC_ERROR AC_API acNodeMapGetFloatValue(acNodeMap hNodeMap, const char * pNodeName, double * pValue)</code></dt>
+<dd><p><strong> acNodeMapGetFloatValue </strong> acts as a shortcut for retrieving the value of a float node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pValue</span></code>: <ul>
+<li>Type: double*</li>
+<li>[Out] parameter</li>
+<li>Value of the node</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapgetbooleanvalue">
+<h2>acNodeMapGetBooleanValue<a class="headerlink" href="#acnodemapgetbooleanvalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1aa3e8e869a6d92992a6ff2e0725ddc44b"></span><code class="descname">AC_ERROR AC_API acNodeMapGetBooleanValue(acNodeMap hNodeMap, const char * pNodeName, bool8_t * pValue)</code></dt>
+<dd><p><strong> acNodeMapGetBooleanValue </strong> acts as a shortcut for retrieving the value of a boolean node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pValue</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>Value of the node</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapgetenumerationvalue">
+<h2>acNodeMapGetEnumerationValue<a class="headerlink" href="#acnodemapgetenumerationvalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1a385cf858ce9a38ecaa5d771178dd9f1e"></span><code class="descname">AC_ERROR AC_API acNodeMapGetEnumerationValue(acNodeMap hNodeMap, const char * pNodeName, char * pSymbolicBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acNodeMapGetEnumerationValue </strong> acts as a shortcut for retrieving the entry of an enumeration node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pSymbolicBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Symbolic of the current entry</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapsetstringvalue">
+<h2>acNodeMapSetStringValue<a class="headerlink" href="#acnodemapsetstringvalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1a36ee2b2838ca7d3adfb4ecf86b7b952d"></span><code class="descname">AC_ERROR AC_API acNodeMapSetStringValue(acNodeMap hNodeMap, const char * pNodeName, const char * pValue)</code></dt>
+<dd><p><strong> acNodeMapSetStringValue </strong> acts as a shortcut for setting the value of a string node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pValue</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>String value to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapsetintegervalue">
+<h2>acNodeMapSetIntegerValue<a class="headerlink" href="#acnodemapsetintegervalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1ad80d24f1c3493b0d13e2137336b48ee3"></span><code class="descname">AC_ERROR AC_API acNodeMapSetIntegerValue(acNodeMap hNodeMap, const char * pNodeName, int64_t value)</code></dt>
+<dd><p><strong> acNodeMapSetIntegerValue </strong> acts as a shortcut for setting the value of an integer node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">value</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>[In] parameter</li>
+<li>Integer value to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapsetfloatvalue">
+<h2>acNodeMapSetFloatValue<a class="headerlink" href="#acnodemapsetfloatvalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1ad9dc77aceb81df95c04768c2cc6fc9ae"></span><code class="descname">AC_ERROR AC_API acNodeMapSetFloatValue(acNodeMap hNodeMap, const char * pNodeName, double value)</code></dt>
+<dd><p><strong> acNodeMapSetFloatValue </strong> acts as a shortcut for setting the value of a float node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">value</span></code>: <ul>
+<li>Type: double</li>
+<li>[In] parameter</li>
+<li>Float value to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapsetbooleanvalue">
+<h2>acNodeMapSetBooleanValue<a class="headerlink" href="#acnodemapsetbooleanvalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1a16daa5b5cb868258f00395cc2999c3bb"></span><code class="descname">AC_ERROR AC_API acNodeMapSetBooleanValue(acNodeMap hNodeMap, const char * pNodeName, bool8_t value)</code></dt>
+<dd><p><strong> acNodeMapSetBooleanValue </strong> acts as a shortcut for setting the value of a boolean node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">value</span></code>: <ul>
+<li>Type: bool8_t</li>
+<li>[In] parameter</li>
+<li>Boolean value to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapsetenumerationvalue">
+<h2>acNodeMapSetEnumerationValue<a class="headerlink" href="#acnodemapsetenumerationvalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1a6e996d19837ddfc0f4ea30e87af10d22"></span><code class="descname">AC_ERROR AC_API acNodeMapSetEnumerationValue(acNodeMap hNodeMap, const char * pNodeName, const char * pSymbolic)</code></dt>
+<dd><p><strong> acNodeMapSetEnumerationValue </strong> acts as a shortcut for setting the value of an enumeration node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pSymbolic</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the entry node to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemapexecute">
+<h2>acNodeMapExecute<a class="headerlink" href="#acnodemapexecute" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_map_8h_1af6b9a981ada10746fa33e82d34fab1eb"></span><code class="descname">AC_ERROR AC_API acNodeMapExecute(acNodeMap hNodeMap, const char * pNodeName)</code></dt>
+<dd><p><strong> acNodeMapExecute </strong> acts as a shortcut for executing a command node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNodeName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the node</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_buffer.html" class="btn btn-neutral float-right" title="Buffer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_arena.html" class="btn btn-neutral" title="Arena" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

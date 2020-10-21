@@ -1,0 +1,698 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Acquisition, Rapid Acquisition &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="C Code Samples" href="c_examples.html"/>
+        <link rel="next" title="Callback, Image Callbacks" href="c_examples_callback_imagecallbacks.html"/>
+        <link rel="prev" title="Acquisition, Multi-Device Acquisition" href="c_examples_acquisition_multidevice.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="c_arena.html">Arena C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="c_examples.html">C Code Samples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_examples_simpleacquisition.html">Simple Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition.html">Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_multidevice.html">Acquisition, Multi-Device Acquisition</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Acquisition, Rapid Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_imagecallbacks.html">Callback, Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_multithreadedimagecallbacks.html">Callback, Multithreaded Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onevent.html">Callback, On Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onnodechange.html">Callback, On Node Change</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_polling.html">Callback, Polling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata.html">Chunk Data, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata_crcvalidation.html">Chunk Data, CRC Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration.html">Enumeration, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration_handlingdisconnections.html">Enumeration, Handling Disconnections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodemaps.html">Explore, Node Maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_exposure.html">Exposure, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodes.html">Explore, Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodetypes.html">Explore, Node Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_forceip.html">Force IP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_heatmap.html">Helios, HeatMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_minmaxdepth.html">Helios, Min Max Depth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_smoothresults.html">Helios, Smooth Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_lut.html">LUT, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_pixelcorrection.html">Pixel Correction, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_colordolpaolp.html">Polarization, Color DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_dolpaolp.html">Polarization, DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_record.html">Record, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save.html">Save, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_filenamepattern.html">Save, File Name Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_ply.html">Save, Ply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_scheduledactioncommands.html">Scheduled Action Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_sequencer_hdr.html">Sequencer, HDR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_streamables.html">Streamables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger.html">Trigger, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger_overlappingtrigger.html">Trigger, Overlapping Trigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_usersets.html">User Sets, Introduction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_examples.html">C Code Samples</a> &raquo;</li>
+        
+      <li>Acquisition, Rapid Acquisition</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="acquisition-rapid-acquisition">
+<h1>Acquisition, Rapid Acquisition<a class="headerlink" href="#acquisition-rapid-acquisition" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************************</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  Copyright (c) 2019, Lucid Vision Labs, Inc.                                    ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR     ***</span>
+<span class="cm"> ***  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,       ***</span>
+<span class="cm"> ***  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE    ***</span>
+<span class="cm"> ***  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER         ***</span>
+<span class="cm"> ***  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  ***</span>
+<span class="cm"> ***  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  ***</span>
+<span class="cm"> ***  SOFTWARE.                                                                      ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***************************************************************************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ArenaCApi.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;inttypes.h&gt; // defines macros for printf functions</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdbool.h&gt;  // defines boolean type and values</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;       // defines strcmp functions</span><span class="cp"></span>
+
+<span class="cp">#define TAB1 &quot;  &quot;</span>
+<span class="cp">#define TAB2 &quot;    &quot;</span>
+
+<span class="c1">// Acquisition: Rapid Acquisition</span>
+<span class="c1">//    This example demonstrates configuring device settings in order to reduce</span>
+<span class="c1">//    bandwidth and increase framerate. This includes reducing the region of</span>
+<span class="c1">//    interest, reducing bits per pixel, increasing packet size, reducing</span>
+<span class="c1">//    exposure time, and setting a large number of buffers.</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- SETTINGS =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// Width and height</span>
+<span class="cp">#define WIDTH 100</span>
+<span class="cp">#define HEIGHT 100</span>
+
+<span class="c1">// Pixel format</span>
+<span class="cp">#define PIXEL_FORMAT &quot;Mono8&quot;</span>
+
+<span class="c1">// Number of images to grab</span>
+<span class="cp">#define NUM_IMAGES 500</span>
+
+<span class="c1">// Maximum packet size</span>
+<span class="c1">//    In order to grab images at the maximum packet size, the ethernet adapter</span>
+<span class="c1">//    must be configured appropriately: &#39;Jumbo packet&#39; must be set to its</span>
+<span class="c1">//    maximum, &#39;UDP checksum offload&#39; must be set to &#39;Rx &amp; Tx Enabled&#39;, and</span>
+<span class="c1">//    &#39;Received Buffers&#39; must be set to its maximum.</span>
+<span class="cp">#define MAX_PACKET_SIZE false</span>
+
+<span class="c1">// Image timeout</span>
+<span class="cp">#define IMAGE_TIMEOUT 2000</span>
+
+<span class="c1">// System timeout</span>
+<span class="cp">#define SYSTEM_TIMEOUT 100</span>
+
+<span class="c1">// Maximum buffer length</span>
+<span class="cp">#define MAX_BUF 256</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- HELPER =-=-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// sets node value</span>
+<span class="c1">// (1) gets node</span>
+<span class="c1">// (2) check access mode</span>
+<span class="c1">// (3) gets value</span>
+<span class="kt">int64_t</span> <span class="nf">SetIntValue</span><span class="p">(</span><span class="n">acNodeMap</span> <span class="n">hNodeMap</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">nodeName</span><span class="p">,</span> <span class="kt">int64_t</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// get node</span>
+        <span class="n">acNode</span> <span class="n">hNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">AC_ACCESS_MODE</span> <span class="n">accessMode</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetNodeAndAccessMode</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="n">nodeName</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">accessMode</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// check access mode</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">accessMode</span> <span class="o">!=</span> <span class="n">AC_ACCESS_MODE_WO</span> <span class="o">&amp;&amp;</span> <span class="n">accessMode</span> <span class="o">!=</span> <span class="n">AC_ACCESS_MODE_RW</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">AC_ERR_ERROR</span><span class="p">;</span>
+
+        <span class="c1">// retrieve the range and increment for the node.</span>
+        <span class="kt">int64_t</span> <span class="n">minimum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int64_t</span> <span class="n">maximum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int64_t</span> <span class="n">increment</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetMin</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">minimum</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetMax</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">maximum</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetInc</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">increment</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Ensure increment</span>
+        <span class="c1">//    If a node has an increment (all integer nodes &amp; some float nodes), only</span>
+        <span class="c1">//    multiples of the increment can be set. Ensure this by dividing and then</span>
+        <span class="c1">//    multiplying by the increment. If a value is between two increments,</span>
+        <span class="c1">//    this will push it to the lower value. Most minimum values are divisible</span>
+        <span class="c1">//    by the increment. If not, this must also be considered in the</span>
+        <span class="c1">//    calculation.</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="p">(((</span><span class="n">value</span> <span class="o">-</span> <span class="n">minimum</span><span class="p">)</span> <span class="o">/</span> <span class="n">increment</span><span class="p">)</span> <span class="o">*</span> <span class="n">increment</span><span class="p">)</span> <span class="o">+</span> <span class="n">minimum</span><span class="p">;</span>
+
+        <span class="c1">// Check min/max values</span>
+        <span class="c1">//    Values must not be less than the minimum or exceed the maximum value of</span>
+        <span class="c1">//    a node. If a value does so, simply push it within range.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">&lt;</span> <span class="n">minimum</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">minimum</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">&gt;</span> <span class="n">maximum</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">maximum</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// set integer value</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerSetValue</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// return value for output</span>
+        <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- EXAMPLE -=-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// demonstrates configuration for high frame rates</span>
+<span class="c1">// (1) lowers image size</span>
+<span class="c1">// (2) maximizes packet size</span>
+<span class="c1">// (3) minimizes exposure time</span>
+<span class="c1">// (4) sets high number of buffers</span>
+<span class="c1">// (5) requeues buffers</span>
+<span class="n">AC_ERROR</span> <span class="nf">AcquireImagesRapidly</span><span class="p">(</span><span class="n">acDevice</span> <span class="n">hDevice</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// get node map</span>
+        <span class="n">acNodeMap</span> <span class="n">hNodeMap</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceGetNodeMap</span><span class="p">(</span><span class="n">hDevice</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hNodeMap</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// retrieve exposure time node to get and set value</span>
+        <span class="n">acNode</span> <span class="n">hExposureTimeNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetNode</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;ExposureTime&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hExposureTimeNode</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// get node values that will be changed in order to return their values at</span>
+        <span class="c1">// the end of the example</span>
+        <span class="kt">double</span> <span class="n">exposureTimeInitial</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="n">pExposureAutoInitial</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">exposureAutoLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="n">pPixelFormatInitial</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">pixelFormatLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+        <span class="kt">int64_t</span> <span class="n">widthInitial</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int64_t</span> <span class="n">heightInitial</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">acNode</span> <span class="n">hDeviceStreamChannelPacketSizeNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="kt">int64_t</span> <span class="n">deviceStreamChannelPacketSizeInitial</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;ExposureAuto&quot;</span><span class="p">,</span> <span class="n">pExposureAutoInitial</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">exposureAutoLen</span><span class="p">)</span> <span class="o">|</span>
+                  <span class="n">acFloatGetValue</span><span class="p">(</span><span class="n">hExposureTimeNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">exposureTimeInitial</span><span class="p">)</span> <span class="o">|</span>
+                  <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;PixelFormat&quot;</span><span class="p">,</span> <span class="n">pPixelFormatInitial</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">pixelFormatLen</span><span class="p">)</span> <span class="o">|</span>
+                  <span class="n">acNodeMapGetIntegerValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;Width&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">widthInitial</span><span class="p">)</span> <span class="o">|</span>
+                  <span class="n">acNodeMapGetIntegerValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;Height&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">heightInitial</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error: failed to retrieve one or more initial node values.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="c1">// retrieve DeviceStreamChannelPacketSize value if max packet size defined as</span>
+        <span class="c1">// true</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MAX_PACKET_SIZE</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// get node</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetNode</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;DeviceStreamChannelPacketSize&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hDeviceStreamChannelPacketSizeNode</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="c1">// get initial node value</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetValue</span><span class="p">(</span><span class="n">hDeviceStreamChannelPacketSizeNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">deviceStreamChannelPacketSizeInitial</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Set low width and height</span>
+        <span class="c1">//    Reducing the size of an image reduces the amount of bandwidth required</span>
+        <span class="c1">//    for each image. The less bandwidth required per image, the more images</span>
+        <span class="c1">//    can be sent over the same bandwidth.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sSet low width and height&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+        <span class="kt">int64_t</span> <span class="n">imageWidth</span> <span class="o">=</span> <span class="n">SetIntValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;Width&quot;</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">);</span>
+        <span class="kt">int64_t</span> <span class="n">imageHeight</span> <span class="o">=</span> <span class="n">SetIntValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;Height&quot;</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">);</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot; (%&quot;</span> <span class="n">PRId64</span> <span class="s">&quot;x%&quot;</span> <span class="n">PRId64</span> <span class="s">&quot;)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">imageWidth</span><span class="p">,</span> <span class="n">imageHeight</span><span class="p">);</span>
+
+        <span class="c1">// Set small pixel format</span>
+        <span class="c1">//    Similar to reducing the ROI, reducing the number of bits per pixel also</span>
+        <span class="c1">//    reduces the bandwidth required for each image. The smallest pixel</span>
+        <span class="c1">//    formats are 8-bit bayer and 8-bit mono (i.e. BayerRG8 and Mono8).</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sSet small pixel format (%s)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">,</span> <span class="n">PIXEL_FORMAT</span><span class="p">);</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;PixelFormat&quot;</span><span class="p">,</span> <span class="n">PIXEL_FORMAT</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Set maximum stream channel packet size</span>
+        <span class="c1">//    Maximizing packet size increases frame rate by reducing the amount of</span>
+        <span class="c1">//    overhead required between images. This includes both extra</span>
+        <span class="c1">//    header/trailer data per packet as well as extra time from intra-packet</span>
+        <span class="c1">//    spacing (the time between packets). In order to grab images at the</span>
+        <span class="c1">//    maximum packet size, the ethernet adapter must be configured</span>
+        <span class="c1">//    appropriately: &#39;Jumbo packet&#39; must be set to its maximum, &#39;UDP checksum</span>
+        <span class="c1">//    offload&#39; must be set to &#39;Rx &amp; Tx Enabled&#39;, and &#39;Received Buffers&#39; must</span>
+        <span class="c1">//    be set to its maximum.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MAX_PACKET_SIZE</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// get maximum value</span>
+                <span class="kt">int64_t</span> <span class="n">maximumChannelPacketSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetMax</span><span class="p">(</span><span class="n">hDeviceStreamChannelPacketSizeNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">maximumChannelPacketSize</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="c1">// get unit</span>
+                <span class="kt">char</span> <span class="n">pChannelPacketSizeUnitBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+                <span class="kt">size_t</span> <span class="n">channelPacketSizeBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetUnit</span><span class="p">(</span><span class="n">hDeviceStreamChannelPacketSizeNode</span><span class="p">,</span> <span class="n">pChannelPacketSizeUnitBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">channelPacketSizeBufLen</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="c1">// set node to maximum size</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sSet maximum device stream channel packet size (%&quot;</span> <span class="n">PRIu64</span> <span class="s">&quot; %s)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">,</span> <span class="n">maximumChannelPacketSize</span><span class="p">,</span> <span class="n">pChannelPacketSizeUnitBuf</span><span class="p">);</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerSetValue</span><span class="p">(</span><span class="n">hDeviceStreamChannelPacketSizeNode</span><span class="p">,</span> <span class="n">maximumChannelPacketSize</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Turn off automatic exposure and set low exposure time</span>
+        <span class="c1">//    Decreasing exposure time can increase frame rate by reducing the amount</span>
+        <span class="c1">//    of time it takes to grab an image. Reducing the exposure time past</span>
+        <span class="c1">//    certain thresholds can cause problems related to not having enough</span>
+        <span class="c1">//    light. In certain situations this can be mitigated by increasing gain</span>
+        <span class="c1">//    and/or environmental light.</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;ExposureAuto&quot;</span><span class="p">,</span> <span class="s">&quot;Off&quot;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// get minimum exposure time</span>
+        <span class="kt">double</span> <span class="n">minimumExposureTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatGetMin</span><span class="p">(</span><span class="n">hExposureTimeNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">minimumExposureTime</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// get exposure time unit</span>
+        <span class="kt">char</span> <span class="n">pExposureUnitBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">exposureBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatGetUnit</span><span class="p">(</span><span class="n">hExposureTimeNode</span><span class="p">,</span> <span class="n">pExposureUnitBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">exposureBufLen</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// set to minimum value</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sSet minimum exposure time (%.0f %s)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">,</span> <span class="n">minimumExposureTime</span><span class="p">,</span> <span class="n">pExposureUnitBuf</span><span class="p">);</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatSetValue</span><span class="p">(</span><span class="n">hExposureTimeNode</span><span class="p">,</span> <span class="n">minimumExposureTime</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Start stream</span>
+        <span class="c1">//    Start the stream before grabbing any images. Starting the stream</span>
+        <span class="c1">//    allocates buffers, which can be passed in as an argument (default: 10),</span>
+        <span class="c1">//    and begins filling them with data. Starting the stream blocks write</span>
+        <span class="c1">//    access to many features such as width, height, and pixel format, as</span>
+        <span class="c1">//    well as acquisition and buffer handling modes, among others. The stream</span>
+        <span class="c1">//    needs to be stopped later.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sStart stream with %i buffers</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">,</span> <span class="n">NUM_IMAGES</span><span class="p">);</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceStartStream</span><span class="p">(</span><span class="n">hDevice</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// get images</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">NUM_IMAGES</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\r</span><span class="s">%sGet image %d&quot;</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+                <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+
+                <span class="n">acBuffer</span> <span class="n">hBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+                <span class="c1">// get buffer for each image</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceGetBuffer</span><span class="p">(</span><span class="n">hDevice</span><span class="p">,</span> <span class="n">IMAGE_TIMEOUT</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hBuffer</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="c1">// requeue buffer for each image</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceRequeueBuffer</span><span class="p">(</span><span class="n">hDevice</span><span class="p">,</span> <span class="n">hBuffer</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// stop stream</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">%sStop stream</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceStopStream</span><span class="p">(</span><span class="n">hDevice</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// return all nodes to their initial values</span>
+        <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">pExposureAutoInitial</span><span class="p">,</span> <span class="s">&quot;Off&quot;</span><span class="p">))</span>
+        <span class="p">{</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatSetValue</span><span class="p">(</span><span class="n">hExposureTimeNode</span><span class="p">,</span> <span class="n">exposureTimeInitial</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;ExposureAuto&quot;</span><span class="p">,</span> <span class="n">pExposureAutoInitial</span><span class="p">)</span> <span class="o">|</span>
+                  <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;PixelFormat&quot;</span><span class="p">,</span> <span class="n">pPixelFormatInitial</span><span class="p">)</span> <span class="o">|</span>
+                  <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;Width&quot;</span><span class="p">,</span> <span class="n">widthInitial</span><span class="p">)</span> <span class="o">|</span>
+                  <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;Height&quot;</span><span class="p">,</span> <span class="n">heightInitial</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error: failed to set one or more node values back to its initial value.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">MAX_PACKET_SIZE</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerSetValue</span><span class="p">(</span><span class="n">hDeviceStreamChannelPacketSizeNode</span><span class="p">,</span> <span class="n">deviceStreamChannelPacketSizeInitial</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =- PREPARATION -=-</span>
+<span class="c1">// =- &amp; CLEAN UP =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// error buffer length</span>
+<span class="cp">#define ERR_BUF 512</span>
+
+<span class="cp">#define CHECK_RETURN                                  \</span>
+<span class="cp">        if (err != AC_ERR_SUCCESS)                        \</span>
+<span class="cp">        {                                                 \</span>
+<span class="cp">                char pMessageBuf[ERR_BUF];                    \</span>
+<span class="cp">                size_t pBufLen = ERR_BUF;                     \</span>
+<span class="cp">                acGetLastErrorMessage(pMessageBuf, &amp;pBufLen); \</span>
+<span class="cp">                printf(&quot;\nError: %s&quot;, pMessageBuf);           \</span>
+<span class="cp">                printf(&quot;\n\nPress enter to complete\n&quot;);      \</span>
+<span class="cp">                getchar();                                    \</span>
+<span class="cp">                return -1;                                    \</span>
+<span class="cp">        }</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;C_Acquisition_RapidAcquisition</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// prepare example</span>
+        <span class="n">acSystem</span> <span class="n">hSystem</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acOpenSystem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemUpdateDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">SYSTEM_TIMEOUT</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="kt">size_t</span> <span class="n">numDevices</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetNumDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numDevices</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">numDevices</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">No camera connected</span><span class="se">\n</span><span class="s">Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                <span class="n">getchar</span><span class="p">();</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">acDevice</span> <span class="n">hDevice</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemCreateDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+        <span class="c1">// run example</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Commence example</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">AcquireImagesRapidly</span><span class="p">(</span><span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Example complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="c1">// clean up example</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemDestroyDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acCloseSystem</span><span class="p">(</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">getchar</span><span class="p">();</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_examples_callback_imagecallbacks.html" class="btn btn-neutral float-right" title="Callback, Image Callbacks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_examples_acquisition_multidevice.html" class="btn btn-neutral" title="Acquisition, Multi-Device Acquisition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,528 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Explore, Nodes &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="C Code Samples" href="c_examples.html"/>
+        <link rel="next" title="Explore, Node Types" href="c_examples_explore_nodetypes.html"/>
+        <link rel="prev" title="Exposure, Introduction" href="c_examples_exposure.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="c_arena.html">Arena C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="c_examples.html">C Code Samples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_examples_simpleacquisition.html">Simple Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition.html">Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_multidevice.html">Acquisition, Multi-Device Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_rapidacquisition.html">Acquisition, Rapid Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_imagecallbacks.html">Callback, Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_multithreadedimagecallbacks.html">Callback, Multithreaded Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onevent.html">Callback, On Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onnodechange.html">Callback, On Node Change</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_polling.html">Callback, Polling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata.html">Chunk Data, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata_crcvalidation.html">Chunk Data, CRC Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration.html">Enumeration, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration_handlingdisconnections.html">Enumeration, Handling Disconnections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodemaps.html">Explore, Node Maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_exposure.html">Exposure, Introduction</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Explore, Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodetypes.html">Explore, Node Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_forceip.html">Force IP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_heatmap.html">Helios, HeatMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_minmaxdepth.html">Helios, Min Max Depth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_smoothresults.html">Helios, Smooth Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_lut.html">LUT, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_pixelcorrection.html">Pixel Correction, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_colordolpaolp.html">Polarization, Color DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_dolpaolp.html">Polarization, DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_record.html">Record, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save.html">Save, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_filenamepattern.html">Save, File Name Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_ply.html">Save, Ply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_scheduledactioncommands.html">Scheduled Action Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_sequencer_hdr.html">Sequencer, HDR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_streamables.html">Streamables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger.html">Trigger, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger_overlappingtrigger.html">Trigger, Overlapping Trigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_usersets.html">User Sets, Introduction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_examples.html">C Code Samples</a> &raquo;</li>
+        
+      <li>Explore, Nodes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="explore-nodes">
+<h1>Explore, Nodes<a class="headerlink" href="#explore-nodes" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************************</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  Copyright (c) 2019, Lucid Vision Labs, Inc.                                    ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR     ***</span>
+<span class="cm"> ***  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,       ***</span>
+<span class="cm"> ***  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE    ***</span>
+<span class="cm"> ***  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER         ***</span>
+<span class="cm"> ***  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  ***</span>
+<span class="cm"> ***  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  ***</span>
+<span class="cm"> ***  SOFTWARE.                                                                      ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***************************************************************************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ArenaCApi.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;inttypes.h&gt; //defines macros for printf functions</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdbool.h&gt;  // defines boolean type and values</span><span class="cp"></span>
+
+<span class="c1">// Explore: Nodes</span>
+<span class="c1">//    This example explores traversing the nodes as a tree and fundamental node</span>
+<span class="c1">//    information including display name, access mode visibility, interface type,</span>
+<span class="c1">//    and value.</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- SETTINGS =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// Choose node types to explore</span>
+<span class="cp">#define EXPLORE_ACCESS true</span>
+<span class="cp">#define EXPLORE_VISIBILITY true</span>
+<span class="cp">#define EXPLORE_TYPE true</span>
+<span class="cp">#define EXPLORE_VALUE true</span>
+
+<span class="c1">// Device Timeout</span>
+<span class="c1">//    Timeout for detecting camera devices (in milliseconds). If no device is</span>
+<span class="c1">//    discovered at the end of the timeout, the example will return an error. The</span>
+<span class="c1">//    timeout is the maximum time to wait to detect a device; the example will</span>
+<span class="c1">//    resume once the internal list of devices has been updated, not waiting the</span>
+<span class="c1">//    full extent of the timeout.</span>
+<span class="cp">#define DEVICE_TIMEOUT 100</span>
+
+<span class="c1">// maximum buffer length</span>
+<span class="cp">#define MAX_BUF 256</span>
+
+<span class="c1">// maintains display indentation</span>
+<span class="kt">void</span> <span class="nf">Indent</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">depth</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">depth</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- EXAMPLE -=-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// explores node</span>
+<span class="c1">// (1) retrieves display name</span>
+<span class="c1">// (2) retrieves accessibility</span>
+<span class="c1">// (3) retrieves visibility</span>
+<span class="c1">// (4) retrieves interface type</span>
+<span class="c1">// (5) retrieves value</span>
+<span class="n">AC_ERROR</span> <span class="nf">ExploreNode</span><span class="p">(</span><span class="n">acSystem</span> <span class="n">hSystem</span><span class="p">,</span> <span class="n">acDevice</span> <span class="n">hDevice</span><span class="p">,</span> <span class="n">acNode</span> <span class="n">hNode</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">depth</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// Retrieve display name</span>
+        <span class="kt">char</span> <span class="n">pDisplayNameBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">bufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeGetDisplayName</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">pDisplayNameBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bufLen</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Retrieve accessibility</span>
+        <span class="n">AC_ACCESS_MODE</span> <span class="n">accessMode</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeGetAccessMode</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">accessMode</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Retrieve visibility</span>
+        <span class="n">AC_VISIBILITY</span> <span class="n">visibility</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeGetVisibility</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">visibility</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Retrieve interface type</span>
+        <span class="n">AC_INTERFACE_TYPE</span> <span class="n">interfaceType</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeGetPrincipalInterfaceType</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">interfaceType</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Retrieve value</span>
+        <span class="n">bool8_t</span> <span class="n">isReadable</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIsReadable</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">isReadable</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="kt">char</span> <span class="n">pValueBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">valueBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acValueToString</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">pValueBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">valueBufLen</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// print node information</span>
+        <span class="n">Indent</span><span class="p">(</span><span class="n">depth</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">pDisplayNameBuf</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">EXPLORE_ACCESS</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">Indent</span><span class="p">(</span><span class="mi">50</span> <span class="o">-</span> <span class="p">(</span><span class="n">depth</span> <span class="o">+</span> <span class="n">bufLen</span><span class="p">));</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%&quot;</span> <span class="n">PRId32</span><span class="p">,</span> <span class="n">accessMode</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">EXPLORE_VISIBILITY</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">Indent</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%&quot;</span> <span class="n">PRId32</span><span class="p">,</span> <span class="n">visibility</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">EXPLORE_TYPE</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">Indent</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%&quot;</span> <span class="n">PRId32</span><span class="p">,</span> <span class="n">interfaceType</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">EXPLORE_VALUE</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">Indent</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isReadable</span><span class="p">)</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">);</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">valueBufLen</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;...&quot;</span><span class="p">);</span>
+                <span class="k">else</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">pValueBuf</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">interfaceType</span> <span class="o">==</span> <span class="n">AC_INTERFACE_TYPE_CATEGORY</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="kt">size_t</span> <span class="n">numFeatures</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acCategoryGetNumFeatures</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numFeatures</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+                <span class="n">acNode</span> <span class="n">hFeatureNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                <span class="n">depth</span> <span class="o">=</span> <span class="p">(</span><span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">numFeatures</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+
+                        <span class="n">err</span> <span class="o">=</span> <span class="n">acCategoryGetFeature</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hFeatureNode</span><span class="p">);</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                        <span class="n">ExploreNode</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">hDevice</span><span class="p">,</span> <span class="n">hFeatureNode</span><span class="p">,</span> <span class="n">depth</span><span class="p">);</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =- PREPARATION -=-</span>
+<span class="c1">// =- &amp; CLEAN UP =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// error buffer length</span>
+<span class="cp">#define ERR_BUF 512</span>
+
+<span class="cp">#define CHECK_RETURN                                  \</span>
+<span class="cp">        if (err != AC_ERR_SUCCESS)                        \</span>
+<span class="cp">        {                                                 \</span>
+<span class="cp">                char pMessageBuf[ERR_BUF];                    \</span>
+<span class="cp">                size_t pBufLen = ERR_BUF;                     \</span>
+<span class="cp">                acGetLastErrorMessage(pMessageBuf, &amp;pBufLen); \</span>
+<span class="cp">                printf(&quot;\nError: %s&quot;, pMessageBuf);           \</span>
+<span class="cp">                printf(&quot;\n\nPress enter to complete\n&quot;);      \</span>
+<span class="cp">                getchar();                                    \</span>
+<span class="cp">                return -1;                                    \</span>
+<span class="cp">        }</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;C_Explore_Nodes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// prepare example</span>
+        <span class="n">acSystem</span> <span class="n">hSystem</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acOpenSystem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemUpdateDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">DEVICE_TIMEOUT</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="kt">size_t</span> <span class="n">numDevices</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetNumDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numDevices</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">numDevices</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">No camera connected</span><span class="se">\n</span><span class="s">Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                <span class="n">getchar</span><span class="p">();</span>
+                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">acDevice</span> <span class="n">hDevice</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemCreateDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+        <span class="c1">// begin example</span>
+        <span class="n">acNodeMap</span> <span class="n">hNodeMap</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceGetNodeMap</span><span class="p">(</span><span class="n">hDevice</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hNodeMap</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// get node by index</span>
+        <span class="kt">size_t</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">acNode</span> <span class="n">hNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetNodeByIndex</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hNode</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// run explore node example</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Commence example</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="kt">size_t</span> <span class="n">depth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">ExploreNode</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">hDevice</span><span class="p">,</span> <span class="n">hNode</span><span class="p">,</span> <span class="n">depth</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Example complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="c1">// clean up example</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemDestroyDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acCloseSystem</span><span class="p">(</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">getchar</span><span class="p">();</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_examples_explore_nodetypes.html" class="btn btn-neutral float-right" title="Explore, Node Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_examples_exposure.html" class="btn btn-neutral" title="Exposure, Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

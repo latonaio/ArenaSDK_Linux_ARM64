@@ -1,0 +1,913 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scheduled Action Commands &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="C Code Samples" href="c_examples.html"/>
+        <link rel="next" title="Sequencer, HDR" href="c_examples_sequencer_hdr.html"/>
+        <link rel="prev" title="Save, Ply" href="c_examples_save_ply.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="c_arena.html">Arena C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="c_examples.html">C Code Samples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_examples_simpleacquisition.html">Simple Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition.html">Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_multidevice.html">Acquisition, Multi-Device Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_rapidacquisition.html">Acquisition, Rapid Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_imagecallbacks.html">Callback, Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_multithreadedimagecallbacks.html">Callback, Multithreaded Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onevent.html">Callback, On Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onnodechange.html">Callback, On Node Change</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_polling.html">Callback, Polling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata.html">Chunk Data, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata_crcvalidation.html">Chunk Data, CRC Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration.html">Enumeration, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration_handlingdisconnections.html">Enumeration, Handling Disconnections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodemaps.html">Explore, Node Maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_exposure.html">Exposure, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodes.html">Explore, Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodetypes.html">Explore, Node Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_forceip.html">Force IP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_heatmap.html">Helios, HeatMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_minmaxdepth.html">Helios, Min Max Depth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_smoothresults.html">Helios, Smooth Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_lut.html">LUT, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_pixelcorrection.html">Pixel Correction, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_colordolpaolp.html">Polarization, Color DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_dolpaolp.html">Polarization, DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_record.html">Record, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save.html">Save, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_filenamepattern.html">Save, File Name Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_ply.html">Save, Ply</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Scheduled Action Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_sequencer_hdr.html">Sequencer, HDR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_streamables.html">Streamables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger.html">Trigger, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger_overlappingtrigger.html">Trigger, Overlapping Trigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_usersets.html">User Sets, Introduction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_examples.html">C Code Samples</a> &raquo;</li>
+        
+      <li>Scheduled Action Commands</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="scheduled-action-commands">
+<h1>Scheduled Action Commands<a class="headerlink" href="#scheduled-action-commands" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************************</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  Copyright (c) 2019, Lucid Vision Labs, Inc.                                    ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR     ***</span>
+<span class="cm"> ***  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,       ***</span>
+<span class="cm"> ***  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE    ***</span>
+<span class="cm"> ***  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER         ***</span>
+<span class="cm"> ***  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  ***</span>
+<span class="cm"> ***  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  ***</span>
+<span class="cm"> ***  SOFTWARE.                                                                      ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***************************************************************************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ArenaCApi.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;inttypes.h&gt; // defines macros for printf functions</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdbool.h&gt;  // defines boolean type and values</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;       // defines strcmp functions</span><span class="cp"></span>
+
+<span class="cp">#if defined _WIN32</span>
+<span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp"></span>
+<span class="cp">#elif defined linux</span>
+<span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define TAB1 &quot;  &quot;</span>
+<span class="cp">#define TAB2 &quot;    &quot;</span>
+<span class="cp">#define TAB3 &quot;      &quot;</span>
+<span class="cp">#define ERASE_LINE &quot;                            &quot;</span>
+
+<span class="cp">#if defined (_WIN32)</span>
+<span class="cp">#define portable_sleep(x) Sleep(x * 1000)</span>
+<span class="cp">#elif defined (__linux__)</span>
+<span class="cp">#define portable_sleep(x) sleep(x)</span>
+<span class="cp">#endif</span>
+
+ <span class="c1">// Scheduled Action Commands</span>
+ <span class="c1">//    This example introduces scheduling action commands on multiple cameras. The</span>
+ <span class="c1">//    device settings are configured to allow each device to trigger a single</span>
+ <span class="c1">//    image using action commands. The system is prepared to receive an action</span>
+ <span class="c1">//    command and the devices&#39; PTP relationships are synchronized. This allows</span>
+ <span class="c1">//    actions commands to be fired across all devices, resulting in</span>
+ <span class="c1">//    simultaneously acquired images with synchronized timestamps</span>
+ <span class="c1">//    Depending on the initial PTP state of each camera, it can take about</span>
+ <span class="c1">//    40 seconds for all devices to autonegotiate.</span>
+
+ <span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+ <span class="c1">// =-=- SETTINGS =-=-</span>
+ <span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+ <span class="c1">// delta time (ns)</span>
+<span class="cp">#define DELTA_TIME 1000000000</span>
+
+<span class="c1">// exposure time</span>
+<span class="cp">#define EXPOSURE_TIME 500.0</span>
+
+<span class="c1">// maximum number of devices to connect</span>
+<span class="cp">#define MAX_DEVICES 10</span>
+
+<span class="c1">// maximum buffer length</span>
+<span class="cp">#define MAX_BUF 256</span>
+
+<span class="c1">// system timeout</span>
+<span class="cp">#define SYSTEM_TIMEOUT 100</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- EXAMPLE -=-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// demonstrates action commands</span>
+<span class="c1">// (1) manually sets exposure, trigger and action command settings</span>
+<span class="c1">// (2) prepares devices for action commands</span>
+<span class="c1">// (3) synchronizes devices and fire action command</span>
+<span class="c1">// (4) retrieves images with synchronized timestamps</span>
+<span class="n">AC_ERROR</span> <span class="nf">SynchronizeCamerasAndTriggerImage</span><span class="p">(</span><span class="n">acSystem</span> <span class="n">hSystem</span><span class="p">,</span> <span class="n">acDevice</span><span class="o">*</span> <span class="n">phDevices</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">numDevices</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// get node map and retrieve initial node values that will be changed in</span>
+        <span class="c1">// order to return their values at the end of the example</span>
+        <span class="n">acNodeMap</span> <span class="n">hNodeMaps</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">];</span>
+        <span class="kt">char</span> <span class="n">pExposureAutoInitials</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">][</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">double</span> <span class="n">exposureTimeInitials</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+        <span class="kt">char</span> <span class="n">triggerModeInitials</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">][</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">char</span> <span class="n">triggerSourceInitials</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">][</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">char</span> <span class="n">triggerSelectorInitials</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">][</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">char</span> <span class="n">actionUnconditionalModeInitials</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">][</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">int64_t</span> <span class="n">actionSelectorInitials</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+        <span class="kt">int64_t</span> <span class="n">actionGroupKeyInitials</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+        <span class="kt">int64_t</span> <span class="n">actionGroupMaskInitials</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+        <span class="kt">bool</span> <span class="n">ptpEnableInitials</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="nb">false</span> <span class="p">};</span>
+        <span class="kt">char</span> <span class="n">transferControlModeInitials</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">][</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">int64_t</span> <span class="n">packetSizeInitials</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numDevices</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="kt">size_t</span> <span class="n">exposureAutoLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+                <span class="kt">size_t</span> <span class="n">triggerModeBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+                <span class="kt">size_t</span> <span class="n">triggerSourceBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+                <span class="kt">size_t</span> <span class="n">triggerSelectorBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+                <span class="kt">size_t</span> <span class="n">actionUnconditionalModeBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+                <span class="kt">size_t</span> <span class="n">transferControlModeBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceGetNodeMap</span><span class="p">(</span><span class="n">phDevices</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="c1">// exposure</span>
+                        <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ExposureAuto&quot;</span><span class="p">,</span> <span class="n">pExposureAutoInitials</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">exposureAutoLen</span><span class="p">)</span> <span class="o">|</span>
+                        <span class="n">acNodeMapGetFloatValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ExposureTime&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">exposureTimeInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="c1">// trigger</span>
+                        <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TriggerMode&quot;</span><span class="p">,</span> <span class="n">triggerModeInitials</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">triggerModeBufLen</span><span class="p">)</span> <span class="o">|</span>
+                        <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TriggerSource&quot;</span><span class="p">,</span> <span class="n">triggerSourceInitials</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">triggerSourceBufLen</span><span class="p">)</span> <span class="o">|</span>
+                        <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TriggerSelector&quot;</span><span class="p">,</span> <span class="n">triggerSelectorInitials</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">triggerSelectorBufLen</span><span class="p">)</span> <span class="o">|</span>
+                        <span class="c1">// action commands</span>
+                        <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionUnconditionalMode&quot;</span><span class="p">,</span> <span class="n">actionUnconditionalModeInitials</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">actionUnconditionalModeBufLen</span><span class="p">)</span> <span class="o">|</span>
+                        <span class="n">acNodeMapGetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionSelector&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">actionSelectorInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="n">acNodeMapGetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionGroupKey&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">actionGroupKeyInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="n">acNodeMapGetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionGroupMask&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">actionGroupMaskInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="c1">// ptp</span>
+                        <span class="n">acNodeMapGetBooleanValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;PtpEnable&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ptpEnableInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="c1">// transfer control</span>
+                        <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TransferControlMode&quot;</span><span class="p">,</span> <span class="n">transferControlModeInitials</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">transferControlModeBufLen</span><span class="p">)</span> <span class="o">|</span>
+                        <span class="c1">// packet size</span>
+                        <span class="n">acNodeMapGetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;DeviceStreamChannelPacketSize&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">packetSizeInitials</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Warning: failed to retrieve one or more initial node values.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// prepare all cameras</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sSetup</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numDevices</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// get serial number</span>
+                <span class="kt">char</span> <span class="n">deviceSerialNumberBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+                <span class="kt">size_t</span> <span class="n">deviceSerialNumberBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;DeviceSerialNumber&quot;</span><span class="p">,</span> <span class="n">deviceSerialNumberBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">deviceSerialNumberBufLen</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sPrepare camera %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">,</span> <span class="n">deviceSerialNumberBuf</span><span class="p">);</span>
+
+                <span class="c1">// Manually set exposure time</span>
+                <span class="c1">//    In order to get synchronized images, the exposure time must be</span>
+                <span class="c1">//    synchronized as well.</span>
+                <span class="kt">double</span> <span class="n">exposureTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sExposure: &quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">);</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ExposureAuto&quot;</span><span class="p">,</span> <span class="s">&quot;Off&quot;</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetFloatValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ExposureTime&quot;</span><span class="p">,</span> <span class="n">EXPOSURE_TIME</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetFloatValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ExposureTime&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">exposureTime</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.3f </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">exposureTime</span><span class="p">);</span>
+
+                <span class="c1">// Enable trigger mode and set source to action</span>
+                <span class="c1">//    To trigger a single image using action commands, trigger mode must</span>
+                <span class="c1">//    be enabled, the source set to an action command, and the selector</span>
+                <span class="c1">//    set to the start of a frame.</span>
+                <span class="kt">char</span> <span class="n">triggerSourceBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+                <span class="kt">size_t</span> <span class="n">triggerSourceBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sTrigger: &quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">);</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TriggerMode&quot;</span><span class="p">,</span> <span class="s">&quot;On&quot;</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TriggerSource&quot;</span><span class="p">,</span> <span class="s">&quot;Action0&quot;</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TriggerSelector&quot;</span><span class="p">,</span> <span class="s">&quot;FrameStart&quot;</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TriggerSource&quot;</span><span class="p">,</span> <span class="n">triggerSourceBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">triggerSourceBufLen</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">triggerSourceBuf</span><span class="p">);</span>
+
+                <span class="c1">// Prepare the device to receive an action command</span>
+                <span class="c1">//    Action unconditional mode allows a camera to accept action from an</span>
+                <span class="c1">//    application without write access. The device key, group key, and</span>
+                <span class="c1">//    group mask must match similar settings in the system&#39;s TL node map.</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sAction commands: &quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">);</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionUnconditionalMode&quot;</span><span class="p">,</span> <span class="s">&quot;On&quot;</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionSelector&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionDeviceKey&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionGroupKey&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionGroupMask&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;prepared</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+                <span class="c1">// Synchronize devices by enabling PTP</span>
+                <span class="c1">//    Enabling PTP on multiple devices causes them to negotiate amongst</span>
+                <span class="c1">//    themselves so that there is a single master device while all the</span>
+                <span class="c1">//    rest become slaves. The slaves&#39; clocks all synchronize to the</span>
+                <span class="c1">//    master&#39;s clock.</span>
+                <span class="kt">bool</span> <span class="n">ptpEnable</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sPTP: &quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">);</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetBooleanValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;PtpEnable&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetBooleanValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;PtpEnable&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ptpEnable</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ptpEnable</span> <span class="o">?</span> <span class="s">&quot;enabled&quot;</span> <span class="o">:</span> <span class="s">&quot;disabled&quot;</span><span class="p">);</span>
+
+                <span class="c1">// Use max supported packet size. We use transfer control to ensure that only one camera</span>
+                <span class="c1">// is transmitting at a time.</span>
+                <span class="n">acNodeMap</span> <span class="n">TLStreamNodeMap</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceGetTLStreamNodeMap</span><span class="p">(</span><span class="n">phDevices</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">TLStreamNodeMap</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetBooleanValue</span><span class="p">(</span><span class="n">TLStreamNodeMap</span><span class="p">,</span> <span class="s">&quot;StreamAutoNegotiatePacketSize&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="c1">// Enable user controlled transfer control</span>
+                <span class="c1">//    Synchronized cameras will begin transmiting images at the same time.</span>
+                <span class="c1">//    To avoid missing packets due to collisions, we will use transfer control</span>
+                <span class="c1">//    to control when each camera transmits the image.</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sTransfer Control: &quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">);</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TransferControlMode&quot;</span><span class="p">,</span> <span class="s">&quot;UserControlled&quot;</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TransferOperationMode&quot;</span><span class="p">,</span> <span class="s">&quot;Continuous&quot;</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapExecute</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TransferStop&quot;</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="kt">char</span> <span class="n">txControlMode</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+                <span class="kt">char</span> <span class="n">txOperationMode</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+                <span class="kt">size_t</span> <span class="n">txControlModeBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+                <span class="kt">size_t</span> <span class="n">txOperationModeBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TransferControlMode&quot;</span><span class="p">,</span> <span class="n">txControlMode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">txControlModeBufLen</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TransferOperationMode&quot;</span><span class="p">,</span> <span class="n">txOperationMode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">txOperationModeBufLen</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s - %s - Transfer Stopped</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">txControlMode</span><span class="p">,</span> <span class="n">txOperationMode</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// prepare system</span>
+        <span class="n">acNodeMap</span> <span class="n">hTLSystemNodeMap</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sPrepare system</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">);</span>
+
+        <span class="c1">// Prepare the system to broadcast an action command</span>
+        <span class="c1">//    The device key, group key, group mask, and target IP must all match</span>
+        <span class="c1">//    similar settings in the devices&#39; node maps. The target IP acts as a</span>
+        <span class="c1">//    mask.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sAction commands: &quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">);</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetTLSystemNodeMap</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hTLSystemNodeMap</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hTLSystemNodeMap</span><span class="p">,</span> <span class="s">&quot;ActionCommandDeviceKey&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hTLSystemNodeMap</span><span class="p">,</span> <span class="s">&quot;ActionCommandGroupKey&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hTLSystemNodeMap</span><span class="p">,</span> <span class="s">&quot;ActionCommandGroupMask&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hTLSystemNodeMap</span><span class="p">,</span> <span class="s">&quot;ActionCommandTargetIP&quot;</span><span class="p">,</span> <span class="mh">0xFFFFFFFF</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot; prepared </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Wait for devices to negotiate their PTP relationship</span>
+        <span class="c1">//    Before starting any PTP-dependent actions, it is important to wait for</span>
+        <span class="c1">//    the devices to complete their negotiation; otherwise, the devices may</span>
+        <span class="c1">//    not yet be synced. Depending on the initial PTP state of each camera,</span>
+        <span class="c1">//    it can take about 40 seconds for all devices to autonegotiate.</span>
+        <span class="c1">//    Below, we wait for the PTP status of each device until</span>
+        <span class="c1">//    there is only one &#39;Master&#39; and the rest are all &#39;Slaves&#39;.</span>
+        <span class="c1">//    During the negotiation phase, multiple devices may initially come up as</span>
+        <span class="c1">//    Master so we will wait until the ptp negotiation completes.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sWait for devices to negotiate. This can take up to about 40s.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+
+        <span class="kt">size_t</span> <span class="n">j</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">bool8_t</span> <span class="n">masterFound</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                <span class="n">bool8_t</span> <span class="n">restartSyncCheck</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+                <span class="c1">// check devices</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">numDevices</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="c1">// get PTP status</span>
+                        <span class="kt">char</span> <span class="n">ptpStatusBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+                        <span class="kt">size_t</span> <span class="n">ptpStatusBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+                        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="s">&quot;PtpStatus&quot;</span><span class="p">,</span> <span class="n">ptpStatusBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ptpStatusBufLen</span><span class="p">);</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                        <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">ptpStatusBuf</span><span class="p">,</span> <span class="s">&quot;Master&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="k">if</span> <span class="p">(</span><span class="n">masterFound</span><span class="p">)</span>
+                                <span class="p">{</span>
+                                        <span class="c1">// Multiple masters -- ptp negotiation is not complete</span>
+                                        <span class="n">restartSyncCheck</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                                        <span class="k">break</span><span class="p">;</span>
+                                <span class="p">}</span>
+
+                                <span class="n">masterFound</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                        <span class="p">}</span>
+                        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">ptpStatusBuf</span><span class="p">,</span> <span class="s">&quot;Slave&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="c1">// Uncalibrated state -- ptp negotiation is not complete</span>
+                                <span class="n">restartSyncCheck</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                                <span class="k">break</span><span class="p">;</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+
+                <span class="c1">// A single master was found and all remaining cameras are slaves</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">restartSyncCheck</span> <span class="o">&amp;&amp;</span> <span class="n">masterFound</span><span class="p">)</span>
+                        <span class="k">break</span><span class="p">;</span>
+
+                <span class="n">portable_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+                <span class="c1">// for output</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\r</span><span class="s">%s</span><span class="se">\r</span><span class="s">%s&quot;</span><span class="p">,</span> <span class="n">ERASE_LINE</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">);</span>
+                        <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+                <span class="p">}</span>
+
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+                <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+
+                <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// start stream</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sStart stream</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numDevices</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceStartStream</span><span class="p">(</span><span class="n">phDevices</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Set up timing and broadcast action command</span>
+        <span class="c1">//    Action commands must be scheduled for a time in the future. This can be</span>
+        <span class="c1">//    done by grabbing the PTP time from a device, adding a delta to it, and</span>
+        <span class="c1">//    setting it as an action command&#39;s execution time.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sSet action command to %i nanoseconds from now</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">,</span> <span class="n">DELTA_TIME</span><span class="p">);</span>
+
+        <span class="c1">// execute latch</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapExecute</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&quot;PtpDataSetLatch&quot;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// get latch</span>
+        <span class="kt">int64_t</span> <span class="n">ptpDataSetLatchValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&quot;PtpDataSetLatchValue&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ptpDataSetLatchValue</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// set execute time to future time</span>
+        <span class="kt">int64_t</span> <span class="n">deltaTime</span> <span class="o">=</span> <span class="n">DELTA_TIME</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hTLSystemNodeMap</span><span class="p">,</span> <span class="s">&quot;ActionCommandExecuteTime&quot;</span><span class="p">,</span> <span class="n">ptpDataSetLatchValue</span> <span class="o">+</span> <span class="n">deltaTime</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Fire action command</span>
+        <span class="c1">//    Action commands are fired and broadcast to all devices, but only</span>
+        <span class="c1">//    received by the devices matching desired settings.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sFire action command</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapExecute</span><span class="p">(</span><span class="n">hTLSystemNodeMap</span><span class="p">,</span> <span class="s">&quot;ActionCommandFireCommand&quot;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// get images and check timestamps</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sGet images</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numDevices</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// get serial</span>
+                <span class="kt">char</span> <span class="n">pSerialNumberBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+                <span class="kt">size_t</span> <span class="n">serialnumberBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetDeviceSerial</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">pSerialNumberBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">serialnumberBufLen</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sImage from device %s </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">,</span> <span class="n">pSerialNumberBuf</span><span class="p">);</span>
+
+                <span class="c1">// Compare timestamps</span>
+                <span class="c1">//    Scheduling action commands amongst PTP synchronized devices results</span>
+                <span class="c1">//    synchronized images with synchronized timestamps.</span>
+                <span class="n">acBuffer</span> <span class="n">hBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                <span class="kt">uint64_t</span> <span class="n">timestamp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sTimestamp: &quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">);</span>
+
+                <span class="c1">// Initiate image transfer from current camera</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapExecute</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TransferStart&quot;</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceGetBuffer</span><span class="p">(</span><span class="n">phDevices</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">3000</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hBuffer</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapExecute</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TransferStop&quot;</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acImageGetTimestamp</span><span class="p">(</span><span class="n">hBuffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">timestamp</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%&quot;</span> <span class="n">PRIu64</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">);</span>
+
+                <span class="c1">// requeue image buffer</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceRequeueBuffer</span><span class="p">(</span><span class="n">phDevices</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hBuffer</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// stop stream</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sStop stream</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numDevices</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceStopStream</span><span class="p">(</span><span class="n">phDevices</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// return nodes to their initial values</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numDevices</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// packet size affects the exposure range so we restore it first</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;DeviceStreamChannelPacketSize&quot;</span><span class="p">,</span> <span class="n">packetSizeInitials</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Warning: failed to set one or more node values back to its initial value.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+                <span class="c1">// exposure</span>
+                <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">pExposureAutoInitials</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;Off&quot;</span><span class="p">))</span>
+                <span class="p">{</span>
+                        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetFloatValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ExposureTime&quot;</span><span class="p">,</span> <span class="n">exposureTimeInitials</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ExposureAuto&quot;</span><span class="p">,</span> <span class="n">pExposureAutoInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="c1">// trigger</span>
+                        <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TriggerSelector&quot;</span><span class="p">,</span> <span class="n">triggerSelectorInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TriggerSource&quot;</span><span class="p">,</span> <span class="n">triggerSourceInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TriggerMode&quot;</span><span class="p">,</span> <span class="n">triggerModeInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="c1">// action commands</span>
+                        <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionGroupMask&quot;</span><span class="p">,</span> <span class="n">actionGroupMaskInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionGroupKey&quot;</span><span class="p">,</span> <span class="n">actionGroupKeyInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="n">acNodeMapSetIntegerValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionSelector&quot;</span><span class="p">,</span> <span class="n">actionSelectorInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;ActionUnconditionalMode&quot;</span><span class="p">,</span> <span class="n">actionUnconditionalModeInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="c1">// ptp</span>
+                        <span class="n">acNodeMapSetBooleanValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;PtpEnable&quot;</span><span class="p">,</span> <span class="n">ptpEnableInitials</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">|</span>
+                        <span class="c1">// transfer control</span>
+                        <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMaps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;TransferControlMode&quot;</span><span class="p">,</span> <span class="n">transferControlModeInitials</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Warning: failed to set one or more node values back to its initial value.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =- PREPARATION -=-</span>
+<span class="c1">// =- &amp; CLEAN UP =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// error buffer length</span>
+<span class="cp">#define ERR_BUF 512</span>
+
+<span class="cp">#define CHECK_RETURN                                  \</span>
+<span class="cp">        if (err != AC_ERR_SUCCESS)                        \</span>
+<span class="cp">        {                                                 \</span>
+<span class="cp">                char pMessageBuf[ERR_BUF];                    \</span>
+<span class="cp">                size_t pBufLen = ERR_BUF;                     \</span>
+<span class="cp">                acGetLastErrorMessage(pMessageBuf, &amp;pBufLen); \</span>
+<span class="cp">                printf(&quot;\nError: %s&quot;, pMessageBuf);           \</span>
+<span class="cp">                printf(&quot;\n\nPress enter to complete\n&quot;);      \</span>
+<span class="cp">                getchar();                                    \</span>
+<span class="cp">                return -1;                                    \</span>
+<span class="cp">        }</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;C_ScheduledActionCommands</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Note: The PTP auto-negotiation phase can take about 40s depending on the &quot;</span>
+                <span class="s">&quot;initial PTP state of each device</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Example may overwrite &#39;ActionDeviceKey&#39; -- proceed? (&#39;y&#39; to continue) &quot;</span><span class="p">);</span>
+        <span class="kt">char</span> <span class="n">continueExample</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+
+        <span class="k">if</span> <span class="p">((</span><span class="n">fgets</span><span class="p">(</span><span class="n">continueExample</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">continueExample</span><span class="p">,</span> <span class="n">stdin</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+                <span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">continueExample</span><span class="p">,</span> <span class="s">&quot;y</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">))</span>
+        <span class="p">{</span>
+
+                <span class="c1">// prepare example</span>
+                <span class="n">acSystem</span> <span class="n">hSystem</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acOpenSystem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hSystem</span><span class="p">);</span>
+                <span class="n">CHECK_RETURN</span><span class="p">;</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemUpdateDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">SYSTEM_TIMEOUT</span><span class="p">);</span>
+                <span class="n">CHECK_RETURN</span><span class="p">;</span>
+                <span class="kt">size_t</span> <span class="n">numDevices</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetNumDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numDevices</span><span class="p">);</span>
+                <span class="n">CHECK_RETURN</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">numDevices</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">No camera connected, example requires at least 2 cameras</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                        <span class="n">getchar</span><span class="p">();</span>
+                        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">numDevices</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Only one camera connected, example requires at least 2 cameras</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                        <span class="n">getchar</span><span class="p">();</span>
+                        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">numDevices</span> <span class="o">&gt;</span> <span class="n">MAX_DEVICES</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Warning: too many cameras, example set to run with only %d cameras</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">MAX_DEVICES</span><span class="p">);</span>
+                <span class="p">}</span>
+
+                <span class="n">acDevice</span> <span class="n">hDevices</span><span class="p">[</span><span class="n">MAX_DEVICES</span><span class="p">];</span>
+
+                <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">numDevices</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+
+                        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemCreateDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hDevices</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+                        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">// run example</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Commence example</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">SynchronizeCamerasAndTriggerImage</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">hDevices</span><span class="p">,</span> <span class="n">numDevices</span><span class="p">);</span>
+                <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Example complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+                <span class="c1">// clean up example</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numDevices</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemDestroyDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">hDevices</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acCloseSystem</span><span class="p">(</span><span class="n">hSystem</span><span class="p">);</span>
+                <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">getchar</span><span class="p">();</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_examples_sequencer_hdr.html" class="btn btn-neutral float-right" title="Sequencer, HDR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_examples_save_ply.html" class="btn btn-neutral" title="Save, Ply" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

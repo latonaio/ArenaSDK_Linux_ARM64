@@ -1,0 +1,870 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Device &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C" href="c_arena.html"/>
+        <link rel="next" title="ChunkData" href="c_arena_chunkdata.html"/>
+        <link rel="prev" title="ImageFactory" href="c_arena_imagefactory.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodemap.html">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+      <li>Device</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="device">
+<h1>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acdevicestartstream">
+<h2>acDeviceStartStream<a class="headerlink" href="#acdevicestartstream" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1a108b0a2eb51936ec87cf611a4c8053e5"></span><code class="descname">AC_ERROR AC_API acDeviceStartStream(acDevice hDevice)</code></dt>
+<dd><p><strong> acDeviceStartStream </strong> causes the device to begin streaming image/chunk data (acBuffer). It must be called before image or chunk data buffers are retrieved (acDeviceGetBuffer). The stream must be stopped (acDeviceStopStream) when no longer needed.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acBuffer</li>
+<li>acDeviceGetBuffer</li>
+<li>acDeviceStopStream </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdevicestartstreamnumbuffersandflags">
+<h2>acDeviceStartStreamNumBuffersAndFlags<a class="headerlink" href="#acdevicestartstreamnumbuffersandflags" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1abc7353c24e2c56a4f0a876c11752b741"></span><code class="descname">AC_ERROR AC_API acDeviceStartStreamNumBuffersAndFlags(acDevice hDevice, size_t numBuffers)</code></dt>
+<dd><p><strong> acDeviceStartStreamNumBuffersAndFlags </strong> causes the device to begin streaming image/chunk data (acBuffer) with given numBuffers and a streaming standard. It must be called before image or chunk data buffers are retrieved (acDeviceGetBuffer). The stream must be stopped (acDeviceStopStream) when no longer needed.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">numBuffers</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Number of internal buffers to use in the acquisition engine</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acBuffer</li>
+<li>acDeviceGetBuffer</li>
+<li>acDeviceStopStream </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdevicestopstream">
+<h2>acDeviceStopStream<a class="headerlink" href="#acdevicestopstream" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1a496ed09aac9421bb6c0de65389b29450"></span><code class="descname">AC_ERROR AC_API acDeviceStopStream(acDevice hDevice)</code></dt>
+<dd><p><strong> acDeviceStopStream </strong> stops the device from streaming image/chunk data (acBuffer) and cleans up the stream. The stream must be stopped when streaming is no longer needed.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acBuffer </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdevicegetbuffer">
+<h2>acDeviceGetBuffer<a class="headerlink" href="#acdevicegetbuffer" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1ab89653e7b1518b99f2eed5d35135d067"></span><code class="descname">AC_ERROR AC_API acDeviceGetBuffer(acDevice hDevice, uint64_t timeout, acBuffer * phBuffer)</code></dt>
+<dd><p><strong> acDeviceGetBuffer </strong> retrieves a buffer (acBuffer) from the device. It must be called after the stream has started (acDeviceStartStream) and before the stream has stopped (acDeviceStopStream). Retrieved buffers must be requeued (acDeviceRequeueBuffer).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">timeout</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Maximum time to wait for a buffer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phBuffer</span></code>: <ul>
+<li>Type: acBuffer*</li>
+<li>[Out] parameter</li>
+<li>Next buffer in the output queue</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acBuffer</li>
+<li>acDeviceStartStream</li>
+<li>acDeviceStopStream</li>
+<li>acDeviceRequeueBuffer </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdevicerequeuebuffer">
+<h2>acDeviceRequeueBuffer<a class="headerlink" href="#acdevicerequeuebuffer" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1ac58bef4d1d9e0ec2dee5c052e27d2da5"></span><code class="descname">AC_ERROR AC_API acDeviceRequeueBuffer(acDevice hDevice, acBuffer pBuffer)</code></dt>
+<dd><p><strong> acDeviceRequeueBuffer </strong> relinquishes control of a buffer (acBuffer) back to Arena. It must be called after a buffer has been retrieved (acDeviceGetBuffer).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>Buffer to requeue</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acBuffer</li>
+<li>acDeviceGetBuffer </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdeviceinitializeevents">
+<h2>acDeviceInitializeEvents<a class="headerlink" href="#acdeviceinitializeevents" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1a1ac601430a609638d04ccd2dbca72e82"></span><code class="descname">AC_ERROR AC_API acDeviceInitializeEvents(acDevice hDevice)</code></dt>
+<dd><p><strong> acDeviceInitializeEvents </strong> causes the underlying events engine to start listening for events. It must be called before waiting on events (acDeviceWaitOnEvent). The event infrastructure must be turned off (acDeviceDeinitializeEvents) when no longer needed.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acDeviceWaitOnEvent</li>
+<li>acDeviceDeinitializeEvents </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdevicedeinitializeevents">
+<h2>acDeviceDeinitializeEvents<a class="headerlink" href="#acdevicedeinitializeevents" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1a9f0dba6750be81261c25963869d71e4a"></span><code class="descname">AC_ERROR AC_API acDeviceDeinitializeEvents(acDevice hDevice)</code></dt>
+<dd><p><strong> DeinitializeEvents </strong> stops the underlying events engine from listening for messages, shutting it down and cleaning it up. It should be called only after the events infrastructure has been initialized (acDeviceInitializeEvents) and after all events have been processed (acDeviceWaitOnEvent).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acDeviceInitializeEvents</li>
+<li>acDeviceWaitOnEvent </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdevicewaitonevent">
+<h2>acDeviceWaitOnEvent<a class="headerlink" href="#acdevicewaitonevent" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1a38c95a565c63145e9b32e30cf7779ba6"></span><code class="descname">AC_ERROR AC_API acDeviceWaitOnEvent(acDevice hDevice, int64_t timeout)</code></dt>
+<dd><p><strong> WaitOnEvent </strong> waits for an event to occur in order to process its data. It must be called after the event infrastructure has been initialized (acDeviceInitializeEvents) and before it is deinitialized (acDeviceDeinitializeEvents). This will also trigger callbacks registered to event nodes.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">timeout</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Maximum time to wait for an event</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acDeviceInitializeEvents</li>
+<li>acDeviceDeinitializeEvents </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdevicegetnodemap">
+<h2>acDeviceGetNodeMap<a class="headerlink" href="#acdevicegetnodemap" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1a069a53e9d0aff3d83bda673e059246b9"></span><code class="descname">AC_ERROR AC_API acDeviceGetNodeMap(acDevice hDevice, acNodeMap * phNodeMap)</code></dt>
+<dd><p><strong> acDeviceGetNodeMap </strong> retrieves the already initialized main node map (acNodeMap), used to access a device’s complete feature set of nodes (acNode).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phNodeMap</span></code>: <ul>
+<li>Type: acNodeMap*</li>
+<li>[Out] parameter</li>
+<li>Main node map for the device</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acNodeMap</li>
+<li>acNode </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdevicegettldevicenodemap">
+<h2>acDeviceGetTLDeviceNodeMap<a class="headerlink" href="#acdevicegettldevicenodemap" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1aad7e75c1be350d3add1a572a6a2f31a2"></span><code class="descname">AC_ERROR AC_API acDeviceGetTLDeviceNodeMap(acDevice hDevice, acNodeMap * phNodeMap)</code></dt>
+<dd><p><strong> acDeviceGetTLDeviceNodeMap </strong> retrieves the already initialized GenTL device node map (acNodeMap), used to access a subset of cached device related nodes (acNode).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phNodeMap</span></code>: <ul>
+<li>Type: acNodeMap*</li>
+<li>[Out] parameter</li>
+<li>GenTL node map for the device</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acNodeMap</li>
+<li>acNode </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdevicegettlstreamnodemap">
+<h2>acDeviceGetTLStreamNodeMap<a class="headerlink" href="#acdevicegettlstreamnodemap" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1a4975c77d1862073d5f368317c425b5ef"></span><code class="descname">AC_ERROR AC_API acDeviceGetTLStreamNodeMap(acDevice hDevice, acNodeMap * phNodeMap)</code></dt>
+<dd><p><strong> acDeviceGetTLStreamNodeMap </strong> retrieves the already initialized GenTL stream node map (acNodeMap), used to access stream related nodes (acNode).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phNodeMap</span></code>: <ul>
+<li>Type: acNodeMap*</li>
+<li>[Out] parameter</li>
+<li>GenTL node map for the stream</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acNodeMap</li>
+<li>acNode </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdevicegettlinterfacenodemap">
+<h2>acDeviceGetTLInterfaceNodeMap<a class="headerlink" href="#acdevicegettlinterfacenodemap" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1a79ffc9e1edb928c7a8790adc92993abb"></span><code class="descname">AC_ERROR AC_API acDeviceGetTLInterfaceNodeMap(acDevice hDevice, acNodeMap * phNodeMap)</code></dt>
+<dd><p><strong> acDeviceGetTLInterfaceNodeMap </strong> retrieves the already initialized GenTL interface node map (acNodeMap), used to access interface related nodes (acNode).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phNodeMap</span></code>: <ul>
+<li>Type: acNodeMap*</li>
+<li>[Out] parameter</li>
+<li>GenTL node map for the interface</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acNodeMap</li>
+<li>acNode </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdeviceregisterimagecallback">
+<h2>acDeviceRegisterImageCallback<a class="headerlink" href="#acdeviceregisterimagecallback" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1a6472630d6ee2f7983312239ff02696ec"></span><code class="descname">AC_ERROR AC_API acDeviceRegisterImageCallback(acDevice hDevice, acCallback * phCallback, acImageCallbackFunction callbackFn, void * pParam)</code></dt>
+<dd><p><strong> acDeviceRegisterImageCallback </strong> registers the specified image callback function for the device. The optional user-specified data will be passed to the image callback function.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phCallback</span></code>: <ul>
+<li>Type: acCallback*</li>
+<li>[Out] parameter</li>
+<li>Handle to registered acCallback</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">callbackFn</span></code>: <ul>
+<li>Type: acImageCallbackFunction</li>
+<li>[In] parameter</li>
+<li>The image callback function to register</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pParam</span></code>: <ul>
+<li>Type: void*</li>
+<li>[In] parameter</li>
+<li>Pointer to optional user-specified callback data</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acDeviceDeregisterImageCallback </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdevicederegisterimagecallback">
+<h2>acDeviceDeregisterImageCallback<a class="headerlink" href="#acdevicederegisterimagecallback" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_device_8h_1a6ebd67ad065b18a66fdfbdeb7644c660"></span><code class="descname">AC_ERROR AC_API acDeviceDeregisterImageCallback(acDevice hDevice, acCallback * phCallback)</code></dt>
+<dd><p><strong> acDeviceDeregisterImageCallback </strong> deregisters the specified image callback for the device.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>A device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phCallback</span></code>: <ul>
+<li>Type: acCallback*</li>
+<li>[In] parameter</li>
+<li>Handle to registered acCallback</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acDeviceRegisterImageCallback </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_chunkdata.html" class="btn btn-neutral float-right" title="ChunkData" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_imagefactory.html" class="btn btn-neutral" title="ImageFactory" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

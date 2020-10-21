@@ -1,0 +1,571 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chunk Data, Introduction &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="C Code Samples" href="c_examples.html"/>
+        <link rel="next" title="Chunk Data, CRC Validation" href="c_examples_chunkdata_crcvalidation.html"/>
+        <link rel="prev" title="Callback, Polling" href="c_examples_callback_polling.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="c_arena.html">Arena C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="c_examples.html">C Code Samples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_examples_simpleacquisition.html">Simple Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition.html">Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_multidevice.html">Acquisition, Multi-Device Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_rapidacquisition.html">Acquisition, Rapid Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_imagecallbacks.html">Callback, Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_multithreadedimagecallbacks.html">Callback, Multithreaded Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onevent.html">Callback, On Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onnodechange.html">Callback, On Node Change</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_polling.html">Callback, Polling</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Chunk Data, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata_crcvalidation.html">Chunk Data, CRC Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration.html">Enumeration, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration_handlingdisconnections.html">Enumeration, Handling Disconnections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodemaps.html">Explore, Node Maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_exposure.html">Exposure, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodes.html">Explore, Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodetypes.html">Explore, Node Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_forceip.html">Force IP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_heatmap.html">Helios, HeatMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_minmaxdepth.html">Helios, Min Max Depth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_smoothresults.html">Helios, Smooth Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_lut.html">LUT, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_pixelcorrection.html">Pixel Correction, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_colordolpaolp.html">Polarization, Color DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_dolpaolp.html">Polarization, DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_record.html">Record, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save.html">Save, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_filenamepattern.html">Save, File Name Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_ply.html">Save, Ply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_scheduledactioncommands.html">Scheduled Action Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_sequencer_hdr.html">Sequencer, HDR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_streamables.html">Streamables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger.html">Trigger, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger_overlappingtrigger.html">Trigger, Overlapping Trigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_usersets.html">User Sets, Introduction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_examples.html">C Code Samples</a> &raquo;</li>
+        
+      <li>Chunk Data, Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chunk-data-introduction">
+<h1>Chunk Data, Introduction<a class="headerlink" href="#chunk-data-introduction" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************************</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  Copyright (c) 2019, Lucid Vision Labs, Inc.                                    ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR     ***</span>
+<span class="cm"> ***  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,       ***</span>
+<span class="cm"> ***  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE    ***</span>
+<span class="cm"> ***  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER         ***</span>
+<span class="cm"> ***  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  ***</span>
+<span class="cm"> ***  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  ***</span>
+<span class="cm"> ***  SOFTWARE.                                                                      ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***************************************************************************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ArenaCApi.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;inttypes.h&gt; // defines macros for printf functions</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdbool.h&gt;  // defines boolean type and values</span><span class="cp"></span>
+
+<span class="cp">#define TAB1 &quot;  &quot;</span>
+<span class="cp">#define TAB2 &quot;    &quot;</span>
+<span class="cp">#define TAB3 &quot;      &quot;</span>
+
+<span class="c1">// Chunk Data: CRC Validation</span>
+<span class="c1">//    This example demonstrates the use of chunk data to verify data through a</span>
+<span class="c1">//    Cyclical Redundancy Check (or CRC for short). CRCs are meant to check the</span>
+<span class="c1">//    validity of sent data. It is performed by doing a series of calculations on</span>
+<span class="c1">//    the raw data before and after it is sent. If the resultant integer values</span>
+<span class="c1">//    match, then it is safe to assume the integrity of the data.</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- SETTINGS =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// system timeout</span>
+<span class="cp">#define SYSTEM_TIMEOUT 100</span>
+
+<span class="c1">// image timeout</span>
+<span class="cp">#define IMAGE_TIMEOUT 2000</span>
+
+<span class="c1">// number of images to grab</span>
+<span class="cp">#define NUM_IMAGES 5</span>
+
+<span class="c1">// maximum buffer length</span>
+<span class="cp">#define MAX_BUF 256</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- EXAMPLE -=-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// demonstrates chunk data</span>
+<span class="c1">// (1) activates chunk mode</span>
+<span class="c1">// (2) enables exposure and gain chunks</span>
+<span class="c1">// (3) starts the stream and gets images</span>
+<span class="c1">// (4) retrieves exposure and gain chunk data from image</span>
+<span class="c1">// (5) requeues buffers and stops the stream</span>
+<span class="n">AC_ERROR</span> <span class="nf">ConfigureAndRetrieveChunkData</span><span class="p">(</span><span class="n">acDevice</span> <span class="n">hDevice</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// get node map</span>
+        <span class="n">acNodeMap</span> <span class="n">hNodeMap</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceGetNodeMap</span><span class="p">(</span><span class="n">hDevice</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hNodeMap</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// get initial node values that will be changed in order to return their</span>
+        <span class="c1">// values at the end of the example get chunk mode active node</span>
+        <span class="n">acNode</span> <span class="n">hChunkModeActiveNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">bool8_t</span> <span class="n">chunkModeActiveInitial</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetNode</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;ChunkModeActive&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hChunkModeActiveNode</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acBooleanGetValue</span><span class="p">(</span><span class="n">hChunkModeActiveNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">chunkModeActiveInitial</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// get chunk enable node</span>
+        <span class="n">acNode</span> <span class="n">hChunkEnableNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">bool8_t</span> <span class="n">chunkModeEnableInitial</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetNode</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;ChunkEnable&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hChunkEnableNode</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acBooleanGetValue</span><span class="p">(</span><span class="n">hChunkEnableNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">chunkModeEnableInitial</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Activate chunk mode</span>
+        <span class="c1">//    Activate chunk mode before enabling chunks; otherwise, ChunkSelector</span>
+        <span class="c1">//    and ChunkEnable nodes will be unavailable.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sActivate chunk mode</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acBooleanSetValue</span><span class="p">(</span><span class="n">hChunkModeActiveNode</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Enable exposure and gain chunks</span>
+        <span class="c1">//    Enable desired chunks before starting the stream. Some chunks provide</span>
+        <span class="c1">//    information already in an image while others not. This example looks at</span>
+        <span class="c1">//    exposure and gain, two pieces of information unavailable from an image</span>
+        <span class="c1">//    without chunk data.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sEnable exposure and gain chunks</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+
+        <span class="c1">// set exposure time</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;ChunkSelector&quot;</span><span class="p">,</span> <span class="s">&quot;ExposureTime&quot;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acBooleanSetValue</span><span class="p">(</span><span class="n">hChunkEnableNode</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// set gain</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapSetEnumerationValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;ChunkSelector&quot;</span><span class="p">,</span> <span class="s">&quot;Gain&quot;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acBooleanSetValue</span><span class="p">(</span><span class="n">hChunkEnableNode</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Start stream and grab images</span>
+        <span class="c1">//    Start streaming images with chunk data. Image data will now be appended</span>
+        <span class="c1">//    with exposure and gain data because they were enabled.</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceStartStream</span><span class="p">(</span><span class="n">hDevice</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sRetrieve images and chunks</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM_IMAGES</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// grab images</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s Image %i&quot;</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+                <span class="n">acBuffer</span> <span class="n">hBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceGetBuffer</span><span class="p">(</span><span class="n">hDevice</span><span class="p">,</span> <span class="n">IMAGE_TIMEOUT</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hBuffer</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="c1">// Check for completeness</span>
+                <span class="c1">//    If an image is incomplete, it could be the case that the chunks</span>
+                <span class="c1">//    hold garbage data value. If incomplete, chunks can still be</span>
+                <span class="c1">//    retrieved but should be checked against null to verify the data</span>
+                <span class="c1">//    exists.</span>
+                <span class="n">bool8_t</span> <span class="n">isIncomplete</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acBufferIsIncomplete</span><span class="p">(</span><span class="n">hBuffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">isIncomplete</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">isIncomplete</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot; (incomplete)&quot;</span><span class="p">);</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">Error: Payload data incomplete. Please review network </span><span class="se">\n</span><span class="s">configurations, increase &quot;</span>
+                                   <span class="s">&quot;packet size, increase inter-packet </span><span class="se">\n</span><span class="s">delay and/or reduce image size, then retry example</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">// Get exposure and gain chunks</span>
+                <span class="c1">//    Chunks work the same way as nodes: they have a node type,</span>
+                <span class="c1">//    additional information, and return null if they don&#39;t exist or</span>
+                <span class="c1">//    cannot be found. For example, the exposure time chunk can access a</span>
+                <span class="c1">//    maximum, minimum, display name, and unit, just like the exposure</span>
+                <span class="c1">//    time node. get exposure chunk</span>
+                <span class="n">acNode</span> <span class="n">hChunkExposureNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                <span class="kt">double</span> <span class="n">exposureValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acChunkDataGetChunk</span><span class="p">(</span><span class="n">hBuffer</span><span class="p">,</span> <span class="s">&quot;ChunkExposureTime&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hChunkExposureNode</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatGetValue</span><span class="p">(</span><span class="n">hChunkExposureNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">exposureValue</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="c1">// get gain chunk</span>
+                <span class="n">acNode</span> <span class="n">hChunkGainNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                <span class="kt">double</span> <span class="n">gainValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acChunkDataGetChunk</span><span class="p">(</span><span class="n">hBuffer</span><span class="p">,</span> <span class="s">&quot;ChunkGain&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hChunkGainNode</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatGetValue</span><span class="p">(</span><span class="n">hChunkGainNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">gainValue</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sexposure = %.1f, gain = %.1f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">,</span> <span class="n">exposureValue</span><span class="p">,</span> <span class="n">gainValue</span><span class="p">);</span>
+
+                <span class="c1">// requeue buffers</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceRequeueBuffer</span><span class="p">(</span><span class="n">hDevice</span><span class="p">,</span> <span class="n">hBuffer</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// stop stream</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceStopStream</span><span class="p">(</span><span class="n">hDevice</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// return nodes to their initial values</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acBooleanSetValue</span><span class="p">(</span><span class="n">hChunkModeActiveNode</span><span class="p">,</span> <span class="n">chunkModeActiveInitial</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acBooleanSetValue</span><span class="p">(</span><span class="n">hChunkEnableNode</span><span class="p">,</span> <span class="n">chunkModeEnableInitial</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =- PREPARATION -=-</span>
+<span class="c1">// =- &amp; CLEAN UP =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// error buffer length</span>
+<span class="cp">#define ERR_BUF 512</span>
+
+<span class="cp">#define CHECK_RETURN                                  \</span>
+<span class="cp">        if (err != AC_ERR_SUCCESS)                        \</span>
+<span class="cp">        {                                                 \</span>
+<span class="cp">                char pMessageBuf[ERR_BUF];                    \</span>
+<span class="cp">                size_t pBufLen = ERR_BUF;                     \</span>
+<span class="cp">                acGetLastErrorMessage(pMessageBuf, &amp;pBufLen); \</span>
+<span class="cp">                printf(&quot;\nError: %s&quot;, pMessageBuf);           \</span>
+<span class="cp">                printf(&quot;\n\nPress enter to complete\n&quot;);      \</span>
+<span class="cp">                getchar();                                    \</span>
+<span class="cp">                return -1;                                    \</span>
+<span class="cp">        }</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;C_ChunkData</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// prepare example</span>
+        <span class="n">acSystem</span> <span class="n">hSystem</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acOpenSystem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemUpdateDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">SYSTEM_TIMEOUT</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="kt">size_t</span> <span class="n">numDevices</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetNumDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numDevices</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">numDevices</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">No camera connected</span><span class="se">\n</span><span class="s">Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                <span class="n">getchar</span><span class="p">();</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">acDevice</span> <span class="n">hDevice</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemCreateDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+        <span class="c1">// run example</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Commence example</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">ConfigureAndRetrieveChunkData</span><span class="p">(</span><span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Example complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="c1">// clean up example</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemDestroyDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acCloseSystem</span><span class="p">(</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">getchar</span><span class="p">();</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_examples_chunkdata_crcvalidation.html" class="btn btn-neutral float-right" title="Chunk Data, CRC Validation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_examples_callback_polling.html" class="btn btn-neutral" title="Callback, Polling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

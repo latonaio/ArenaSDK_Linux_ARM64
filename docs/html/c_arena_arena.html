@@ -1,0 +1,518 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Arena &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C" href="c_arena.html"/>
+        <link rel="next" title="NodeMap" href="c_arena_nodemap.html"/>
+        <link rel="prev" title="Image" href="c_arena_image.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_device.html">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodemap.html">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+      <li>Arena</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arena">
+<h1>Arena<a class="headerlink" href="#arena" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acopensystem">
+<h2>acOpenSystem<a class="headerlink" href="#acopensystem" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_8h_1ac21f697ea2517e0b72d1e21f8a78736c"></span><code class="descname">AC_ERROR AC_API acOpenSystem(acSystem * phSystem)</code></dt>
+<dd><p><strong> acOpenSystem </strong> initializes the Arena SDK and retrieves the system object (acSystem). The system must be closed or memory will leak.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">phSystem</span></code>: <ul>
+<li>Type: acSystem*</li>
+<li>[Out] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acSystem </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acclosesystem">
+<h2>acCloseSystem<a class="headerlink" href="#acclosesystem" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_8h_1a7ca52adf335dd32054de52dd8895bcbf"></span><code class="descname">AC_ERROR AC_API acCloseSystem(acSystem hSystem)</code></dt>
+<dd><p><strong> acCloseSystem </strong> cleans up the system (acSystem) and deinitializes the Arena SDK, deallocating all memory.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acSystem </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acgetbitsperpixel">
+<h2>acGetBitsPerPixel<a class="headerlink" href="#acgetbitsperpixel" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_8h_1a7ee47c9cb59f1613c5850536cde36a16"></span><code class="descname">AC_ERROR AC_API acGetBitsPerPixel(uint64_t pixelFormat, size_t * pBitsPerPixel)</code></dt>
+<dd><p><strong> acGetBitsPerPixel </strong> get the number of bits per pixel of the image from the integer value of the pixel format (PfncFormat). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pixelFormat</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Pixel format to get bits per pixel</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBitsPerPixel</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Number of bits per pixel for given pixel format</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="accalculatecrc32">
+<h2>acCalculateCRC32<a class="headerlink" href="#accalculatecrc32" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_8h_1af81827b23fb21d1cc6681c2df8d1c43c"></span><code class="descname">AC_ERROR AC_API acCalculateCRC32(const uint8_t * pData, size_t pDataLen, size_t * pCRCValue)</code></dt>
+<dd><p><strong> acCalculatedCRC32 </strong> calculates a CRC value (cyclical redundancy check) on a dataset. This is used to check whether the dataset has been sent in its entirety. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pData</span></code>: <ul>
+<li>Type: const uint8_t*</li>
+<li>[In] parameter</li>
+<li>A pointer to the data to use to calculate the CRC</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pDataLen</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>The size of the data</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pCRCValue</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>The calculated CRC value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acisreadable">
+<h2>acIsReadable<a class="headerlink" href="#acisreadable" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_8h_1a13e4a3b96f7863854275de019099ab7b"></span><code class="descname">AC_ERROR AC_API acIsReadable(acNode hNode, bool8_t * pIsReadable)</code></dt>
+<dd><p><strong> acIsReadable </strong> checks whether a node is readable. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIsReadable</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="aciswritable">
+<h2>acIsWritable<a class="headerlink" href="#aciswritable" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_8h_1a8132af9d0c022554906a857b99778bea"></span><code class="descname">AC_ERROR AC_API acIsWritable(acNode hNode, bool8_t * pIsWritable)</code></dt>
+<dd><p><strong> acIsWritable </strong> checks whether a node is writable. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIsWritable</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="accalculatemaximumnumberofbuffers">
+<h2>acCalculateMaximumNumberOfBuffers<a class="headerlink" href="#accalculatemaximumnumberofbuffers" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_8h_1a76ccc6bd1843f42f55a3806a5c887b02"></span><code class="descname">AC_ERROR AC_API acCalculateMaximumNumberOfBuffers(size_t payloadSize, size_t * pMaxBufs)</code></dt>
+<dd><p><strong> acCalculateMaximumNumberOfBuffers </strong> calculates the number of buffers it would take to fill 80% of the available memory. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">payloadSize</span></code>: <ul>
+<li>Type: size_t</li>
+<li>Unit: bytes</li>
+<li>[In] parameter</li>
+<li>Payload size of an image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pMaxBufs</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Maximum number of buffers</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_nodemap.html" class="btn btn-neutral float-right" title="NodeMap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_image.html" class="btn btn-neutral" title="Image" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

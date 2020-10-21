@@ -1,0 +1,1490 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ImageWriter &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Save C" href="c_save.html"/>
+        <link rel="next" title="VideoRecorder" href="c_save_videorecorder.html"/>
+        <link rel="prev" title="Definitions" href="c_save_defs.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="c_arena.html">Arena C</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="c_save.html">Save C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_save_defs.html">Definitions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ImageWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_save_videorecorder.html">VideoRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_save_imagereader.html">ImageReader</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_save.html">Save C</a> &raquo;</li>
+        
+      <li>ImageWriter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="imagewriter">
+<h1>ImageWriter<a class="headerlink" href="#imagewriter" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="savewritercreateempty">
+<h2>saveWriterCreateEmpty<a class="headerlink" href="#savewritercreateempty" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1aede18c3cd1a7d99d8ab58caee5514508"></span><code class="descname">SC_ERROR SC_API saveWriterCreateEmpty(saveWriter * phWriter)</code></dt>
+<dd><p><strong> saveWriterCreateEmpty </strong> creates an empty/default image writer. The parameters of this image writer are not set (height = width = bits per pixel = 0). The default file name pattern is ‘savedimages/image&lt;count&gt;.jpg’ and the default file format is jpeg.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">phWriter</span></code>: <ul>
+<li>Type: saveWriter*</li>
+<li>[Out] parameter</li>
+<li>Created image writer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>unable to save before setting parameters </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritercreate">
+<h2>saveWriterCreate<a class="headerlink" href="#savewritercreate" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a6bdc34fc81b41b8994b668f6d45ab23c"></span><code class="descname">SC_ERROR SC_API saveWriterCreate(size_t width, size_t height, size_t bitsPerPixel, saveWriter * phWriter)</code></dt>
+<dd><p><strong> saveWriterCreate </strong> creates an image writer while setting the parameters of the upcoming image(s) to save. The default file name pattern is ‘savedimages/image&lt;count&gt;.jpg’ and the default file format is jpeg. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">width</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Width of the image(s) to save</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">height</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Height of the image(s) to save</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">bitsPerPixel</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Number of bits per pixel of the image(s) to save</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phWriter</span></code>: <ul>
+<li>Type: saveWriter*</li>
+<li>[Out] parameter</li>
+<li>Created image writer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewriterdestroy">
+<h2>saveWriterDestroy<a class="headerlink" href="#savewriterdestroy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a367a02b7b402ce9badbb4b6d78d5d519"></span><code class="descname">SC_ERROR SC_API saveWriterDestroy(saveWriter hWriter)</code></dt>
+<dd><p><strong> saveWriterDestroy </strong> cleans up an image writer (saveWriter), deallocating its memory.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>saveWriter </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetjpeg">
+<h2>saveWriterSetJpeg<a class="headerlink" href="#savewritersetjpeg" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1acbed48d9efe7256fa633b54d6c356f4c"></span><code class="descname">SC_ERROR SC_API saveWriterSetJpeg(saveWriter hWriter)</code></dt>
+<dd><p><strong> saveWriterSetJpeg </strong> changes the image writer to save images using the jpeg file format. It also switches the extension to ‘.jpg’. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetjpegandconfig">
+<h2>saveWriterSetJpegAndConfig<a class="headerlink" href="#savewritersetjpegandconfig" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1acf99520b7b4a7a0176e6c55ea1561204"></span><code class="descname">SC_ERROR SC_API saveWriterSetJpegAndConfig(saveWriter hWriter, size_t quality, bool8_t progressive, SC_JPEG_SUBSAMPLING subsampling, bool8_t optimize)</code></dt>
+<dd><p><strong> saveWriterSetJpeg </strong> changes the image writer to save images using the jpeg file format. It also switches the extension to ‘.jpg’. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">quality</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Range: 1-100</li>
+<li>Image quality (1 lower, 100 highest)</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">progressive</span></code>: <ul>
+<li>Type: bool8_t</li>
+<li>[In] parameter</li>
+<li>If true, saves progressive</li>
+<li>Otherwise, saves baseline</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">subsampling</span></code>: <ul>
+<li>Type: SC_JPEG_SUBSAMPLING</li>
+<li>[In] parameter</li>
+<li>The chroma subsampling to apply</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">optimize</span></code>: <ul>
+<li>Type: bool8_t</li>
+<li>[In] parameter</li>
+<li>If true, calculates optimal Huffman coding tables</li>
+<li>Otherwise, does not</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetbmp">
+<h2>saveWriterSetBmp<a class="headerlink" href="#savewritersetbmp" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a61027140ee1218b7292fcecb0e42a43a"></span><code class="descname">SC_ERROR SC_API saveWriterSetBmp(saveWriter hWriter)</code></dt>
+<dd><p><strong> saveWriterSetBmp </strong> changes the image writer to save images using the bmp file format. It also switches the extension to ‘.bmp’. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetraw">
+<h2>saveWriterSetRaw<a class="headerlink" href="#savewritersetraw" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a29bfc89fef4e3c62323246bacd0d2842"></span><code class="descname">SC_ERROR SC_API saveWriterSetRaw(saveWriter hWriter)</code></dt>
+<dd><p><strong> saveWriterSetRaw </strong> changes the image writer to save images as raw data. It also switches the extension to ‘.raw’. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetply">
+<h2>saveWriterSetPly<a class="headerlink" href="#savewritersetply" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a22932964ec297b9d847d63556232a7a3"></span><code class="descname">SC_ERROR SC_API saveWriterSetPly(saveWriter hWriter)</code></dt>
+<dd><p><strong> saveWriterSetPly </strong> changes the image writer to save images as ply data. It also switches the extension to ‘.ply’. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetplyandconfig">
+<h2>saveWriterSetPlyAndConfig<a class="headerlink" href="#savewritersetplyandconfig" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1ad09afa393dc33d20c4a5e8f155b751ef"></span><code class="descname">SC_ERROR SC_API saveWriterSetPlyAndConfig(saveWriter hWriter, bool8_t filterPoints)</code></dt>
+<dd><p><strong> saveWriterSetPlyAndConfig </strong> changes the image writer to save images as ply data. It also switches the extension to ‘.ply’. Uses filterPoints as parameter to filter NaN points <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">filterPoints</span></code>: <ul>
+<li>Type: bool8_t,</li>
+<li>[In] parameter</li>
+<li>Default: true</li>
+<li>Filter NaN points (A = B = C = -32,678)</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetplyandconfigextended">
+<h2>saveWriterSetPlyAndConfigExtended<a class="headerlink" href="#savewritersetplyandconfigextended" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a858a345e0e7e181aef8f0f6721939926"></span><code class="descname">SC_ERROR SC_API saveWriterSetPlyAndConfigExtended(saveWriter hWriter, savePlyParams params)</code></dt>
+<dd><p><strong> saveWriterSetPlyAndConfigExtended </strong> changes the image writer to save images as ply data. It switches the extension to ‘.ply’ and uses <strong> savePlyParams </strong> information to configre the save data. The param.filterPoints option will filter NaN points in the output data. The params.scale, and params.offset(A/B/C) will be applied to the output PLY file accordingly also. Finally the params.isSigned value lets the library know if data passed in is signed or unsigned. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">params</span></code>: <ul>
+<li>Type: savePlyParams,</li>
+<li>[In] parameter</li>
+<li>Passes savePlyParams to saveWriterSetPlyAndConfigExtended</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersettiff">
+<h2>saveWriterSetTiff<a class="headerlink" href="#savewritersettiff" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1aede086fd251ed97d10bc4b49779babfd"></span><code class="descname">SC_ERROR SC_API saveWriterSetTiff(saveWriter hWriter)</code></dt>
+<dd><p><strong> saveWriterSetTiff </strong> changes the image writer to save images using the tiff file format. It also switches the extension to ‘.tiff’. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersettiffandconfig">
+<h2>saveWriterSetTiffAndConfig<a class="headerlink" href="#savewritersettiffandconfig" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1ad7cf2a8cc3b979c6d4f6c58cb629875f"></span><code class="descname">SC_ERROR SC_API saveWriterSetTiffAndConfig(saveWriter hWriter, SC_TIFF_COMPRESSION compression, bool8_t cmykTags)</code></dt>
+<dd><p><strong> saveWriterSetTiff </strong> changes the image writer to save images using the tiff file format. It also switches the extension to ‘.tiff’. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">compression</span></code>: <ul>
+<li>Type: SC_TIFF_COMPRESSION</li>
+<li>[In] parameter</li>
+<li>Compression algorithm</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">cmykTags</span></code>: <ul>
+<li>Type: bool8_t</li>
+<li>[In] parameter</li>
+<li>If true, stores tags for separated CMYK</li>
+<li>Otherwise, does not</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetpng">
+<h2>saveWriterSetPng<a class="headerlink" href="#savewritersetpng" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a0cfc09bf96cd9805275641fb6da78b85"></span><code class="descname">SC_ERROR SC_API saveWriterSetPng(saveWriter hWriter)</code></dt>
+<dd><p><strong> saveWriterSetPng </strong> changes the image writer to save images using the png file format. It also switches the extension to ‘.png’. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h2>saveWriterSetPng<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a0cfc09bf96cd9805275641fb6da78b85"></span><code class="descname">SC_ERROR SC_API saveWriterSetPng(saveWriter hWriter)</code></dt>
+<dd><p><strong> saveWriterSetPng </strong> changes the image writer to save images using the png file format. It also switches the extension to ‘.png’. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetextension">
+<h2>saveWriterSetExtension<a class="headerlink" href="#savewritersetextension" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1acfaaf791f7fe3ef28a859a2e28bf3276"></span><code class="descname">SC_ERROR SC_API saveWriterSetExtension(saveWriter hWriter, const char * pExtension)</code></dt>
+<dd><p><strong> saveWriterSetExtension </strong> changes the extension of the file format to use. Be aware that changing the extension does not change the file format.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pExtension</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Extension to use</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>does not affect the file format </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetparams">
+<h2>saveWriterSetParams<a class="headerlink" href="#savewritersetparams" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1aed88dda4fa3b063bb484114be7911577"></span><code class="descname">SC_ERROR SC_API saveWriterSetParams(saveWriter hWriter, size_t width, size_t height, size_t bitsPerPixel)</code></dt>
+<dd><p><strong> saveWriterSetParams </strong> sets the parameters for the image(s) to save. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">width</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Width of the image(s) to save</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">height</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Height of the image(s) to save</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">bitsPerPixel</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Bits per pixel of the image(s) to save</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetfilenamepattern">
+<h2>saveWriterSetFileNamePattern<a class="headerlink" href="#savewritersetfilenamepattern" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a5c6c05512a19f8c7e64e054a94d30eb0"></span><code class="descname">SC_ERROR SC_API saveWriterSetFileNamePattern(saveWriter hWriter, const char * pFileNamePattern)</code></dt>
+<dd><p><strong> saveWriterSetFileNamePattern </strong> sets a new file name or pattern to use to save images. Include ‘&lt;count&gt;’ to include an image count (specific to this image image writer). Include ‘&lt;timestamp&gt;’ to include a timestamp. An image’s timestamp must be updated manually. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFileNamePattern</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>File name pattern to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewriterupdatetag">
+<h2>saveWriterUpdateTag<a class="headerlink" href="#savewriterupdatetag" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a0b6470fb662ba75df90f6a7c95ab6e67"></span><code class="descname">SC_ERROR SC_API saveWriterUpdateTag(saveWriter hWriter, const char * pTag, const char * pValue)</code></dt>
+<dd><p><strong> saveWriterUpdateTag </strong> updates the value to replace a given tag when an image is saved. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pTag</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Tag to replace</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pValue</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Value to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetcount">
+<h2>saveWriterSetCount<a class="headerlink" href="#savewritersetcount" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1ad2b4ffc050657677813ae2be5afe67e3"></span><code class="descname">SC_ERROR SC_API saveWriterSetCount(saveWriter hWriter, uint64_t count)</code></dt>
+<dd><p><strong> saveWriterSetCount </strong> manually sets the count particular to the image writer. The count increments with each saved image. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">count</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Count to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetcountpath">
+<h2>saveWriterSetCountPath<a class="headerlink" href="#savewritersetcountpath" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a5a9baa2a159a9a85b02080be30062a1c"></span><code class="descname">SC_ERROR SC_API saveWriterSetCountPath(saveWriter hWriter, uint64_t count)</code></dt>
+<dd><p><strong> saveWriterSetCount </strong> manually sets the count particular to the file name pattern. The count increments with each saved image. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">count</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Count to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersetcountglobal">
+<h2>saveWriterSetCountGlobal<a class="headerlink" href="#savewritersetcountglobal" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a92b3c74179882efe1723d08002f874d4"></span><code class="descname">SC_ERROR SC_API saveWriterSetCountGlobal(saveWriter hWriter, uint64_t count)</code></dt>
+<dd><p><strong> saveWriterSetCount </strong> manually sets the count across all image writers and video recorders. The count increments with each saved image. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">count</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Count to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersettimestamp">
+<h2>saveWriterSetTimestamp<a class="headerlink" href="#savewritersettimestamp" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a2a3ed352313a1a44d06b403b24bbc326"></span><code class="descname">SC_ERROR SC_API saveWriterSetTimestamp(saveWriter hWriter, uint64_t timestamp)</code></dt>
+<dd><p><strong> saveWriterSetTimestamp </strong> manually sets the timestamp. The timestamp must be updated manually.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">timestamp</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Timestamp to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p></p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritergetparams">
+<h2>saveWriterGetParams<a class="headerlink" href="#savewritergetparams" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a8d7a029e29593cce990dfe5238a8d8d8"></span><code class="descname">SC_ERROR SC_API saveWriterGetParams(saveWriter hWriter, size_t * pWidth, size_t * pHeight, size_t * pBitsPerPixel)</code></dt>
+<dd><p><strong> saveWriterGetParams </strong> retrieves the parameters currently used to save images.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pWidth</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>The width</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pHeight</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>The height</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBitsPerPixel</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Number of bits per pixel</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>At least one [Out] parameter must be non-null </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritergetfilenamepattern">
+<h2>saveWriterGetFileNamePattern<a class="headerlink" href="#savewritergetfilenamepattern" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a4529779ee0956d5bcf902d9eb47c4962"></span><code class="descname">SC_ERROR SC_API saveWriterGetFileNamePattern(saveWriter hWriter, char * pFileNamePattern, size_t * pLen)</code></dt>
+<dd><p><strong> saveWriterGetFileNamePattern </strong> retrieves the file name pattern. The received file name pattern does not replace tags (e.g. &lt;count&gt;, &lt;timestamp&gt;). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFileNamePattern</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>File name pattern</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value - including the null terminating character -</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritergetextension">
+<h2>saveWriterGetExtension<a class="headerlink" href="#savewritergetextension" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1ab40e98f2688b029a1d5cc92dbc72f505"></span><code class="descname">SC_ERROR SC_API saveWriterGetExtension(saveWriter hWriter, char * pExtension, size_t * pLen)</code></dt>
+<dd><p><strong> saveWriterGetExtension </strong> retrieves the extension currently being used (e.g. ‘.jpg’, ‘.png’).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pExtension</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Current extension</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value - including the null terminating character -</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>extension does not necessarily represent its file format </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewriterpeekfilename">
+<h2>saveWriterPeekFileName<a class="headerlink" href="#savewriterpeekfilename" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1aa4c8098b402359295d8b86d570bd00d2"></span><code class="descname">SC_ERROR SC_API saveWriterPeekFileName(saveWriter hWriter, char * pFileName, size_t * pLen)</code></dt>
+<dd><p><strong> saveWriterPeekFileName </strong> peeks at the next file name to use, replacing any appropriate tags (e.g. &lt;count&gt;, &lt;timestamp&gt;). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFileName</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Next file name to use</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value - including the null terminating character -</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewriterpeekcount">
+<h2>saveWriterPeekCount<a class="headerlink" href="#savewriterpeekcount" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1acad0846eee252997c9e61a7055fa138d"></span><code class="descname">SC_ERROR SC_API saveWriterPeekCount(saveWriter hWriter, uint64_t * pCount)</code></dt>
+<dd><p><strong> saveWriterPeekCount </strong> peeks at the count/index of the next saved image particular to the image writer. This is the number that the &lt;count&gt; or &lt;count:local&gt; tags will be replaced with. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pCount</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>[Out] parameter</li>
+<li>Count</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewriterpeekcountpath">
+<h2>saveWriterPeekCountPath<a class="headerlink" href="#savewriterpeekcountpath" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a74dc96fef54ac7966f585d3997d131df"></span><code class="descname">SC_ERROR SC_API saveWriterPeekCountPath(saveWriter hWriter, uint64_t * pCount)</code></dt>
+<dd><p><strong> saveWriterPeekCount </strong> peeks at the count/index of the next saved image particular to the file name pattern. This is the number that the &lt;count:path&gt; tag will be replaced with. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pCount</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>[Out] parameter</li>
+<li>Path count</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewriterpeekcountglobal">
+<h2>saveWriterPeekCountGlobal<a class="headerlink" href="#savewriterpeekcountglobal" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a83fd258dbcbd10c596bf879894adeb1d"></span><code class="descname">SC_ERROR SC_API saveWriterPeekCountGlobal(saveWriter hWriter, uint64_t * pCount)</code></dt>
+<dd><p><strong> saveWriterPeekCount </strong> peeks at the count/index of the next saved image across all image writers and video recorders. This is the number that the &lt;count:global&gt; tag will be replaced with. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pCount</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>[Out] parameter</li>
+<li>Global count</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritergetlastfilename">
+<h2>saveWriterGetLastFileName<a class="headerlink" href="#savewritergetlastfilename" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a5fcdb4f381b7fc415a9934f914466546"></span><code class="descname">SC_ERROR SC_API saveWriterGetLastFileName(saveWriter hWriter, char * pFileName, size_t * pLen)</code></dt>
+<dd><p><strong> saveWriterGetLastFileName </strong> retrieves the last file name used to save a video with this context. Returns ‘’ if no file has been saved. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFileName</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Last file name used</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value - including the null terminating character -</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersave">
+<h2>saveWriterSave<a class="headerlink" href="#savewritersave" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a314db1a4c2e28b671ef61f1ca62f5ef7"></span><code class="descname">SC_ERROR SC_API saveWriterSave(saveWriter hWriter, const uint8_t * pData)</code></dt>
+<dd><p><strong> saveWriterSave </strong> saves an image starting from the upper leftmost pixel. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pData</span></code>: <ul>
+<li>Type: const uint8_t*</li>
+<li>[In] parameter</li>
+<li>Image data to save</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersavewithcolor">
+<h2>saveWriterSaveWithColor<a class="headerlink" href="#savewritersavewithcolor" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1acf10a0ece24041a7bce66dab6d745443"></span><code class="descname">SC_ERROR SC_API saveWriterSaveWithColor(saveWriter hWriter, const uint8_t * pData, const uint8_t * pColor, bool createDirectories)</code></dt>
+<dd><p><strong> saveWriterSave </strong> saves an image starting from the upper leftmost pixel with coloring. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pData</span></code>: <ul>
+<li>Type: const uint8_t*</li>
+<li>[In] parameter</li>
+<li>Image data to save</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pColor</span></code>: <ul>
+<li>Type: const uint8_t*</li>
+<li>Pointer to RGB data for image coloring</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">createDirectories</span></code>: <ul>
+<li>Type: bool createDirectories</li>
+<li>Default: true</li>
+<li>If true, attempts to create any missing directories in the path</li>
+<li>Otherwise, does not create any directories</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewritersavebottomtotop">
+<h2>saveWriterSaveBottomToTop<a class="headerlink" href="#savewritersavebottomtotop" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_writer_8h_1a09881bd3f3a236e8d62ff86acf9ac3fd"></span><code class="descname">SC_ERROR SC_API saveWriterSaveBottomToTop(saveWriter hWriter, const uint8_t * pData)</code></dt>
+<dd><p><strong> saveWriterSaveBottomToTop </strong> saves an image starting from the lower leftmost pixel. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveWriter</li>
+<li>[In] parameter</li>
+<li>An image writer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pData</span></code>: <ul>
+<li>Type: const uint8_t*</li>
+<li>[In] parameter</li>
+<li>Image data to save</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_save_videorecorder.html" class="btn btn-neutral float-right" title="VideoRecorder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_save_defs.html" class="btn btn-neutral" title="Definitions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

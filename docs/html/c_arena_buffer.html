@@ -1,0 +1,708 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Buffer &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C" href="c_arena.html"/>
+        <link rel="next" title="FeatureStream" href="c_arena_featurestream.html"/>
+        <link rel="prev" title="NodeMap" href="c_arena_nodemap.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_device.html">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodemap.html">NodeMap</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+      <li>Buffer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="buffer">
+<h1>Buffer<a class="headerlink" href="#buffer" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acbuffergetsizefilled">
+<h2>acBufferGetSizeFilled<a class="headerlink" href="#acbuffergetsizefilled" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_buffer_8h_1a08b9ba791d71247f824f870fe6174a59"></span><code class="descname">AC_ERROR AC_API acBufferGetSizeFilled(acBuffer hBuffer, size_t * pSizeFilled)</code></dt>
+<dd><p><strong> acBufferGetSizeFilled </strong> retrieves the size of the payload data, excluding transport layer protocol leaders. The payload data may include image data, chunk data, or both.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>A buffer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pSizeFilled</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Size of the payload</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><strong> acBufferGetSizeFilled </strong> retrieves the size of the data of a buffer, excluding transport layer protocol leaders. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pSizeFilled</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>Out parameter</li>
+<li>Size of the payload data</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acbuffergetpayloadsize">
+<h2>acBufferGetPayloadSize<a class="headerlink" href="#acbuffergetpayloadsize" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_buffer_8h_1a529f946b248bc2c8b87cae8250b9515c"></span><code class="descname">AC_ERROR AC_API acBufferGetPayloadSize(acBuffer hBuffer, size_t * pPayloadSize)</code></dt>
+<dd><p><strong> GetPayloadSize </strong> retrieves the intended size of the payload. This is similar to the retrieved payload size (acBufferGetSizeFilled), but different in that missed data is included.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: size_t</li>
+<li>Unit: bytes</li>
+<li>Size of the intended payload</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acBufferGetSizeFilled </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acbuffergetsizeofbuffer">
+<h2>acBufferGetSizeOfBuffer<a class="headerlink" href="#acbuffergetsizeofbuffer" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_buffer_8h_1a724fb3ecc248795e717646cae8955403"></span><code class="descname">AC_ERROR AC_API acBufferGetSizeOfBuffer(acBuffer hBuffer, size_t * pSizeOfBuffer)</code></dt>
+<dd><p><strong> acBufferGetSizeOfBuffer </strong> retrieves the size of a buffer. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>A buffer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pSizeOfBuffer</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Size of the buffer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h2>acBufferGetSizeFilled<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_buffer_8h_1a08b9ba791d71247f824f870fe6174a59"></span><code class="descname">AC_ERROR AC_API acBufferGetSizeFilled(acBuffer hBuffer, size_t * pSizeFilled)</code></dt>
+<dd><p><strong> acBufferGetSizeFilled </strong> retrieves the size of the payload data, excluding transport layer protocol leaders. The payload data may include image data, chunk data, or both.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>A buffer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pSizeFilled</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Size of the payload</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><strong> acBufferGetSizeFilled </strong> retrieves the size of the data of a buffer, excluding transport layer protocol leaders. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pSizeFilled</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>Out parameter</li>
+<li>Size of the payload data</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acbuffergetframeid">
+<h2>acBufferGetFrameId<a class="headerlink" href="#acbuffergetframeid" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_buffer_8h_1abafcf4a5c961c2a8ef9da471d2e83238"></span><code class="descname">AC_ERROR AC_API acBufferGetFrameId(acBuffer hBuffer, uint64_t * pFrameId)</code></dt>
+<dd><p><strong> acBufferGetFrameId </strong> gets the frame ID, a sequential identifier for buffers. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>A buffer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFrameId</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>[Out] parameter</li>
+<li>Frame ID</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acbuffergetpayloadtype">
+<h2>acBufferGetPayloadType<a class="headerlink" href="#acbuffergetpayloadtype" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_buffer_8h_1a1342032933d3feecc9d557bf0458c234"></span><code class="descname">AC_ERROR AC_API acBufferGetPayloadType(acBuffer hBuffer, AC_PAYLOAD_TYPE * pPayloadType)</code></dt>
+<dd><p><strong> acBufferGetPayloadType </strong> returns a buffer’s payload type (AC_PAYLOAD_TYPE), as defined by the GigE Vision specification. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>A buffer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pPayloadType</span></code>: <ul>
+<li>Type: AC_PAYLOAD_TYPE*</li>
+<li>[Out] parameter</li>
+<li>Type of payload data</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acbufferhaschunkdata">
+<h2>acBufferHasChunkData<a class="headerlink" href="#acbufferhaschunkdata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_buffer_8h_1abd9471a48ceb55a8f5b1d1c5074230ef"></span><code class="descname">AC_ERROR AC_API acBufferHasChunkData(acBuffer hBuffer, bool8_t * pHasChunkData)</code></dt>
+<dd><p><strong> acBufferHasChunkData </strong> returns whether or not a buffer’s payload that may be interpreted as chunk data. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>A buffer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pHasChunkData</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if the payload has chunk data</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acbufferhasimagedata">
+<h2>acBufferHasImageData<a class="headerlink" href="#acbufferhasimagedata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_buffer_8h_1a149d9e638a52b116993b7b58021470cf"></span><code class="descname">AC_ERROR AC_API acBufferHasImageData(acBuffer hBuffer, bool8_t * pHasImageData)</code></dt>
+<dd><p><strong> acBufferHasChunkData </strong> returns whether or not a buffer’s payload that may be interpreted as chunk data. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>A buffer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pHasImageData</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if the payload has image data</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acbufferisincomplete">
+<h2>acBufferIsIncomplete<a class="headerlink" href="#acbufferisincomplete" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_buffer_8h_1a9e52ac0cce9c221b46afabaded9e159e"></span><code class="descname">AC_ERROR AC_API acBufferIsIncomplete(acBuffer hBuffer, bool8_t * pIsIncomplete)</code></dt>
+<dd><p><strong> acBufferIsIncomplete </strong> returns whether or not the payload is complete. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>A buffer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIsIncomplete</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if the data is incomplete</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acbufferdatalargerthanbuffer">
+<h2>acBufferDataLargerThanBuffer<a class="headerlink" href="#acbufferdatalargerthanbuffer" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_buffer_8h_1a31b61c19f775a207e7bde4f56a148be6"></span><code class="descname">AC_ERROR AC_API acBufferDataLargerThanBuffer(acBuffer hBuffer, bool8_t * pDataLargerThanBuffer)</code></dt>
+<dd><p><strong> acBufferDataLargerThanBuffer </strong> returns whether or not a buffer’s payload data is larger than the buffer. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>A buffer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pDataLargerThanBuffer</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if the payload is larger than the buffer</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acbufferverifycrc">
+<h2>acBufferVerifyCRC<a class="headerlink" href="#acbufferverifycrc" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_buffer_8h_1a47ca3bd169a26af7ecb6c00cd814a2d4"></span><code class="descname">AC_ERROR AC_API acBufferVerifyCRC(acBuffer hBuffer, bool8_t * pVerifyCRC)</code></dt>
+<dd><p><strong> acBufferVerifyCRC </strong> calculates the CRC of a buffer’s data and verifies it against the CRC value sent from the device via chunk data. This helps verify that no data has been changed or missed during a transmission. This function calls a global helper function to calculate the CRC (acCalculateCRC32).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>A buffer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pVerifyCRC</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if the calculated CRC value equals the one sent from the device</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acCalculateCRC </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_featurestream.html" class="btn btn-neutral float-right" title="FeatureStream" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_nodemap.html" class="btn btn-neutral" title="NodeMap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

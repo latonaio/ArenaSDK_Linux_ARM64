@@ -1,0 +1,533 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FeatureStream &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C" href="c_arena.html"/>
+        <link rel="next" title="Callback" href="c_arena_callback.html"/>
+        <link rel="prev" title="Buffer" href="c_arena_buffer.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_device.html">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodemap.html">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+      <li>FeatureStream</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="featurestream">
+<h1>FeatureStream<a class="headerlink" href="#featurestream" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acfeaturestreamcreate">
+<h2>acFeatureStreamCreate<a class="headerlink" href="#acfeaturestreamcreate" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_feature_stream_8h_1a4a607c1b5e3bd6908eeeeeb7dd32dad8"></span><code class="descname">AC_ERROR AC_API acFeatureStreamCreate(acNodeMap hNodeMap, acFeatureStream * phFeatureStream)</code></dt>
+<dd><p><strong> acFeatureStream </strong> builds a feature stream from a device’s node map (acNodeMap). This node map cannot be changed later; another feature stream must be created to stream another node map.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNodeMap</span></code>: <ul>
+<li>Type: acNodeMap</li>
+<li>[In] parameter</li>
+<li>Node map to stream</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phFeatureStream</span></code>: <ul>
+<li>Type: acFeatureStream*</li>
+<li>[Out] parameter</li>
+<li>Feature stream object to create</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acNodeMap </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfeaturestreamdestroy">
+<h2>acFeatureStreamDestroy<a class="headerlink" href="#acfeaturestreamdestroy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_feature_stream_8h_1ace1919f70da88a918d55ec3d311e15cd"></span><code class="descname">AC_ERROR AC_API acFeatureStreamDestroy(acFeatureStream hFeatureStream)</code></dt>
+<dd><p><strong> acFeatureStreamDestroy </strong> destroys a feature stream object, cleaning up allocated memory. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hFeatureStream</span></code>: <ul>
+<li>Type: acFeatureStream</li>
+<li>[In] parameter</li>
+<li>Feature stream object to destroy</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfeaturestreamwrite">
+<h2>acFeatureStreamWrite<a class="headerlink" href="#acfeaturestreamwrite" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_feature_stream_8h_1a16015fafcbb113ed25eca03ee73185ab"></span><code class="descname">AC_ERROR AC_API acFeatureStreamWrite(acFeatureStream hFeatureStream)</code></dt>
+<dd><p><strong> acFeatureStreamWrite </strong> streams all selected features from the node map (acNodeMap) to a file.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hFeatureStream</span></code>: <ul>
+<li>Type: acFeatureStream</li>
+<li>[In] parameter</li>
+<li>The feature stream object</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acNodeMap </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfeaturestreamwritefilename">
+<h2>acFeatureStreamWriteFileName<a class="headerlink" href="#acfeaturestreamwritefilename" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_feature_stream_8h_1a106624a15769ac74fb531337092d9e6f"></span><code class="descname">AC_ERROR AC_API acFeatureStreamWriteFileName(acFeatureStream hFeatureStream, const char * pFileName)</code></dt>
+<dd><p><strong> acFeatureStreamWriteFileName </strong> streams all selected features from the node map (acNodeMap) to a file.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hFeatureStream</span></code>: <ul>
+<li>Type: acFeatureStream</li>
+<li>[In] parameter</li>
+<li>The feature stream object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFileName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the file to stream to</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acNodeMap </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfeaturestreamread">
+<h2>acFeatureStreamRead<a class="headerlink" href="#acfeaturestreamread" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_feature_stream_8h_1ad397dfdd2610f2e62eb69baeecacc1f1"></span><code class="descname">AC_ERROR AC_API acFeatureStreamRead(acFeatureStream hFeatureStream)</code></dt>
+<dd><p><strong> acFeatureStreamRead </strong> streams all selected features from a file to the node map (acNodeMap).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hFeatureStream</span></code>: <ul>
+<li>Type: acFeatureStream</li>
+<li>[In] parameter</li>
+<li>The feature stream object</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acNodeMap </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfeaturestreamreadfilename">
+<h2>acFeatureStreamReadFileName<a class="headerlink" href="#acfeaturestreamreadfilename" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_feature_stream_8h_1a954b0546e1fbf37cb14842fc00021bf2"></span><code class="descname">AC_ERROR AC_API acFeatureStreamReadFileName(acFeatureStream hFeatureStream, const char * pFileName)</code></dt>
+<dd><p><strong> acFeatureStreamReadFileName </strong> streams all selected features from a file to the node map (acNodeMap).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hFeatureStream</span></code>: <ul>
+<li>Type: acFeatureStream</li>
+<li>[In] parameter</li>
+<li>The feature stream object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFileName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the file to stream from</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acNodeMap </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfeaturestreamselect">
+<h2>acFeatureStreamSelect<a class="headerlink" href="#acfeaturestreamselect" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_feature_stream_8h_1a1c8a68c72796c49217e82057c528fc81"></span><code class="descname">AC_ERROR AC_API acFeatureStreamSelect(acFeatureStream hFeatureStream, const char * pFeatureName)</code></dt>
+<dd><p><strong> acFeatureStreamSelect </strong> adds a single streamable feature to the list of selected features to stream. If called for the first time, <strong> acFeatureStreamSelect </strong> also sets an internal ‘select-all’ flag to false. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hFeatureStream</span></code>: <ul>
+<li>Type: acFeatureStream</li>
+<li>[In] parameter</li>
+<li>The feature stream object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFeatureName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Name of the feature to select</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_callback.html" class="btn btn-neutral float-right" title="Callback" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_buffer.html" class="btn btn-neutral" title="Buffer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

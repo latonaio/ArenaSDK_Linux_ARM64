@@ -1,0 +1,588 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ImageParams &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Save C++" href="cpp_save.html"/>
+        <link rel="next" title="VideoParams" href="cpp_save_videoparams.html"/>
+        <link rel="prev" title="VideoRecorder" href="cpp_save_videorecorder.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cpp_arena.html">Arena C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_save.html">Save C++</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_videorecorder.html">VideoRecorder</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ImageParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_videoparams.html">VideoParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_imagereader.html">ImageReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_imagewriter.html">ImageWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_save.html">Save C++</a> &raquo;</li>
+        
+      <li>ImageParams</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="imageparams">
+<h1>ImageParams<a class="headerlink" href="#imageparams" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="id1">
+<h2>ImageParams<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv3N4Save11ImageParamsE">
+<span id="_CPPv2N4Save11ImageParamsE"></span><span id="Save::ImageParams"></span><span class="target" id="class_save_1_1_image_params"></span><em class="property">class </em><code class="descname">ImageParams</code><a class="headerlink" href="#_CPPv3N4Save11ImageParamsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A container to hold and calculate image parameters. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>ImageParams<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageParams11ImageParamsEv">
+<span id="_CPPv2N4Save11ImageParams11ImageParamsEv"></span><span id="Save::ImageParams::ImageParams"></span><span class="target" id="class_save_1_1_image_params_1adeae5664362482317de103d9a7659eb8"></span><code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">ImageParams</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>An empty constructor. Initializes width, height, and bits per pixel to 0. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>ImageParams<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageParams11ImageParamsE6size_t6size_t6size_tb">
+<span id="_CPPv2N4Save11ImageParams11ImageParamsE6size_t6size_t6size_tb"></span><span id="Save::ImageParams::ImageParams__s.s.s.b"></span><span class="target" id="class_save_1_1_image_params_1a83f5dab34267baa364fd2fccb4d3bc1f"></span><code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">ImageParams</code><span class="sig-paren">(</span>size_t <em>width</em>, size_t <em>height</em>, size_t <em>bitsPerPixel</em>, bool <em>topToBottom</em> = true<span class="sig-paren">)</span><br /></dt>
+<dd><p><p>A constructor. </p>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">width</span></code>: <ul>
+<li>Type: size_t</li>
+<li>Image width</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">height</span></code>: <ul>
+<li>Type: size_t</li>
+<li>Image height</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">bitsPerPixel</span></code>: <ul>
+<li>Type: size_t</li>
+<li>Number of bits per pixel</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">topToBottom</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: true</li>
+<li>If true, image data is read/written top to bottom</li>
+<li>Otherwise, bottom to top</li>
+<li>Only applicable when saving JPEG and BMP</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h2>ImageParams<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageParams11ImageParamsERK11ImageParams">
+<span id="_CPPv2N4Save11ImageParams11ImageParamsERK11ImageParams"></span><span id="Save::ImageParams::ImageParams__ImageParamsCR"></span><span class="target" id="class_save_1_1_image_params_1ab549f9f4b30506c2d469b7877b942de9"></span><code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">ImageParams</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N4Save11ImageParams11ImageParamsEv" title="Save::ImageParams::ImageParams">ImageParams</a> &amp;<em>params</em><span class="sig-paren">)</span><br /></dt>
+<dd><p><p>A copy constructor. </p>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">params</span></code>: <ul>
+<li>Type: const <a class="reference internal" href="#class_save_1_1_image_params"><span class="std std-ref">Save::ImageParams</span></a>&amp;</li>
+<li>Image parameters to copy</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="operator">
+<h2>Operator =<a class="headerlink" href="#operator" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageParamsaSE11ImageParams">
+<span id="_CPPv2N4Save11ImageParamsaSE11ImageParams"></span><span id="Save::ImageParams::assign-operator__ImageParams"></span><span class="target" id="class_save_1_1_image_params_1a81aadc43cc889e95e4d1d14e28d81ec2"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a> &amp;<code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a> <em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageParamsaSE11ImageParams" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><p>A copy assignment operator. </p>
+<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: const <a class="reference internal" href="#class_save_1_1_image_params"><span class="std std-ref">Save::ImageParams</span></a>&amp;</li>
+<li>Copied image parameters</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">params</span></code>: <ul>
+<li>Type: <a class="reference internal" href="#class_save_1_1_image_params"><span class="std std-ref">Save::ImageParams</span></a></li>
+<li>Image parameters to copy</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h2>~ImageParams<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageParamsD0Ev">
+<span id="_CPPv2N4Save11ImageParamsD0Ev"></span><span id="Save::ImageParams::~ImageParams"></span><span class="target" id="class_save_1_1_image_params_1ace901b8675528d1dca30585a63be8fd7"></span><code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">~ImageParams</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageParamsD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A destructor. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="setwidth">
+<h2>SetWidth<a class="headerlink" href="#setwidth" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageParams8SetWidthE6size_t">
+<span id="_CPPv2N4Save11ImageParams8SetWidthE6size_t"></span><span id="Save::ImageParams::SetWidth__s"></span><span class="target" id="class_save_1_1_image_params_1acd7bff4e99b51498ef8f42be3ea344a2"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">SetWidth</code><span class="sig-paren">(</span>size_t <em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageParams8SetWidthE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetWidth </strong> sets the width parameter. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">width</span></code>: <ul>
+<li>Type: size_t</li>
+<li>Image width</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setheight">
+<h2>SetHeight<a class="headerlink" href="#setheight" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageParams9SetHeightE6size_t">
+<span id="_CPPv2N4Save11ImageParams9SetHeightE6size_t"></span><span id="Save::ImageParams::SetHeight__s"></span><span class="target" id="class_save_1_1_image_params_1a3ed9bf1dd14eeec4ba31eee24106494a"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">SetHeight</code><span class="sig-paren">(</span>size_t <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageParams9SetHeightE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetHeight </strong> sets the height parameter. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">height</span></code>: <ul>
+<li>Type: size_t</li>
+<li>Image height</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setbitsperpixel">
+<h2>SetBitsPerPixel<a class="headerlink" href="#setbitsperpixel" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageParams15SetBitsPerPixelE6size_t">
+<span id="_CPPv2N4Save11ImageParams15SetBitsPerPixelE6size_t"></span><span id="Save::ImageParams::SetBitsPerPixel__s"></span><span class="target" id="class_save_1_1_image_params_1a3d02def7cc06868f835d4e21cb60c483"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">SetBitsPerPixel</code><span class="sig-paren">(</span>size_t <em>bpp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageParams15SetBitsPerPixelE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetBitsPerPixel </strong> sets the bits per pixel parameter. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">bpp</span></code>: <ul>
+<li>Type: size_t</li>
+<li>Number of bits per pixel</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="settoptobottom">
+<h2>SetTopToBottom<a class="headerlink" href="#settoptobottom" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageParams14SetTopToBottomEb">
+<span id="_CPPv2N4Save11ImageParams14SetTopToBottomEb"></span><span id="Save::ImageParams::SetTopToBottom__b"></span><span class="target" id="class_save_1_1_image_params_1a90c639779075ac5140f762b273bb9bfd"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">SetTopToBottom</code><span class="sig-paren">(</span>bool <em>topToBottom</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageParams14SetTopToBottomEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetTopToBottom </strong> sets whether the image is read/written from top to bottom or bottom to top. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">topToBottom</span></code>: <ul>
+<li>Type: bool</li>
+<li>If true, image data is read/written top to bottom</li>
+<li>Otherwise, bottom to top</li>
+<li>Only applicable when saving JPEG and BMP</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getwidth">
+<h2>GetWidth<a class="headerlink" href="#getwidth" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3NK4Save11ImageParams8GetWidthEv">
+<span id="_CPPv2NK4Save11ImageParams8GetWidthEv"></span><span id="Save::ImageParams::GetWidthC"></span><span class="target" id="class_save_1_1_image_params_1afee22ef3440c0c17ff174fdf7bb8fd4b"></span>size_t <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">GetWidth</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4Save11ImageParams8GetWidthEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetWidth </strong> gets the width parameter. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: size_t</li>
+<li>Image width</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getheight">
+<h2>GetHeight<a class="headerlink" href="#getheight" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3NK4Save11ImageParams9GetHeightEv">
+<span id="_CPPv2NK4Save11ImageParams9GetHeightEv"></span><span id="Save::ImageParams::GetHeightC"></span><span class="target" id="class_save_1_1_image_params_1a44eb4f4a19b20db455f2f9fc0230e4cf"></span>size_t <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">GetHeight</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4Save11ImageParams9GetHeightEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetHeight </strong> gets the height parameter. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: size_t</li>
+<li>Image height</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getbitsperpixel">
+<h2>GetBitsPerPixel<a class="headerlink" href="#getbitsperpixel" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3NK4Save11ImageParams15GetBitsPerPixelEv">
+<span id="_CPPv2NK4Save11ImageParams15GetBitsPerPixelEv"></span><span id="Save::ImageParams::GetBitsPerPixelC"></span><span class="target" id="class_save_1_1_image_params_1a8d823cd16c287da23983fd37766094c5"></span>size_t <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">GetBitsPerPixel</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4Save11ImageParams15GetBitsPerPixelEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetBitsPerPixel </strong> gets the bits per pixel parameter. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: size_t</li>
+<li>Number of bits per pixel</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="gettoptobottom">
+<h2>GetTopToBottom<a class="headerlink" href="#gettoptobottom" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3NK4Save11ImageParams14GetTopToBottomEv">
+<span id="_CPPv2NK4Save11ImageParams14GetTopToBottomEv"></span><span id="Save::ImageParams::GetTopToBottomC"></span><span class="target" id="class_save_1_1_image_params_1aa672d6221dc7aa12022301397a18bdb3"></span>bool <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">GetTopToBottom</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4Save11ImageParams14GetTopToBottomEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetTopToBottom </strong> gets whether the image is read/written from top to bottom or bottom to top. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: bool</li>
+<li>If true, image data is read/written top to bottom</li>
+<li>Otherwise, bottom to top</li>
+<li>Only applicable when saving JPEG and BMP</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getsize">
+<h2>GetSize<a class="headerlink" href="#getsize" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3NK4Save11ImageParams7GetSizeEv">
+<span id="_CPPv2NK4Save11ImageParams7GetSizeEv"></span><span id="Save::ImageParams::GetSizeC"></span><span class="target" id="class_save_1_1_image_params_1ad12c20b429411a0470db3e23423a9948"></span>size_t <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">GetSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4Save11ImageParams7GetSizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetSize </strong> calculates the size of the image. The size is calculated by multiplying the width, height, and bytes per pixel (bits per pixel divided by 8) and adding an extra byte if a remainder of bits remains. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: size_t</li>
+<li>Image size</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getstride">
+<h2>GetStride<a class="headerlink" href="#getstride" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3NK4Save11ImageParams9GetStrideEv">
+<span id="_CPPv2NK4Save11ImageParams9GetStrideEv"></span><span id="Save::ImageParams::GetStrideC"></span><span class="target" id="class_save_1_1_image_params_1a33e456f54b925bcba4be26cc1a825422"></span>size_t <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a><code class="descclassname">::</code></code><code class="descname">GetStride</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4Save11ImageParams9GetStrideEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetStride </strong> calculates the stride of an image. The stride is calculated by multiplying the width by the number of bytes per pixel (bits per pixel divided by 8). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: size_t</li>
+<li>Image stride/pitch</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_save_videoparams.html" class="btn btn-neutral float-right" title="VideoParams" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_save_videorecorder.html" class="btn btn-neutral" title="VideoRecorder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

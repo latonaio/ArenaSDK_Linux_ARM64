@@ -1,0 +1,1533 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Node &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Nodes" href="c_arena_nodes.html"/>
+        <link rel="next" title="Value" href="c_arena_value.html"/>
+        <link rel="prev" title="Nodes" href="c_arena_nodes.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_device.html">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodemap.html">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena_nodes.html">Nodes</a> &raquo;</li>
+        
+      <li>Node</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="node">
+<h1>Node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acnodegetaccessmode">
+<h2>acNodeGetAccessMode<a class="headerlink" href="#acnodegetaccessmode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a37f0322f23e2aba38d4eefb250c7a5a7"></span><code class="descname">AC_ERROR AC_API acNodeGetAccessMode(acNode hNode, AC_ACCESS_MODE * pAccessMode)</code></dt>
+<dd><p><strong> acNodeGetAccessMode </strong> retrieves a node’s access mode. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pAccessMode</span></code>: <ul>
+<li>Type: AC_ACCESS_MODE*</li>
+<li>[Out] parameter</li>
+<li>Access mode</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetalias">
+<h2>acNodeGetAlias<a class="headerlink" href="#acnodegetalias" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a60167c4f2e2462ee2c7e5c18b6a94a05"></span><code class="descname">AC_ERROR AC_API acNodeGetAlias(acNode hNode, acNode * phAliasNode)</code></dt>
+<dd><p><strong> acNodeGetAlias </strong> retrieves a node’s alias node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phAliasNode</span></code>: <ul>
+<li>Type: acNode*</li>
+<li>[Out] parameter</li>
+<li>Alias node</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetcachingmode">
+<h2>acNodeGetCachingMode<a class="headerlink" href="#acnodegetcachingmode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a2c3b6040aea7cb9b3ae412149ec74064"></span><code class="descname">AC_ERROR AC_API acNodeGetCachingMode(acNode hNode, AC_CACHING_MODE * pCachingMode)</code></dt>
+<dd><p><strong> acNodeGetCachingMode </strong> retrieves a node’s caching mode. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pCachingMode</span></code>: <ul>
+<li>Type: AC_CACHING_MODE*</li>
+<li>[Out] parameter</li>
+<li>Caching mode</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetcastalias">
+<h2>acNodeGetCastAlias<a class="headerlink" href="#acnodegetcastalias" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a9be969e538225da6a8c5f49248e2bb4a"></span><code class="descname">AC_ERROR AC_API acNodeGetCastAlias(acNode hNode, acNode * phAliasNode)</code></dt>
+<dd><p><strong> acNodeGetCastAlias </strong> retrieves a node’s cast alias. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phAliasNode</span></code>: <ul>
+<li>Type: acNode*</li>
+<li>[Out] parameter</li>
+<li>Cast alias</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetnumchildren">
+<h2>acNodeGetNumChildren<a class="headerlink" href="#acnodegetnumchildren" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1aff737bf073b7986d2296d75f99a94d90"></span><code class="descname">AC_ERROR AC_API acNodeGetNumChildren(acNode hNode, size_t * pNumChildren)</code></dt>
+<dd><p><strong> acNodeGetNumChildren </strong> retrieves the number of a node’s children. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNumChildren</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Number of child nodes</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetchild">
+<h2>acNodeGetChild<a class="headerlink" href="#acnodegetchild" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a8cd2fff685fdec1ad315cecfa8925ca5"></span><code class="descname">AC_ERROR AC_API acNodeGetChild(acNode hNode, size_t index, acNode * phChildNode)</code></dt>
+<dd><p><strong> acNodeGetChild </strong> retrieves a node’s child node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the child</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phChildNode</span></code>: <ul>
+<li>Type: acNode*</li>
+<li>[Out] parameter</li>
+<li>Child node</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetchildandaccessmode">
+<h2>acNodeGetChildAndAccessMode<a class="headerlink" href="#acnodegetchildandaccessmode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a07ff27af191fee28a49dfcdf317bf575"></span><code class="descname">AC_ERROR AC_API acNodeGetChildAndAccessMode(acNode hNode, size_t index, acNode * phChildNode, AC_ACCESS_MODE * accessMode)</code></dt>
+<dd><p><strong> acNodeGetChildAndAccessMode </strong> retrieves a node’s child node and the child’s access mode. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the child</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phChildNode</span></code>: <ul>
+<li>Type: acNode*</li>
+<li>[Out] parameter</li>
+<li>Child node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">accessMode</span></code>: <ul>
+<li>Type: AC_ACCESS_MODE*</li>
+<li>[Out] parameter</li>
+<li>Child node’s access mode</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetdescription">
+<h2>acNodeGetDescription<a class="headerlink" href="#acnodegetdescription" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1ab11d11fc49a5921a7e88fd2c47525218"></span><code class="descname">AC_ERROR AC_API acNodeGetDescription(acNode hNode, char * pDescription, size_t * pBufLen)</code></dt>
+<dd><p><strong> acNodeGetDescription </strong> retrieves a node’s longer description. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pDescription</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Description of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetdevicename">
+<h2>acNodeGetDeviceName<a class="headerlink" href="#acnodegetdevicename" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a3f36dda0c6355fbc8bd0d5ef1b64aed3"></span><code class="descname">AC_ERROR AC_API acNodeGetDeviceName(acNode hNode, char * pDeviceName, size_t * pBufLen)</code></dt>
+<dd><p><strong> acNodeGetDeviceName </strong> retrieves a node’s device name. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pDeviceName</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Device name of the node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetdisplayname">
+<h2>acNodeGetDisplayName<a class="headerlink" href="#acnodegetdisplayname" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a2623b8f0e211d62c3add4eaf87477576"></span><code class="descname">AC_ERROR AC_API acNodeGetDisplayName(acNode hNode, char * pDisplayName, size_t * pBufLen)</code></dt>
+<dd><p><strong> acNodeGetDisplayName </strong> retrieves a node’s display name. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pDisplayName</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Display name</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetdocuurl">
+<h2>acNodeGetDocuURL<a class="headerlink" href="#acnodegetdocuurl" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a84ce4b7c9b5636da83b2bff1e30fa6c9"></span><code class="descname">AC_ERROR AC_API acNodeGetDocuURL(acNode hNode, char * pDocuURL, size_t * pBufLen)</code></dt>
+<dd><p><strong> acNodeGetDocuURL </strong> retrieves a node’s document URL. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pDocuURL</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Document URL</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegeteventid">
+<h2>acNodeGetEventID<a class="headerlink" href="#acnodegeteventid" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1affb4822c49ab2a19840625b1645ee0ab"></span><code class="descname">AC_ERROR AC_API acNodeGetEventID(acNode hNode, char * pEventIDBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acNodeGetEventID </strong> retrieves a node’s event ID. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pEventIDBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Event ID</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetname">
+<h2>acNodeGetName<a class="headerlink" href="#acnodegetname" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1abe9057f90dd1fc41f428685bfd9cf95c"></span><code class="descname">AC_ERROR AC_API acNodeGetName(acNode hNode, char * pNameBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acNodeGetName </strong> retrieves a node’s name. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNameBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Name</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetfullyqualifiedname">
+<h2>acNodeGetFullyQualifiedName<a class="headerlink" href="#acnodegetfullyqualifiedname" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1afe307b0b01eb62c6fb202e94007d4f64"></span><code class="descname">AC_ERROR AC_API acNodeGetFullyQualifiedName(acNode hNode, char * pNameBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acNodeGetFullyQualifiedName </strong> retrieves a node’s fully qualified name. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>In parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNameBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>Out parameter</li>
+<li>Accepts null</li>
+<li>Name</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>In/out parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetnamespace">
+<h2>acNodeGetNamespace<a class="headerlink" href="#acnodegetnamespace" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1af87112d5d1358bc112cc3f5f45a0ee1c"></span><code class="descname">AC_ERROR AC_API acNodeGetNamespace(acNode hNode, AC_NAMESPACE * pNameSpace)</code></dt>
+<dd><p><strong> acNodeGetNamespace </strong> retrieves a node’s namespace. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNameSpace</span></code>: <ul>
+<li>Type: AC_NAMESPACE*</li>
+<li>[Out] parameter</li>
+<li>Namespace</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetnumparents">
+<h2>acNodeGetNumParents<a class="headerlink" href="#acnodegetnumparents" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1ae304468839d6b14337cb32d95e1e74c0"></span><code class="descname">AC_ERROR AC_API acNodeGetNumParents(acNode hNode, size_t * pNumParents)</code></dt>
+<dd><p><strong> acNodeGetNumParents </strong> retrieves the number of a node’s parents. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNumParents</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Number of parent nodes</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetparent">
+<h2>acNodeGetParent<a class="headerlink" href="#acnodegetparent" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1afce49954081be9f8daed25c36a4ec7dc"></span><code class="descname">AC_ERROR AC_API acNodeGetParent(acNode hNode, size_t index, acNode * phParentNode)</code></dt>
+<dd><p><strong> acNodeGetParent </strong> retrieves a node’s parent node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the parent</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phParentNode</span></code>: <ul>
+<li>Type: acNode*</li>
+<li>[Out] parameter</li>
+<li>The parent node</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetparentandaccessmode">
+<h2>acNodeGetParentAndAccessMode<a class="headerlink" href="#acnodegetparentandaccessmode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1aa6439b4e6fdd6224588fdfea95830f59"></span><code class="descname">AC_ERROR AC_API acNodeGetParentAndAccessMode(acNode hNode, size_t index, acNode * phParentNode, AC_ACCESS_MODE * pAccessMode)</code></dt>
+<dd><p><strong> acNodeGetParentAndAccessMode </strong> retrieves a node’s parent node and the parent’s access mode. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the parent node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phParentNode</span></code>: <ul>
+<li>Type: acNode*</li>
+<li>[Out] parameter</li>
+<li>The parent node</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pAccessMode</span></code>: <ul>
+<li>Type: AC_ACCESS_MODE*</li>
+<li>[Out] parameter</li>
+<li>Parent node’s access mode</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetpollingtime">
+<h2>acNodeGetPollingTime<a class="headerlink" href="#acnodegetpollingtime" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1aa2f19e159f20eb25be3231154f43dc55"></span><code class="descname">AC_ERROR AC_API acNodeGetPollingTime(acNode hNode, int64_t * pPollingTime)</code></dt>
+<dd><p><strong> acNodeGetPollingTime </strong> retrieves a node’s polling time in milliseconds. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pPollingTime</span></code>: <ul>
+<li>Type: int64_t*</li>
+<li>[Out] parameter</li>
+<li>Polling time</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetprincipalinterfacetype">
+<h2>acNodeGetPrincipalInterfaceType<a class="headerlink" href="#acnodegetprincipalinterfacetype" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a8d529930735ddccd6c590b6c5b8d7c40"></span><code class="descname">AC_ERROR AC_API acNodeGetPrincipalInterfaceType(acNode hNode, AC_INTERFACE_TYPE * pInterfaceType)</code></dt>
+<dd><p><strong> acNodeGetPrincipalInterfaceType </strong> retrieves a node’s type. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pInterfaceType</span></code>: <ul>
+<li>Type: AC_INTERFACE_TYPE*</li>
+<li>[Out] parameter</li>
+<li>Node type</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetproperty">
+<h2>acNodeGetProperty<a class="headerlink" href="#acnodegetproperty" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a3771a87b6e6afcb3c83f42109eb8cb92"></span><code class="descname">AC_ERROR AC_API acNodeGetProperty(acNode hNode, const char * pPropertyName, char * pPropertyValueBuf, size_t * pPropertyValueBufLen, char * pPropertyAttributeBuf, size_t * pPropertyAttributeBufLen)</code></dt>
+<dd><p><strong> acNodeGetProperty </strong> retrieves a node’s properties and their values. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pPropertyName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Accepts null</li>
+<li>List of property names</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pPropertyValueBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pPropertyValueBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>List of property values</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pPropertyAttributeBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pPropertyAttributeBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>The node</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetnumpropertynames">
+<h2>acNodeGetNumPropertyNames<a class="headerlink" href="#acnodegetnumpropertynames" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a6f78a72721de74733eb889ef2c726335"></span><code class="descname">AC_ERROR AC_API acNodeGetNumPropertyNames(acNode hNode, size_t * pNumPropertyNames)</code></dt>
+<dd><p><strong> acNodeGetNumPropertyNames </strong> retrieves the number of a node’s property names. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNumPropertyNames</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Number of node properties</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetpropertyname">
+<h2>acNodeGetPropertyName<a class="headerlink" href="#acnodegetpropertyname" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a5cad1047663b099c86a3cf2637d56a5e"></span><code class="descname">AC_ERROR AC_API acNodeGetPropertyName(acNode hNode, size_t index, char * pPropertyNameBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acNodeGetPropertyName </strong> retrieves a node’s property name. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the property</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pPropertyNameBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Property name</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegettooltip">
+<h2>acNodeGetToolTip<a class="headerlink" href="#acnodegettooltip" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1aa91c2ac5f7be1d25b6b34b7e2a2535e1"></span><code class="descname">AC_ERROR AC_API acNodeGetToolTip(acNode hNode, char * pToolTipBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acNodeGetToolTip </strong> retrieves a node’s shorter description. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pToolTipBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Tool tip</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodeinvalidatenode">
+<h2>acNodeInvalidateNode<a class="headerlink" href="#acnodeinvalidatenode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a3c4d43b33156d446e03f01a86845139d"></span><code class="descname">AC_ERROR AC_API acNodeInvalidateNode(acNode hNode)</code></dt>
+<dd><p><strong> acNodeInvalidateNode </strong> invalidates a node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodegetvisibility">
+<h2>acNodeGetVisibility<a class="headerlink" href="#acnodegetvisibility" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1ad7b330195f8a30dbfa3f266c0f8c7fc9"></span><code class="descname">AC_ERROR AC_API acNodeGetVisibility(acNode hNode, AC_VISIBILITY * pVisibility)</code></dt>
+<dd><p><strong> acNodeGetVisibility </strong> retrieves a node’s suggested visibility. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pVisibility</span></code>: <ul>
+<li>Type: AC_VISIBILITY*</li>
+<li>[Out] parameter</li>
+<li>Visibility</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodeimposeaccessmode">
+<h2>acNodeImposeAccessMode<a class="headerlink" href="#acnodeimposeaccessmode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a6beb561728387dfa3c39e89e334780a5"></span><code class="descname">AC_ERROR AC_API acNodeImposeAccessMode(acNode hNode, AC_ACCESS_MODE imposedAccessMode)</code></dt>
+<dd><p><strong> acNodeImposeAccessMode </strong> imposes an access mode on a node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">imposedAccessMode</span></code>: <ul>
+<li>Type: AC_ACCESS_MODE</li>
+<li>[In] parameter</li>
+<li>Imposed access mode</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodeimposevisibility">
+<h2>acNodeImposeVisibility<a class="headerlink" href="#acnodeimposevisibility" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a8e5bbb0e8ab720bb8c175cd5da73deff"></span><code class="descname">AC_ERROR AC_API acNodeImposeVisibility(acNode hNode, AC_VISIBILITY imposedVisibility)</code></dt>
+<dd><p><strong> acNodeImposeVisibility </strong> imposes a visibility setting on a node. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">imposedVisibility</span></code>: <ul>
+<li>Type: AC_VISIBILITY</li>
+<li>[In] parameter</li>
+<li>Imposed visibility</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodeiscachable">
+<h2>acNodeIsCachable<a class="headerlink" href="#acnodeiscachable" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a572b020e057370318cbbaa87eb68f1bc"></span><code class="descname">AC_ERROR AC_API acNodeIsCachable(acNode hNode, bool8_t * pIsCachable)</code></dt>
+<dd><p><strong> acNodeIsCachable </strong> retrieves whether or not a node is cachable. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIsCachable</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if node value is cachable</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodeisdeprecated">
+<h2>acNodeIsDeprecated<a class="headerlink" href="#acnodeisdeprecated" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a06f37342346d3aad2206c3532d698315"></span><code class="descname">AC_ERROR AC_API acNodeIsDeprecated(acNode hNode, bool8_t * pIsDeprecated)</code></dt>
+<dd><p><strong> acNodeIsDeprecated </strong> retrieves whether or not a node is deprecated. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIsDeprecated</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if node is deprecated</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodeisfeature">
+<h2>acNodeIsFeature<a class="headerlink" href="#acnodeisfeature" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1ab54d3083dbdf721569da4c01db6daa68"></span><code class="descname">AC_ERROR AC_API acNodeIsFeature(acNode hNode, bool8_t * pIsFeature)</code></dt>
+<dd><p><strong> acNodeIsFeature </strong> retrieves whether or not a node is a feature. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIsFeature</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if node is a feature</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodeisstreamable">
+<h2>acNodeIsStreamable<a class="headerlink" href="#acnodeisstreamable" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_node_8h_1a6fd2bb609ecaa52cf3a6be7143bdcbb3"></span><code class="descname">AC_ERROR AC_API acNodeIsStreamable(acNode hNode, bool8_t * pIsStreamable)</code></dt>
+<dd><p><strong> acNodeIsStreamable </strong> retrieves whether or not a node is streamable. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>The node</li>
+<li>Accepts any node type</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIsStreamable</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if node is streamable</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_value.html" class="btn btn-neutral float-right" title="Value" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_nodes.html" class="btn btn-neutral" title="Nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

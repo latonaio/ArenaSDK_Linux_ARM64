@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ImageReader &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Save C++" href="cpp_save.html"/>
+        <link rel="next" title="ImageWriter" href="cpp_save_imagewriter.html"/>
+        <link rel="prev" title="VideoParams" href="cpp_save_videoparams.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cpp_arena.html">Arena C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_save.html">Save C++</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_videorecorder.html">VideoRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_imageparams.html">ImageParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_videoparams.html">VideoParams</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ImageReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_imagewriter.html">ImageWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_save.html">Save C++</a> &raquo;</li>
+        
+      <li>ImageReader</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="imagereader">
+<h1>ImageReader<a class="headerlink" href="#imagereader" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="id1">
+<h2>ImageReader<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv3N4Save11ImageReaderE">
+<span id="_CPPv2N4Save11ImageReaderE"></span><span id="Save::ImageReader"></span><span class="target" id="class_save_1_1_image_reader"></span><em class="property">class </em><code class="descname">ImageReader</code><a class="headerlink" href="#_CPPv3N4Save11ImageReaderE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The image reader facilitates the loading of image data from files. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>ImageReader<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageReader11ImageReaderEPKcb">
+<span id="_CPPv2N4Save11ImageReader11ImageReaderEPKcb"></span><span id="Save::ImageReader::ImageReader__cCP.b"></span><span class="target" id="class_save_1_1_image_reader_1a1e2595ea8b98012d5e89972b3a5cedfa"></span><code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageReaderE" title="Save::ImageReader">ImageReader</a><code class="descclassname">::</code></code><code class="descname">ImageReader</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pFileName</em>, bool <em>topToBottom</em> = true<span class="sig-paren">)</span><br /></dt>
+<dd><p><p>A constructor. Internally, it loads an image (</p>
+<a class="reference internal" href="#class_save_1_1_image_reader_1a51a8e15e1632cc4317d969964f0fea1d"><span class="std std-ref">Save::ImageReader::Load</span></a>). <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pFileName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Name of the file to load</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">topToBottom</span></code>: <ul>
+<li>Type: Type: bool</li>
+<li>Default: true</li>
+<li>If true, read the file from top to bottom</li>
+<li>Otherwise, from bottom to top</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>ImageReader<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageReader11ImageReaderERK11ImageReader">
+<span id="_CPPv2N4Save11ImageReader11ImageReaderERK11ImageReader"></span><span id="Save::ImageReader::ImageReader__ImageReaderCR"></span><span class="target" id="class_save_1_1_image_reader_1a67082f137c997c4d86263925d7c4d0aa"></span><code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageReaderE" title="Save::ImageReader">ImageReader</a><code class="descclassname">::</code></code><code class="descname">ImageReader</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N4Save11ImageReader11ImageReaderEPKcb" title="Save::ImageReader::ImageReader">ImageReader</a> &amp;<em>imageReader</em><span class="sig-paren">)</span><br /></dt>
+<dd><p><p>A copy constructor. </p>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">imageReader</span></code>: <ul>
+<li>Type: const <a class="reference internal" href="#class_save_1_1_image_reader"><span class="std std-ref">Save::ImageReader</span></a>&amp;</li>
+<li>Image reader to copy</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="operator">
+<h2>Operator =<a class="headerlink" href="#operator" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageReaderaSE11ImageReader">
+<span id="_CPPv2N4Save11ImageReaderaSE11ImageReader"></span><span id="Save::ImageReader::assign-operator__ImageReader"></span><span class="target" id="class_save_1_1_image_reader_1a2407f55fc587e078f3e8e3c16a6b83df"></span><a class="reference internal" href="#_CPPv3N4Save11ImageReaderE" title="Save::ImageReader">ImageReader</a> &amp;<code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageReaderE" title="Save::ImageReader">ImageReader</a><code class="descclassname">::</code></code><code class="descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N4Save11ImageReaderE" title="Save::ImageReader">ImageReader</a> <em>imageReader</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageReaderaSE11ImageReader" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><p>A copy assignment operator. </p>
+<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="#class_save_1_1_image_reader"><span class="std std-ref">ImageReader</span></a>&amp;</li>
+<li>Copied image reader</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">imageReader</span></code>: <ul>
+<li>Type: <a class="reference internal" href="#class_save_1_1_image_reader"><span class="std std-ref">ImageReader</span></a></li>
+<li>Image reader to copy</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h2>~ImageReader<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageReaderD0Ev">
+<span id="_CPPv2N4Save11ImageReaderD0Ev"></span><span id="Save::ImageReader::~ImageReader"></span><span class="target" id="class_save_1_1_image_reader_1a0d157c87dffdc46f406f90520aeae5db"></span><code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageReaderE" title="Save::ImageReader">ImageReader</a><code class="descclassname">::</code></code><code class="descname">~ImageReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageReaderD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A destructor. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="load">
+<h2>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageReader4LoadEPKcb">
+<span id="_CPPv2N4Save11ImageReader4LoadEPKcb"></span><span id="Save::ImageReader::Load__cCP.b"></span><span class="target" id="class_save_1_1_image_reader_1a51a8e15e1632cc4317d969964f0fea1d"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageReaderE" title="Save::ImageReader">ImageReader</a><code class="descclassname">::</code></code><code class="descname">Load</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pFileName</em>, bool <em>topToBottom</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageReader4LoadEPKcb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> Load </strong> loads image data from a file to memory. After loading an image, the image parameters can be retrieved (<a class="reference internal" href="#class_save_1_1_image_reader_1a0aa8be99f054dd9744b12ab05cadb9b8"><span class="std std-ref">Save::ImageReader::GetParams</span></a>) or the image data (<a class="reference internal" href="#class_save_1_1_image_reader_1a41a3c6e93de7155491cff8c1a545bd5c"><span class="std std-ref">Save::ImageReader::GetData</span></a>). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pFileName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Name of the file to load</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getparams">
+<h2>GetParams<a class="headerlink" href="#getparams" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3NK4Save11ImageReader9GetParamsEv">
+<span id="_CPPv2NK4Save11ImageReader9GetParamsEv"></span><span id="Save::ImageReader::GetParamsC"></span><span class="target" id="class_save_1_1_image_reader_1a0aa8be99f054dd9744b12ab05cadb9b8"></span><a class="reference internal" href="cpp_save_imageparams.html#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a> <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageReaderE" title="Save::ImageReader">ImageReader</a><code class="descclassname">::</code></code><code class="descname">GetParams</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4Save11ImageReader9GetParamsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetParams </strong> retrieves the parameters of a loaded image. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="cpp_save_imageparams.html#class_save_1_1_image_params"><span class="std std-ref">Save::ImageParams</span></a></li>
+<li>Parameters of a loaded image</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getdata">
+<h2>GetData<a class="headerlink" href="#getdata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3NK4Save11ImageReader7GetDataEv">
+<span id="_CPPv2NK4Save11ImageReader7GetDataEv"></span><span id="Save::ImageReader::GetDataC"></span><span class="target" id="class_save_1_1_image_reader_1a41a3c6e93de7155491cff8c1a545bd5c"></span><em class="property">const</em> uint8_t *<code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageReaderE" title="Save::ImageReader">ImageReader</a><code class="descclassname">::</code></code><code class="descname">GetData</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4Save11ImageReader7GetDataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetData </strong> retrieves the data of a loaded image. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: const uint8_t*</li>
+<li>Data of a loaded image</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="loadrawdata">
+<h2>LoadRawData<a class="headerlink" href="#loadrawdata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageReader11LoadRawDataEPKcP7uint8_tK6size_t">
+<span id="_CPPv2N4Save11ImageReader11LoadRawDataEPKcP7uint8_tK6size_t"></span><span id="Save::ImageReader::LoadRawData__cCP.uint8_tP.sC"></span><span class="target" id="class_save_1_1_image_reader_1a2a4224614c465ea567092fbc183c5f7e"></span><em class="property">static</em> void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save11ImageReaderE" title="Save::ImageReader">ImageReader</a><code class="descclassname">::</code></code><code class="descname">LoadRawData</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pFileName</em>, uint8_t *<em>pImageData</em>, <em class="property">const</em> size_t <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageReader11LoadRawDataEPKcP7uint8_tK6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> LoadRawData </strong> is a static function that loads the raw data of a file.<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pFileName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Name of the file to load</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pImageData</span></code>: <ul>
+<li>Type: uint8_t*</li>
+<li>Out parameter</li>
+<li>Requires a preallocated buffer</li>
+<li>Returns data from the loaded file</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">size</span></code>: <ul>
+<li>Type: const size_t</li>
+<li>Size of the file to read</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Reads files top to bottom </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_save_imagewriter.html" class="btn btn-neutral float-right" title="ImageWriter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_save_videoparams.html" class="btn btn-neutral" title="VideoParams" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

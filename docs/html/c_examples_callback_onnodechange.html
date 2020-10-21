@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Callback, On Node Change &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="C Code Samples" href="c_examples.html"/>
+        <link rel="next" title="Callback, Polling" href="c_examples_callback_polling.html"/>
+        <link rel="prev" title="Callback, On Event" href="c_examples_callback_onevent.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="c_arena.html">Arena C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="c_examples.html">C Code Samples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_examples_simpleacquisition.html">Simple Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition.html">Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_multidevice.html">Acquisition, Multi-Device Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_rapidacquisition.html">Acquisition, Rapid Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_imagecallbacks.html">Callback, Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_multithreadedimagecallbacks.html">Callback, Multithreaded Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onevent.html">Callback, On Event</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Callback, On Node Change</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_polling.html">Callback, Polling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata.html">Chunk Data, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata_crcvalidation.html">Chunk Data, CRC Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration.html">Enumeration, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration_handlingdisconnections.html">Enumeration, Handling Disconnections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodemaps.html">Explore, Node Maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_exposure.html">Exposure, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodes.html">Explore, Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodetypes.html">Explore, Node Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_forceip.html">Force IP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_heatmap.html">Helios, HeatMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_minmaxdepth.html">Helios, Min Max Depth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_smoothresults.html">Helios, Smooth Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_lut.html">LUT, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_pixelcorrection.html">Pixel Correction, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_colordolpaolp.html">Polarization, Color DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_dolpaolp.html">Polarization, DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_record.html">Record, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save.html">Save, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_filenamepattern.html">Save, File Name Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_ply.html">Save, Ply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_scheduledactioncommands.html">Scheduled Action Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_sequencer_hdr.html">Sequencer, HDR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_streamables.html">Streamables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger.html">Trigger, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger_overlappingtrigger.html">Trigger, Overlapping Trigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_usersets.html">User Sets, Introduction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_examples.html">C Code Samples</a> &raquo;</li>
+        
+      <li>Callback, On Node Change</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="callback-on-node-change">
+<h1>Callback, On Node Change<a class="headerlink" href="#callback-on-node-change" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************************</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  Copyright (c) 2019, Lucid Vision Labs, Inc.                                    ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR     ***</span>
+<span class="cm"> ***  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,       ***</span>
+<span class="cm"> ***  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE    ***</span>
+<span class="cm"> ***  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER         ***</span>
+<span class="cm"> ***  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  ***</span>
+<span class="cm"> ***  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  ***</span>
+<span class="cm"> ***  SOFTWARE.                                                                      ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***************************************************************************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ArenaCApi.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#define TAB1 &quot;  &quot;</span>
+<span class="cp">#define TAB2 &quot;    &quot;</span>
+<span class="cp">#define TAB3 &quot;      &quot;</span>
+<span class="cp">#define TAB4 &quot;        &quot;</span>
+
+<span class="c1">// Callbacks: On Node Change</span>
+<span class="c1">//    This example demonstrates configuring a callback to be invoked when a node</span>
+<span class="c1">//    is invalidated. A node is invalidated when its value changes or can be</span>
+<span class="c1">//    invalidated manually. In this example, a callback is registered on</span>
+<span class="c1">//    PayloadSize. The example shows two ways to invoke a callback: first by</span>
+<span class="c1">//    changing the value of a dependent node (Height) and then by invalidating</span>
+<span class="c1">//    PayloadSize manually. Whenever the callback is triggered, the callback</span>
+<span class="c1">//    function prints the updated value of the invalidated node.</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- SETTINGS =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// Height values</span>
+<span class="c1">//    The example changes the value of the height node twice to ensure that the</span>
+<span class="c1">//    height is changed.</span>
+<span class="cp">#define HEIGHT_ONE 256</span>
+<span class="cp">#define HEIGHT_TWO 512</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- EXAMPLE -=-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// system timeout</span>
+<span class="cp">#define SYSTEM_TIMEOUT 100</span>
+
+<span class="c1">// maximum buffer length</span>
+<span class="cp">#define MAX_BUF 256</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- EXAMPLE -=-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// callback function</span>
+<span class="c1">// (1) prints information from the callback</span>
+<span class="kt">void</span> <span class="nf">PrintNodeValue</span><span class="p">(</span><span class="n">acNode</span> <span class="n">hNode</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">pUserData</span><span class="p">)</span>
+<span class="p">{</span>
+
+        <span class="c1">// Do something on callback</span>
+        <span class="c1">//    This function is registered with the callback and invoked when the</span>
+        <span class="c1">//    registered node is invalidated. In this case, the callback prints the</span>
+        <span class="c1">//    display name and value of the invalidated node.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sMessage from callback</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">);</span>
+
+        <span class="c1">// get node display name</span>
+        <span class="kt">char</span> <span class="n">pDisplayNameBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">displayNameBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+        <span class="n">acNodeGetDisplayName</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">pDisplayNameBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">displayNameBufLen</span><span class="p">);</span>
+
+        <span class="c1">// print PayloadSize value</span>
+        <span class="kt">char</span> <span class="n">pValueBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">valueBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+        <span class="n">acValueToString</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">pValueBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">valueBufLen</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s%s: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB4</span><span class="p">,</span> <span class="n">pDisplayNameBuf</span><span class="p">,</span> <span class="n">pValueBuf</span><span class="p">);</span>
+
+        <span class="c1">// print device serial number from pUserData</span>
+        <span class="kt">char</span><span class="o">*</span> <span class="n">pSerialNumberUserData</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">pUserData</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sDevice Serial Number: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB4</span><span class="p">,</span> <span class="n">pSerialNumberUserData</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// demonstrates callbacks invoked on node changes</span>
+<span class="c1">// (1) registers callback on node PayloadSize</span>
+<span class="c1">// (2) changes Height twice to invalidate PayloadSize, invoking callback</span>
+<span class="c1">// (3) invalidates PayloadSize manually</span>
+<span class="c1">// (4) deregisters callback</span>
+<span class="n">AC_ERROR</span> <span class="nf">ConfigureAndCauseCallback</span><span class="p">(</span><span class="n">acSystem</span> <span class="n">hSystem</span><span class="p">,</span> <span class="n">acDevice</span> <span class="n">hDevice</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// get node map</span>
+        <span class="n">acNodeMap</span> <span class="n">hNodeMap</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceGetNodeMap</span><span class="p">(</span><span class="n">hDevice</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hNodeMap</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Register PayloadSize for callbacks</span>
+        <span class="c1">//    Callbacks are registered with a node and a function. This example</span>
+        <span class="c1">//    demonstrates callbacks being invoked when the node is invalidated. This</span>
+        <span class="c1">//    could be when the node value changes, either manually or by the device,</span>
+        <span class="c1">//    or the node is invalidated manually.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sRegister callback on PayloadSize</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+
+        <span class="c1">// get payload size node</span>
+        <span class="n">acNode</span> <span class="n">hPayloadSizeNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetNode</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;PayloadSize&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hPayloadSizeNode</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// get device serial number to retrieve during callback. This could be used</span>
+        <span class="c1">// to identify devices among multiple cameras.</span>
+        <span class="kt">size_t</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="n">pSerialNumberBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">bufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetDeviceSerial</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">pSerialNumberBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bufLen</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// register callback</span>
+        <span class="n">acCallback</span> <span class="n">hCallback</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acCallbackRegister</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hCallback</span><span class="p">,</span> <span class="n">hPayloadSizeNode</span><span class="p">,</span> <span class="n">PrintNodeValue</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">pSerialNumberBuf</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Modify Height to invalidate and invoke callback on PayloadSize</span>
+        <span class="c1">//    The value of PayloadSize depends on a number of other nodes, including</span>
+        <span class="c1">//    Height, Width, etc. Therefore, changing the value of Height changes the</span>
+        <span class="c1">//    value of and invalidates PayloadSize, which then invokes the callback.</span>
+        <span class="n">acNode</span> <span class="n">hHeightNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetNode</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="s">&quot;Height&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hHeightNode</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// get initial height node value that will be changed and returned at the end</span>
+        <span class="c1">// of the example</span>
+        <span class="kt">int64_t</span> <span class="n">heightValueInitial</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetValue</span><span class="p">(</span><span class="n">hHeightNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">heightValueInitial</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// set new height values</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sChange height once</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">);</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerSetValue</span><span class="p">(</span><span class="n">hHeightNode</span><span class="p">,</span> <span class="n">HEIGHT_ONE</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sChange height twice</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">);</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerSetValue</span><span class="p">(</span><span class="n">hHeightNode</span><span class="p">,</span> <span class="n">HEIGHT_TWO</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Manually invalidate PayloadSize for callback</span>
+        <span class="c1">//    Apart from changing the value of a node, nodes can be invalidated</span>
+        <span class="c1">//    manually by calling InvalidateNode. This also invokes the callback.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sInvalidate PayloadSize</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">);</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeInvalidateNode</span><span class="p">(</span><span class="n">hPayloadSizeNode</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// Deregister callback</span>
+        <span class="c1">//    Failing to deregister a callback results in a memory leak. Once a</span>
+        <span class="c1">//    callback has been registered, it will no longer be invoked when a node</span>
+        <span class="c1">//    is invalidated.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sDeregister callback</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">);</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acCallbackDeregister</span><span class="p">(</span><span class="n">hCallback</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// return height node to initial value</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerSetValue</span><span class="p">(</span><span class="n">hHeightNode</span><span class="p">,</span> <span class="n">heightValueInitial</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =- PREPARATION -=-</span>
+<span class="c1">// =- &amp; CLEAN UP =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// error buffer length</span>
+<span class="cp">#define ERR_BUF 512</span>
+
+<span class="cp">#define CHECK_RETURN                                  \</span>
+<span class="cp">        if (err != AC_ERR_SUCCESS)                        \</span>
+<span class="cp">        {                                                 \</span>
+<span class="cp">                char pMessageBuf[ERR_BUF];                    \</span>
+<span class="cp">                size_t pBufLen = ERR_BUF;                     \</span>
+<span class="cp">                acGetLastErrorMessage(pMessageBuf, &amp;pBufLen); \</span>
+<span class="cp">                printf(&quot;\nError: %s&quot;, pMessageBuf);           \</span>
+<span class="cp">                printf(&quot;\n\nPress enter to complete\n&quot;);      \</span>
+<span class="cp">                getchar();                                    \</span>
+<span class="cp">                return -1;                                    \</span>
+<span class="cp">        }</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;C_Callback_OnNodeChange</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// prepare example</span>
+        <span class="n">acSystem</span> <span class="n">hSystem</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acOpenSystem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemUpdateDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">SYSTEM_TIMEOUT</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="kt">size_t</span> <span class="n">numDevices</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetNumDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numDevices</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">numDevices</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">No camera connected</span><span class="se">\n</span><span class="s">Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                <span class="n">getchar</span><span class="p">();</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">acDevice</span> <span class="n">hDevice</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemCreateDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+        <span class="c1">// run example</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Commence example</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">ConfigureAndCauseCallback</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Example complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="c1">// clean up example</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemDestroyDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acCloseSystem</span><span class="p">(</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">getchar</span><span class="p">();</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_examples_callback_polling.html" class="btn btn-neutral float-right" title="Callback, Polling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_examples_callback_onevent.html" class="btn btn-neutral" title="Callback, On Event" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ImageFactory &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C" href="c_arena.html"/>
+        <link rel="next" title="Device" href="c_arena_device.html"/>
+        <link rel="prev" title="Definitions" href="c_arena_defs.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_device.html">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodemap.html">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+      <li>ImageFactory</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="imagefactory">
+<h1>ImageFactory<a class="headerlink" href="#imagefactory" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acimagefactorycreate">
+<h2>acImageFactoryCreate<a class="headerlink" href="#acimagefactorycreate" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_factory_8h_1afb7dc24a0aecd5b53818a85f58b786d5"></span><code class="descname">AC_ERROR AC_API acImageFactoryCreate(uint8_t * pData, size_t dataSize, size_t width, size_t height, uint64_t pixelFormat, acBuffer * phDst)</code></dt>
+<dd><p>FactoryCreate(uint8_t pData, size_t dataSize, size_t width, size_t height, uint64_t pixelFormat, acBuffer* phDst)</p>
+<p><strong> acImageFactoryCreate </strong> creates an image (acBuffer) from a minimal set of parameters. Images created with the image factory must be destroyed (acImageFactoryDestroy) when no longer needed.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pData</span></code>: <ul>
+<li>Type: uint8_t*</li>
+<li>[Out] parameter</li>
+<li>Pointer to the beginning of the payload data</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">dataSize</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Size of the data</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">width</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Width of the image to create</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">height</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Height of the image to create</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pixelFormat</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Pixel format of the image to create</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phDst</span></code>: <ul>
+<li>Type: acBuffer*</li>
+<li>[Out] parameter</li>
+<li>Image created from the parameters</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acBuffer</li>
+<li>acImageFactoryDestroy </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagefactorycopy">
+<h2>acImageFactoryCopy<a class="headerlink" href="#acimagefactorycopy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_factory_8h_1ab0b58e6e824117679e34f69dba759690"></span><code class="descname">AC_ERROR AC_API acImageFactoryCopy(acBuffer hSrc, acBuffer * phDst)</code></dt>
+<dd><p><strong> acImageFactoryCopy </strong> creates a deep copy of an image (acBuffer) from another image. Images created with the image factory must be destroyed (acImageFactoryDestroy) when no longer needed.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSrc</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>Image to copy</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phDst</span></code>: <ul>
+<li>Type: acBuffer*</li>
+<li>[Out] parameter</li>
+<li>Deep copy of the image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acBuffer</li>
+<li>acImageFactoryDestroy </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagefactoryconvert">
+<h2>acImageFactoryConvert<a class="headerlink" href="#acimagefactoryconvert" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_factory_8h_1a850102d23c624d0a01cf98d4497b44d6"></span><code class="descname">AC_ERROR AC_API acImageFactoryConvert(acBuffer hSrc, uint64_t pixelFormat, acBuffer * phDst)</code></dt>
+<dd><p><strong> acImageFactoryConvert </strong> converts an image (acBuffer) to a select pixel format. In doing so, it creates a completely new image, similar to a deep copy but with a different pixel format. Images created with the image factory must be destroyed (acImageFactoryDestroy) when no longer needed; otherwise, memory will leak.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSrc</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>Image to convert</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pixelFormat</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Pixel format to convert to</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phDst</span></code>: <ul>
+<li>Type: acBuffer*</li>
+<li>[Out] parameter</li>
+<li>Convert image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acBuffer</li>
+<li>acImageFactoryDestroy </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagefactoryconvertbayeralgorithm">
+<h2>acImageFactoryConvertBayerAlgorithm<a class="headerlink" href="#acimagefactoryconvertbayeralgorithm" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_factory_8h_1af24b223456e18b81d1f04c7e57b54486"></span><code class="descname">AC_ERROR AC_API acImageFactoryConvertBayerAlgorithm(acBuffer hSrc, uint64_t pixelFormat, AC_BAYER_ALGORITHM bayerAlgo, acBuffer * phDst)</code></dt>
+<dd><p><strong> acImageFactoryConvert </strong> converts an image (acBuffer) to a select pixel format. In doing so, it creates a completely new image, similar to a deep copy but with a different pixel format. Images created with the image factory must be destroyed (acImageFactoryDestroy) when no longer needed; otherwise, memory will leak.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSrc</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>Image to convert</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pixelFormat</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Pixel format to convert to</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">bayerAlgo</span></code>: <ul>
+<li>Type: AC_BAYER_ALGORITHM</li>
+<li>[In] parameter</li>
+<li>Bayer conversion algorithm to use</li>
+<li>Only applicable when converting from bayer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phDst</span></code>: <ul>
+<li>Type: acBuffer*</li>
+<li>[Out] parameter</li>
+<li>Converted image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acBuffer</li>
+<li>acImageFactoryDestroy </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagefactorydestroy">
+<h2>acImageFactoryDestroy<a class="headerlink" href="#acimagefactorydestroy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_factory_8h_1a01fb8373f7bafd652722986dfd6ab41f"></span><code class="descname">AC_ERROR AC_API acImageFactoryDestroy(acBuffer hBuffer)</code></dt>
+<dd><p><strong> acImageFactoryDestroy </strong> cleans up an image (acBuffer) and deallocates its memory. It must be called on any image created by the image factory (acImageFactoryCreate, acImageFactoryCopy, acImageFactoryConvert).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>[In] parameter</li>
+<li>Image to destroy</li>
+<li>Image must be from image factory</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acBuffer</li>
+<li>acImageFactoryCreate </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_device.html" class="btn btn-neutral float-right" title="Device" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_defs.html" class="btn btn-neutral" title="Definitions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

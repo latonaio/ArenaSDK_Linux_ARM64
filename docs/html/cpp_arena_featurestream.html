@@ -1,0 +1,569 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FeatureStream &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C++" href="cpp_arena.html"/>
+        <link rel="next" title="IDevice" href="cpp_arena_idevice.html"/>
+        <link rel="prev" title="IImage" href="cpp_arena_iimage.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_arena.html">Arena C++</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_global.html">Global Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_isystem.html">ISystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ichunkdata.html">IChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ibuffer.html">IBuffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_interfaceinfo.html">InterfaceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_iimage.html">IImage</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_idevice.html">IDevice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_deviceinfo.html">DeviceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_einterfacetypeclass.html">EInterfaceTypeClass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_eincmodeclass.html">EIncModeClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_save.html">Save C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_arena.html">Arena C++</a> &raquo;</li>
+        
+      <li>FeatureStream</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="featurestream">
+<h1>FeatureStream<a class="headerlink" href="#featurestream" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="id1">
+<h2>FeatureStream<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv3N5Arena13FeatureStreamE">
+<span id="_CPPv2N5Arena13FeatureStreamE"></span><span id="Arena::FeatureStream"></span><span class="target" id="class_arena_1_1_feature_stream"></span><em class="property">class </em><code class="descname">FeatureStream</code><a class="headerlink" href="#_CPPv3N5Arena13FeatureStreamE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A <strong> <a class="reference internal" href="#class_arena_1_1_feature_stream"><span class="std std-ref">FeatureStream</span></a> </strong> object allows a device to stream features to and from files, sharing values amongst one another. Features can be either written from the device’s node map (GenApi::INodeMap) to a file or read from a file to the node map.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// saving all streamable features from a device to a file</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">FeatureStream</span> <span class="n">featureStream</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">);</span>
+    <span class="n">featureStream</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;fileName.txt&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// loading all streamable features from a file to a device</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">FeatureStream</span> <span class="n">featureStream</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">);</span>
+    <span class="n">featureStream</span><span class="p">.</span><span class="n">Read</span><span class="p">(</span><span class="s">&quot;fileName.txt&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>Feature streams can stream all streamable features on a device or a select few. By default, a feature stream will not have had any features selected and will save or load all available streamable features. For a more precise list, features may be selected (<a class="reference internal" href="#class_arena_1_1_feature_stream_1ac90459cf09c1a93fa77ff712a32e87ef"><span class="std std-ref">Arena::FeatureStream::Select</span></a>, cascading I/O operator &lt;&lt;).</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// saving just width and height to a file</span>
+<span class="c1">// selecting width and height with the output operator</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">FeatureStream</span> <span class="n">featureStream</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">);</span>
+    <span class="n">featureStream</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Width&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Height&quot;</span><span class="p">;</span>
+    <span class="n">featureStream</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;fileName.txt&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>Not all features are streamable. If unsure, check feature streamability (GenApi::INode::IsStreamable).</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// checking for streamability, only selecting if streamable</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pNode</span><span class="o">-&gt;</span><span class="n">IsStreamable</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">featureStream</span> <span class="o">&lt;&lt;</span> <span class="n">pNode</span><span class="o">-&gt;</span><span class="n">GetName</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Not all features are streamable</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="#class_arena_1_1_feature_stream"><span class="std std-ref">Arena::FeatureStream</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>FeatureStream<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena13FeatureStream13FeatureStreamEPN6GenApi8INodeMapE">
+<span id="_CPPv2N5Arena13FeatureStream13FeatureStreamEPN6GenApi8INodeMapE"></span><span id="Arena::FeatureStream::FeatureStream__GenApi::INodeMapP"></span><span class="target" id="class_arena_1_1_feature_stream_1aa32643c076b2641841752ff23684bae0"></span><code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena13FeatureStreamE" title="Arena::FeatureStream">FeatureStream</a><code class="descclassname">::</code></code><code class="descname">FeatureStream</code><span class="sig-paren">(</span>GenApi::INodeMap *<em>pNodeMap</em><span class="sig-paren">)</span><br /></dt>
+<dd><p><p>The </p>
+<strong> constructor </strong> builds a feature stream from a device’s node map (GenApi::INodeMap). This node map cannot be changed later; another feature stream must be created to stream another node map.<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pNodeMap</span></code>: <ul>
+<li>Type: GenApi::INodeMap*</li>
+<li>Pointer to the node map to stream</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>By default, a feature stream will have a flag set to stream all streamable features. A subset of streamable features may be selected (<a class="reference internal" href="#class_arena_1_1_feature_stream_1ac90459cf09c1a93fa77ff712a32e87ef"><span class="std std-ref">Arena::FeatureStream::Select</span></a>), reversing the flag. If a non-streamable feature is selected, the call will throw and the flag will remain as it originally was.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="#class_arena_1_1_feature_stream_1ac90459cf09c1a93fa77ff712a32e87ef"><span class="std std-ref">Arena::FeatureStream::Select</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="write">
+<h2>Write<a class="headerlink" href="#write" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena13FeatureStream5WriteEKN7GenICam8gcstringE">
+<span id="_CPPv2N5Arena13FeatureStream5WriteEKN7GenICam8gcstringE"></span><span id="Arena::FeatureStream::Write__GenICam::gcstringC"></span><span class="target" id="class_arena_1_1_feature_stream_1a5f9b4831cc86d8429df04d06f196af2d"></span>void <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena13FeatureStreamE" title="Arena::FeatureStream">FeatureStream</a><code class="descclassname">::</code></code><code class="descname">Write</code><span class="sig-paren">(</span><em class="property">const</em> GenICam::gcstring <em>fileName</em> = &quot;features.txt&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena13FeatureStream5WriteEKN7GenICam8gcstringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> Write </strong> streams all selected features from the node map (GenApi::INodeMap) to a file.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileName</span></code>: <ul>
+<li>Type: const GenICam::gcstring</li>
+<li>Default: features.txt</li>
+<li>Name of the file to write to</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>By default, a feature stream will have a flag set to stream all streamable features. A subset of streamable features may be selected (<a class="reference internal" href="#class_arena_1_1_feature_stream_1ac90459cf09c1a93fa77ff712a32e87ef"><span class="std std-ref">Arena::FeatureStream::Select</span></a>), reversing the flag. If a non-streamable feature is selected, the call will throw and the flag will remain as it originally was.</p>
+<p>Essentially, if no features have been selected, <strong> Write </strong> will stream all available streamable features from the node map to the file; if one or more features have been selected, only the selected features will be streamed.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>May throw GenICam::GenericException or other derived exception</li>
+<li>May throw exception related to file access permissions</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="#class_arena_1_1_feature_stream_1ac90459cf09c1a93fa77ff712a32e87ef"><span class="std std-ref">Arena::FeatureStream::Select</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="read">
+<h2>Read<a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena13FeatureStream4ReadEKN7GenICam8gcstringE">
+<span id="_CPPv2N5Arena13FeatureStream4ReadEKN7GenICam8gcstringE"></span><span id="Arena::FeatureStream::Read__GenICam::gcstringC"></span><span class="target" id="class_arena_1_1_feature_stream_1aaeb6c18996ea31640d7f6720142cb675"></span>void <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena13FeatureStreamE" title="Arena::FeatureStream">FeatureStream</a><code class="descclassname">::</code></code><code class="descname">Read</code><span class="sig-paren">(</span><em class="property">const</em> GenICam::gcstring <em>fileName</em> = &quot;features.txt&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena13FeatureStream4ReadEKN7GenICam8gcstringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> Read </strong> streams all selected features from a file to the node map (GenApi::INodeMap).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileName</span></code>: <ul>
+<li>Type: const GenICam::gcstring</li>
+<li>Default: features.txt</li>
+<li>Name of the file to read from</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Calling <strong> Read </strong> streams all features from a file. Selecting features (<a class="reference internal" href="#class_arena_1_1_feature_stream_1ac90459cf09c1a93fa77ff712a32e87ef"><span class="std std-ref">Arena::FeatureStream::Select</span></a>) only applies to <strong> Write </strong>.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>May throw GenICam::GenericException or other derived exception</li>
+<li>May throw exception related to file access permissions</li>
+<li>Selecting features only applies to write</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="#class_arena_1_1_feature_stream_1ac90459cf09c1a93fa77ff712a32e87ef"><span class="std std-ref">Arena::FeatureStream::Select</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="select">
+<h2>Select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena13FeatureStream6SelectEN7GenICam8gcstringE">
+<span id="_CPPv2N5Arena13FeatureStream6SelectEN7GenICam8gcstringE"></span><span id="Arena::FeatureStream::Select__GenICam::gcstring"></span><span class="target" id="class_arena_1_1_feature_stream_1ac90459cf09c1a93fa77ff712a32e87ef"></span>void <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena13FeatureStreamE" title="Arena::FeatureStream">FeatureStream</a><code class="descclassname">::</code></code><code class="descname">Select</code><span class="sig-paren">(</span>GenICam::gcstring <em>featureName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena13FeatureStream6SelectEN7GenICam8gcstringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> Select </strong> adds a single streamable feature to the list of selected features to stream. If called for the first time, <strong> Select </strong> also sets an internal ‘select-all’ flag to false.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">featureName</span></code>: <ul>
+<li>Type: GenICam::gcstring</li>
+<li>Name of the feature to select</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>By default, a feature stream will have a flag set to stream all streamable features. A subset of streamable features may be selected, reversing the flag. If a non-streamable feature is selected, the call will throw and the flag will remain as it originally was.</p>
+<p>Trying to select a non-streamable feature will throw. If unsure, check streamability:</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// checking for streamability, only selecting if streamable</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pNode</span><span class="o">-&gt;</span><span class="n">IsStreamable</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">featureStream</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">pNode</span><span class="o">-&gt;</span><span class="n">GetName</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Provides same functionality as &lt;&lt; operator</li>
+<li>Selecting features only applies to write operation</li>
+<li>Throws GenICam::InvalidArgumentException if selected feature not streamable</li>
+<li>May throw child of GenICam::GenericExceptio </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="operator">
+<h2>Operator &lt;&lt;<a class="headerlink" href="#operator" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena13FeatureStreamlsEN7GenICam8gcstringE">
+<span id="_CPPv2N5Arena13FeatureStreamlsEN7GenICam8gcstringE"></span><span id="Arena::FeatureStream::lshift-operator__GenICam::gcstring"></span><span class="target" id="class_arena_1_1_feature_stream_1abd388235e53b7060d2bfc696a9c3be02"></span><a class="reference internal" href="#_CPPv3N5Arena13FeatureStreamE" title="Arena::FeatureStream">FeatureStream</a> &amp;<code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena13FeatureStreamE" title="Arena::FeatureStream">FeatureStream</a><code class="descclassname">::</code></code><code class="descname">operator&lt;&lt;</code><span class="sig-paren">(</span>GenICam::gcstring <em>featureName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena13FeatureStreamlsEN7GenICam8gcstringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><p>The </p>
+<strong> cascading I/O operator (&lt;&lt;) </strong> adds a single streamable feature to the list of selected features to stream. If called for the first time, it also sets an internal ‘select-all’ flag to false.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="#class_arena_1_1_feature_stream"><span class="std std-ref">FeatureStream</span></a>&amp;</li>
+<li>Same feature stream object, allowing for cascading</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">featureName</span></code>: <ul>
+<li>Type: GenICam::gcstring</li>
+<li>Name of the feature to select</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>By default, a feature stream has a flag set to stream all streamable features. A subset of streamable features may be selected (<a class="reference internal" href="#class_arena_1_1_feature_stream_1ac90459cf09c1a93fa77ff712a32e87ef"><span class="std std-ref">Arena::FeatureStream::Select</span></a>), reversing the flag. If a non-streamable feature is selected, the call will throw and the flag will remain as it originally was.</p>
+<p>Trying to select a non-streamable feature will throw. If unsure, check streamability:</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// checking for streamability, only selecting if streamable</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pNode</span><span class="o">-&gt;</span><span class="n">IsStreamable</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">featureStream</span> <span class="o">&lt;&lt;</span> <span class="n">pNode</span><span class="o">-&gt;</span><span class="n">GetName</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>The operator’s ability to cascade calls allows selecting items to be linked together, one after the other.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// cascading selection calls with the &lt;&lt; operator before streaming to file</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">FeatureStream</span> <span class="n">featureStream</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">);</span>
+    <span class="n">featureStream</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Width&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Height&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;OffsetX&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;OffsetY&quot;</span><span class="p">;</span>
+    <span class="n">featureStream</span><span class="p">.</span><span class="n">Write</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Provides same functionality as <a class="reference internal" href="#class_arena_1_1_feature_stream_1ac90459cf09c1a93fa77ff712a32e87ef"><span class="std std-ref">Arena::FeatureStream::Select</span></a> with the added bonus of cascading calls</li>
+<li>Selecting features only applies to write operation</li>
+<li>Throws GenICam::InvalidArgumentException if selected feature not streamable</li>
+<li>May throw GenICam::GenericException or other derived exception</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="#class_arena_1_1_feature_stream"><span class="std std-ref">Arena::FeatureStream</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_feature_stream_1ac90459cf09c1a93fa77ff712a32e87ef"><span class="std std-ref">Arena::FeatureStream::Select</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>~FeatureStream<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena13FeatureStreamD0Ev">
+<span id="_CPPv2N5Arena13FeatureStreamD0Ev"></span><span id="Arena::FeatureStream::~FeatureStream"></span><span class="target" id="class_arena_1_1_feature_stream_1a4253c34315e74bc403fc90175b93728b"></span><code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena13FeatureStreamE" title="Arena::FeatureStream">FeatureStream</a><code class="descclassname">::</code></code><code class="descname">~FeatureStream</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena13FeatureStreamD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A destructor </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_arena_idevice.html" class="btn btn-neutral float-right" title="IDevice" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_arena_iimage.html" class="btn btn-neutral" title="IImage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

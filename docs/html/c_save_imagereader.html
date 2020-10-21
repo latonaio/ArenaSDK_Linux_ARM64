@@ -1,0 +1,517 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ImageReader &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Save C" href="c_save.html"/>
+        <link rel="next" title="C Code Samples" href="c_examples.html"/>
+        <link rel="prev" title="VideoRecorder" href="c_save_videorecorder.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="c_arena.html">Arena C</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="c_save.html">Save C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_save_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_save_imagewriter.html">ImageWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_save_videorecorder.html">VideoRecorder</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ImageReader</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_save.html">Save C</a> &raquo;</li>
+        
+      <li>ImageReader</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="imagereader">
+<h1>ImageReader<a class="headerlink" href="#imagereader" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="savereadercreate">
+<h2>saveReaderCreate<a class="headerlink" href="#savereadercreate" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_reader_8h_1ae97a4c1d0ac3babb2bbf2a635c3f0f8c"></span><code class="descname">SC_ERROR SC_API saveReaderCreate(saveReader * phReader, const char * pFileName)</code></dt>
+<dd><p><strong> saveReaderCreate </strong> initializes an image reader and loads an image. The image reader must be destroyed or memory will leak. This image reader loads images starting from the upper leftmost pixel. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">phReader</span></code>: <ul>
+<li>Type: saveReader*</li>
+<li>[Out] parameter</li>
+<li>Created image reader</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFileName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Relative path to a file to load</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savereadercreatebottomtotop">
+<h2>saveReaderCreateBottomToTop<a class="headerlink" href="#savereadercreatebottomtotop" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_reader_8h_1ad5600c5defdd3a03601926113f3a2bb6"></span><code class="descname">SC_ERROR SC_API saveReaderCreateBottomToTop(saveReader * phReader, const char * pFileName)</code></dt>
+<dd><p><strong> saveReaderCreateBottomToTop </strong> initializes an image reader and loads an image. The image reader must be destroyed or memory will leak. This image reader loads images starting from the lower leftmost pixel. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">phReader</span></code>: <ul>
+<li>Type: saveReader*</li>
+<li>[Out] parameter</li>
+<li>Created image reader</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFileName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Relative path to a file to load</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savereaderdestroy">
+<h2>saveReaderDestroy<a class="headerlink" href="#savereaderdestroy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_reader_8h_1ac26496fae314347f2cfe2494cab309c6"></span><code class="descname">SC_ERROR SC_API saveReaderDestroy(saveReader hReader)</code></dt>
+<dd><p><strong> saveReaderDestroy </strong> cleans up an image reader (saveReader), deallocating its memory.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hReader</span></code>: <ul>
+<li>Type: saveReader</li>
+<li>[In] parameter</li>
+<li>An image reader</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Invalidates pointers to image data</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>saveReader </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savereadergetparams">
+<h2>saveReaderGetParams<a class="headerlink" href="#savereadergetparams" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_reader_8h_1a304c83ed9a30805b25a2650f7c938eea"></span><code class="descname">SC_ERROR SC_API saveReaderGetParams(saveReader hReader, size_t * pWidth, size_t * pHeight, size_t * pBitsPerPixel)</code></dt>
+<dd><p><strong> saveReaderGetParams </strong> retrieves the width, height, and number of bits per pixel of the loaded image. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hReader</span></code>: <ul>
+<li>Type: saveReader</li>
+<li>[In] parameter</li>
+<li>An image reader</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pWidth</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Width of the loaded image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pHeight</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Height of the loaded image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBitsPerPixel</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Number of bits per pixel of the loaded image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savereadergetdata">
+<h2>saveReaderGetData<a class="headerlink" href="#savereadergetdata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_reader_8h_1a2d440165f45ac4e91eef0af2e7d08e17"></span><code class="descname">SC_ERROR SC_API saveReaderGetData(saveReader hReader, uint8_t ** ppData)</code></dt>
+<dd><p><strong> saveReaderGetData </strong> retrieves a pointer to the beginning of the loaded image data. Data must be copied manually in order to retain data beyond beyond the life cycle of the image reader.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hReader</span></code>: <ul>
+<li>Type: saveReader</li>
+<li>[In] parameter</li>
+<li>An image reader</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">ppData</span></code>: <ul>
+<li>Type: uint8_t**</li>
+<li>[Out] parameter</li>
+<li>Pointer to the image data</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Pointer invalidated on destruction of image reader </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="savereaderloadrawdata">
+<h2>saveReaderLoadRawData<a class="headerlink" href="#savereaderloadrawdata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_image_reader_8h_1ad34ab0d7a761a4639635d270c2ab24c1"></span><code class="descname">SC_ERROR SC_API saveReaderLoadRawData(const char * pFileName, uint8_t * pImageData, const size_t size)</code></dt>
+<dd><p><strong> saveReaderLoadRawData </strong> loads raw data into a buffer. It does not require an image reader context (saveReader).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pFileName</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Relative path to the file to load</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pImageData</span></code>: <ul>
+<li>Type: uint8_t*</li>
+<li>[Out] parameter</li>
+<li>Retrieved data</li>
+<li>Buffer must be preallocated</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">size</span></code>: <ul>
+<li>Type: const size_t</li>
+<li>[In] parameter</li>
+<li>Size of the buffer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>does not require context</li>
+<li>image data buffer must be preallocated</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>saveReader </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_examples.html" class="btn btn-neutral float-right" title="C Code Samples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_save_videorecorder.html" class="btn btn-neutral" title="VideoRecorder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

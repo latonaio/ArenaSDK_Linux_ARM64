@@ -1,0 +1,1481 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>VideoRecorder &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Save C" href="c_save.html"/>
+        <link rel="next" title="ImageReader" href="c_save_imagereader.html"/>
+        <link rel="prev" title="ImageWriter" href="c_save_imagewriter.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="c_arena.html">Arena C</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="c_save.html">Save C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_save_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_save_imagewriter.html">ImageWriter</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">VideoRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_save_imagereader.html">ImageReader</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_save.html">Save C</a> &raquo;</li>
+        
+      <li>VideoRecorder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="videorecorder">
+<h1>VideoRecorder<a class="headerlink" href="#videorecorder" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="saverecordercreateempty">
+<h2>saveRecorderCreateEmpty<a class="headerlink" href="#saverecordercreateempty" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a6cc334412e5cc441942457069ff8852a"></span><code class="descname">SC_ERROR SC_API saveRecorderCreateEmpty(saveRecorder * hRecorder)</code></dt>
+<dd><p><strong> saveRecorderCreateEmpty </strong> creates an empty/default video recorder. The parameters of the video recorder are not yet set (width = height = 0, FPS = 0/0). The default file name pattern is ‘savedvideos/video&lt;count&gt;.avi’. The default codec is raw, the default container is AVI, and the default pixel format is BGR8. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder*</li>
+<li>[Out] parameter</li>
+<li>Created video recorder</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecordercreate">
+<h2>saveRecorderCreate<a class="headerlink" href="#saverecordercreate" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1aa41eb8bc0b5e4c53f73ae8dcc1b086c7"></span><code class="descname">SC_ERROR SC_API saveRecorderCreate(size_t width, size_t height, double fps, saveRecorder * hRecorder)</code></dt>
+<dd><p><strong> saveRecorderCreate </strong> creates a video recorder and sets initial video parameters. The default file name pattern is ‘savedvideos/video&lt;count&gt;.avi’. The default codec is raw, the default container is AVI, and the default pixel format is BGR8. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">width</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Width of a single frame in the video</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">height</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Height of a single frame in the video</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">fps</span></code>: <ul>
+<li>Type: double</li>
+<li>[In] parameter</li>
+<li>Frames per second</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder*</li>
+<li>[Out] parameter</li>
+<li>Created video recorder</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderdestroy">
+<h2>saveRecorderDestroy<a class="headerlink" href="#saverecorderdestroy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1ab6ae4eaf498417df251084a3b5656d4c"></span><code class="descname">SC_ERROR SC_API saveRecorderDestroy(saveRecorder hRecorder)</code></dt>
+<dd><p><strong> saveRecorderDestroy </strong> cleans up a video recorder (saveRecorder), deallocating its memory.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>saveRecorder </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecordersetraw">
+<h2>saveRecorderSetRaw<a class="headerlink" href="#saverecordersetraw" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a957b8787abb56db5c657d8e451211b8a"></span><code class="descname">SC_ERROR SC_API saveRecorderSetRaw(saveRecorder hRecorder, uint64_t pixelFormat)</code></dt>
+<dd><p><strong> saveRecorderSetRaw </strong> changes the image writer to save images using a specified pixel format without a container.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pixelFormat</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Pixel format of the image data</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecordersetrawavibgr8">
+<h2>saveRecorderSetRawAviBGR8<a class="headerlink" href="#saverecordersetrawavibgr8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a5c6f785dbdc88f725cc8dc487f57c7bf"></span><code class="descname">SC_ERROR SC_API saveRecorderSetRawAviBGR8(saveRecorder hRecorder)</code></dt>
+<dd><p><strong> saveRecorderSetRawAviBGR8 </strong> sets the codec, container, and pixel format to raw, AVI, and BGR8, respectively.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-BGR8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecordersetrawmovrgb8">
+<h2>saveRecorderSetRawMovRGB8<a class="headerlink" href="#saverecordersetrawmovrgb8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1ae2572a90cbe50596b2297ee38f45e4d9"></span><code class="descname">SC_ERROR SC_API saveRecorderSetRawMovRGB8(saveRecorder hRecorder)</code></dt>
+<dd><p><strong> saveRecorderSetRawMovRGB8 </strong> sets the codec, container, and pixel format to raw, MOV, and RGB8, respectively.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-RGB8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderseth264movrgb8">
+<h2>saveRecorderSetH264MovRGB8<a class="headerlink" href="#saverecorderseth264movrgb8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a047dc7be02c6cf7935981d2a747c85c4"></span><code class="descname">SC_ERROR SC_API saveRecorderSetH264MovRGB8(saveRecorder hRecorder)</code></dt>
+<dd><p><strong> saveRecorderSetH264MovRGB8 </strong> sets the codec, container, and pixel format to H264, MOV, and RGB8, respectively.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-RGB8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderseth264movrgb8andconfig">
+<h2>saveRecorderSetH264MovRGB8AndConfig<a class="headerlink" href="#saverecorderseth264movrgb8andconfig" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a535dc27df782f8f45436937c4b9f9b3a"></span><code class="descname">SC_ERROR SC_API saveRecorderSetH264MovRGB8AndConfig(saveRecorder hRecorder, int64_t bitrate)</code></dt>
+<dd><p><strong> saveRecorderSetH264MovRGB8 </strong> sets the codec, container, and pixel format to H264, MOV, and RGB8, respectively.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">bitRate</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>[In] parameter</li>
+<li>Bitrate (bit/s)</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-RGB8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderseth264movbgr8">
+<h2>saveRecorderSetH264MovBGR8<a class="headerlink" href="#saverecorderseth264movbgr8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a4f61b5814e58af30b04d2a70b86ecf61"></span><code class="descname">SC_ERROR SC_API saveRecorderSetH264MovBGR8(saveRecorder hRecorder)</code></dt>
+<dd><p><strong> saveRecorderSetH264MovBGR8 </strong> sets the codec, container, and pixel format to H264, MOV, and BGR8, respectively.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-BGR8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderseth264movbgr8andconfig">
+<h2>saveRecorderSetH264MovBGR8AndConfig<a class="headerlink" href="#saverecorderseth264movbgr8andconfig" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a83c63563a461c483e73f51d0c9ca8906"></span><code class="descname">SC_ERROR SC_API saveRecorderSetH264MovBGR8AndConfig(saveRecorder hRecorder, int64_t bitrate)</code></dt>
+<dd><p><strong> saveRecorderSetH264MovBGR8 </strong> sets the codec, container, and pixel format to H264, MOV, and BGR8, respectively.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">bitRate</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>[In] parameter</li>
+<li>Bitrate (bit/s)</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-BGR8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderseth264mp4rgb8">
+<h2>saveRecorderSetH264Mp4RGB8<a class="headerlink" href="#saverecorderseth264mp4rgb8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a64f6d965e35b9fe208debbcef23c2dc9"></span><code class="descname">SC_ERROR SC_API saveRecorderSetH264Mp4RGB8(saveRecorder hRecorder)</code></dt>
+<dd><p><strong> saveRecorderSetH264Mp4RGB8 </strong> sets the codec, container, and pixel format to H264, MPEG-4, and RGB8, respectively.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-RGB8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderseth264mp4rgb8andconfig">
+<h2>saveRecorderSetH264Mp4RGB8AndConfig<a class="headerlink" href="#saverecorderseth264mp4rgb8andconfig" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1aa91e08dbbb02249d9a0cf9eed1bcbff6"></span><code class="descname">SC_ERROR SC_API saveRecorderSetH264Mp4RGB8AndConfig(saveRecorder hRecorder, int64_t bitrate)</code></dt>
+<dd><p><strong> saveRecorderSetH264Mp4RGB8 </strong> sets the codec, container, and pixel format to H264, MPEG-4, and RGB8, respectively.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">bitRate</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>[In] parameter</li>
+<li>Bitrate (bit/s)</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-RGB8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderseth264mp4bgr8">
+<h2>saveRecorderSetH264Mp4BGR8<a class="headerlink" href="#saverecorderseth264mp4bgr8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a87f923f21091244d0505b0ed42235ba4"></span><code class="descname">SC_ERROR SC_API saveRecorderSetH264Mp4BGR8(saveRecorder hRecorder)</code></dt>
+<dd><p><strong> saveRecorderSetH264Mp4BGR8 </strong> sets the codec, container, and pixel format to H264, MPEG-4, and BGR8, respectively.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-BGR8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderseth264mp4bgr8andconfig">
+<h2>saveRecorderSetH264Mp4BGR8AndConfig<a class="headerlink" href="#saverecorderseth264mp4bgr8andconfig" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a660d04c6b77ce7204d0c48fa53a2de57"></span><code class="descname">SC_ERROR SC_API saveRecorderSetH264Mp4BGR8AndConfig(saveRecorder hRecorder, int64_t bitrate)</code></dt>
+<dd><p><strong> saveRecorderSetH264Mp4BGR8 </strong> sets the codec, container, and pixel format to H264, MPEG-4, and BGR8, respectively.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">bitRate</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>[In] parameter</li>
+<li>Bitrate (bit/s)</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-BGR8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecordersetparams">
+<h2>saveRecorderSetParams<a class="headerlink" href="#saverecordersetparams" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a447a5dd0c7d0f7dc97aa145f4f8b822f"></span><code class="descname">SC_ERROR SC_API saveRecorderSetParams(saveRecorder hRecorder, size_t width, size_t height, double fps)</code></dt>
+<dd><p><strong> saveRecorderSetParams </strong> sets the parameters for the video(s) to recorder.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">width</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Width of a single frame in the video</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">height</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Height of a single frame in the video</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">fps</span></code>: <ul>
+<li>Type: double</li>
+<li>[In] parameter</li>
+<li>Frames per second</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecordersetfilenamepattern">
+<h2>saveRecorderSetFileNamePattern<a class="headerlink" href="#saverecordersetfilenamepattern" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a0870c57db16e7c3b309c75e6768f1851"></span><code class="descname">SC_ERROR SC_API saveRecorderSetFileNamePattern(saveRecorder hRecorder, const char * pFileNamePattern)</code></dt>
+<dd><p><strong> saveRecorderSetFileNamePattern </strong> sets a file name pattern. Changing the extension via this call will change the output container.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFileNamePattern</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>File name pattern to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The video recorder defaults to different settings depending on the extension of the file name pattern:<ul class="simple">
+<li>’.avi’ defaults to raw codec, BGR8 pixel format</li>
+<li>’.mov’ defaults to raw codec, RGB8 pixel format</li>
+<li>’.mp4’ defaults to H264 codec, BGR8 pixel</li>
+</ul>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>changes to the file extension will change the container accordingly</li>
+<li>set file name pattern before setting other settings</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderupdatetag">
+<h2>saveRecorderUpdateTag<a class="headerlink" href="#saverecorderupdatetag" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1aa4452a48b41eb01e9d83755fb9def8f9"></span><code class="descname">SC_ERROR SC_API saveRecorderUpdateTag(saveRecorder hRecorder, const char * pTag, const char * pValue)</code></dt>
+<dd><p><strong> saveRecorderUpdateTag </strong> updates the value to replace a given tag when an video is saved. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pTag</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Tag to replace</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pValue</span></code>: <ul>
+<li>Type: const char*</li>
+<li>[In] parameter</li>
+<li>Value to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecordersetcount">
+<h2>saveRecorderSetCount<a class="headerlink" href="#saverecordersetcount" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a2e2cd4250152b1af27b528b6c1a19ed4"></span><code class="descname">SC_ERROR SC_API saveRecorderSetCount(saveRecorder hRecorder, uint64_t count)</code></dt>
+<dd><p><strong> saveRecorderSetCount </strong> manually sets the count. The count increments with each recorded video. The count is context specific.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">count</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Value of the internal counter</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecordersettimestamp">
+<h2>saveRecorderSetTimestamp<a class="headerlink" href="#saverecordersettimestamp" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1ab2349eb216435c14e1f3013be04e269e"></span><code class="descname">SC_ERROR SC_API saveRecorderSetTimestamp(saveRecorder hRecorder, uint64_t timestamp)</code></dt>
+<dd><p><strong> saveRecorderSetTimestamp </strong> manually sets the timestamp. The timestamp must be updated manually.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">timestamp</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Timestamp to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>cannot be called while recording</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecordergetparams">
+<h2>saveRecorderGetParams<a class="headerlink" href="#saverecordergetparams" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a03bc78ee4caff7a8fa71cc2bae405873"></span><code class="descname">SC_ERROR SC_API saveRecorderGetParams(saveRecorder hRecorder, size_t * pWidth, size_t * pHeight, double * pFps)</code></dt>
+<dd><p><strong> saveRecorderGetParams </strong> retrieves the parameters currently used to recorder videos.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pWidth</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>The width</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pHeight</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>The height</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFps</span></code>: <ul>
+<li>Type: double*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Frames per second</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>At least one [Out] parameter must be non-null </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecordergetfilenamepattern">
+<h2>saveRecorderGetFileNamePattern<a class="headerlink" href="#saverecordergetfilenamepattern" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a68da246b11706bd5d3075f3b440b7474"></span><code class="descname">SC_ERROR SC_API saveRecorderGetFileNamePattern(saveRecorder hRecorder, char * pFileNamePattern, size_t * pLen)</code></dt>
+<dd><p><strong> saveRecorderGetFileNamePattern </strong> retrieves the file name pattern. The received file name pattern does not replace tags (e.g. &lt;count&gt;, &lt;timestamp&gt;). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFileNamePattern</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>File name pattern</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/Out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value - including the null terminating character -</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecordergetextension">
+<h2>saveRecorderGetExtension<a class="headerlink" href="#saverecordergetextension" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a590515f6381405ad1238867ecdd6a1d8"></span><code class="descname">SC_ERROR SC_API saveRecorderGetExtension(saveRecorder hRecorder, char * pExtension, size_t * pLen)</code></dt>
+<dd><p><strong> saveRecorderGetExtension </strong> retrieves the extension currently being used (e.g. ‘.avi’, ‘.mp4’). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pExtension</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Current extension</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/Out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value - including the null terminating character -</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderpeekfilename">
+<h2>saveRecorderPeekFileName<a class="headerlink" href="#saverecorderpeekfilename" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a8cd2ad640abe7d0ede1d44f0039c9fb8"></span><code class="descname">SC_ERROR SC_API saveRecorderPeekFileName(saveRecorder hRecorder, char * pFileName, size_t * pLen)</code></dt>
+<dd><p><strong> saveRecorderPeekFileName </strong> peeks at the next file name to use, replacing any appropriate tags (e.g. &lt;count&gt;, &lt;timestamp&gt;). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFileName</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Next file name to use</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/Out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value - including the null terminating character -</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderpeekcount">
+<h2>saveRecorderPeekCount<a class="headerlink" href="#saverecorderpeekcount" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1ac904b54485c605e986e11096895ad84c"></span><code class="descname">SC_ERROR SC_API saveRecorderPeekCount(saveRecorder hRecorder, uint64_t * pCount)</code></dt>
+<dd><p><strong> saveRecorderPeekCount </strong> peeks at the count/index of the next saved image. This is the number that the &lt;count&gt; tag will be replaced with. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pCount</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>[Out] parameter</li>
+<li>Local count</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderpeekcountpath">
+<h2>saveRecorderPeekCountPath<a class="headerlink" href="#saverecorderpeekcountpath" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a70c47b07956325dc1007d596f0550f16"></span><code class="descname">SC_ERROR SC_API saveRecorderPeekCountPath(saveRecorder hWriter, uint64_t * pCount)</code></dt>
+<dd><p><strong> saveRecorderPeekCount </strong> peeks at the count/index of the next saved video particular to the file name pattern. This is the number that the &lt;count:path&gt; tag will be replaced with. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pCount</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>[Out] parameter</li>
+<li>Path count</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderpeekcountglobal">
+<h2>saveRecorderPeekCountGlobal<a class="headerlink" href="#saverecorderpeekcountglobal" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a894f723953089aed9bebb9a4ef3b029d"></span><code class="descname">SC_ERROR SC_API saveRecorderPeekCountGlobal(saveRecorder hWriter, uint64_t * pCount)</code></dt>
+<dd><p><strong> saveRecorderPeekCount </strong> peeks at the count/index of the next saved video across all image writers and video recorders. This is the number that the &lt;count:global&gt; tag will be replaced with. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hWriter</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pCount</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>[Out] parameter</li>
+<li>Global count</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecordergetlastfilename">
+<h2>saveRecorderGetLastFileName<a class="headerlink" href="#saverecordergetlastfilename" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a237c6377be47f7822db255cf227e4f4c"></span><code class="descname">SC_ERROR SC_API saveRecorderGetLastFileName(saveRecorder hRecorder, char * pLastFileName, size_t * pLen)</code></dt>
+<dd><p><strong> saveRecorderGetLastFileName </strong> retrieves the last file name used to save a video with this context. Returns ‘’ if no file has been saved. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pLastFileName</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Last file name used</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/Out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value - including the null terminating character -</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderopen">
+<h2>saveRecorderOpen<a class="headerlink" href="#saverecorderopen" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a396ea362a78d3ec6d57d53cdd1274a25"></span><code class="descname">SC_ERROR SC_API saveRecorderOpen(saveRecorder hRecorder)</code></dt>
+<dd><p><strong> saveRecorderOpen </strong> opens the output file, sets up internal buffers, frames, contexts, and settings, and allocates memory to prepare to append input frames.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>settings cannot be changed until the recorder is closed </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderappendimage">
+<h2>saveRecorderAppendImage<a class="headerlink" href="#saverecorderappendimage" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1afd73a44da82e4864061959c51fbedb22"></span><code class="descname">SC_ERROR SC_API saveRecorderAppendImage(saveRecorder hRecorder, uint8_t * pImageData)</code></dt>
+<dd><p><strong> saveRecorderAppendImage </strong> accepts the next frame’s raw image data, encodes it, and appends it to the video file. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pImageData</span></code>: <ul>
+<li>Type: uint8_t*</li>
+<li>[Out] parameter</li>
+<li>Frame data to append</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="saverecorderclose">
+<h2>saveRecorderClose<a class="headerlink" href="#saverecorderclose" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_save_c_video_recorder_8h_1a71894a625bfe0049f0e1e6700b0b71e3"></span><code class="descname">SC_ERROR SC_API saveRecorderClose(saveRecorder hRecorder)</code></dt>
+<dd><p><strong> saveRecorderClose </strong> cleans up memory and settings of the video, concluding the currently recorded video.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: SC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns SC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hRecorder</span></code>: <ul>
+<li>Type: saveRecorder</li>
+<li>[In] parameter</li>
+<li>A video recorder</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>additional frames cannot be appended once the file has been closed </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_save_imagereader.html" class="btn btn-neutral float-right" title="ImageReader" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_save_imagewriter.html" class="btn btn-neutral" title="ImageWriter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

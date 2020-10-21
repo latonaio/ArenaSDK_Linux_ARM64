@@ -1,0 +1,913 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Arena SDK for Windows &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="next" title="Arena SDK for Linux" href="arena_sdk_linux.html"/>
+        <link rel="prev" title="Arena SDK Datasheet" href="getting_started_sdk_datasheet.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Arena SDK for Windows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#initial-configuration-in-windows">Initial Configuration in Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ethernet-adapter-configuration">Ethernet Adapter Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-the-ethernet-driver">Installing the Ethernet Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lucid-lightweight-filter-driver-for-windows">LUCID Lightweight Filter Driver for Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-the-lucid-lightweight-filter-driver-with-lucid-driver-installer">Installing the LUCID Lightweight Filter Driver with LUCID Driver Installer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jumbo-frames">Jumbo Frames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#receive-buffers">Receive Buffers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ip-address-assignment">IP Address Assignment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#camera-ip-setup">Camera IP Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-persistent-ip-or-dhcp-on-the-camera-with-ip-config-utility">Setting Up Persistent IP or DHCP on the Camera with IP Config Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#forcing-an-ip-address-on-the-camera-with-ip-config-utility">Forcing an IP Address on the Camera with IP Config Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-lla-on-the-ethernet-adapter">Setting Up LLA on the Ethernet Adapter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started-with-arenaview-in-windows">Getting Started with ArenaView in Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#launching-arenaview">Launching ArenaView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controlling-your-camera-in-arenaview">Controlling Your Camera in ArenaView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-images-in-arenaview">Saving images in ArenaView</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#distributing-arena-sdk-programs-for-windows">Distributing Arena SDK Programs for Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#microsoft-visual-c-redistributables">Microsoft Visual C++ Redistributables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#microsoft-net-framework">Microsoft .NET Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arena-sdk">Arena SDK</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Arena SDK for Windows</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arena-sdk-for-windows">
+<h1>Arena SDK for Windows<a class="headerlink" href="#arena-sdk-for-windows" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="initial-configuration-in-windows">
+<h2>Initial Configuration in Windows<a class="headerlink" href="#initial-configuration-in-windows" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ethernet-adapter-configuration">
+<h3>Ethernet Adapter Configuration<a class="headerlink" href="#ethernet-adapter-configuration" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="installing-the-ethernet-driver">
+<h3>Installing the Ethernet Driver<a class="headerlink" href="#installing-the-ethernet-driver" title="Permalink to this headline">¶</a></h3>
+<p>LUCID recommends updating the Ethernet driver on your Ethernet adapter to the latest driver available before connecting your camera. You may need to navigate to the manufacturer’s website to get the latest version of the Ethernet driver.</p>
+</div>
+<div class="section" id="lucid-lightweight-filter-driver-for-windows">
+<h3>LUCID Lightweight Filter Driver for Windows<a class="headerlink" href="#lucid-lightweight-filter-driver-for-windows" title="Permalink to this headline">¶</a></h3>
+<p>LUCID recommends installing the LUCID Lightweight Filter Driver included with the Arena SDK as it can reduce CPU load and improve streaming performance on the host system. The LUCID Lightweight Filter Driver is installed as a network service and filters out GVSP packets before being passed up Microsoft’s UDP stack.</p>
+<p>You can install the LUCID Lightweight Filter Driver during SDK installation, or you can install it manually after.</p>
+</div>
+<div class="section" id="installing-the-lucid-lightweight-filter-driver-with-lucid-driver-installer">
+<h3>Installing the LUCID Lightweight Filter Driver with LUCID Driver Installer<a class="headerlink" href="#installing-the-lucid-lightweight-filter-driver-with-lucid-driver-installer" title="Permalink to this headline">¶</a></h3>
+<p>Arena SDK provides a simple command-line utility named LUCID Driver Installer that can be used to install the LUCID Lightweight Filter Driver.</p>
+<p>The following command shows how to install the LUCID Lightweight Filter Driver on a 64-bit system:</p>
+<p>Windows 10:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> LUCIDDriverInstaller -i <span class="s2">&quot;C:\Program Files\Lucid Vision Labs\Arena SDK\driver64\Lucid Lwf\Windows 10\Lucidlwf.inf&quot;</span>
+</pre></div>
+</div>
+<p>Windows 7:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> LUCIDDriverInstaller -i <span class="s2">&quot;C:\Program Files\Lucid Vision Labs\Arena SDK\driver64\Lucid Lwf\Windows 7\Lucidlwf.inf&quot;</span>
+</pre></div>
+</div>
+<p>The following command shows how to uninstall the LUCID Lightweight Filter Driver:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> LUCIDDriverInstaller -u
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="_images/help_icon.png"><img alt="help" src="_images/help_icon.png" style="width: 70px;" /></a></td>
+<td>LUCID Driver Installer must be run with administrator privileges.</td>
+</tr>
+</tbody>
+</table>
+<p>You can also install the LUCID Lightweight Filter Driver manually using the following steps:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Open <strong>Network and Sharing Center</strong></p>
+</li>
+<li><p class="first">Right-click on your Ethernet adapter and click <strong>Properties</strong></p>
+</li>
+<li><p class="first">Click <strong>Install</strong> in the Ethernet adapter’s properties window</p>
+</li>
+<li><p class="first">Choose <strong>Service</strong> in the Network Feature Type window</p>
+<blockquote>
+<div><img alt="_images/windows_install_network_service.png" src="_images/windows_install_network_service.png" />
+</div></blockquote>
+</li>
+<li><p class="first">Find the LUCID Lightweight Filter Driver in the Network Service window, and click OK to install the service.</p>
+<blockquote>
+<div><img alt="_images/windows_install_filter_driver.png" src="_images/windows_install_filter_driver.png" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="92%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="_images/lightbulb_icon.png"><img alt="lightbulb" src="_images/lightbulb_icon.png" style="width: 70px;" /></a></td>
+<td><p class="first">If the LUCID Lightweight Filter Driver is not available in the Network Service window, click <strong>Have Disk</strong> to find the filter driver manually.</p>
+<ul class="last simple">
+<li>On a 64-bit system, the filter driver is located in C:\Program Files\Lucid Vision Labs\Arena SDK\driver64\Lucid Lwf</li>
+<li>On a 32-bit system, the filter driver is located in C:\Program Files\Lucid Vision Labs\Arena SDK\driver\Lucid Lwf</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+<li><p class="first">Verify the LUCID Lightweight Filter Driver is installed in the Ethernet adapter’s properties window.</p>
+<blockquote>
+<div><img alt="_images/windows_filter_driver.png" src="_images/windows_filter_driver.png" />
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="jumbo-frames">
+<h3>Jumbo Frames<a class="headerlink" href="#jumbo-frames" title="Permalink to this headline">¶</a></h3>
+<p>LUCID recommends enabling jumbo frames on your Ethernet adapter. A jumbo frame is an Ethernet frame that is larger than 1500 bytes. Most Ethernet adapters support jumbo frames, however it is usually turned off by default.</p>
+<p>Enabling jumbo frames on the Ethernet adapter allows a packet size of up to 9000 bytes to be set on the camera. The larger packet size will enable optimal performance on high-bandwidth cameras, and it usually reduces CPU load on the host system. Please note in order to set a 9000 byte packet size on the camera, the Ethernet adapter must support a jumbo frame size of 9000 bytes or higher. Jumbo frames can be enabled in your Ethernet adapter’s properties.</p>
+<img alt="_images/windows_adapter_jumbo_frames.png" src="_images/windows_adapter_jumbo_frames.png" />
+<p>Once you have enabled jumbo frames on the Ethernet adapter, you can set a larger packet size on your camera. The following screenshot shows setting a 9000 byte packet size in ArenaView:</p>
+<img alt="_images/windows_arenaview_jumbo_frames.png" src="_images/windows_arenaview_jumbo_frames.png" />
+</div>
+<div class="section" id="receive-buffers">
+<h3>Receive Buffers<a class="headerlink" href="#receive-buffers" title="Permalink to this headline">¶</a></h3>
+<p>A receive buffer is the size of system memory that can be used by the Ethernet adapter to receive packets. Some network adapter drivers or the operating system itself may set the receive buffer value to a low value by default, which may result in decreased performance. Increasing the receive buffer size, however, will also result in increased system memory usage. The receive buffer size can be adjusted in your Ethernet adapter’s properties.</p>
+<img alt="_images/windows_adapter_receive_buffer.png" src="_images/windows_adapter_receive_buffer.png" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="91%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="_images/help_icon.png"><img alt="help" src="_images/help_icon.png" style="width: 70px;" /></a></td>
+<td>Using your Ethernet adapter’s maximum supported receive buffer size is recommended.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ip-address-assignment">
+<h2>IP Address Assignment<a class="headerlink" href="#ip-address-assignment" title="Permalink to this headline">¶</a></h2>
+<p>There are three methods used by LUCID cameras to obtain an IP address:</p>
+<ul class="simple">
+<li>Persistent - The camera uses a fixed IP address</li>
+<li>Dynamic Host Configuration Protocol (DHCP) - The camera is assigned an address from a DHCP server</li>
+<li>Link-Local Address (LLA) - The camera obtains an address in the Link-Local Address range from 169.254.1.0 to 169.254.254.255</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="92%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="_images/lightbulb_icon.png"><img alt="lightbulb" src="_images/lightbulb_icon.png" style="width: 70px;" /></a></td>
+<td>A Link-Local Address is selected with a pseudo-random number generator, so an LLA address cannot be reliably predicted.
+If you require a consistent IP address, you should set up a persistent IP on the camera.
+For more information on Link-Local Address selection, refer to <a class="reference external" href="https://tools.ietf.org/html/rfc3927#section-2.1">Section 2.1 in RFC 3927</a>.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="2"><a class="reference internal" href="_images/help_icon.png"><img alt="help" src="_images/help_icon.png" style="width: 70px;" /></a></td>
+<td rowspan="2">The camera must be on the same subnet as the Ethernet adapter and have a valid IP address before use.</td>
+</tr>
+<tr class="row-even"></tr>
+</tbody>
+</table>
+<div class="section" id="camera-ip-setup">
+<h3>Camera IP Setup<a class="headerlink" href="#camera-ip-setup" title="Permalink to this headline">¶</a></h3>
+<p>Persistent IP and DHCP configurations can be disabled on the camera. The default camera configuration is as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Persistent IP</strong></td>
+<td>Disabled</td>
+</tr>
+<tr class="row-even"><td><strong>DHCP</strong></td>
+<td>Enabled</td>
+</tr>
+<tr class="row-odd"><td><strong>LLA</strong></td>
+<td>Enabled (always enabled)</td>
+</tr>
+</tbody>
+</table>
+<p>Out of the box, the camera first attempts to connect using DHCP. If the camera is unable to connect using DHCP, it will use Link-Local Addressing.</p>
+</div>
+<div class="section" id="setting-up-persistent-ip-or-dhcp-on-the-camera-with-ip-config-utility">
+<h3>Setting Up Persistent IP or DHCP on the Camera with IP Config Utility<a class="headerlink" href="#setting-up-persistent-ip-or-dhcp-on-the-camera-with-ip-config-utility" title="Permalink to this headline">¶</a></h3>
+<p>Arena SDK provides a simple command-line utility named IP Config Utility to configure your camera’s IP address.</p>
+<p>The following command shows all connected cameras:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> IPConfigUtility /list
+
+[index] MAC             IP              SUBNET          GATEWAY                 IP CONFIG
+[0]     1C0FAF000001    169.254.101.0   255.255.0.0     0.0.0.0                 DHCP= 1 Persistent Ip= 1 LLA = 1
+</pre></div>
+</div>
+<p>The following commands show how to enable and set a persistent IP address on a camera with the MAC address of 1C:0F:AF:00:00:01:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> IPConfigUtility /config -m 1C0FAF000001 -p true
+<span class="p">&gt;</span> IPConfigUtility /persist -m 1C0FAF000001 -p true -a 192.168.0.10 -s 255.255.0.0 -g 0.0.0.0
+</pre></div>
+</div>
+<p>The following commands show how to enable persistent IP and set a persistent IP address on a camera listed at index 0:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> IPConfigUtility /config -i 0 -p true
+<span class="p">&gt;</span> IPConfigUtility /persist -i 0 -p true -a 192.168.0.10 -s 255.255.0.0 -g 0.0.0.0
+</pre></div>
+</div>
+<p>The following command shows how to enable DHCP on a camera listed at index 0:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> IPConfigUtility /config -i 0 -d true
+</pre></div>
+</div>
+<p>The following commands show how to enable persistent IP and DHCP and set a persistent IP address on a camera listed at index 0:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> IPConfigUtility /config -i 0 -p true -d true
+<span class="p">&gt;</span> IPConfigUtility /persist -i 0 -p true -a 192.168.0.10 -s 255.255.0.0 -g 0.0.0.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="forcing-an-ip-address-on-the-camera-with-ip-config-utility">
+<h3>Forcing an IP Address on the Camera with IP Config Utility<a class="headerlink" href="#forcing-an-ip-address-on-the-camera-with-ip-config-utility" title="Permalink to this headline">¶</a></h3>
+<p>The following command shows how to force an IP address on a camera with the MAC address of 1C:0F:AF:00:00:01:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> IPConfigUtility /force -m 1C0FAF000001 -a 192.168.0.10 -s 255.255.0.0 -g 0.0.0.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-lla-on-the-ethernet-adapter">
+<h3>Setting Up LLA on the Ethernet Adapter<a class="headerlink" href="#setting-up-lla-on-the-ethernet-adapter" title="Permalink to this headline">¶</a></h3>
+<p>The following steps illustrate an example configuration for one Ethernet adapter to use the LLA space.</p>
+<ol class="arabic">
+<li><p class="first">Navigate to Control Panel -&gt; Network and Internet -&gt; Network and Sharing Center</p>
+</li>
+<li><p class="first">Click <strong>Change adapter settings</strong></p>
+<img alt="_images/windows_adapter_settings.png" src="_images/windows_adapter_settings.png" />
+</li>
+<li><p class="first">Right-click on your Ethernet adapter and click <strong>Properties</strong></p>
+<img alt="_images/windows_select_properties.png" src="_images/windows_select_properties.png" />
+</li>
+<li><p class="first">Select <strong>Internet Protocol Version 4 (TCP/IPv4)</strong> and click <strong>Properties</strong></p>
+<img alt="_images/windows_ethernet_properties.png" src="_images/windows_ethernet_properties.png" />
+</li>
+<li><p class="first">Select <strong>Use the following IP address</strong> and enter the following details:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="57%" />
+<col width="43%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>IP address</strong></td>
+<td>169.254.0.1</td>
+</tr>
+<tr class="row-even"><td><strong>Subnet mask</strong></td>
+<td>255.255.0.0</td>
+</tr>
+</tbody>
+</table>
+<img alt="_images/windows_ipv4_properties.png" src="_images/windows_ipv4_properties.png" />
+<p>Default gateway and DNS server details can be left blank.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="getting-started-with-arenaview-in-windows">
+<h2>Getting Started with ArenaView in Windows<a class="headerlink" href="#getting-started-with-arenaview-in-windows" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="launching-arenaview">
+<h3>Launching ArenaView<a class="headerlink" href="#launching-arenaview" title="Permalink to this headline">¶</a></h3>
+<p>To launch ArenaView, click Start -&gt; All Programs -&gt; Lucid Vision Labs -&gt; ArenaView</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview.png" src="_images/windows_arenaview.png" />
+</div></blockquote>
+<p>On a default installation, ArenaView gets installed in C:\ProgramData\Lucid Vision Labs\ArenaView.</p>
+</div>
+<div class="section" id="controlling-your-camera-in-arenaview">
+<h3>Controlling Your Camera in ArenaView<a class="headerlink" href="#controlling-your-camera-in-arenaview" title="Permalink to this headline">¶</a></h3>
+<p>Select your camera in the <strong>Camera</strong> window pane. Double-click on the camera to connect to the camera.</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_camera_selection.png" src="_images/windows_arenaview_camera_selection.png" />
+</div></blockquote>
+<p>Cameras that have an invalid IP address will be highlighted in light red. Double-click on the camera to force it to a valid IP address.</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_camera_selection_misconfigured_ip.png" src="_images/windows_arenaview_camera_selection_misconfigured_ip.png" />
+</div></blockquote>
+<p>After selecting your camera, the <strong>Features</strong> window pane will be filled with the camera feature list which allows you to change settings on the camera.</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_feature_list.png" src="_images/windows_arenaview_feature_list.png" />
+</div></blockquote>
+<p>Click on the feature name’s value to change its value. You may need to stop streaming the camera to change certain features.</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_feature_value.png" src="_images/windows_arenaview_feature_value.png" />
+</div></blockquote>
+<p>You can find more information for a feature by clicking on it and looking at the <strong>Properties</strong> window pane.</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_feature_properties.png" src="_images/windows_arenaview_feature_properties.png" />
+</div></blockquote>
+<p>ArenaView also includes the option to enable Packet Resend, which is the functionality for the software to request lost packets. More information about Packet Resend can be found at our Tech Brief here: <a class="reference external" href="https://thinklucid.com/tech-briefs/gigabit-ethernet-the-efficient-and-reliable-interface/#resends">https://thinklucid.com/tech-briefs/gigabit-ethernet-the-efficient-and-reliable-interface/#resends</a>.
+If you see packet loss or torn images while streaming in ArenaView, you can enable this feature by setting TL DataStream Parameters -&gt; Buffer Handling Control -&gt; Packet Resend Enable to On.</p>
+<blockquote>
+<div><img alt="images/packet_resend_enable.png" src="images/packet_resend_enable.png" />
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="_images/lightbulb_icon.png"><img alt="lightbulb" src="_images/lightbulb_icon.png" style="width: 70px;" /></a></td>
+<td>Stop the camera stream before changing the Packet Resend option.</td>
+</tr>
+</tbody>
+</table>
+<p>The ArenaView toolbar has the following buttons:</p>
+<ol class="arabic simple">
+<li>Click <a class="reference internal" href="_images/windows_arenaview_button_snapshot.png"><img alt="windows_arenaview_button_snapshot" src="_images/windows_arenaview_button_snapshot.png" style="width: 30px;" /></a> to acquire a single image. This will open a new tab.</li>
+<li>Click <a class="reference internal" href="_images/windows_arenaview_button_continuous.png"><img alt="windows_arenaview_button_continuous" src="_images/windows_arenaview_button_continuous.png" style="width: 30px;" /></a> to continuously acquire images. This will open a new tab.</li>
+<li>Click <a class="reference internal" href="_images/windows_arenaview_button_stop.png"><img alt="windows_arenaview_button_stop" src="_images/windows_arenaview_button_stop.png" style="width: 30px;" /></a> to stop acquisition and close the current tab.</li>
+</ol>
+<p>Use the <strong>Node List</strong> toggle in the Features window pane to switch between the following modes:</p>
+<ul class="simple">
+<li><img alt="windows_arenaview_visibility_simple" src="_images/windows_arenaview_visibility_simple.png" /> shows beginner camera features</li>
+<li><img alt="windows_arenaview_visibility_complete" src="_images/windows_arenaview_visibility_complete.png" /> shows all camera features</li>
+</ul>
+<p>Use the <strong>Filter</strong> to filter specific camera features. Include boolean operators such as OR to filter multiple feature names:</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_feature_list_filter.png" src="_images/windows_arenaview_feature_list_filter.png" />
+</div></blockquote>
+<p>The <strong>Log</strong> window pane displays connection updates (camera arrival or removal) and streaming information for the camera.</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_log.png" src="_images/windows_arenaview_log.png" />
+</div></blockquote>
+</div>
+<div class="section" id="saving-images-in-arenaview">
+<h3>Saving images in ArenaView<a class="headerlink" href="#saving-images-in-arenaview" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Click <a class="reference internal" href="_images/windows_arenaview_button_snapshot.png"><img alt="windows_arenaview_button_snapshot" src="_images/windows_arenaview_button_snapshot.png" style="width: 30px;" /></a> to acquire a single image. This will open a new tab.</li>
+<li>Click <a class="reference internal" href="_images/windows_arenaview_button_save.png"><img alt="windows_arenaview_button_save" src="_images/windows_arenaview_button_save.png" style="width: 30px;" /></a> or File -&gt; Save to save an image.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="distributing-arena-sdk-programs-for-windows">
+<h2>Distributing Arena SDK Programs for Windows<a class="headerlink" href="#distributing-arena-sdk-programs-for-windows" title="Permalink to this headline">¶</a></h2>
+<p>This document will describe the requirements you will need when distributing your Arena SDK-based program to another Windows system.</p>
+<div class="section" id="microsoft-visual-c-redistributables">
+<h3>Microsoft Visual C++ Redistributables<a class="headerlink" href="#microsoft-visual-c-redistributables" title="Permalink to this headline">¶</a></h3>
+<p>The Microsoft Visual C++ Redistributables should be installed first. The redistributable to be installed depends on the architecture of the program. For example, a 32-bit program will only need the 32-bit redistributables.</p>
+<p>Microsoft Visual C++ 2015 Redistributable:</p>
+<ul class="simple">
+<li>32-bit (x86): 14.0.24215</li>
+<li>64-bit (x64): 14.0.24215</li>
+<li><a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=53840">https://www.microsoft.com/en-us/download/details.aspx?id=53840</a></li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="_images/lightbulb_icon.png"><img alt="lightbulb" src="_images/lightbulb_icon.png" style="width: 70px;" /></a></td>
+<td><p class="first">For further information on the Microsoft Visual C++ Redistributables, please see Microsoft’s article titled <strong>Redistributing Visual C++ Files</strong>:</p>
+<ul class="last simple">
+<li>For Visual Studio 2015: <a class="reference external" href="https://msdn.microsoft.com/en-us/library/ms235299(v=vs.140).aspx">https://msdn.microsoft.com/en-us/library/ms235299(v=vs.140).aspx</a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="microsoft-net-framework">
+<h3>Microsoft .NET Framework<a class="headerlink" href="#microsoft-net-framework" title="Permalink to this headline">¶</a></h3>
+<p>Microsoft .NET Framework version 4.5.2 or later is required for programs using the ArenaNET libraries. The  Microsoft .NET Framework offline installer for version 4.5.2 can be found at this link:
+<a class="reference external" href="https://www.microsoft.com/en-ca/download/details.aspx?id=42642">https://www.microsoft.com/en-ca/download/details.aspx?id=42642</a></p>
+</div>
+<div class="section" id="arena-sdk">
+<h3>Arena SDK<a class="headerlink" href="#arena-sdk" title="Permalink to this headline">¶</a></h3>
+<p>The following files must be placed in the same directory as your executable. This document describes distributing release versions of the Arena SDK libraries and its required dependencies. The debug libraries included with Arena SDK have an additional <strong>d</strong> after the library name (e.x. Arena<strong>d</strong>_v140.dll) and can be used for development purposes, however the debug libraries should not be distributed to production machines.</p>
+<p>✓ = file is required.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="70%" />
+<col width="10%" />
+<col width="8%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Arena SDK main libraries</strong></th>
+<th class="head"><strong>C++</strong></th>
+<th class="head"><strong>C</strong></th>
+<th class="head"><strong>.NET</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Arena_v140.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>ArenaC_v140.dll</td>
+<td>&#160;</td>
+<td>✓</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>ArenaNET_v140.dll</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="70%" />
+<col width="10%" />
+<col width="8%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Arena UI</strong></th>
+<th class="head"><strong>C++</strong></th>
+<th class="head"><strong>C</strong></th>
+<th class="head"><strong>.NET</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ArenaUI_v140.dll</td>
+<td>✓</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="70%" />
+<col width="10%" />
+<col width="8%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>LUCID Save API</strong></th>
+<th class="head"><strong>C++</strong></th>
+<th class="head"><strong>C</strong></th>
+<th class="head"><strong>C#</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Save_v140.dll</td>
+<td>✓</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>SaveC_v140.dll</td>
+<td>&#160;</td>
+<td>✓</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>avcodec-58.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>avdevice-58.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>avfilter-7.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>avformat-58.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>avutil-56.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>postproc-55.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>swresample-3.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>swscale-5.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="70%" />
+<col width="10%" />
+<col width="8%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>FreeImage</strong></th>
+<th class="head"><strong>C++</strong></th>
+<th class="head"><strong>C</strong></th>
+<th class="head"><strong>.NET</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>FreeImage_v140.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="70%" />
+<col width="10%" />
+<col width="8%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Logging</strong></th>
+<th class="head"><strong>C++</strong></th>
+<th class="head"><strong>C</strong></th>
+<th class="head"><strong>.NET</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>log4cpp.properties</td>
+<td colspan="3">Optional</td>
+</tr>
+</tbody>
+</table>
+<p>If the log4cpp.properties file is included, Arena SDK and GenTL log files will be created in the executable’s path.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="70%" />
+<col width="10%" />
+<col width="8%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>GenTL</strong></th>
+<th class="head"><strong>C++</strong></th>
+<th class="head"><strong>C</strong></th>
+<th class="head"><strong>.NET</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GenTL_LUCID_v140.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="70%" />
+<col width="10%" />
+<col width="8%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>GenICam</strong></th>
+<th class="head"><strong>C++</strong></th>
+<th class="head"><strong>C</strong></th>
+<th class="head"><strong>.NET</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CLAllSerial_MD_VC140_v3_1_LUCID.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>CLProtocol_MD_VC140_v3_1_LUCID.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>GCBase_MD_VC140_v3_1_LUCID.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>GenApi_MD_VC140_v3_1_LUCID.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>Log_MD_VC140_v3_1_LUCID.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>MathParser_MD_VC140_v3_1_LUCID.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>NodeMapData_MD_VC140_v3_1_LUCID.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>ResUsageStat_MD_VC140_v3_1_LUCID.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>XmlParser_MD_VC140_v3_1_LUCID.dll</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p>The following files must be placed in a subfolder named <strong>xml</strong>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="70%" />
+<col width="10%" />
+<col width="8%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>GenTL Transport Layer XML files</strong></th>
+<th class="head"><strong>C++</strong></th>
+<th class="head"><strong>C</strong></th>
+<th class="head"><strong>.NET</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SFNC_GenTLBuffer_Reference_Version_1_0_0_Schema_1_1.xml</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>SFNC_GenTLDataStream_Reference_Version_1_0_0_Schema_1_1.xml</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>SFNC_GenTLDevice_Reference_Version_1_0_0_Schema_1_1.xml</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>SFNC_GenTLInterface_Reference_Version_1_0_0_Schema_1_1.xml</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>SFNC_GenTLSystem_Reference_Version_1_0_0_Schema_1_1.xml</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arena_sdk_linux.html" class="btn btn-neutral float-right" title="Arena SDK for Linux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getting_started_sdk_datasheet.html" class="btn btn-neutral" title="Arena SDK Datasheet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

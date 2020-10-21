@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GenTL Device Features &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="GenTL Features" href="gentl.html"/>
+        <link rel="next" title="GenTL Stream Features" href="gentl_stream.html"/>
+        <link rel="prev" title="GenTL Interface Features" href="gentl_interface.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gentl.html">GenTL Features</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gentl_system.html">GenTL System Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gentl_interface.html">GenTL Interface Features</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">GenTL Device Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gentl_stream.html">GenTL Stream Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="gentl.html">GenTL Features</a> &raquo;</li>
+        
+      <li>GenTL Device Features</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gentl-device-features">
+<h1>GenTL Device Features<a class="headerlink" href="#gentl-device-features" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Node</th>
+<th class="head">Type (Access)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>DeviceID</td>
+<td>String (RO)</td>
+<td>Interface-wide unique identifier of this device.</td>
+</tr>
+<tr class="row-odd"><td>DeviceSerialNumber</td>
+<td>String (RO)</td>
+<td>Serial number of the remote device.</td>
+</tr>
+<tr class="row-even"><td>DeviceUserID</td>
+<td>String (RO)</td>
+<td>User-programmable device identifier of the remote device.</td>
+</tr>
+<tr class="row-odd"><td>DeviceVendor</td>
+<td>String (RO)</td>
+<td>Name of the remote device vendor.</td>
+</tr>
+<tr class="row-even"><td>DeviceModel</td>
+<td>String (RO)</td>
+<td>Name of the remote device model.</td>
+</tr>
+<tr class="row-odd"><td>DeviceVersion</td>
+<td>String (RO)</td>
+<td>Name of the version of the remote device model.</td>
+</tr>
+<tr class="row-even"><td>DeviceType</td>
+<td>Enumeration (RO)</td>
+<td>Custom transport layer. The entries for this enumeration node are ‘GigEVision’, ‘CameraLink’, ‘CameraLinkHS’, ‘CoaXPress’, ‘USB3Vision’, and ‘Custom’.</td>
+</tr>
+<tr class="row-odd"><td>DeviceDisplay</td>
+<td>String (RO)</td>
+<td>User readable name of the device. If this is not defined in the device this should be “VENDOR MODEL (ID)”.</td>
+</tr>
+<tr class="row-even"><td>DeviceAccessStatus</td>
+<td>Enumeration (RW)</td>
+<td>Non-available devices. The entries for this enumeration node are ‘Unknown’, ‘ReadWrite’, ‘ReadOnly’, and ‘NoAccess’.</td>
+</tr>
+<tr class="row-odd"><td>DeviceEventDataFormat</td>
+<td>Enumeration (RO)</td>
+<td>Custom. The entries for this enumeration node are ‘None’, ‘GigEVision’, and ‘Custom’.</td>
+</tr>
+<tr class="row-even"><td>GevDeviceIPAddress</td>
+<td>Integer (RO)</td>
+<td>Current IP address of the GVCP interface of the remote device.</td>
+</tr>
+<tr class="row-odd"><td>GevDeviceSubnetMask</td>
+<td>Integer (RO)</td>
+<td>Current subnet mask of the GVCP interface of the remote device.</td>
+</tr>
+<tr class="row-even"><td>GevDeviceMACAddress</td>
+<td>Integer (RO)</td>
+<td>48-bit MAC address of the GVCP interface of the remote device.</td>
+</tr>
+<tr class="row-odd"><td>GevDeviceGateway</td>
+<td>Integer (RO)</td>
+<td>Current gateway IP address of the GVCP interface of the remote device.</td>
+</tr>
+<tr class="row-even"><td>DeviceEndianessMechanism</td>
+<td>Enumeration (RW)</td>
+<td>Handling the device endianess according to GenICam Schema 1.1 and later. The entries for this enumeration node are ‘Legacy’ and ‘Standard’.</td>
+</tr>
+<tr class="row-odd"><td>StreamSelector</td>
+<td>Integer (RW)</td>
+<td>Selector for the different stream channels.The selector is 0-based in order to match the index of the C interface.</td>
+</tr>
+<tr class="row-even"><td>StreamID</td>
+<td>String (RO)</td>
+<td>Device unique ID for the stream, e.g. a GUID.</td>
+</tr>
+<tr class="row-odd"><td>ActionCommandDeviceKey</td>
+<td>Integer (RW)</td>
+<td>User-specified Action Command Device Key.</td>
+</tr>
+<tr class="row-even"><td>ActionCommandGroupKey</td>
+<td>Integer (RW)</td>
+<td>User-specified Action Command Group Key.</td>
+</tr>
+<tr class="row-odd"><td>ActionCommandGroupMask</td>
+<td>Integer (RW)</td>
+<td>User-specified Action Command Group Mask.</td>
+</tr>
+<tr class="row-even"><td>ActionCommandExecuteTime</td>
+<td>Integer (RW)</td>
+<td>Time when the device will execute the command.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gentl_stream.html" class="btn btn-neutral float-right" title="GenTL Stream Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gentl_interface.html" class="btn btn-neutral" title="GenTL Interface Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

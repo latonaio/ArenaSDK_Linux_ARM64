@@ -1,0 +1,673 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Definitions &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Save C" href="c_save.html"/>
+        <link rel="next" title="ImageWriter" href="c_save_imagewriter.html"/>
+        <link rel="prev" title="Save C" href="c_save.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="c_arena.html">Arena C</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="c_save.html">Save C</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_save_imagewriter.html">ImageWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_save_videorecorder.html">VideoRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_save_imagereader.html">ImageReader</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_save.html">Save C</a> &raquo;</li>
+        
+      <li>Definitions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="definitions">
+<h1>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="savereader">
+<h2>saveReader<a class="headerlink" href="#savereader" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv310saveReader">
+<span id="_CPPv210saveReader"></span><span id="saveReader"></span><span class="target" id="_save_c_defs_8h_1ac6b7b1b140c53f40e11f5a35c3c9d0df"></span><em class="property">typedef </em><code class="descname">saveReader</code><a class="headerlink" href="#_CPPv310saveReader" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Handle to an image reader, used to read images from disk into Save C. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="savewriter">
+<h2>saveWriter<a class="headerlink" href="#savewriter" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv310saveWriter">
+<span id="_CPPv210saveWriter"></span><span id="saveWriter"></span><span class="target" id="_save_c_defs_8h_1a26f490a496f0b7815330be7ab8e903fb"></span><em class="property">typedef </em><code class="descname">saveWriter</code><a class="headerlink" href="#_CPPv310saveWriter" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Handle to an image writer, used to save images to disk. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="sc-error-list">
+<h2>SC_ERROR_LIST<a class="headerlink" href="#sc-error-list" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv313SC_ERROR_LIST">
+<span id="_CPPv213SC_ERROR_LIST"></span><span id="SC_ERROR_LIST"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eb"></span><em class="property">enum </em><code class="descname">SC_ERROR_LIST</code><a class="headerlink" href="#_CPPv313SC_ERROR_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different errors that a function might return.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Use SC_ERROR integer values in place of SC_ERROR_LIST enum values </li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv314SC_ERR_SUCCESS">
+<span id="_CPPv214SC_ERR_SUCCESS"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba19dc71e309cc0668f345b072e6ac2761"></span><code class="descname">SC_ERR_SUCCESS</code> = 0<a class="headerlink" href="#_CPPv314SC_ERR_SUCCESS" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Success, no error </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv312SC_ERR_ERROR">
+<span id="_CPPv212SC_ERR_ERROR"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba23142eb6439fc1a2de5099ace779ff41"></span><code class="descname">SC_ERR_ERROR</code> = -1001<a class="headerlink" href="#_CPPv312SC_ERR_ERROR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Generic error </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv322SC_ERR_NOT_INITIALIZED">
+<span id="_CPPv222SC_ERR_NOT_INITIALIZED"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba4008e2a7f3d324d204a6ca9015d6963e"></span><code class="descname">SC_ERR_NOT_INITIALIZED</code> = -1002<a class="headerlink" href="#_CPPv322SC_ERR_NOT_INITIALIZED" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Arena SDK not initialized </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv322SC_ERR_NOT_IMPLEMENTED">
+<span id="_CPPv222SC_ERR_NOT_IMPLEMENTED"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba0a7936b483adfb42575eea7a70a782f5"></span><code class="descname">SC_ERR_NOT_IMPLEMENTED</code> = -1003<a class="headerlink" href="#_CPPv322SC_ERR_NOT_IMPLEMENTED" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function not implemented </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv322SC_ERR_RESOURCE_IN_USE">
+<span id="_CPPv222SC_ERR_RESOURCE_IN_USE"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba2c3707d3c6a149111b0b85a2e970537a"></span><code class="descname">SC_ERR_RESOURCE_IN_USE</code> = -1004<a class="headerlink" href="#_CPPv322SC_ERR_RESOURCE_IN_USE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resource already in use </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv320SC_ERR_ACCESS_DENIED">
+<span id="_CPPv220SC_ERR_ACCESS_DENIED"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49ebaee4f531987ea68551e9f48efbb38b217"></span><code class="descname">SC_ERR_ACCESS_DENIED</code> = -1005<a class="headerlink" href="#_CPPv320SC_ERR_ACCESS_DENIED" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Incorrect access </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv321SC_ERR_INVALID_HANDLE">
+<span id="_CPPv221SC_ERR_INVALID_HANDLE"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49ebaad661cb25531bd5b054cdb1a5c28ffb5"></span><code class="descname">SC_ERR_INVALID_HANDLE</code> = -1006<a class="headerlink" href="#_CPPv321SC_ERR_INVALID_HANDLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Null/incorrect handle </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv317SC_ERR_INVALID_ID">
+<span id="_CPPv217SC_ERR_INVALID_ID"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49ebaac092752f0dce0615ad73510bee370e9"></span><code class="descname">SC_ERR_INVALID_ID</code> = -1007<a class="headerlink" href="#_CPPv317SC_ERR_INVALID_ID" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Incorrect ID </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv314SC_ERR_NO_DATA">
+<span id="_CPPv214SC_ERR_NO_DATA"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba29c3953537a8467b42e01aaca8e5fec2"></span><code class="descname">SC_ERR_NO_DATA</code> = -1008<a class="headerlink" href="#_CPPv314SC_ERR_NO_DATA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>No data available </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv324SC_ERR_INVALID_PARAMETER">
+<span id="_CPPv224SC_ERR_INVALID_PARAMETER"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba0a1b904bc12e89b8f93d914cb12be0ca"></span><code class="descname">SC_ERR_INVALID_PARAMETER</code> = -1009<a class="headerlink" href="#_CPPv324SC_ERR_INVALID_PARAMETER" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Null/incorrect parameter </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv39SC_ERR_IO">
+<span id="_CPPv29SC_ERR_IO"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba56b824b65b8cc4e2ed576e635f799a01"></span><code class="descname">SC_ERR_IO</code> = -1010<a class="headerlink" href="#_CPPv39SC_ERR_IO" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Input/output error </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv314SC_ERR_TIMEOUT">
+<span id="_CPPv214SC_ERR_TIMEOUT"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba40d08cf0f289915b07876e29b90c445e"></span><code class="descname">SC_ERR_TIMEOUT</code> = -1011<a class="headerlink" href="#_CPPv314SC_ERR_TIMEOUT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Timed out </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv312SC_ERR_ABORT">
+<span id="_CPPv212SC_ERR_ABORT"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49ebae27ba2274c09279d119b0587b7c08b43"></span><code class="descname">SC_ERR_ABORT</code> = -1012<a class="headerlink" href="#_CPPv312SC_ERR_ABORT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function aborted </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv321SC_ERR_INVALID_BUFFER">
+<span id="_CPPv221SC_ERR_INVALID_BUFFER"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba4c1f1a8037399cbfbc54b3a5d1b91ea2"></span><code class="descname">SC_ERR_INVALID_BUFFER</code> = -1013<a class="headerlink" href="#_CPPv321SC_ERR_INVALID_BUFFER" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Invalid buffer </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv320SC_ERR_NOT_AVAILABLE">
+<span id="_CPPv220SC_ERR_NOT_AVAILABLE"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba82ff54665115c1140a64390d58c5418b"></span><code class="descname">SC_ERR_NOT_AVAILABLE</code> = -1014<a class="headerlink" href="#_CPPv320SC_ERR_NOT_AVAILABLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function not available </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv322SC_ERR_INVALID_ADDRESS">
+<span id="_CPPv222SC_ERR_INVALID_ADDRESS"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba7f3c7071bed4aaf25d50078e325f2574"></span><code class="descname">SC_ERR_INVALID_ADDRESS</code> = -1015<a class="headerlink" href="#_CPPv322SC_ERR_INVALID_ADDRESS" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Invalid register address </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv323SC_ERR_BUFFER_TOO_SMALL">
+<span id="_CPPv223SC_ERR_BUFFER_TOO_SMALL"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49ebaee63be08753ba035970322f4bb794785"></span><code class="descname">SC_ERR_BUFFER_TOO_SMALL</code> = -1016<a class="headerlink" href="#_CPPv323SC_ERR_BUFFER_TOO_SMALL" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Buffer too small </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv320SC_ERR_INVALID_INDEX">
+<span id="_CPPv220SC_ERR_INVALID_INDEX"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba9a536ff65cf7bff22c9b63d24d64aa9f"></span><code class="descname">SC_ERR_INVALID_INDEX</code> = -1017<a class="headerlink" href="#_CPPv320SC_ERR_INVALID_INDEX" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Invalid index </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv325SC_ERR_PARSING_CHUNK_DATA">
+<span id="_CPPv225SC_ERR_PARSING_CHUNK_DATA"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba17cc84fd316a38c8901de98f2ed45865"></span><code class="descname">SC_ERR_PARSING_CHUNK_DATA</code> = -1018<a class="headerlink" href="#_CPPv325SC_ERR_PARSING_CHUNK_DATA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Error parsing chunk data </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv320SC_ERR_INVALID_VALUE">
+<span id="_CPPv220SC_ERR_INVALID_VALUE"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba8c3b3bee7fde1cb3b73359f326cad20c"></span><code class="descname">SC_ERR_INVALID_VALUE</code> = -1019<a class="headerlink" href="#_CPPv320SC_ERR_INVALID_VALUE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Invalid value </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv325SC_ERR_RESOURCE_EXHAUSTED">
+<span id="_CPPv225SC_ERR_RESOURCE_EXHAUSTED"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49eba47c8bba35d1b6c076d74276fbcdd9d31"></span><code class="descname">SC_ERR_RESOURCE_EXHAUSTED</code> = -1020<a class="headerlink" href="#_CPPv325SC_ERR_RESOURCE_EXHAUSTED" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resource cannot perform more actions </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv320SC_ERR_OUT_OF_MEMORY">
+<span id="_CPPv220SC_ERR_OUT_OF_MEMORY"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49ebaa6f1f16c98e6ac469415a6ba075db986"></span><code class="descname">SC_ERR_OUT_OF_MEMORY</code> = -1021<a class="headerlink" href="#_CPPv320SC_ERR_OUT_OF_MEMORY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Not enough memory </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv311SC_ERR_BUSY">
+<span id="_CPPv211SC_ERR_BUSY"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49ebafb0524dca9a951b9b9f1d41ab9648e4b"></span><code class="descname">SC_ERR_BUSY</code> = -1022<a class="headerlink" href="#_CPPv311SC_ERR_BUSY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Busy on anothe process </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv316SC_ERR_CUSTOM_ID">
+<span id="_CPPv216SC_ERR_CUSTOM_ID"></span><span class="target" id="_save_c_defs_8h_1aa11b7d5dd9bf392fa082b50fa63d49ebafd4e7d8de12447ca4fa5ee201e21a224"></span><code class="descname">SC_ERR_CUSTOM_ID</code> = -10000<a class="headerlink" href="#_CPPv316SC_ERR_CUSTOM_ID" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Start adding custom error LIST here </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sc-error">
+<h2>SC_ERROR<a class="headerlink" href="#sc-error" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv38SC_ERROR">
+<span id="_CPPv28SC_ERROR"></span><span id="SC_ERROR"></span><span class="target" id="_save_c_defs_8h_1ac0d9899d355e017b723010cc06dddec7"></span><em class="property">typedef </em><code class="descname">SC_ERROR</code><a class="headerlink" href="#_CPPv38SC_ERROR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the error enum (SC_ERROR_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="sc-format-list">
+<h2>SC_FORMAT_LIST<a class="headerlink" href="#sc-format-list" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv314SC_FORMAT_LIST">
+<span id="_CPPv214SC_FORMAT_LIST"></span><span id="SC_FORMAT_LIST"></span><span class="target" id="_save_c_defs_8h_1af6601b7f5b194351c7b98f7bf1dbafb8"></span><em class="property">enum </em><code class="descname">SC_FORMAT_LIST</code><a class="headerlink" href="#_CPPv314SC_FORMAT_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different file formats that Save C is able to read/write.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Use SC_FORMAT integer values in place of SC_FORMAT_LIST enum values </li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv317SC_FORMAT_UNKNOWN">
+<span id="_CPPv217SC_FORMAT_UNKNOWN"></span><span class="target" id="_save_c_defs_8h_1af6601b7f5b194351c7b98f7bf1dbafb8af5da7ecaa5e593ea722a1efeb24bd56a"></span><code class="descname">SC_FORMAT_UNKNOWN</code> = 0<a class="headerlink" href="#_CPPv317SC_FORMAT_UNKNOWN" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Unknown file format </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv314SC_FORMAT_JPEG">
+<span id="_CPPv214SC_FORMAT_JPEG"></span><span class="target" id="_save_c_defs_8h_1af6601b7f5b194351c7b98f7bf1dbafb8a3a643c46ea09db5e0ffe28ff2fbf2ce8"></span><code class="descname">SC_FORMAT_JPEG</code> = 1<a class="headerlink" href="#_CPPv314SC_FORMAT_JPEG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Jpeg image file format </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv313SC_FORMAT_PNG">
+<span id="_CPPv213SC_FORMAT_PNG"></span><span class="target" id="_save_c_defs_8h_1af6601b7f5b194351c7b98f7bf1dbafb8a898b5aa9c751f919f7f2b6275045901f"></span><code class="descname">SC_FORMAT_PNG</code> = 2<a class="headerlink" href="#_CPPv313SC_FORMAT_PNG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Png image file format </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv314SC_FORMAT_TIFF">
+<span id="_CPPv214SC_FORMAT_TIFF"></span><span class="target" id="_save_c_defs_8h_1af6601b7f5b194351c7b98f7bf1dbafb8a61bac0d2aabd61ac883a85de116c2be6"></span><code class="descname">SC_FORMAT_TIFF</code> = 3<a class="headerlink" href="#_CPPv314SC_FORMAT_TIFF" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Tiff image file format </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv313SC_FORMAT_BMP">
+<span id="_CPPv213SC_FORMAT_BMP"></span><span class="target" id="_save_c_defs_8h_1af6601b7f5b194351c7b98f7bf1dbafb8a24c09134c8361ea8d7f00ac297f07cda"></span><code class="descname">SC_FORMAT_BMP</code> = 4<a class="headerlink" href="#_CPPv313SC_FORMAT_BMP" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Bmp image file format </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv313SC_FORMAT_RAW">
+<span id="_CPPv213SC_FORMAT_RAW"></span><span class="target" id="_save_c_defs_8h_1af6601b7f5b194351c7b98f7bf1dbafb8a300220d3f798ad7765b8e0ab1642bc9f"></span><code class="descname">SC_FORMAT_RAW</code> = 6<a class="headerlink" href="#_CPPv313SC_FORMAT_RAW" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Raw image or video file format </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv313SC_FORMAT_AVI">
+<span id="_CPPv213SC_FORMAT_AVI"></span><span class="target" id="_save_c_defs_8h_1af6601b7f5b194351c7b98f7bf1dbafb8ae46f45cf09063d6e01ddf2f3a199653a"></span><code class="descname">SC_FORMAT_AVI</code> = 7<a class="headerlink" href="#_CPPv313SC_FORMAT_AVI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Avi video file format </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv313SC_FORMAT_MOV">
+<span id="_CPPv213SC_FORMAT_MOV"></span><span class="target" id="_save_c_defs_8h_1af6601b7f5b194351c7b98f7bf1dbafb8a50238c4887091f6aba871f55d3e7b805"></span><code class="descname">SC_FORMAT_MOV</code> = 8<a class="headerlink" href="#_CPPv313SC_FORMAT_MOV" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Mov video file format </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv313SC_FORMAT_MP4">
+<span id="_CPPv213SC_FORMAT_MP4"></span><span class="target" id="_save_c_defs_8h_1af6601b7f5b194351c7b98f7bf1dbafb8a869a0c533b4e90d9ba7368e86702b9b3"></span><code class="descname">SC_FORMAT_MP4</code> = 9<a class="headerlink" href="#_CPPv313SC_FORMAT_MP4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Mpeg-4 video file format </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv313SC_FORMAT_PLY">
+<span id="_CPPv213SC_FORMAT_PLY"></span><span class="target" id="_save_c_defs_8h_1af6601b7f5b194351c7b98f7bf1dbafb8a2aad9b5cd7fac7afc3d9a9141af430c9"></span><code class="descname">SC_FORMAT_PLY</code> = 10<a class="headerlink" href="#_CPPv313SC_FORMAT_PLY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ply 3D pointcloud file format </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sc-format">
+<h2>SC_FORMAT<a class="headerlink" href="#sc-format" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv39SC_FORMAT">
+<span id="_CPPv29SC_FORMAT"></span><span id="SC_FORMAT"></span><span class="target" id="_save_c_defs_8h_1a50636fab478e7acc38bc3b8c356f5275"></span><em class="property">typedef </em><code class="descname">SC_FORMAT</code><a class="headerlink" href="#_CPPv39SC_FORMAT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the file format enum (SC_FORMAT_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="sc-jpeg-subsampling-list">
+<h2>SC_JPEG_SUBSAMPLING_LIST<a class="headerlink" href="#sc-jpeg-subsampling-list" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv324SC_JPEG_SUBSAMPLING_LIST">
+<span id="_CPPv224SC_JPEG_SUBSAMPLING_LIST"></span><span id="SC_JPEG_SUBSAMPLING_LIST"></span><span class="target" id="_save_c_defs_8h_1a4d5247560bf24871421f45700522957c"></span><em class="property">enum </em><code class="descname">SC_JPEG_SUBSAMPLING_LIST</code><a class="headerlink" href="#_CPPv324SC_JPEG_SUBSAMPLING_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different subsampling options when saving JPEG images.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Use SC_JPEG_SUBSAMPLING integer values in place of SC_JPEG_SUBSAMPLING_LIST enum values </li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv322SC_NO_JPEG_SUBSAMPLING">
+<span id="_CPPv222SC_NO_JPEG_SUBSAMPLING"></span><span class="target" id="_save_c_defs_8h_1a4d5247560bf24871421f45700522957ca9869dee2992e7cd8a110785e51292c69"></span><code class="descname">SC_NO_JPEG_SUBSAMPLING</code> = 0<a class="headerlink" href="#_CPPv322SC_NO_JPEG_SUBSAMPLING" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save with no chroma subsampling (4:4:4) </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv323SC_JPEG_SUBSAMPLING_411">
+<span id="_CPPv223SC_JPEG_SUBSAMPLING_411"></span><span class="target" id="_save_c_defs_8h_1a4d5247560bf24871421f45700522957ca1b0217b80daf27a08a4c9b9891f5590f"></span><code class="descname">SC_JPEG_SUBSAMPLING_411</code> = 1<a class="headerlink" href="#_CPPv323SC_JPEG_SUBSAMPLING_411" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save with high 4x1 chroma subsampling (4:1:1) </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv323SC_JPEG_SUBSAMPLING_420">
+<span id="_CPPv223SC_JPEG_SUBSAMPLING_420"></span><span class="target" id="_save_c_defs_8h_1a4d5247560bf24871421f45700522957cada1e0c37402c4aa24ed43a9988234a68"></span><code class="descname">SC_JPEG_SUBSAMPLING_420</code> = 2<a class="headerlink" href="#_CPPv323SC_JPEG_SUBSAMPLING_420" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save with medium 2x2 chroma subsampling (4:2:0) </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv323SC_JPEG_SUBSAMPLING_422">
+<span id="_CPPv223SC_JPEG_SUBSAMPLING_422"></span><span class="target" id="_save_c_defs_8h_1a4d5247560bf24871421f45700522957cadfa34538e67891914a30c18d156e4d08"></span><code class="descname">SC_JPEG_SUBSAMPLING_422</code> = 3<a class="headerlink" href="#_CPPv323SC_JPEG_SUBSAMPLING_422" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save with low 2x1 chroma subsampling (4:2:2) </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sc-jpeg-subsampling">
+<h2>SC_JPEG_SUBSAMPLING<a class="headerlink" href="#sc-jpeg-subsampling" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv319SC_JPEG_SUBSAMPLING">
+<span id="_CPPv219SC_JPEG_SUBSAMPLING"></span><span id="SC_JPEG_SUBSAMPLING"></span><span class="target" id="_save_c_defs_8h_1a008d9103d39ab1269c34af774b1c91c8"></span><em class="property">typedef </em><code class="descname">SC_JPEG_SUBSAMPLING</code><a class="headerlink" href="#_CPPv319SC_JPEG_SUBSAMPLING" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the file format enum (SC_JPEG_SUBSAMPLING_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="sc-tiff-compression-list">
+<h2>SC_TIFF_COMPRESSION_LIST<a class="headerlink" href="#sc-tiff-compression-list" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv324SC_TIFF_COMPRESSION_LIST">
+<span id="_CPPv224SC_TIFF_COMPRESSION_LIST"></span><span id="SC_TIFF_COMPRESSION_LIST"></span><span class="target" id="_save_c_defs_8h_1a0a9d973b9178684a1ac03f4a2dafd5d7"></span><em class="property">enum </em><code class="descname">SC_TIFF_COMPRESSION_LIST</code><a class="headerlink" href="#_CPPv324SC_TIFF_COMPRESSION_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different compression options when saving TIFF images.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Use SC_TIFF_COMPRESSION integer values in place of SC_TIFF_COMPRESSION_LIST enum values </li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv322SC_NO_TIFF_COMPRESSION">
+<span id="_CPPv222SC_NO_TIFF_COMPRESSION"></span><span class="target" id="_save_c_defs_8h_1a0a9d973b9178684a1ac03f4a2dafd5d7af512c85e6ff3bf9eb72c76a488cfba30"></span><code class="descname">SC_NO_TIFF_COMPRESSION</code> = 0<a class="headerlink" href="#_CPPv322SC_NO_TIFF_COMPRESSION" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save without any compression </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv328SC_TIFF_COMPRESSION_PACKBITS">
+<span id="_CPPv228SC_TIFF_COMPRESSION_PACKBITS"></span><span class="target" id="_save_c_defs_8h_1a0a9d973b9178684a1ac03f4a2dafd5d7ab164348ddc85bdaf01d1f192722ac27f"></span><code class="descname">SC_TIFF_COMPRESSION_PACKBITS</code> = 1<a class="headerlink" href="#_CPPv328SC_TIFF_COMPRESSION_PACKBITS" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save using PACKBITS compression </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv327SC_TIFF_COMPRESSION_DEFLATE">
+<span id="_CPPv227SC_TIFF_COMPRESSION_DEFLATE"></span><span class="target" id="_save_c_defs_8h_1a0a9d973b9178684a1ac03f4a2dafd5d7ad0a207490cd6b7d7298eddc1d675453c"></span><code class="descname">SC_TIFF_COMPRESSION_DEFLATE</code> = 2<a class="headerlink" href="#_CPPv327SC_TIFF_COMPRESSION_DEFLATE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save using DEFLATE compression (also known as ZLIP compression </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv333SC_TIFF_COMPRESSION_ADOBE_DEFLATE">
+<span id="_CPPv233SC_TIFF_COMPRESSION_ADOBE_DEFLATE"></span><span class="target" id="_save_c_defs_8h_1a0a9d973b9178684a1ac03f4a2dafd5d7a5dc5f16e85e902a5553ad1ad8616956b"></span><code class="descname">SC_TIFF_COMPRESSION_ADOBE_DEFLATE</code> = 3<a class="headerlink" href="#_CPPv333SC_TIFF_COMPRESSION_ADOBE_DEFLATE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save using ADOBE DEFLATE compression </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv329SC_TIFF_COMPRESSION_CCITTFAX3">
+<span id="_CPPv229SC_TIFF_COMPRESSION_CCITTFAX3"></span><span class="target" id="_save_c_defs_8h_1a0a9d973b9178684a1ac03f4a2dafd5d7a6dae232c6a466b6b3f318755e19bf7ae"></span><code class="descname">SC_TIFF_COMPRESSION_CCITTFAX3</code> = 4<a class="headerlink" href="#_CPPv329SC_TIFF_COMPRESSION_CCITTFAX3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save using CCITT Group 3 fax encoding </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv329SC_TIFF_COMPRESSION_CCITTFAX4">
+<span id="_CPPv229SC_TIFF_COMPRESSION_CCITTFAX4"></span><span class="target" id="_save_c_defs_8h_1a0a9d973b9178684a1ac03f4a2dafd5d7a46e933bec9509ffabcb95f74ca12edfa"></span><code class="descname">SC_TIFF_COMPRESSION_CCITTFAX4</code> = 5<a class="headerlink" href="#_CPPv329SC_TIFF_COMPRESSION_CCITTFAX4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save using CCITT Group 4 fax encoding </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv323SC_TIFF_COMPRESSION_LZW">
+<span id="_CPPv223SC_TIFF_COMPRESSION_LZW"></span><span class="target" id="_save_c_defs_8h_1a0a9d973b9178684a1ac03f4a2dafd5d7afbc0fcf4ff7962917f112c3c29240fca"></span><code class="descname">SC_TIFF_COMPRESSION_LZW</code> = 6<a class="headerlink" href="#_CPPv323SC_TIFF_COMPRESSION_LZW" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save using LZW compression </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv329SC_TIFF_COMPRESSION_JPEG_TIFF">
+<span id="_CPPv229SC_TIFF_COMPRESSION_JPEG_TIFF"></span><span class="target" id="_save_c_defs_8h_1a0a9d973b9178684a1ac03f4a2dafd5d7a106129e7f353b9e40768e86f67dcd6f8"></span><code class="descname">SC_TIFF_COMPRESSION_JPEG_TIFF</code> = 7<a class="headerlink" href="#_CPPv329SC_TIFF_COMPRESSION_JPEG_TIFF" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save using JPEG compression (8-bit greyscale and 24-bit only. Default to LZW for other bitdepths) </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv326SC_TIFF_COMPRESSION_LOGLUV">
+<span id="_CPPv226SC_TIFF_COMPRESSION_LOGLUV"></span><span class="target" id="_save_c_defs_8h_1a0a9d973b9178684a1ac03f4a2dafd5d7aa20219e8f4261524e6f55980a3ef8ed9"></span><code class="descname">SC_TIFF_COMPRESSION_LOGLUV</code> = 8<a class="headerlink" href="#_CPPv326SC_TIFF_COMPRESSION_LOGLUV" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save using LogLuv compression (only available with RGBF images. Default to LZW compression) </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sc-tiff-compression">
+<h2>SC_TIFF_COMPRESSION<a class="headerlink" href="#sc-tiff-compression" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv319SC_TIFF_COMPRESSION">
+<span id="_CPPv219SC_TIFF_COMPRESSION"></span><span id="SC_TIFF_COMPRESSION"></span><span class="target" id="_save_c_defs_8h_1a974881d0792efa64713b901824a1e507"></span><em class="property">typedef </em><code class="descname">SC_TIFF_COMPRESSION</code><a class="headerlink" href="#_CPPv319SC_TIFF_COMPRESSION" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the file format enum (SC_TIFF_COMPRESSION_LIST). </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_save_imagewriter.html" class="btn btn-neutral float-right" title="ImageWriter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_save.html" class="btn btn-neutral" title="Save C" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

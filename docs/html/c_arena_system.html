@@ -1,0 +1,1627 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>System &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C" href="c_arena.html"/>
+        <link rel="next" title="Nodes" href="c_arena_nodes.html"/>
+        <link rel="prev" title="Callback" href="c_arena_callback.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_device.html">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodemap.html">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+      <li>System</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="system">
+<h1>System<a class="headerlink" href="#system" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acsystemgetnuminterfaces">
+<h2>acSystemGetNumInterfaces<a class="headerlink" href="#acsystemgetnuminterfaces" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1ad2d19ba5d16c0279f8d4ea2bb8bce5d6"></span><code class="descname">AC_ERROR AC_API acSystemGetNumInterfaces(acSystem hSystem, size_t * pNumDevices)</code></dt>
+<dd><p><strong> acSystemGetNumInterfaces </strong> retrieves the number of discovered interfaces. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNumDevices</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>The number of discovered interfaces</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetinterfaceipaddress">
+<h2>acSystemGetInterfaceIpAddress<a class="headerlink" href="#acsystemgetinterfaceipaddress" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a48ecc4465577b6e8c01852cb502c14cd"></span><code class="descname">AC_ERROR AC_API acSystemGetInterfaceIpAddress(acSystem hSystem, size_t index, uint32_t * pIpAddress)</code></dt>
+<dd><p><strong> acSystemGetInterfaceIpAddress </strong> gets the IP address of a interface on the network, returning it as its raw integer value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the interface</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIpAddress</span></code>: <ul>
+<li>Type: uint32_t*</li>
+<li>[Out] parameter</li>
+<li>IP address as an integer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetinterfaceipaddressstr">
+<h2>acSystemGetInterfaceIpAddressStr<a class="headerlink" href="#acsystemgetinterfaceipaddressstr" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a1b19dac64a3e81188087af7f353f6dc7"></span><code class="descname">AC_ERROR AC_API acSystemGetInterfaceIpAddressStr(acSystem hSystem, size_t index, char * pIpAddressStr, size_t * pBufLen)</code></dt>
+<dd><p><strong> acSystemGetInterfaceIpAddressStr </strong> gets the IP address of a interface on the network, returning it as a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the interface</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIpAddressStr</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>IP address as a dot-separated string</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetinterfacesubnetmask">
+<h2>acSystemGetInterfaceSubnetMask<a class="headerlink" href="#acsystemgetinterfacesubnetmask" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1aa34521a5d04800050838da695831390c"></span><code class="descname">AC_ERROR AC_API acSystemGetInterfaceSubnetMask(acSystem hSystem, size_t index, uint32_t * pSubnetMask)</code></dt>
+<dd><p><strong> acSystemGetInterfaceSubnetMask </strong> gets the subnet mask of an interface on the network, returning it as its raw integer value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the interface</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pSubnetMask</span></code>: <ul>
+<li>Type: uint32_t*</li>
+<li>[Out] parameter</li>
+<li>Subnet mask as an integer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetinterfacesubnetmaskstr">
+<h2>acSystemGetInterfaceSubnetMaskStr<a class="headerlink" href="#acsystemgetinterfacesubnetmaskstr" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a2534ff9d0fee4823bd0e6b637d8579e5"></span><code class="descname">AC_ERROR AC_API acSystemGetInterfaceSubnetMaskStr(acSystem hSystem, size_t index, char * pSubnetMaskStr, size_t * pBufLen)</code></dt>
+<dd><p><strong> acSystemGetInterfaceSubnetMaskStr </strong> gets the subnet mask of an interface on the network, returning it as a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the interface</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pSubnetMaskStr</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Subnet mask as a dot-separated string</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetinterfacemacaddress">
+<h2>acSystemGetInterfaceMacAddress<a class="headerlink" href="#acsystemgetinterfacemacaddress" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a7b544397b14ad26378dd936780ddfea2"></span><code class="descname">AC_ERROR AC_API acSystemGetInterfaceMacAddress(acSystem hSystem, size_t index, uint64_t * pMacAddress)</code></dt>
+<dd><p><strong> acSystemGetInterfaceMacAddress </strong> gets the MAC address of a interface on the network, returning it as its raw integer value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>MAC address as an integer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pMacAddress</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>[Out] parameter</li>
+<li>MAC address</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetinterfacemacaddressstr">
+<h2>acSystemGetInterfaceMacAddressStr<a class="headerlink" href="#acsystemgetinterfacemacaddressstr" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a3f77ea680d0dc6d387c00deb78fd387d"></span><code class="descname">AC_ERROR AC_API acSystemGetInterfaceMacAddressStr(acSystem hSystem, size_t index, char * pMacAddress, size_t * pBufLen)</code></dt>
+<dd><p><strong> acSystemGetInterfaceMacAddressStr </strong> gets the MAC address of a interface on the network, returning it as a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the interface</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pMacAddress</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>MAC address as a colon-separated string</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemupdatedevices">
+<h2>acSystemUpdateDevices<a class="headerlink" href="#acsystemupdatedevices" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a33c3f7ba3b423307abf520a4e19e88f3"></span><code class="descname">AC_ERROR AC_API acSystemUpdateDevices(acSystem hSystem, uint64_t timeout)</code></dt>
+<dd><p><strong> acSystemUpdateDevices </strong> updates the internal list of devices, (along with their relevant interfaces). It must be called before retrieving the number of devices (acSystemGetNumDevices) or any time that an updated device list might be necessary.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">timeout</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Time to wait for connected devices to respond</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acSystemGetNumDevices </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemupdatedeviceshaschanged">
+<h2>acSystemUpdateDevicesHasChanged<a class="headerlink" href="#acsystemupdatedeviceshaschanged" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1af15867d01c31f21081a7683e87ad0e15"></span><code class="descname">AC_ERROR AC_API acSystemUpdateDevicesHasChanged(acSystem hSystem, uint64_t timeout, bool8_t * pHasChanged)</code></dt>
+<dd><p><strong> acSystemUpdateDevicesHasChanged </strong> updates the internal list of devices, (along with their relevant interfaces). It must be called before retrieving the number of devices (acSystemGetNumDevices) or any time that an updated device list might be necessary.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">timeout</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Time to wait for connected devices to respond</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pHasChanged</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True on first call that a device is found</li>
+<li>True if the device list has changed since the last call</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acSystemGetNumDevices </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemupdatedevicesoninterface">
+<h2>acSystemUpdateDevicesOnInterface<a class="headerlink" href="#acsystemupdatedevicesoninterface" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a6eb65b32eff111178025474b00058ebb"></span><code class="descname">AC_ERROR AC_API acSystemUpdateDevicesOnInterface(acSystem hSystem, size_t interfaceIndex, uint64_t timeout, bool8_t * pHasChanged)</code></dt>
+<dd><p><strong> acSystemUpdateDevicesOnInterface </strong> updates the internal list of devices, (along with their relevant interfaces). It must be called before retrieving the number of devices (acSystemGetNumDevices) or any time that an updated device list might be necessary.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">interfaceIndex</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the interface</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">timeout</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Time to wait for connected devices to respond</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pHasChanged</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True on first call that a device is found</li>
+<li>True if the device list has changed since the last call</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acSystemGetNumDevices </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetnumdevices">
+<h2>acSystemGetNumDevices<a class="headerlink" href="#acsystemgetnumdevices" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a97dbf535c993a46c66b1d53b17e078fa"></span><code class="descname">AC_ERROR AC_API acSystemGetNumDevices(acSystem hSystem, size_t * pNumDevices)</code></dt>
+<dd><p><strong> acSystemGetNumDevices </strong> retrieves the number of discovered devices. It must be called after updating the internal list of devices (acSystemUpdateDevices).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pNumDevices</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>The number of discovered devices</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acSystemUpdateDevices </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdevicemodel">
+<h2>acSystemGetDeviceModel<a class="headerlink" href="#acsystemgetdevicemodel" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a6507ed33f26db4e986e11bbcbc4c433c"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceModel(acSystem hSystem, size_t index, char * pModelNameBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acSystemGetDeviceModel </strong> gets the model name of a device. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pModelNameBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Model name of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdevicevendor">
+<h2>acSystemGetDeviceVendor<a class="headerlink" href="#acsystemgetdevicevendor" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a1e7f592bc644a0d05594c870850fbead"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceVendor(acSystem hSystem, size_t index, char * pVendorNameBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acSystemGetDeviceVendor </strong> gets the vendor/manufacturer name of a device. Vendor names differentiate between device vendors/manufacturers. Lucid devices return ‘Lucid Vision Labs’. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pVendorNameBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Vendor name of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdeviceserial">
+<h2>acSystemGetDeviceSerial<a class="headerlink" href="#acsystemgetdeviceserial" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a7b6c0e9452a7dc6af93f2b6ad68bf700"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceSerial(acSystem hSystem, size_t index, char * pSerialNumberBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acDeviceGetDeviceSerial </strong> gets the serial number of a device. A serial number differentiates between devices. Each Lucid device has a unique serial number. Lucid serial numbers are numeric, but the serial numbers of other vendors may be alphanumeric. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pSerialNumberBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Serial number of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdeviceipaddress">
+<h2>acSystemGetDeviceIpAddress<a class="headerlink" href="#acsystemgetdeviceipaddress" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1acb1415d9c1293efb182d4b9927e2c4ba"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceIpAddress(acSystem hSystem, size_t index, uint32_t * pIpAddress)</code></dt>
+<dd><p><strong> acSystemGetDeviceIpAddress </strong> gets the IP address of a device on the network, returning it as its raw integer value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIpAddress</span></code>: <ul>
+<li>Type: uint32_t*</li>
+<li>[Out] parameter</li>
+<li>IP address as an integer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdeviceipaddressstr">
+<h2>acSystemGetDeviceIpAddressStr<a class="headerlink" href="#acsystemgetdeviceipaddressstr" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a3976305d8f883d7578635ab65e941e10"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceIpAddressStr(acSystem hSystem, size_t index, char * pIpAddressStr, size_t * pBufLen)</code></dt>
+<dd><p><strong> acSystemGetDeviceIpAddressStr </strong> gets the IP address of a device on the network, returning it as a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIpAddressStr</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>IP address as a dot-separated string</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdevicesubnetmask">
+<h2>acSystemGetDeviceSubnetMask<a class="headerlink" href="#acsystemgetdevicesubnetmask" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a1c7043dea01aaa07e8cddf95bbfe8254"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceSubnetMask(acSystem hSystem, size_t index, uint32_t * pSubnetMask)</code></dt>
+<dd><p><strong> acSystemGetDeviceSubnetMask </strong> gets the subnet mask of a device on the network, returning it as its raw integer value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pSubnetMask</span></code>: <ul>
+<li>Type: uint32_t*</li>
+<li>[Out] parameter</li>
+<li>Subnet mask as an integer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdevicesubnetmaskstr">
+<h2>acSystemGetDeviceSubnetMaskStr<a class="headerlink" href="#acsystemgetdevicesubnetmaskstr" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1acfb84d83f20b490758f7e7e1b60d8b52"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceSubnetMaskStr(acSystem hSystem, size_t index, char * pSubnetMaskStr, size_t * pBufLen)</code></dt>
+<dd><p><strong> acSystemGetDeviceSubnetMaskStr </strong> gets the subnet mask of a device on the network, returning it as a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pSubnetMaskStr</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Subnet mask as a dot-separated string</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdevicedefaultgateway">
+<h2>acSystemGetDeviceDefaultGateway<a class="headerlink" href="#acsystemgetdevicedefaultgateway" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a10485873af377f81f65ea1eced5ab63d"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceDefaultGateway(acSystem hSystem, size_t index, uint32_t * pDefaultGateway)</code></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success </li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pDefaultGateway</span></code>: <ul>
+<li>Type: uint32_t*</li>
+<li>[Out] parameter</li>
+<li>Default gateway as an integer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdevicedefaultgatewaystr">
+<h2>acSystemGetDeviceDefaultGatewayStr<a class="headerlink" href="#acsystemgetdevicedefaultgatewaystr" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a7766cc5ff6d88983d6988145d1ebd8cb"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceDefaultGatewayStr(acSystem hSystem, size_t index, char * pDefaultGatewayStr, size_t * pBufLen)</code></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success </li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pDefaultGatewayStr</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>Default gateway as a dot-separated string</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdevicemacaddress">
+<h2>acSystemGetDeviceMacAddress<a class="headerlink" href="#acsystemgetdevicemacaddress" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a8cd8c81446886423f655e3e871ea7b43"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceMacAddress(acSystem hSystem, size_t index, uint64_t * pMacAddress)</code></dt>
+<dd><p><strong> acSystemGetDeviceMacAddress </strong> gets the MAC address of a device on the network, returning it as its raw integer value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>MAC address as an integer</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pMacAddress</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>[Out] parameter</li>
+<li>MAC address</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdevicemacaddressstr">
+<h2>acSystemGetDeviceMacAddressStr<a class="headerlink" href="#acsystemgetdevicemacaddressstr" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a2b28a7a790fd3e879e338702771f82c3"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceMacAddressStr(acSystem hSystem, size_t index, char * pMacAddress, size_t * pBufLen)</code></dt>
+<dd><p><strong> acSystemGetDeviceMacAddressStr </strong> gets the MAC address of a device on the network, returning it as a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pMacAddress</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>MAC address as a colon-separated string</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemforceipaddress">
+<h2>acSystemForceIpAddress<a class="headerlink" href="#acsystemforceipaddress" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1ab245bd6a8bdcec7df083536ba941ca43"></span><code class="descname">AC_ERROR AC_API acSystemForceIpAddress(acSystem hSystem, uint64_t macAddress, uint64_t ipAddress, uint64_t subnetMask, uint64_t defaultGateway)</code></dt>
+<dd><p><strong> acSystemForceIpAddress </strong> force sets the IP address of a device on the network <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">macAddress</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>MAC address</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">ipAddress</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>Ip address</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">subnetMask</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>subnetMask address</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">defaultGateway</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>[In] parameter</li>
+<li>defaultGateway address</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdeviceuserdefinedname">
+<h2>acSystemGetDeviceUserDefinedName<a class="headerlink" href="#acsystemgetdeviceuserdefinedname" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a8631c80c08fed054c1b997f6d6e999e7"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceUserDefinedName(acSystem hSystem, size_t index, char * pUserDefinedName, size_t * pBufLen)</code></dt>
+<dd><p><ul class="simple">
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pUserDefinedName</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Accepts null</li>
+<li>User-defined name</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><strong> acSystemGetDeviceUserDefinedName </strong> gets the user-defined name of a device. If supported, it is a customizable string with a maximum of 16 bytes that can be used to identify a device. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemisdevicedhcpconfigurationenabled">
+<h2>acSystemIsDeviceDHCPConfigurationEnabled<a class="headerlink" href="#acsystemisdevicedhcpconfigurationenabled" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1ab115bcd1dd6d3c0202f079f84867d8dd"></span><code class="descname">AC_ERROR AC_API acSystemIsDeviceDHCPConfigurationEnabled(acSystem hSystem, size_t index, bool8_t * pIsDHCPConfigurationEnabled)</code></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success </li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIsDHCPConfigurationEnabled</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if DHCP enabled on device</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemisdevicepersistentipconfigurationenabled">
+<h2>acSystemIsDevicePersistentIpConfigurationEnabled<a class="headerlink" href="#acsystemisdevicepersistentipconfigurationenabled" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a674b2b79aa991005f3bb063cb2d389c0"></span><code class="descname">AC_ERROR AC_API acSystemIsDevicePersistentIpConfigurationEnabled(acSystem hSystem, size_t index, bool8_t * pIsPersistentIpConfigurationEnabled)</code></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success </li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIsPersistentIpConfigurationEnabled</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if persisitent IP configuration set on device</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgetdeviceversion">
+<h2>acSystemGetDeviceVersion<a class="headerlink" href="#acsystemgetdeviceversion" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a4f9236272bf1a2146d2d60f79a0a6c7e"></span><code class="descname">AC_ERROR AC_API acSystemGetDeviceVersion(acSystem hSystem, size_t index, char * pDeviceVersion, size_t * pBufLen)</code></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="acsystemisdevicellaconfigurationenabled">
+<h2>acSystemIsDeviceLLAConfigurationEnabled<a class="headerlink" href="#acsystemisdevicellaconfigurationenabled" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1acd889be050ff4564ec79d91beb937c6a"></span><code class="descname">AC_ERROR AC_API acSystemIsDeviceLLAConfigurationEnabled(acSystem hSystem, size_t index, bool8_t * pIsLLAIpConfigurationEnabled)</code></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success </li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIsLLAIpConfigurationEnabled</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if LLA enabled on device</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemcreatedevice">
+<h2>acSystemCreateDevice<a class="headerlink" href="#acsystemcreatedevice" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1a6ad661a4d3eb3b882aeb977355076949"></span><code class="descname">AC_ERROR AC_API acSystemCreateDevice(acSystem hSystem, size_t index, acDevice * phDevice)</code></dt>
+<dd><p><strong> acSystemCreateDevice </strong> creates and initializes a device. It must be called after the device list has been updated (acSystemUpdateDevices). The device must be destroyed (acSystemDestroyDevice) when no longer needed.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: <ul>
+<li>Type: size_t</li>
+<li>[In] parameter</li>
+<li>Index of the device</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phDevice</span></code>: <ul>
+<li>Type: acDevice*</li>
+<li>[Out] parameter</li>
+<li>Initialized, ready-to-use device</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acSystemUpdateDevices</li>
+<li>acSystemDestroyDevice </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemdestroydevice">
+<h2>acSystemDestroyDevice<a class="headerlink" href="#acsystemdestroydevice" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1aa624cf3d7be460c284b1e7c618b567d3"></span><code class="descname">AC_ERROR AC_API acSystemDestroyDevice(acSystem hSystem, acDevice hDevice)</code></dt>
+<dd><p><strong> acSystemDestroyDevice </strong> destroys and cleans up the internal memory of a device (acDevice). Devices that have been created (acSystemCreateDevice) must be destroyed.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">hDevice</span></code>: <ul>
+<li>Type: acDevice</li>
+<li>[In] parameter</li>
+<li>Device to destroy</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acDevice</li>
+<li>acSystemCreateDevice </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acsystemgettlsystemnodemap">
+<h2>acSystemGetTLSystemNodeMap<a class="headerlink" href="#acsystemgettlsystemnodemap" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_system_8h_1ae2b034de2b6e29dce2064a43fc522017"></span><code class="descname">AC_ERROR AC_API acSystemGetTLSystemNodeMap(acSystem hSystem, acNodeMap * phNodeMap)</code></dt>
+<dd><p><strong> GetTLSystemNodeMap </strong> retrieves the GenTL system node map (acNodeMap), used to access system related nodes (acNode).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hSystem</span></code>: <ul>
+<li>Type: acSystem</li>
+<li>[In] parameter</li>
+<li>The system object</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">phNodeMap</span></code>: <ul>
+<li>Type: acNodeMap*</li>
+<li>[Out] parameter</li>
+<li>GenTL node map for the system</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acNodeMap</li>
+<li>acNode </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_nodes.html" class="btn btn-neutral float-right" title="Nodes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_callback.html" class="btn btn-neutral" title="Callback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

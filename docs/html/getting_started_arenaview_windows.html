@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started with ArenaView in Windows &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started with ArenaView in Windows</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started-with-arenaview-in-windows">
+<h1>Getting Started with ArenaView in Windows<a class="headerlink" href="#getting-started-with-arenaview-in-windows" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="launching-arenaview">
+<h2>Launching ArenaView<a class="headerlink" href="#launching-arenaview" title="Permalink to this headline">¶</a></h2>
+<p>To launch ArenaView, click Start -&gt; All Programs -&gt; Lucid Vision Labs -&gt; ArenaView</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview.png" src="_images/windows_arenaview.png" />
+</div></blockquote>
+<p>On a default installation, ArenaView gets installed in C:\ProgramData\Lucid Vision Labs\ArenaView.</p>
+</div>
+<div class="section" id="controlling-your-camera-in-arenaview">
+<h2>Controlling Your Camera in ArenaView<a class="headerlink" href="#controlling-your-camera-in-arenaview" title="Permalink to this headline">¶</a></h2>
+<p>Select your camera in the <strong>Camera</strong> window pane. Double-click on the camera to connect to the camera.</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_camera_selection.png" src="_images/windows_arenaview_camera_selection.png" />
+</div></blockquote>
+<p>Cameras that have an invalid IP address will be highlighted in light red. Double-click on the camera to force it to a valid IP address.</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_camera_selection_misconfigured_ip.png" src="_images/windows_arenaview_camera_selection_misconfigured_ip.png" />
+</div></blockquote>
+<p>After selecting your camera, the <strong>Features</strong> window pane will be filled with the camera feature list which allows you to change settings on the camera.</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_feature_list.png" src="_images/windows_arenaview_feature_list.png" />
+</div></blockquote>
+<p>Click on the feature name’s value to change its value. You may need to stop streaming the camera to change certain features.</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_feature_value.png" src="_images/windows_arenaview_feature_value.png" />
+</div></blockquote>
+<p>You can find more information for a feature by clicking on it and looking at the <strong>Properties</strong> window pane.</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_feature_properties.png" src="_images/windows_arenaview_feature_properties.png" />
+</div></blockquote>
+<p>ArenaView also includes the option to enable Packet Resend, which is the functionality for the software to request lost packets. More information about Packet Resend can be found at our Tech Brief here: <a class="reference external" href="https://thinklucid.com/tech-briefs/gigabit-ethernet-the-efficient-and-reliable-interface/#resends">https://thinklucid.com/tech-briefs/gigabit-ethernet-the-efficient-and-reliable-interface/#resends</a>.
+If you see packet loss or torn images while streaming in ArenaView, you can enable this feature by setting TL DataStream Parameters -&gt; Buffer Handling Control -&gt; Packet Resend Enable to On.</p>
+<blockquote>
+<div><img alt="images/packet_resend_enable.png" src="images/packet_resend_enable.png" />
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="_images/lightbulb_icon.png"><img alt="lightbulb" src="_images/lightbulb_icon.png" style="width: 70px;" /></a></td>
+<td>Stop the camera stream before changing the Packet Resend option.</td>
+</tr>
+</tbody>
+</table>
+<p>The ArenaView toolbar has the following buttons:</p>
+<ol class="arabic simple">
+<li>Click <a class="reference internal" href="_images/windows_arenaview_button_snapshot.png"><img alt="windows_arenaview_button_snapshot" src="_images/windows_arenaview_button_snapshot.png" style="width: 30px;" /></a> to acquire a single image. This will open a new tab.</li>
+<li>Click <a class="reference internal" href="_images/windows_arenaview_button_continuous.png"><img alt="windows_arenaview_button_continuous" src="_images/windows_arenaview_button_continuous.png" style="width: 30px;" /></a> to continuously acquire images. This will open a new tab.</li>
+<li>Click <a class="reference internal" href="_images/windows_arenaview_button_stop.png"><img alt="windows_arenaview_button_stop" src="_images/windows_arenaview_button_stop.png" style="width: 30px;" /></a> to stop acquisition and close the current tab.</li>
+</ol>
+<p>Use the <strong>Node List</strong> toggle in the Features window pane to switch between the following modes:</p>
+<ul class="simple">
+<li><img alt="windows_arenaview_visibility_simple" src="_images/windows_arenaview_visibility_simple.png" /> shows beginner camera features</li>
+<li><img alt="windows_arenaview_visibility_complete" src="_images/windows_arenaview_visibility_complete.png" /> shows all camera features</li>
+</ul>
+<p>Use the <strong>Filter</strong> to filter specific camera features. Include boolean operators such as OR to filter multiple feature names:</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_feature_list_filter.png" src="_images/windows_arenaview_feature_list_filter.png" />
+</div></blockquote>
+<p>The <strong>Log</strong> window pane displays connection updates (camera arrival or removal) and streaming information for the camera.</p>
+<blockquote>
+<div><img alt="_images/windows_arenaview_log.png" src="_images/windows_arenaview_log.png" />
+</div></blockquote>
+</div>
+<div class="section" id="saving-images-in-arenaview">
+<h2>Saving images in ArenaView<a class="headerlink" href="#saving-images-in-arenaview" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click <a class="reference internal" href="_images/windows_arenaview_button_snapshot.png"><img alt="windows_arenaview_button_snapshot" src="_images/windows_arenaview_button_snapshot.png" style="width: 30px;" /></a> to acquire a single image. This will open a new tab.</li>
+<li>Click <a class="reference internal" href="_images/windows_arenaview_button_save.png"><img alt="windows_arenaview_button_save" src="_images/windows_arenaview_button_save.png" style="width: 30px;" /></a> or File -&gt; Save to save an image.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

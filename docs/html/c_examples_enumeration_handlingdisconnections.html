@@ -1,0 +1,687 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Enumeration, Handling Disconnections &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="C Code Samples" href="c_examples.html"/>
+        <link rel="next" title="Explore, Node Maps" href="c_examples_explore_nodemaps.html"/>
+        <link rel="prev" title="Enumeration, Introduction" href="c_examples_enumeration.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="c_arena.html">Arena C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="c_examples.html">C Code Samples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_examples_simpleacquisition.html">Simple Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition.html">Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_multidevice.html">Acquisition, Multi-Device Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_rapidacquisition.html">Acquisition, Rapid Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_imagecallbacks.html">Callback, Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_multithreadedimagecallbacks.html">Callback, Multithreaded Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onevent.html">Callback, On Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onnodechange.html">Callback, On Node Change</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_polling.html">Callback, Polling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata.html">Chunk Data, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata_crcvalidation.html">Chunk Data, CRC Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration.html">Enumeration, Introduction</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Enumeration, Handling Disconnections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodemaps.html">Explore, Node Maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_exposure.html">Exposure, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodes.html">Explore, Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodetypes.html">Explore, Node Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_forceip.html">Force IP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_heatmap.html">Helios, HeatMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_minmaxdepth.html">Helios, Min Max Depth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_smoothresults.html">Helios, Smooth Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_lut.html">LUT, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_pixelcorrection.html">Pixel Correction, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_colordolpaolp.html">Polarization, Color DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_dolpaolp.html">Polarization, DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_record.html">Record, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save.html">Save, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_filenamepattern.html">Save, File Name Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_ply.html">Save, Ply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_scheduledactioncommands.html">Scheduled Action Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_sequencer_hdr.html">Sequencer, HDR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_streamables.html">Streamables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger.html">Trigger, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger_overlappingtrigger.html">Trigger, Overlapping Trigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_usersets.html">User Sets, Introduction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_examples.html">C Code Samples</a> &raquo;</li>
+        
+      <li>Enumeration, Handling Disconnections</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="enumeration-handling-disconnections">
+<h1>Enumeration, Handling Disconnections<a class="headerlink" href="#enumeration-handling-disconnections" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************************</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  Copyright (c) 2019, Lucid Vision Labs, Inc.                                    ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR     ***</span>
+<span class="cm"> ***  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,       ***</span>
+<span class="cm"> ***  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE    ***</span>
+<span class="cm"> ***  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER         ***</span>
+<span class="cm"> ***  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  ***</span>
+<span class="cm"> ***  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  ***</span>
+<span class="cm"> ***  SOFTWARE.                                                                      ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***************************************************************************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ArenaCApi.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdbool.h&gt;  // defines boolean type and values</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;inttypes.h&gt; // defines macros for printf functions</span><span class="cp"></span>
+
+<span class="c1">// Multithreading is implemented differently for Windows and Linux</span>
+<span class="c1">// systems, so headers, functions and macros are defined according to the</span>
+<span class="c1">// operating system being used.</span>
+<span class="cp">#ifdef _WIN32</span>
+<span class="cp">#include</span> <span class="cpf">&quot;ArenaCThreadWindows.h&quot;</span><span class="cp"></span>
+<span class="cp">#elif defined linux</span>
+<span class="cp">#include</span> <span class="cpf">&quot;ArenaCThreadLinux.h&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define TAB1 &quot;  &quot;</span>
+<span class="cp">#define TAB2 &quot;    &quot;</span>
+<span class="cp">#define TAB3 &quot;      &quot;</span>
+<span class="cp">#define TAB4 &quot;        &quot;</span>
+
+<span class="c1">// Enumeration: Handling Disconnections</span>
+<span class="c1">//    This example demonstrates a multi-threaded approach to handling device</span>
+<span class="c1">//    First, the acquisition thread is responsible for acquiring images when the</span>
+<span class="c1">//    disconnections. It spawns two threads, each with a different</span>
+<span class="c1">//    responsibility. device is connected. Second, the enumeration thread handles</span>
+<span class="c1">//    disconnections by reconnecting the device and notifying the acquisition</span>
+<span class="c1">//    thread.</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- SETTINGS =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// image timeout</span>
+<span class="cp">#define IMAGE_TIMEOUT 2000</span>
+
+<span class="c1">// update timeout</span>
+<span class="cp">#define SYSTEM_TIMEOUT 100</span>
+
+<span class="c1">// maximum number of images</span>
+<span class="cp">#define MAX_IMAGES 500</span>
+
+<span class="c1">// maximum buffer length</span>
+<span class="cp">#define MAX_BUF 256</span>
+
+<span class="c1">// Global settings</span>
+<span class="c1">// This example uses global scope for variables and information shared</span>
+<span class="c1">// between threads. This is not a best practice but is done this way for the sake</span>
+<span class="c1">// of simplicity.</span>
+
+<span class="n">THREAD_LOCK_VARIABLE</span><span class="p">(</span><span class="n">g_deviceMutex</span><span class="p">)</span>
+
+<span class="n">THREAD_CONDITION_VARIABLE</span><span class="p">(</span><span class="n">g_deviceConnected</span><span class="p">)</span>
+
+<span class="c1">// arenaC</span>
+<span class="n">acDevice</span> <span class="n">g_pDevice</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+<span class="c1">// other</span>
+<span class="k">static</span> <span class="kt">bool</span> <span class="n">g_isRunning</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- HELPER =-=-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// return error</span>
+<span class="c1">// (1) exit current thread</span>
+<span class="c1">// (2) notify other thread to exit</span>
+<span class="c1">// (3) return error</span>
+<span class="n">AC_ERROR</span> <span class="nf">exitThreads</span><span class="p">(</span><span class="n">AC_ERROR</span> <span class="n">err</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">g_isRunning</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="n">acThreadConditionVariableWake</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_deviceConnected</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- EXAMPLE -=-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// reconnects a device when disconnected</span>
+<span class="c1">// (1) on disconnection, activate</span>
+<span class="c1">// (2) search for device</span>
+<span class="c1">// (3) reconnect device</span>
+<span class="c1">// (4) notify all on reconnection</span>
+<span class="c1">// (5) notify all on exit</span>
+
+<span class="n">THREAD_FUNCTION_SIGNATURE</span><span class="p">(</span><span class="n">EnumerationThread</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+        <span class="n">acSystem</span> <span class="n">hSystem</span> <span class="o">=</span> <span class="p">(</span><span class="n">acSystem</span><span class="o">*</span><span class="p">)</span><span class="n">lpParam</span><span class="p">;</span>
+
+        <span class="c1">// grab subnet upon entering thread</span>
+        <span class="kt">uint32_t</span> <span class="n">subnetMask</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetDeviceSubnetMask</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">subnetMask</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="n">exitThreads</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+
+        <span class="k">while</span> <span class="p">(</span><span class="n">g_isRunning</span><span class="p">)</span>
+        <span class="p">{</span>
+
+                <span class="c1">// Search for device</span>
+                <span class="c1">//    When the device has been disconnected, this thread waits for it</span>
+                <span class="c1">//    to reconnect, constantly updating and scanning the device list</span>
+                <span class="c1">//    for the lost device.</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemUpdateDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">SYSTEM_TIMEOUT</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">==</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemCreateDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_pDevice</span><span class="p">);</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">==</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="c1">// Recreate device and notify other thread</span>
+                                <span class="c1">//    Once the device has been found, recreate it and notify</span>
+                                <span class="c1">//    the acquisition thread that it can stop waiting and</span>
+                                <span class="c1">//    continue acquiring images.</span>
+                                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sDevice reconnected</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB4</span><span class="p">);</span>
+
+                                <span class="c1">// Ensure appropriate network settings</span>
+                                <span class="c1">//    Check that the device is on the same subnet after</span>
+                                <span class="c1">//    reconnecting the camera. If the camera/adapter are on a</span>
+                                <span class="c1">//    non 169.254.*.* subnet but not using a persistent IP or</span>
+                                <span class="c1">//    DHCP, the camera will automatically be assigned an LLA</span>
+                                <span class="c1">//    and pick a 169.254.*.* IP/subnet after reconnecting,</span>
+                                <span class="c1">//    causing the example to exit. There are several ways to</span>
+                                <span class="c1">//    fix this issue: (1) by setting a static IP to the</span>
+                                <span class="c1">//    ethernet port, (2) forcing an IP address whenever the</span>
+                                <span class="c1">//    device is updated (see C_ForceIP), (3) running</span>
+                                <span class="c1">//    ArenaConfig to configure the adapter settings, or (4)</span>
+                                <span class="c1">//    setting up a persistent IP on the camera using</span>
+                                <span class="c1">//    IPConfigUtility</span>
+                                <span class="kt">uint32_t</span> <span class="n">subnetMaskReconnect</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+                                <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetDeviceSubnetMask</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">subnetMaskReconnect</span><span class="p">);</span>
+                                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                                        <span class="n">exitThreads</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+
+                                <span class="k">if</span> <span class="p">(</span><span class="n">subnetMask</span> <span class="o">!=</span> <span class="n">subnetMaskReconnect</span><span class="p">)</span>
+                                <span class="p">{</span>
+
+                                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">%sError: Subnet has changed upon reconnecting</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">);</span>
+                                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sSubnet at example start:   %&quot;</span> <span class="n">PRIu32</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">subnetMask</span><span class="p">);</span>
+                                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sSubnet after reconnection: %&quot;</span> <span class="n">PRIu32</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">subnetMaskReconnect</span><span class="p">);</span>
+                                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">%sPress enter to exit example</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+
+                                        <span class="c1">// exit thread and notify other thread to exit</span>
+                                        <span class="n">exitThreads</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+                                <span class="p">}</span>
+
+                                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceStartStream</span><span class="p">(</span><span class="n">g_pDevice</span><span class="p">);</span>
+                                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                                        <span class="n">exitThreads</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+
+                                <span class="n">acThreadConditionVariableWake</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_deviceConnected</span><span class="p">);</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Notify other thread on exit</span>
+        <span class="c1">//    If the device is disconnected at the time of exit, the other thread</span>
+        <span class="c1">//    will be waiting for reconnection. Sending this notification allows the</span>
+        <span class="c1">//    other thread to stop waiting and continue to exit.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sNotify other thread on exit</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">);</span>
+
+        <span class="n">acThreadConditionVariableWake</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_deviceConnected</span><span class="p">);</span>
+
+        <span class="n">THREAD_RETURN</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// acquires images while device is connected</span>
+<span class="c1">// (1) starts stream</span>
+<span class="c1">// (2) retrieves images</span>
+<span class="c1">// (3) catches disconnections, destroying device appropriately</span>
+<span class="c1">// (4) waits for reconnection</span>
+<span class="c1">// (5) restarts stream, continuing to retrieve images</span>
+<span class="c1">// (6) stops stream</span>
+<span class="n">THREAD_FUNCTION_SIGNATURE</span><span class="p">(</span><span class="n">AcquisitionThread</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+        <span class="n">acSystem</span> <span class="n">hSystem</span> <span class="o">=</span> <span class="p">(</span><span class="n">acSystem</span><span class="o">*</span><span class="p">)</span><span class="n">lpParam</span><span class="p">;</span>
+
+        <span class="c1">// start stream</span>
+        <span class="kt">int</span> <span class="n">numImages</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceStartStream</span><span class="p">(</span><span class="n">g_pDevice</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="n">exitThreads</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+
+        <span class="c1">// Get images while connected</span>
+        <span class="c1">//    While the device is connected and streaming, grab images. This</span>
+        <span class="c1">//    example just counts the images and requeues their buffers; however,</span>
+        <span class="c1">//    using the image factory to copy or convert the images for display</span>
+        <span class="c1">//    or processing might be a useful addition.</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">g_isRunning</span> <span class="o">&amp;&amp;</span> <span class="n">numImages</span> <span class="o">&lt;</span> <span class="n">MAX_IMAGES</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\r</span><span class="s">%sGet image %i&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">numImages</span><span class="p">);</span>
+                <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+                <span class="n">acBuffer</span> <span class="n">hBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceGetBuffer</span><span class="p">(</span><span class="n">g_pDevice</span><span class="p">,</span> <span class="n">IMAGE_TIMEOUT</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hBuffer</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="c1">// Catch disconnection</span>
+                        <span class="c1">//    Disconnections will most likely show themselves as</span>
+                        <span class="c1">//    read/write timeouts. This is caused as the host attempts to</span>
+                        <span class="c1">//    signal the device, but the device doesn&#39;t respond, timing</span>
+                        <span class="c1">//    out.</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">%sDevice disconnected</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB4</span><span class="p">);</span>
+
+                        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemDestroyDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">g_pDevice</span><span class="p">);</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                                <span class="n">exitThreads</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+
+                        <span class="c1">// Lock access across threads</span>
+                        <span class="c1">//    Use a lock to protect access to shared resources, ensuring</span>
+                        <span class="c1">//    that simultaneous writes/reads across threads don&#39;t clobber</span>
+                        <span class="c1">//    one another.</span>
+                        <span class="n">acThreadLock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_deviceMutex</span><span class="p">);</span>
+                        <span class="n">g_pDevice</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+                        <span class="c1">// check that exit condition has not been called while inside the</span>
+                        <span class="c1">// loop</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">g_isRunning</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="c1">// Wait for reconnection if necessary</span>
+                                <span class="c1">//    When the device has been disconnected, the acquisition</span>
+                                <span class="c1">//    thread waits on the enumeration thread to reconnect the</span>
+                                <span class="c1">//    device. This is done through a conditional variable.</span>
+                                <span class="c1">//    This conditional variable has also been set up to stop</span>
+                                <span class="c1">//    waiting if the application has been terminated.</span>
+                                <span class="n">acThreadConditionVariableSleep</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_deviceConnected</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_deviceMutex</span><span class="p">);</span>
+                        <span class="p">}</span>
+
+                        <span class="n">acThreadUnlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_deviceMutex</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                        <span class="c1">// increment image count and requeue buffer</span>
+                        <span class="n">numImages</span> <span class="o">=</span> <span class="n">numImages</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+
+                        <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceRequeueBuffer</span><span class="p">(</span><span class="n">g_pDevice</span><span class="p">,</span> <span class="n">hBuffer</span><span class="p">);</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                                <span class="n">exitThreads</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+
+                        <span class="k">if</span> <span class="p">(</span><span class="n">numImages</span> <span class="o">&gt;=</span> <span class="n">MAX_IMAGES</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">%sAcquisition completed, press enter to continue</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">);</span>
+                                <span class="n">g_isRunning</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="p">};</span>
+
+        <span class="c1">// stop stream</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">g_pDevice</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceStopStream</span><span class="p">(</span><span class="n">g_pDevice</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="n">exitThreads</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">THREAD_RETURN</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// run example</span>
+<span class="c1">// (1) create acquisition and enumeration threads</span>
+<span class="c1">// (2) stop acquisition on key press</span>
+<span class="c1">// (3) wait for threads to complete and close handles</span>
+<span class="n">AC_ERROR</span> <span class="n">RunExample</span><span class="p">(</span><span class="n">acSystem</span> <span class="n">hSystem</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// initialize lock and condition variable</span>
+        <span class="n">acThreadLockInitialize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_deviceMutex</span><span class="p">);</span>
+        <span class="n">acThreadConditionVariableInitialize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_deviceConnected</span><span class="p">);</span>
+
+        <span class="c1">// Start acquisition and enumeration threads and wait for key</span>
+        <span class="c1">//    Spawn a thread for acquisition and a thread for enumeration. Keeping</span>
+        <span class="c1">//    this kind of work off the main thread allows for multiple things</span>
+        <span class="c1">//    happening simultaneously in the case of more complex applications.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sStart acquisition and enumeration threads</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">);</span>
+        <span class="n">g_isRunning</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+        <span class="n">THREAD_ID</span><span class="p">(</span><span class="n">hChildAcquisitionThread</span><span class="p">);</span>
+        <span class="n">THREAD_ID</span><span class="p">(</span><span class="n">hChildEnumerationThread</span><span class="p">);</span>
+
+        <span class="n">acThreadCreate</span><span class="p">(</span><span class="n">AcquisitionThread</span><span class="p">,</span> <span class="n">hSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hChildAcquisitionThread</span><span class="p">);</span>
+        <span class="n">acThreadCreate</span><span class="p">(</span><span class="n">EnumerationThread</span><span class="p">,</span> <span class="n">hSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hChildEnumerationThread</span><span class="p">);</span>
+
+        <span class="c1">// Stop acquisition on key press</span>
+        <span class="c1">//    Because the main thread pushed all the work into the worker threads, it</span>
+        <span class="c1">//    is free to wait for user input to end the application.</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sPress enter to stop acquisition</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">);</span>
+        <span class="n">getchar</span><span class="p">();</span>
+
+        <span class="c1">// Wait for threads to complete and close handles</span>
+        <span class="c1">//    When user input is received, the application must send a signal to the</span>
+        <span class="c1">//    worker threads that this has happened. This is accomplished with a</span>
+        <span class="c1">//    global boolean. The application should then wait for each thread to</span>
+        <span class="c1">//    complete before continuing its shutdown.</span>
+        <span class="n">g_isRunning</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+        <span class="n">acThreadDestroy</span><span class="p">(</span><span class="n">hChildEnumerationThread</span><span class="p">);</span>
+        <span class="n">acThreadDestroy</span><span class="p">(</span><span class="n">hChildAcquisitionThread</span><span class="p">);</span>
+
+        <span class="c1">// deinitialize condition variable and thread lock and destroying all threads</span>
+        <span class="n">acThreadLockDeinitialize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_deviceMutex</span><span class="p">);</span>
+        <span class="n">acThreadConditionVariableDeinitialize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_deviceConnected</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =- PREPARATION -=-</span>
+<span class="c1">// =- &amp; CLEAN UP =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// error buffer length</span>
+<span class="cp">#define ERR_BUF 512</span>
+
+<span class="cp">#define CHECK_RETURN                                  \</span>
+<span class="cp">        if (err != AC_ERR_SUCCESS)                        \</span>
+<span class="cp">        {                                                 \</span>
+<span class="cp">                char pMessageBuf[ERR_BUF];                    \</span>
+<span class="cp">                size_t pBufLen = ERR_BUF;                     \</span>
+<span class="cp">                acGetLastErrorMessage(pMessageBuf, &amp;pBufLen); \</span>
+<span class="cp">                printf(&quot;\nError: %s&quot;, pMessageBuf);           \</span>
+<span class="cp">                printf(&quot;\n\nPress enter to complete\n&quot;);      \</span>
+<span class="cp">                getchar();                                    \</span>
+<span class="cp">                return -1;                                    \</span>
+<span class="cp">        }</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;C_Enumeration_HandlingDisconnections</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Please manually disconnect and reconnect device as device acquires images</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// prepare example</span>
+        <span class="n">acSystem</span> <span class="n">hSystem</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acOpenSystem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemUpdateDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">SYSTEM_TIMEOUT</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="kt">size_t</span> <span class="n">numDevices</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetNumDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numDevices</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">numDevices</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Waiting for a device...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemUpdateDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">SYSTEM_TIMEOUT</span><span class="p">);</span>
+                        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetNumDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numDevices</span><span class="p">);</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">numDevices</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+                                <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemCreateDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_pDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+        <span class="c1">// run example</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Commence example</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">RunExample</span><span class="p">(</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Example complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="c1">// clean up example</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">g_pDevice</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemDestroyDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">g_pDevice</span><span class="p">);</span>
+                <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acCloseSystem</span><span class="p">(</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">getchar</span><span class="p">();</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_examples_explore_nodemaps.html" class="btn btn-neutral float-right" title="Explore, Node Maps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_examples_enumeration.html" class="btn btn-neutral" title="Enumeration, Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

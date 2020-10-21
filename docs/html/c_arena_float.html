@@ -1,0 +1,746 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Float &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Nodes" href="c_arena_nodes.html"/>
+        <link rel="next" title="Integer" href="c_arena_integer.html"/>
+        <link rel="prev" title="Enumeration" href="c_arena_enumeration.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_device.html">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodemap.html">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena_nodes.html">Nodes</a> &raquo;</li>
+        
+      <li>Float</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="float">
+<h1>Float<a class="headerlink" href="#float" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acfloatsetvalue">
+<h2>acFloatSetValue<a class="headerlink" href="#acfloatsetvalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1aae35af7328cfcc1054fc03aaf4d66cb5"></span><code class="descname">AC_ERROR AC_API acFloatSetValue(acNode hNode, double value)</code></dt>
+<dd><p><strong> acFloatSetValue </strong> sets a new value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">value</span></code>: <ul>
+<li>Type: double</li>
+<li>[In] parameter</li>
+<li>Value to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfloatgetvalue">
+<h2>acFloatGetValue<a class="headerlink" href="#acfloatgetvalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1ab4b6143ea85a14c4ad45f3f7a8b8531a"></span><code class="descname">AC_ERROR AC_API acFloatGetValue(acNode hNode, double * pValue)</code></dt>
+<dd><p><strong> acFloatGetValue </strong> retrieves the current value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pValue</span></code>: <ul>
+<li>Type: double*</li>
+<li>[Out] parameter</li>
+<li>Current value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfloatgetmin">
+<h2>acFloatGetMin<a class="headerlink" href="#acfloatgetmin" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1a5e38b37d7e444452fef639792ba840b8"></span><code class="descname">AC_ERROR AC_API acFloatGetMin(acNode hNode, double * pMinimum)</code></dt>
+<dd><p><strong> acFloatGetMin </strong> retrieves the minimum value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pMinimum</span></code>: <ul>
+<li>Type: double*</li>
+<li>[Out] parameter</li>
+<li>Minimum value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfloatgetmax">
+<h2>acFloatGetMax<a class="headerlink" href="#acfloatgetmax" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1a6abe8f8de27c30643daaa147109d2dd2"></span><code class="descname">AC_ERROR AC_API acFloatGetMax(acNode hNode, double * pMaximum)</code></dt>
+<dd><p><strong> acFloatGetMax </strong> retrieves the maximum value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pMaximum</span></code>: <ul>
+<li>Type: double*</li>
+<li>[Out] parameter</li>
+<li>Maximum value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfloathasinc">
+<h2>acFloatHasInc<a class="headerlink" href="#acfloathasinc" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1af27b8ab6e18f6956c6d07e9239c5ae91"></span><code class="descname">AC_ERROR AC_API acFloatHasInc(acNode hNode, bool8_t * pHasInc)</code></dt>
+<dd><p><strong> acFloatHasInc </strong> retrieves whether or not the value has an increment. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pHasInc</span></code>: <ul>
+<li>Type: bool8_t*</li>
+<li>[Out] parameter</li>
+<li>True if the value has a software-imposed increment</li>
+<li>Otherwise, false</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfloatgetincmode">
+<h2>acFloatGetIncMode<a class="headerlink" href="#acfloatgetincmode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1a3d3814651f7c1412f791bf94a87c4e44"></span><code class="descname">AC_ERROR AC_API acFloatGetIncMode(acNode hNode, AC_INC_MODE * pIncMode)</code></dt>
+<dd><p><strong> acFloatGetIncMode </strong> retrieves the increment (if there is one). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIncMode</span></code>: <ul>
+<li>Type: AC_INC_MODE*</li>
+<li>[Out] parameter</li>
+<li>Increment mode</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfloatgetinc">
+<h2>acFloatGetInc<a class="headerlink" href="#acfloatgetinc" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1a4b9068c78f8abdf26393bec7b16fd71a"></span><code class="descname">AC_ERROR AC_API acFloatGetInc(acNode hNode, double * pIncrement)</code></dt>
+<dd><p><strong> acFloatGetInc </strong> retrieves the value increment (if there is one). Get the increment after checking whether there is one (acFloatHasInc).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIncrement</span></code>: <ul>
+<li>Type: double*</li>
+<li>[Out] parameter</li>
+<li>Increment value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acFloatHasInc </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfloatgetrepresentation">
+<h2>acFloatGetRepresentation<a class="headerlink" href="#acfloatgetrepresentation" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1aadbc3ffee98b59a8de076e88a39fe1bb"></span><code class="descname">AC_ERROR AC_API acFloatGetRepresentation(acNode hNode, AC_REPRESENTATION * pRepresentation)</code></dt>
+<dd><p><strong> acFloatGetRepresentation </strong> retrieves the value representation. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pRepresentation</span></code>: <ul>
+<li>Type: AC_REPRESENTATION*</li>
+<li>[Out] parameter</li>
+<li>Numeric representation</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfloatgetunit">
+<h2>acFloatGetUnit<a class="headerlink" href="#acfloatgetunit" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1a947a1ca567a6aa2c663500b66b63a3e4"></span><code class="descname">AC_ERROR AC_API acFloatGetUnit(acNode hNode, char * pUnitBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acFloatGetUnit </strong> retrieves the units of the value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pUnitBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Value unit</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfloatgetdisplaynotation">
+<h2>acFloatGetDisplayNotation<a class="headerlink" href="#acfloatgetdisplaynotation" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1a3dff66d9459f96c4b48f74657be733d0"></span><code class="descname">AC_ERROR AC_API acFloatGetDisplayNotation(acNode hNode, AC_DISPLAY_NOTATION * pDisplayNotation)</code></dt>
+<dd><p><strong> acFloatGetDisplayNotation </strong> retrieves the best way to display the float, either by floating point, scientific notation, or both depending on the value (automatic). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pDisplayNotation</span></code>: <ul>
+<li>Type: AC_DISPLAY_NOTATION*</li>
+<li>[Out] parameter</li>
+<li>Display notation</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfloatgetdisplayprecision">
+<h2>acFloatGetDisplayPrecision<a class="headerlink" href="#acfloatgetdisplayprecision" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1ac1971168419e0b48fde3e47c6ebd55a7"></span><code class="descname">AC_ERROR AC_API acFloatGetDisplayPrecision(acNode hNode, int64_t * pDisplayPrecision)</code></dt>
+<dd><p><strong> acFloatGetDisplayPrecision </strong> retrieves the floating point precision of the value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pDisplayPrecision</span></code>: <ul>
+<li>Type: int64_t*</li>
+<li>[Out] parameter</li>
+<li>Floating point precision</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfloatimposemin">
+<h2>acFloatImposeMin<a class="headerlink" href="#acfloatimposemin" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1aedc126a15a35083f5e11a40c1960ac24"></span><code class="descname">AC_ERROR AC_API acFloatImposeMin(acNode hNode, double imposedMinimum)</code></dt>
+<dd><p><strong> acFloatImposeMin </strong> imposes a minimum. New minimum must be greater than the actual minimum. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">imposedMinimum</span></code>: <ul>
+<li>Type: double</li>
+<li>[In] parameter</li>
+<li>Minimum to impose</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfloatimposemax">
+<h2>acFloatImposeMax<a class="headerlink" href="#acfloatimposemax" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_float_8h_1ad208a6a0c9a1dc5092f127fbb4ee1929"></span><code class="descname">AC_ERROR AC_API acFloatImposeMax(acNode hNode, double imposedMaximum)</code></dt>
+<dd><p><strong> acFloatImposeMax </strong> imposes a maximum. New maximum must be less than the actual maximum. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts float nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">imposedMaximum</span></code>: <ul>
+<li>Type: double</li>
+<li>[In] parameter</li>
+<li>Maximum to impose</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_integer.html" class="btn btn-neutral float-right" title="Integer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_enumeration.html" class="btn btn-neutral" title="Enumeration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

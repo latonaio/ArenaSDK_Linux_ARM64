@@ -1,0 +1,1011 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>VideoRecorder &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Save C++" href="cpp_save.html"/>
+        <link rel="next" title="ImageParams" href="cpp_save_imageparams.html"/>
+        <link rel="prev" title="Definitions" href="cpp_save_defs.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cpp_arena.html">Arena C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_save.html">Save C++</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_defs.html">Definitions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">VideoRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_imageparams.html">ImageParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_videoparams.html">VideoParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_imagereader.html">ImageReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_imagewriter.html">ImageWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_save.html">Save C++</a> &raquo;</li>
+        
+      <li>VideoRecorder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="videorecorder">
+<h1>VideoRecorder<a class="headerlink" href="#videorecorder" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="id1">
+<h2>VideoRecorder<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv3N4Save13VideoRecorderE">
+<span id="_CPPv2N4Save13VideoRecorderE"></span><span id="Save::VideoRecorder"></span><span class="target" id="class_save_1_1_video_recorder"></span><em class="property">class </em><code class="descname">VideoRecorder</code><a class="headerlink" href="#_CPPv3N4Save13VideoRecorderE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The video recorder facilitates the grouping of image data into video files. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>VideoRecorder<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder13VideoRecorderEv">
+<span id="_CPPv2N4Save13VideoRecorder13VideoRecorderEv"></span><span id="Save::VideoRecorder::VideoRecorder"></span><span class="target" id="class_save_1_1_video_recorder_1a49c55f0408c4ac4daf083b8d73d3e30f"></span><code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">VideoRecorder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>An empty constructor.</p>
+<p>The video recorder defaults to an empty video parameters object and ‘savedvideos/video&lt;count&gt;.avi’ for the file name pattern. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>VideoRecorder<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder13VideoRecorderEv">
+<span id="_CPPv2N4Save13VideoRecorder13VideoRecorderEv"></span><span class="target" id="class_save_1_1_video_recorder_1a49c55f0408c4ac4daf083b8d73d3e30f"></span><code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">VideoRecorder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>An empty constructor.</p>
+<p>The video recorder defaults to an empty video parameters object and ‘savedvideos/video&lt;count&gt;.avi’ for the file name pattern. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h2>~VideoRecorder<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorderD0Ev">
+<span id="_CPPv2N4Save13VideoRecorderD0Ev"></span><span id="Save::VideoRecorder::~VideoRecorder"></span><span class="target" id="class_save_1_1_video_recorder_1a9095d6b6c3cf109fb3d3196ad34d55d5"></span><code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">~VideoRecorder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorderD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A destructor. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="setraw">
+<h2>SetRaw<a class="headerlink" href="#setraw" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder6SetRawE8uint64_t">
+<span id="_CPPv2N4Save13VideoRecorder6SetRawE8uint64_t"></span><span id="Save::VideoRecorder::SetRaw__uint64_t"></span><span class="target" id="class_save_1_1_video_recorder_1aa2357769041beebe8177f5dc425497c7"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">SetRaw</code><span class="sig-paren">(</span>uint64_t <em>pixelFormat</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder6SetRawE8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetRaw </strong> sets the recorder to write raw frames with no container or metadata. Frame data can be written for any pixel format, but data cannot be played back. It will also set the file extension to ‘.raw’.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pixelFormat</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>Pixel format to use</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setrawavibgr8">
+<h2>SetRawAviBGR8<a class="headerlink" href="#setrawavibgr8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder13SetRawAviBGR8Ev">
+<span id="_CPPv2N4Save13VideoRecorder13SetRawAviBGR8Ev"></span><span id="Save::VideoRecorder::SetRawAviBGR8"></span><span class="target" id="class_save_1_1_video_recorder_1a8c05ed6bb7d39802c311aab68bed743d"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">SetRawAviBGR8</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder13SetRawAviBGR8Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetRawAviBGR8 </strong> sets the codec to raw, the container to AVI, and the expected pixel format to BGR8. It will also set the file extension to ‘.avi’.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-BGR8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setrawmovrgb8">
+<h2>SetRawMovRGB8<a class="headerlink" href="#setrawmovrgb8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder13SetRawMovRGB8Ev">
+<span id="_CPPv2N4Save13VideoRecorder13SetRawMovRGB8Ev"></span><span id="Save::VideoRecorder::SetRawMovRGB8"></span><span class="target" id="class_save_1_1_video_recorder_1a5fcbe4268ff341d0cf111c1a95873134"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">SetRawMovRGB8</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder13SetRawMovRGB8Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetRawMovRGB8 </strong> sets the codec to raw, the container to MOV, and the expected pixel format to RGB8. It will also set the file extension to ‘.mov’.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-RGB8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="seth264movrgb8">
+<h2>SetH264MovRGB8<a class="headerlink" href="#seth264movrgb8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder14SetH264MovRGB8E7int64_t">
+<span id="_CPPv2N4Save13VideoRecorder14SetH264MovRGB8E7int64_t"></span><span id="Save::VideoRecorder::SetH264MovRGB8__int64_t"></span><span class="target" id="class_save_1_1_video_recorder_1aa7648e74a5bfeea0d7f5aa016213cf09"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">SetH264MovRGB8</code><span class="sig-paren">(</span>int64_t <em>bitrate</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder14SetH264MovRGB8E7int64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetH264MovRGB8 </strong> sets the codec to H264, the container to MOV, and the expected pixel format to RGB8. It will also set the file extension to ‘.mov’.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">bitrate</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>Default: 0</li>
+<li>Bitrate (bit/s)</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-RGB8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="seth264movbgr8">
+<h2>SetH264MovBGR8<a class="headerlink" href="#seth264movbgr8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder14SetH264MovBGR8E7int64_t">
+<span id="_CPPv2N4Save13VideoRecorder14SetH264MovBGR8E7int64_t"></span><span id="Save::VideoRecorder::SetH264MovBGR8__int64_t"></span><span class="target" id="class_save_1_1_video_recorder_1a8943d29ce2ddcfcc6deee4dbf208313d"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">SetH264MovBGR8</code><span class="sig-paren">(</span>int64_t <em>bitrate</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder14SetH264MovBGR8E7int64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetH264MovBGR8 </strong> sets the codec to H264, the container to MOV, and the expected pixel format to BGR8. It will also set the file extension to ‘.mov’.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">bitrate</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>Default: 0</li>
+<li>Bitrate (bit/s)</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-BGR8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="seth264mp4rgb8">
+<h2>SetH264Mp4RGB8<a class="headerlink" href="#seth264mp4rgb8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder14SetH264Mp4RGB8E7int64_t">
+<span id="_CPPv2N4Save13VideoRecorder14SetH264Mp4RGB8E7int64_t"></span><span id="Save::VideoRecorder::SetH264Mp4RGB8__int64_t"></span><span class="target" id="class_save_1_1_video_recorder_1abcd3575e48cdd6386ed6d10a14ddcdfa"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">SetH264Mp4RGB8</code><span class="sig-paren">(</span>int64_t <em>bitrate</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder14SetH264Mp4RGB8E7int64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetH264Mp4RGB8 </strong> sets the codec to H264, the container to MP4, and the expected pixel format to RGB8. It will also set the file extension to ‘.mp4’.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">bitrate</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>Default: 0</li>
+<li>Bitrate (bit/s)</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-RGB8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="seth264mp4bgr8">
+<h2>SetH264Mp4BGR8<a class="headerlink" href="#seth264mp4bgr8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder14SetH264Mp4BGR8E7int64_t">
+<span id="_CPPv2N4Save13VideoRecorder14SetH264Mp4BGR8E7int64_t"></span><span id="Save::VideoRecorder::SetH264Mp4BGR8__int64_t"></span><span class="target" id="class_save_1_1_video_recorder_1a39070f5e86d4d687e61497876a51bcb9"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">SetH264Mp4BGR8</code><span class="sig-paren">(</span>int64_t <em>bitrate</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder14SetH264Mp4BGR8E7int64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetH264Mp4BGR8 </strong> sets the codec to H264, the container to MP4, and the expected pixel format to BGR8. It will also set the file extension to ‘.mp4’.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">bitrate</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>Default: 0</li>
+<li>Bitrate (bit/s)</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// prepare and open video recorder to prepare to create recorded video</span>
+<span class="p">{</span>
+       <span class="kt">void</span> <span class="n">RecordVideo</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*&gt;&amp;</span> <span class="n">images</span><span class="p">)</span>
+       <span class="p">{</span>
+           <span class="n">Save</span><span class="o">::</span><span class="n">VideoParams</span> <span class="n">params</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">GetWidth</span><span class="p">(),</span> <span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">GetHeight</span><span class="p">(),</span> <span class="mi">25</span><span class="p">);</span>
+           <span class="n">Save</span><span class="o">::</span><span class="n">VideoRecorder</span> <span class="n">videoRecorder</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">Cpp_Record</span><span class="o">/</span><span class="n">video</span><span class="p">.</span><span class="n">mp4</span><span class="p">);</span>
+
+           <span class="n">videoRecorder</span><span class="p">.</span><span class="n">SetH264Mp4BGR8</span><span class="p">();</span>
+
+           <span class="n">videoRecorder</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
+       <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>pushing non-BGR8 data will result in unexpected behavior</li>
+<li>changes file extension</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setparams">
+<h2>SetParams<a class="headerlink" href="#setparams" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder9SetParamsE11VideoParams">
+<span id="_CPPv2N4Save13VideoRecorder9SetParamsE11VideoParams"></span><span id="Save::VideoRecorder::SetParams__VideoParams"></span><span class="target" id="class_save_1_1_video_recorder_1af532f877c68426504a649b7d9cac6934"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">SetParams</code><span class="sig-paren">(</span><a class="reference internal" href="cpp_save_videoparams.html#_CPPv3N4Save11VideoParamsE" title="Save::VideoParams">VideoParams</a> <em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder9SetParamsE11VideoParams" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetParams </strong> sets the width and height of the input frame data and the frames per second of the video output.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">params</span></code>: <ul>
+<li>Type: <a class="reference internal" href="cpp_save_videoparams.html#class_save_1_1_video_params"><span class="std std-ref">VideoParams</span></a></li>
+<li>Parameters to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setfilenamepattern">
+<h2>SetFileNamePattern<a class="headerlink" href="#setfilenamepattern" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder18SetFileNamePatternEPKc">
+<span id="_CPPv2N4Save13VideoRecorder18SetFileNamePatternEPKc"></span><span id="Save::VideoRecorder::SetFileNamePattern__cCP"></span><span class="target" id="class_save_1_1_video_recorder_1a1b8615530a03e3734eb460da50354f8d"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">SetFileNamePattern</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pFileNamePattern</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder18SetFileNamePatternEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetFileNamePattern </strong> sets a file name pattern. Changing the extension via this call will change the output container.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pFileNamePattern</span></code>: <ul>
+<li>Type: const char*</li>
+<li>File name pattern to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The video recorder defaults to different settings depending on the extension of the file name pattern:<ul class="simple">
+<li>’.avi’ defaults to raw codec, BGR8 pixel format</li>
+<li>’.mov’ defaults to raw codec, RGB8 pixel format</li>
+<li>’.mp4’ defaults to H264 codec, BGR8 pixel</li>
+</ul>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>changes to the file extension will change the container accordingly</li>
+<li>set file name pattern before setting other settings</li>
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="updatetag">
+<h2>UpdateTag<a class="headerlink" href="#updatetag" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder9UpdateTagEPKcPKc">
+<span id="_CPPv2N4Save13VideoRecorder9UpdateTagEPKcPKc"></span><span id="Save::VideoRecorder::UpdateTag__cCP.cCP"></span><span class="target" id="class_save_1_1_video_recorder_1ae995a96a4a4a0b10c3cb62326582d18d"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">UpdateTag</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pTag</em>, <em class="property">const</em> char *<em>pValue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder9UpdateTagEPKcPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> UpdateTag </strong> updates the value to replace a given tag when a video is saved. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pTag</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Tag to replace</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pValue</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Value to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setcount">
+<h2>SetCount<a class="headerlink" href="#setcount" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder8SetCountE8uint64_t11ECountScope">
+<span id="_CPPv2N4Save13VideoRecorder8SetCountE8uint64_t11ECountScope"></span><span id="Save::VideoRecorder::SetCount__uint64_t.ECountScope"></span><span class="target" id="class_save_1_1_video_recorder_1a1315a348c84c5fe891f71c002536fdf8"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">SetCount</code><span class="sig-paren">(</span>uint64_t <em>count</em>, <a class="reference internal" href="cpp_save_defs.html#_CPPv3N4Save11ECountScopeE" title="Save::ECountScope">ECountScope</a> <em>scope</em> = Local<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder8SetCountE8uint64_t11ECountScope" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetCount </strong> sets the value of one of the available counters.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">count</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>Value of the internal counter</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">scope</span></code>: <ul>
+<li>Type: ECountScope</li>
+<li>Default: Local</li>
+<li>Counter to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>cannot be called while recording </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="settimestamp">
+<h2>SetTimestamp<a class="headerlink" href="#settimestamp" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder12SetTimestampE8uint64_t">
+<span id="_CPPv2N4Save13VideoRecorder12SetTimestampE8uint64_t"></span><span id="Save::VideoRecorder::SetTimestamp__uint64_t"></span><span class="target" id="class_save_1_1_video_recorder_1a66dea5c5c03ea3da37acebd4a833336c"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">SetTimestamp</code><span class="sig-paren">(</span>uint64_t <em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder12SetTimestampE8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetTimestamp </strong> sets the timestamp. The timestamp replaces any instance of ‘&lt;timestamp&gt;’ in the file name pattern.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">timestamp</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>Timestamp to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>cannot be called while recording</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getparams">
+<h2>GetParams<a class="headerlink" href="#getparams" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder9GetParamsEv">
+<span id="_CPPv2N4Save13VideoRecorder9GetParamsEv"></span><span id="Save::VideoRecorder::GetParams"></span><span class="target" id="class_save_1_1_video_recorder_1acda04d814e9a8d0a78fc3af9b7f50443"></span><a class="reference internal" href="cpp_save_videoparams.html#_CPPv3N4Save11VideoParamsE" title="Save::VideoParams">VideoParams</a> <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">GetParams</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder9GetParamsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetParams </strong> retrieves the video parameters object, which houses the width, height, and frames per second of the video. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="cpp_save_videoparams.html#class_save_1_1_video_params"><span class="std std-ref">VideoParams</span></a></li>
+<li>Video parameters</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getfilenamepattern">
+<h2>GetFileNamePattern<a class="headerlink" href="#getfilenamepattern" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder18GetFileNamePatternEbb">
+<span id="_CPPv2N4Save13VideoRecorder18GetFileNamePatternEbb"></span><span id="Save::VideoRecorder::GetFileNamePattern__b.b"></span><span class="target" id="class_save_1_1_video_recorder_1ac5afb9d0ca23bc04efd65dae2996c9e1"></span>std::string <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">GetFileNamePattern</code><span class="sig-paren">(</span>bool <em>withPath</em> = false, bool <em>withExt</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder18GetFileNamePatternEbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetFileNamePattern </strong> retrieves the file name pattern of the recorder. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: std::string</li>
+<li>The file name pattern</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">withPath</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: false</li>
+<li>Whether or not to include the path</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">withExt</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: true</li>
+<li>Whether or not to include the extension</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getpath">
+<h2>GetPath<a class="headerlink" href="#getpath" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder7GetPathEv">
+<span id="_CPPv2N4Save13VideoRecorder7GetPathEv"></span><span id="Save::VideoRecorder::GetPath"></span><span class="target" id="class_save_1_1_video_recorder_1ab7d9625536a80e9bd27ab91b45f9721a"></span>std::string <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">GetPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder7GetPathEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetPath </strong> retrieves the path that the video recorder is currently outputting videos to. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: std::string</li>
+<li>The path</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getextension">
+<h2>GetExtension<a class="headerlink" href="#getextension" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder12GetExtensionEv">
+<span id="_CPPv2N4Save13VideoRecorder12GetExtensionEv"></span><span id="Save::VideoRecorder::GetExtension"></span><span class="target" id="class_save_1_1_video_recorder_1a4a2a4c6a020a1118653f553088906b0a"></span>std::string <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">GetExtension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder12GetExtensionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetExtension </strong> The extension of the file name pattern. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: std::string</li>
+<li>The extension</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getcodec">
+<h2>GetCodec<a class="headerlink" href="#getcodec" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder8GetCodecEv">
+<span id="_CPPv2N4Save13VideoRecorder8GetCodecEv"></span><span id="Save::VideoRecorder::GetCodec"></span><span class="target" id="class_save_1_1_video_recorder_1ac517101dccf6444a6a49780b22b137d0"></span>std::string <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">GetCodec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder8GetCodecEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetCodec </strong> retrieves the compression codec the recorder is currently set to use for video encoding. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: std::string</li>
+<li>Video codec</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getpixelformat">
+<h2>GetPixelFormat<a class="headerlink" href="#getpixelformat" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder14GetPixelFormatEv">
+<span id="_CPPv2N4Save13VideoRecorder14GetPixelFormatEv"></span><span id="Save::VideoRecorder::GetPixelFormat"></span><span class="target" id="class_save_1_1_video_recorder_1a70e9dbb242beaec4fbb9ac575f96c7d8"></span>uint64_t <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">GetPixelFormat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder14GetPixelFormatEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetPixelFormat </strong> retrieves the integer value representation of the pixel format that the recorder is currently expecting. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: uint64_t</li>
+<li>Pixel format, as defined in the PFNC (Pixel Format Naming Convention)</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="peekfilename">
+<h2>PeekFileName<a class="headerlink" href="#peekfilename" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder12PeekFileNameEbb">
+<span id="_CPPv2N4Save13VideoRecorder12PeekFileNameEbb"></span><span id="Save::VideoRecorder::PeekFileName__b.b"></span><span class="target" id="class_save_1_1_video_recorder_1acccbf64ed9ec46f148a89637d20d0fca"></span>std::string <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">PeekFileName</code><span class="sig-paren">(</span>bool <em>withPath</em> = false, bool <em>withExt</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder12PeekFileNameEbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> PeekFileName </strong> retrieves a peek at the file name of the next video to be recorded, barring any changes to the file name pattern. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: std::string</li>
+<li>File name of the next video</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">withPath</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: false</li>
+<li>Whether or not to include the path</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">withExt</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: true</li>
+<li>Whether or not to include the extension</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="peekcount">
+<h2>PeekCount<a class="headerlink" href="#peekcount" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder9PeekCountE11ECountScope">
+<span id="_CPPv2N4Save13VideoRecorder9PeekCountE11ECountScope"></span><span id="Save::VideoRecorder::PeekCount__ECountScope"></span><span class="target" id="class_save_1_1_video_recorder_1a549ef36be513fb0b541bd10ff4e712d8"></span>uint64_t <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">PeekCount</code><span class="sig-paren">(</span><a class="reference internal" href="cpp_save_defs.html#_CPPv3N4Save11ECountScopeE" title="Save::ECountScope">ECountScope</a> <em>scope</em> = Local<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder9PeekCountE11ECountScope" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> PeekCount </strong> retrieves a peek at the value of one of the available counters. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: uint64_t</li>
+<li>Value of the internal counter</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">scope</span></code>: <ul>
+<li>Type: ECountScope</li>
+<li>Default: Local</li>
+<li>Counter to peek</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getlastfilename">
+<h2>GetLastFileName<a class="headerlink" href="#getlastfilename" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder15GetLastFileNameEbb">
+<span id="_CPPv2N4Save13VideoRecorder15GetLastFileNameEbb"></span><span id="Save::VideoRecorder::GetLastFileName__b.b"></span><span class="target" id="class_save_1_1_video_recorder_1ac43f68a377b4ad1afc722a11e8e71531"></span>std::string <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">GetLastFileName</code><span class="sig-paren">(</span>bool <em>withPath</em> = false, bool <em>withExt</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder15GetLastFileNameEbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetLastFileName </strong> retrieves the last file name used for a video. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: std::string</li>
+<li>The last file name</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">withPath</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: false</li>
+<li>Whether or not to include the path</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">withExt</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: true</li>
+<li>Whether or not to include the extension</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="open">
+<h2>Open<a class="headerlink" href="#open" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder4OpenEv">
+<span id="_CPPv2N4Save13VideoRecorder4OpenEv"></span><span id="Save::VideoRecorder::Open"></span><span class="target" id="class_save_1_1_video_recorder_1a73d126acb62e6e14172f3711420d0f35"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">Open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder4OpenEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> Open </strong> opens the output file, sets up internal buffers, frames, contexts, and settings, and allocates memory to prepare to append input frames.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>settings cannot be changed until the recorder is closed </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="appendimage">
+<h2>AppendImage<a class="headerlink" href="#appendimage" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder11AppendImageEPK7uint8_t">
+<span id="_CPPv2N4Save13VideoRecorder11AppendImageEPK7uint8_t"></span><span id="Save::VideoRecorder::AppendImage__uint8_tCP"></span><span class="target" id="class_save_1_1_video_recorder_1a07148ba5331e3ad76e615d820a38a585"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">AppendImage</code><span class="sig-paren">(</span><em class="property">const</em> uint8_t *<em>pData</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder11AppendImageEPK7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> AppendImage </strong> accepts the next frame’s raw image data, encodes it, and appends it to the video file. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pData</span></code>: <ul>
+<li>Type: const uint8_t*</li>
+<li>Data of the next frame to append</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="close">
+<h2>Close<a class="headerlink" href="#close" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save13VideoRecorder5CloseEv">
+<span id="_CPPv2N4Save13VideoRecorder5CloseEv"></span><span id="Save::VideoRecorder::Close"></span><span class="target" id="class_save_1_1_video_recorder_1a5ef281c6baa96a1d8af9eee267ba57bb"></span>void <code class="descclassname">Save::<a class="reference internal" href="#_CPPv3N4Save13VideoRecorderE" title="Save::VideoRecorder">VideoRecorder</a><code class="descclassname">::</code></code><code class="descname">Close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save13VideoRecorder5CloseEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> Close </strong> cleans up memory and settings of the video, concluding the currently recorded video.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>additional frames cannot be appended once the file has been closed </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_save_imageparams.html" class="btn btn-neutral float-right" title="ImageParams" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_save_defs.html" class="btn btn-neutral" title="Definitions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

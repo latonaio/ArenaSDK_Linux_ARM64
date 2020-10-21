@@ -1,0 +1,809 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Explore, Node Types &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="C Code Samples" href="c_examples.html"/>
+        <link rel="next" title="Force IP" href="c_examples_forceip.html"/>
+        <link rel="prev" title="Explore, Nodes" href="c_examples_explore_nodes.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="c_arena.html">Arena C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="c_examples.html">C Code Samples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_examples_simpleacquisition.html">Simple Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition.html">Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_multidevice.html">Acquisition, Multi-Device Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_acquisition_rapidacquisition.html">Acquisition, Rapid Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_imagecallbacks.html">Callback, Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_multithreadedimagecallbacks.html">Callback, Multithreaded Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onevent.html">Callback, On Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_onnodechange.html">Callback, On Node Change</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_callback_polling.html">Callback, Polling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata.html">Chunk Data, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_chunkdata_crcvalidation.html">Chunk Data, CRC Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration.html">Enumeration, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_enumeration_handlingdisconnections.html">Enumeration, Handling Disconnections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodemaps.html">Explore, Node Maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_exposure.html">Exposure, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_explore_nodes.html">Explore, Nodes</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Explore, Node Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_forceip.html">Force IP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_heatmap.html">Helios, HeatMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_minmaxdepth.html">Helios, Min Max Depth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_helios_smoothresults.html">Helios, Smooth Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_lut.html">LUT, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_pixelcorrection.html">Pixel Correction, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_colordolpaolp.html">Polarization, Color DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_polarization_dolpaolp.html">Polarization, DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_record.html">Record, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save.html">Save, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_filenamepattern.html">Save, File Name Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_save_ply.html">Save, Ply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_scheduledactioncommands.html">Scheduled Action Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_sequencer_hdr.html">Sequencer, HDR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_streamables.html">Streamables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger.html">Trigger, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_trigger_overlappingtrigger.html">Trigger, Overlapping Trigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_examples_usersets.html">User Sets, Introduction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_examples.html">C Code Samples</a> &raquo;</li>
+        
+      <li>Explore, Node Types</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="explore-node-types">
+<h1>Explore, Node Types<a class="headerlink" href="#explore-node-types" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************************</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  Copyright (c) 2019, Lucid Vision Labs, Inc.                                    ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR     ***</span>
+<span class="cm"> ***  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,       ***</span>
+<span class="cm"> ***  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE    ***</span>
+<span class="cm"> ***  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER         ***</span>
+<span class="cm"> ***  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  ***</span>
+<span class="cm"> ***  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  ***</span>
+<span class="cm"> ***  SOFTWARE.                                                                      ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***************************************************************************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ArenaCApi.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;inttypes.h&gt; // defines macros for printf functions</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdbool.h&gt;  // defines boolean type and values</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;       // defines strcmp functions</span><span class="cp"></span>
+
+<span class="cp">#define TAB1 &quot;  &quot;</span>
+<span class="cp">#define TAB2 &quot;    &quot;</span>
+<span class="cp">#define TAB3 &quot;      &quot;</span>
+
+<span class="c1">// Explore: Node Types</span>
+<span class="c1">//    This example explores the different properties of various node&#39;s types</span>
+<span class="c1">//    including boolean, string, enumeration, integer, and float nodes. The user</span>
+<span class="c1">//    inputs the node name that they wish to access (leaving out spacing between</span>
+<span class="c1">//    words) in order to retrieve the node properties, or inputs &#39;x&#39; to exit.</span>
+<span class="c1">//    This example includes commented out code that sets values for each node</span>
+<span class="c1">//    type, retrieves entry by node name for enumeration types, and imposes</span>
+<span class="c1">//    maximum and minimum values for integer and float types. See</span>
+<span class="c1">//    Cpp_Explore_Nodes for a complete list of nodes and their respective types.</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- SETTINGS =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// timeout for detecting camera devices (in milliseconds).</span>
+<span class="cp">#define DEVICE_TIMEOUT 100</span>
+
+<span class="c1">// maximum buffer length</span>
+<span class="cp">#define MAX_BUF 256</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- EXAMPLE -=-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// explores nodes of boolean type</span>
+<span class="c1">// (1) retrieves value</span>
+<span class="c1">// (2) demonstrates value setter in a comment</span>
+<span class="n">AC_ERROR</span> <span class="nf">ExploreBoolean</span><span class="p">(</span><span class="n">acNodeMap</span> <span class="n">hNodeMap</span><span class="p">,</span> <span class="n">acNode</span> <span class="n">hNode</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">nodeName</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// Retrieve value</span>
+        <span class="n">bool8_t</span> <span class="n">value</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetBooleanValue</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="n">nodeName</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">value</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sValue: %i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+
+        <span class="c1">// Set value</span>
+        <span class="c1">//{</span>
+        <span class="c1">//      bool8_t boolValue = true;</span>
+        <span class="c1">//      err = acBooleanSetValue(hNode, boolValue);</span>
+        <span class="c1">//      if (err != AC_ERR_SUCCESS)</span>
+        <span class="c1">//              return err;</span>
+        <span class="c1">//}</span>
+
+        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// explores nodes of string type</span>
+<span class="c1">// (1) retrieves value</span>
+<span class="c1">// (2) retrieves maximum value length</span>
+<span class="c1">// (3) demonstrates value setter in a comment</span>
+<span class="n">AC_ERROR</span> <span class="nf">ExploreString</span><span class="p">(</span><span class="n">acNode</span> <span class="n">hNode</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// Retrieve value</span>
+        <span class="kt">char</span> <span class="n">pValue</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">bufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acStringGetValue</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">pValue</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bufLen</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sValue: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">pValue</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve maximum length</span>
+        <span class="kt">int64_t</span> <span class="n">maxLength</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acStringGetMaxLength</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">maxLength</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sMaximum Length: %&quot;</span> <span class="n">PRIu64</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">maxLength</span><span class="p">);</span>
+
+        <span class="c1">// Set value</span>
+        <span class="c1">//{</span>
+        <span class="c1">//      char stringValue[MAX_BUF] = &quot;string value&quot;;</span>
+        <span class="c1">//      err = acStringSetValue(hNode, stringValue);</span>
+        <span class="c1">//      if (err != AC_ERR_SUCCESS)</span>
+        <span class="c1">//              return err;</span>
+        <span class="c1">//}</span>
+
+        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// explores nodes of type enumeration</span>
+<span class="c1">// (1) retrieves currently set symbolic node</span>
+<span class="c1">// (2) retrieves integer value</span>
+<span class="c1">// (3) retrieves list of symbolic entries</span>
+<span class="c1">// (4) demonstrates enumeration node retrieval by name in a comment</span>
+<span class="c1">// (5) demonstrates value setter in a comment</span>
+<span class="n">AC_ERROR</span> <span class="nf">ExploreEnumeration</span><span class="p">(</span><span class="n">acNode</span> <span class="n">hNode</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">nodeName</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// Retrieve current entry</span>
+        <span class="kt">char</span> <span class="n">pCurrentBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">currentBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acEnumerationGetCurrentSymbolic</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">pCurrentBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">currentBufLen</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sCurrent entry: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">pCurrentBuf</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve integer value</span>
+        <span class="n">acNode</span> <span class="n">hEntryNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="kt">int64_t</span> <span class="n">intValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acEnumerationGetCurrentEntry</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hEntryNode</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acEnumEntryGetIntValue</span><span class="p">(</span><span class="n">hEntryNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">intValue</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sInteger value: %&quot;</span> <span class="n">PRId64</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">intValue</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve symbolic entries</span>
+        <span class="kt">size_t</span> <span class="n">numEntries</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acEnumerationGetNumEntries</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numEntries</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sEntries:&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">numEntries</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// get entry by index</span>
+                <span class="kt">char</span> <span class="n">pSymbolicBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+                <span class="kt">size_t</span> <span class="n">symbolicBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acEnumerationGetSymbolicByIndex</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">pSymbolicBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">symbolicBufLen</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;, &quot;</span><span class="p">);</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">pSymbolicBuf</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve entry by name</span>
+        <span class="c1">//{</span>
+        <span class="c1">//      acNode hEnumerationEntryNode = NULL;</span>
+        <span class="c1">//      err = acEnumerationGetEntryByName(hEntryNode, nodeName, &amp;hEnumerationEntryNode);</span>
+        <span class="c1">//      if (err != AC_ERR_SUCCESS)</span>
+        <span class="c1">//              return err;</span>
+        <span class="c1">//}</span>
+
+        <span class="c1">// Set value</span>
+        <span class="c1">//{</span>
+        <span class="c1">//      int64_t intValue = 0;</span>
+        <span class="c1">//      err = acEnumerationSetByIntValue(hNode, intValue);</span>
+        <span class="c1">//      if (err != AC_ERR_SUCCESS)</span>
+        <span class="c1">//              return err;</span>
+        <span class="c1">//}</span>
+
+        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// explores nodes of type integer</span>
+<span class="c1">// (1) retrieves value</span>
+<span class="c1">// (2) retrieves maximum and minimum</span>
+<span class="c1">// (3) retrieves increment and increment mode</span>
+<span class="c1">// (4) retrieves representation</span>
+<span class="c1">// (5) retrieves unit</span>
+<span class="c1">// (6) demonstrates maximum and minimum imposition in a comment</span>
+<span class="c1">// (7) demonstrates value setter in a comment</span>
+<span class="n">AC_ERROR</span> <span class="nf">ExploreInteger</span><span class="p">(</span><span class="n">acNode</span> <span class="n">hNode</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// Retrieve value</span>
+        <span class="kt">int64_t</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetValue</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">value</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sValue: %&quot;</span> <span class="n">PRId64</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve range</span>
+        <span class="kt">int64_t</span> <span class="n">pMaximum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int64_t</span> <span class="n">pMinimum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetMax</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">pMaximum</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetMin</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">pMinimum</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sMaximum, minimum: %&quot;</span> <span class="n">PRId64</span> <span class="s">&quot;, %&quot;</span> <span class="n">PRId64</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">pMaximum</span><span class="p">,</span> <span class="n">pMinimum</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve increment</span>
+        <span class="kt">int64_t</span> <span class="n">increment</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetInc</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">increment</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sIncrement (mode): %&quot;</span> <span class="n">PRIu64</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">increment</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve representation</span>
+        <span class="n">AC_REPRESENTATION</span> <span class="n">representation</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetRepresentation</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">representation</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sRepresentation: %&quot;</span> <span class="n">PRIu32</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">representation</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve unit</span>
+        <span class="kt">char</span> <span class="n">pUnitBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">intUnitBufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acIntegerGetUnit</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">pUnitBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">intUnitBufLen</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sUnit: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">pUnitBuf</span><span class="p">);</span>
+
+        <span class="c1">// Impose maximum and minimum</span>
+        <span class="c1">//{</span>
+        <span class="c1">//      int64_t imposedMinimum = 0;</span>
+        <span class="c1">//      int64_t imposedMaximum = 10;</span>
+        <span class="c1">//      err = acIntegerImposeMin(hNode, imposedMinimum);</span>
+        <span class="c1">//      if (err != AC_ERR_SUCCESS)</span>
+        <span class="c1">//              return err;</span>
+        <span class="c1">//</span>
+        <span class="c1">//      err = acIntegerImposeMax(hNode, imposedMaximum);</span>
+        <span class="c1">//      if (err != AC_ERR_SUCCESS)</span>
+        <span class="c1">//              return err;</span>
+        <span class="c1">//}</span>
+
+        <span class="c1">// Set value</span>
+        <span class="c1">//{</span>
+        <span class="c1">//      int64_t intValue = 0;</span>
+        <span class="c1">//      err = acIntegerSetValue(hNode, intValue);</span>
+        <span class="c1">//      if (err != AC_ERR_SUCCESS)</span>
+        <span class="c1">//              return err;</span>
+        <span class="c1">//}</span>
+
+        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// explores nodes of type float</span>
+<span class="c1">// (1) retrieves value</span>
+<span class="c1">// (2) retrieves maximum and minimum</span>
+<span class="c1">// (3) retrieves increment and increment mode</span>
+<span class="c1">// (4) retrieves representation</span>
+<span class="c1">// (5) retrieves unit</span>
+<span class="c1">// (6) retrieves display notation</span>
+<span class="c1">// (7) retrieves display precision</span>
+<span class="c1">// (8) demonstrates maximum and minimum imposition in a comment</span>
+<span class="c1">// (9) demonstrates value setter in a comment</span>
+<span class="n">AC_ERROR</span> <span class="nf">ExploreFloat</span><span class="p">(</span><span class="n">acNodeMap</span> <span class="n">hNode</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// Retrieve value</span>
+        <span class="kt">double</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatGetValue</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">value</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sValue: %.0f </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve range</span>
+        <span class="kt">double</span> <span class="n">maximum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">minimum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatGetMax</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">maximum</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatGetMin</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">minimum</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sMaximum, minimum: %.0lf, %.0lf </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">maximum</span><span class="p">,</span> <span class="n">minimum</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve increment</span>
+        <span class="n">bool8_t</span> <span class="n">hasInc</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatHasInc</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hasInc</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sIncrement (mode): &quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">hasInc</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="kt">double</span> <span class="n">increment</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatGetInc</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">increment</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%lf</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">increment</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;no increment</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve representation</span>
+        <span class="n">AC_REPRESENTATION</span> <span class="n">representation</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatGetRepresentation</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">representation</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sRepresentation: %&quot;</span> <span class="n">PRIu32</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">representation</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve unit</span>
+        <span class="kt">char</span> <span class="n">pUnitBuf</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">bufLen</span> <span class="o">=</span> <span class="n">MAX_BUF</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatGetUnit</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">pUnitBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bufLen</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sUnit: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">pUnitBuf</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve display notation</span>
+        <span class="n">AC_DISPLAY_NOTATION</span> <span class="n">displayNotation</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatGetDisplayNotation</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">displayNotation</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sDisplay notation: %&quot;</span> <span class="n">PRIu32</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">displayNotation</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve display precision</span>
+        <span class="kt">int64_t</span> <span class="n">displayPrecision</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acFloatGetDisplayPrecision</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">displayPrecision</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sDisplay precision: %&quot;</span> <span class="n">PRIu64</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">displayPrecision</span><span class="p">);</span>
+
+        <span class="c1">// Impose maximum and minimum</span>
+        <span class="c1">//{</span>
+        <span class="c1">//      double imposedMinimum = 0;</span>
+        <span class="c1">//      double imposedMaximum = 10;</span>
+
+        <span class="c1">//      err = acFloatImposeMin(hNode, imposedMinimum);</span>
+        <span class="c1">//      if (err != AC_ERR_SUCCESS)</span>
+        <span class="c1">//              return err;</span>
+
+        <span class="c1">//      err = acFloatImposeMax(hNode, imposedMaximum);</span>
+        <span class="c1">//      if (err != AC_ERR_SUCCESS)</span>
+        <span class="c1">//              return err;</span>
+        <span class="c1">//}</span>
+
+        <span class="c1">// Set value</span>
+        <span class="c1">//{</span>
+        <span class="c1">//      double floatValue = 0;</span>
+        <span class="c1">//      err = acFloatSetValue(hNode, floatValue);</span>
+        <span class="c1">//      if (err != AC_ERR_SUCCESS)</span>
+        <span class="c1">//              return err;</span>
+        <span class="c1">//}</span>
+
+        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// controls node exploration</span>
+<span class="n">AC_ERROR</span> <span class="nf">ExploreNodes</span><span class="p">(</span><span class="n">acDevice</span> <span class="n">hDevice</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// get device node map from device</span>
+        <span class="n">acNodeMap</span> <span class="n">hNodeMap</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acDeviceGetNodeMap</span><span class="p">(</span><span class="n">hDevice</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hNodeMap</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+        <span class="c1">// stay in loop until exit</span>
+        <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// &#39;x&#39; to exit</span>
+                <span class="kt">char</span> <span class="n">nodeName</span><span class="p">[</span><span class="n">MAX_BUF</span><span class="p">];</span>
+
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sInput node name to explore (&#39;x&#39; to exit)</span><span class="se">\n</span><span class="s">%s&quot;</span><span class="p">,</span> <span class="n">TAB1</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">((</span><span class="n">fgets</span><span class="p">(</span><span class="n">nodeName</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">nodeName</span><span class="p">,</span> <span class="n">stdin</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+                        <span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">nodeName</span><span class="p">,</span> <span class="s">&quot;x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">))</span>
+                <span class="p">{</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%sExit</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB2</span><span class="p">);</span>
+                        <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">// change end of string character in nodeName so it is accepted as input</span>
+                <span class="n">acNode</span> <span class="n">hNode</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                <span class="kt">size_t</span> <span class="n">length</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">nodeName</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">nodeName</span><span class="p">[</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;\n&#39;</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">nodeName</span><span class="p">[</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">// get node</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeMapGetNode</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="n">nodeName</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hNode</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">hNode</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="c1">// get node interface type</span>
+                        <span class="n">AC_INTERFACE_TYPE</span> <span class="n">interfaceType</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                        <span class="n">err</span> <span class="o">=</span> <span class="n">acNodeGetPrincipalInterfaceType</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">interfaceType</span><span class="p">);</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">)</span>
+                                <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+
+                        <span class="c1">// explore by type</span>
+                        <span class="k">switch</span> <span class="p">(</span><span class="n">interfaceType</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="k">case</span> <span class="nl">AC_INTERFACE_TYPE_BOOLEAN</span><span class="p">:</span>
+                                        <span class="n">ExploreBoolean</span><span class="p">(</span><span class="n">hNodeMap</span><span class="p">,</span> <span class="n">hNode</span><span class="p">,</span> <span class="n">nodeName</span><span class="p">);</span>
+                                        <span class="k">break</span><span class="p">;</span>
+                                <span class="k">case</span> <span class="nl">AC_INTERFACE_TYPE_STRING</span><span class="p">:</span>
+                                        <span class="n">ExploreString</span><span class="p">(</span><span class="n">hNode</span><span class="p">);</span>
+                                        <span class="k">break</span><span class="p">;</span>
+                                <span class="k">case</span> <span class="nl">AC_INTERFACE_TYPE_ENUMERATION</span><span class="p">:</span>
+                                        <span class="n">ExploreEnumeration</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">nodeName</span><span class="p">);</span>
+                                        <span class="k">break</span><span class="p">;</span>
+                                <span class="k">case</span> <span class="nl">AC_INTERFACE_TYPE_INTEGER</span><span class="p">:</span>
+                                        <span class="n">ExploreInteger</span><span class="p">(</span><span class="n">hNode</span><span class="p">);</span>
+                                        <span class="k">break</span><span class="p">;</span>
+                                <span class="k">case</span> <span class="nl">AC_INTERFACE_TYPE_FLOAT</span><span class="p">:</span>
+                                        <span class="n">ExploreFloat</span><span class="p">(</span><span class="n">hNode</span><span class="p">);</span>
+                                        <span class="k">break</span><span class="p">;</span>
+                                <span class="k">default</span><span class="o">:</span>
+                                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s%s type not found</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">nodeName</span><span class="p">);</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s%s not found</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">TAB3</span><span class="p">,</span> <span class="n">nodeName</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =- PREPARATION -=-</span>
+<span class="c1">// =- &amp; CLEAN UP =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// error buffer length</span>
+<span class="cp">#define ERR_BUF 512</span>
+
+<span class="cp">#define CHECK_RETURN                                  \</span>
+<span class="cp">        if (err != AC_ERR_SUCCESS)                        \</span>
+<span class="cp">        {                                                 \</span>
+<span class="cp">                char pMessageBuf[ERR_BUF];                    \</span>
+<span class="cp">                size_t pBufLen = ERR_BUF;                     \</span>
+<span class="cp">                acGetLastErrorMessage(pMessageBuf, &amp;pBufLen); \</span>
+<span class="cp">                printf(&quot;\nError: %s&quot;, pMessageBuf);           \</span>
+<span class="cp">                printf(&quot;\n\nPress enter to complete\n&quot;);      \</span>
+<span class="cp">                getchar();                                    \</span>
+<span class="cp">                return -1;                                    \</span>
+<span class="cp">        }</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;C_Explore_NodeTypes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">AC_ERROR</span> <span class="n">err</span> <span class="o">=</span> <span class="n">AC_ERR_SUCCESS</span><span class="p">;</span>
+
+        <span class="c1">// prepare example</span>
+        <span class="n">acSystem</span> <span class="n">hSystem</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acOpenSystem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemUpdateDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">DEVICE_TIMEOUT</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="kt">size_t</span> <span class="n">numDevices</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemGetNumDevices</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numDevices</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">numDevices</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">No camera connected</span><span class="se">\n</span><span class="s">Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                <span class="n">getchar</span><span class="p">();</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">acDevice</span> <span class="n">hDevice</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemCreateDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+        <span class="c1">// run example</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Commence example</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">ExploreNodes</span><span class="p">(</span><span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Example complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="c1">// clean up example</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acSystemDestroyDevice</span><span class="p">(</span><span class="n">hSystem</span><span class="p">,</span> <span class="n">hDevice</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">acCloseSystem</span><span class="p">(</span><span class="n">hSystem</span><span class="p">);</span>
+        <span class="n">CHECK_RETURN</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">getchar</span><span class="p">();</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_examples_forceip.html" class="btn btn-neutral float-right" title="Force IP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_examples_explore_nodes.html" class="btn btn-neutral" title="Explore, Nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

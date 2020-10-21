@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IInteger &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="GenApi C++" href="cpp_genapi.html"/>
+        <link rel="next" title="NodeMapRef" href="cpp_genapi_nodemapref.html"/>
+        <link rel="prev" title="IEnumeration" href="cpp_genapi_ienumeration.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cpp_arena.html">Arena C++</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_icategory.html">ICategory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_iboolean.html">IBoolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_inode.html">INode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_ichunkport.html">IChunkPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_istring.html">IString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_nodemapfactory.html">NodeMapFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_iportrecorder.html">IPortRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_iregister.html">IRegister</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_icommand.html">ICommand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_ibase.html">IBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_iport.html">IPort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_ienumeration.html">IEnumeration</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">IInteger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_nodemapref.html">NodeMapRef</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_ifloat.html">IFloat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_ienumerationt.html">IEnumerationT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_ivalue.html">IValue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_ienumentry.html">IEnumEntry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_inodemapdyn.html">INodeMapDyn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_inodemap.html">INodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_genapi_portwritelist.html">PortWriteList</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_save.html">Save C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_genapi.html">GenApi C++</a> &raquo;</li>
+        
+      <li>IInteger</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="iinteger">
+<h1>IInteger<a class="headerlink" href="#iinteger" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="type">
+<dt id="_CPPv38ArenaNET">
+<span id="_CPPv28ArenaNET"></span><span id="ArenaNET"></span><span class="target" id="namespace_arena_n_e_t"></span><em class="property">namespace </em><code class="descname">ArenaNET</code><a class="headerlink" href="#_CPPv38ArenaNET" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="interface">
+<dt id="_CPPv3N8ArenaNET8IIntegerE">
+<span id="_CPPv2N8ArenaNET8IIntegerE"></span><span id="ArenaNET::IInteger"></span><span class="target" id="class_arena_n_e_t_1_1_i_integer"></span><em class="property">interface </em><code class="descname">IInteger</code><a class="headerlink" href="#_CPPv3N8ArenaNET8IIntegerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;IIntegerNET.h&gt;</em><p>Interface for integer nodes </p>
+<p>Subclassed by ArenaNET::Integer</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N8ArenaNET8IInteger3setE7__int64">
+<span id="_CPPv2N8ArenaNET8IInteger3setE7__int64"></span><span id="ArenaNET::IInteger::set____int64"></span><span class="target" id="class_arena_n_e_t_1_1_i_integer_1ad47a811344c0ff996b56594279eec847"></span><em class="property">virtual</em> void <code class="descname">set</code><span class="sig-paren">(</span>__int64 <em>value</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N8ArenaNET8IInteger3setE7__int64" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8ArenaNET8IInteger20GetListOfValidValuesEv">
+<span id="_CPPv2N8ArenaNET8IInteger20GetListOfValidValuesEv"></span><span id="ArenaNET::IInteger::GetListOfValidValues"></span><span class="target" id="class_arena_n_e_t_1_1_i_integer_1a1a37203027b86eebe600bda17bcbe9f7"></span><em class="property">virtual</em> List&lt;__int64&gt; <code class="descname">GetListOfValidValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N8ArenaNET8IInteger20GetListOfValidValuesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8ArenaNET8IInteger20GetListOfValidValuesEb">
+<span id="_CPPv2N8ArenaNET8IInteger20GetListOfValidValuesEb"></span><span id="ArenaNET::IInteger::GetListOfValidValues__b"></span><span class="target" id="class_arena_n_e_t_1_1_i_integer_1abb9f0214c8537c7e8eae25e073d4ef70"></span><em class="property">virtual</em> List&lt;__int64&gt; <code class="descname">GetListOfValidValues</code><span class="sig-paren">(</span>bool <em>bounded</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N8ArenaNET8IInteger20GetListOfValidValuesEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8ArenaNET8IInteger9ImposeMinE7__int64">
+<span id="_CPPv2N8ArenaNET8IInteger9ImposeMinE7__int64"></span><span id="ArenaNET::IInteger::ImposeMin____int64"></span><span class="target" id="class_arena_n_e_t_1_1_i_integer_1aaf1e30c94cb8fd5a65a726c5b628842f"></span><em class="property">virtual</em> void <code class="descname">ImposeMin</code><span class="sig-paren">(</span>__int64 <em>value</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N8ArenaNET8IInteger9ImposeMinE7__int64" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N8ArenaNET8IInteger9ImposeMaxE7__int64">
+<span id="_CPPv2N8ArenaNET8IInteger9ImposeMaxE7__int64"></span><span id="ArenaNET::IInteger::ImposeMax____int64"></span><span class="target" id="class_arena_n_e_t_1_1_i_integer_1a3043cecd9ecda21e1ba1262fb5f91b16"></span><em class="property">virtual</em> void <code class="descname">ImposeMax</code><span class="sig-paren">(</span>__int64 <em>value</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N8ArenaNET8IInteger9ImposeMaxE7__int64" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt>
+<span class="target" id="class_arena_n_e_t_1_1_i_integer_1a6816a0e193f47c08e5db09613030bdde"></span><code class="descname">property __int64 ArenaNET::IInteger::Value</code><p>{</p>
+<p>			virtual __int64 get() = 0</p>
+</dt>
+<dd><p>Value of the node </p>
+</dd></dl>
+
+<dl class="member">
+<dt>
+<span class="target" id="class_arena_n_e_t_1_1_i_integer_1accd8425c175dc0ea67c0496aef792db6"></span><code class="descname">property __int64 ArenaNET::IInteger::Min</code><p>{</p>
+<p>			virtual __int64 get() = 0</p>
+</dt>
+<dd><p>Minimum value of the node </p>
+</dd></dl>
+
+<dl class="member">
+<dt>
+<span class="target" id="class_arena_n_e_t_1_1_i_integer_1a38e05a8972b3a3ae9d7f6c6abac3dd0e"></span><code class="descname">property __int64 ArenaNET::IInteger::Max</code><p>{</p>
+<p>			virtual __int64 get() = 0</p>
+</dt>
+<dd><p>Maximum value of the node </p>
+</dd></dl>
+
+<dl class="member">
+<dt>
+<span class="target" id="class_arena_n_e_t_1_1_i_integer_1a96f4570075da0a1a2cc97db900ef388b"></span><code class="descname">property EIncMode ArenaNET::IInteger::IncMode</code><p>{</p>
+<p>			virtual EIncMode get() = 0</p>
+</dt>
+<dd><p>Increment mode of the node </p>
+</dd></dl>
+
+<dl class="member">
+<dt>
+<span class="target" id="class_arena_n_e_t_1_1_i_integer_1a0d51a5ff7d12b4293b74a0f1a8aa1c65"></span><code class="descname">property __int64 ArenaNET::IInteger::Inc</code><p>{</p>
+<p>			virtual __int64 get() = 0</p>
+</dt>
+<dd><p>Fixed incremement of the node, if applicable </p>
+</dd></dl>
+
+<dl class="member">
+<dt>
+<span class="target" id="class_arena_n_e_t_1_1_i_integer_1a7e4f1d7310609df36c02c7aa4953f889"></span><code class="descname">property ERepresentation ArenaNET::IInteger::Representation</code><p>{</p>
+<p>			virtual ERepresentation get() = 0</p>
+</dt>
+<dd><p>Best representation of the value </p>
+</dd></dl>
+
+<dl class="member">
+<dt>
+<span class="target" id="class_arena_n_e_t_1_1_i_integer_1a694d32eb3c671f945dcb8ddeb32ccd0a"></span><code class="descname">property String ArenaNET::IInteger::Unit</code><p>{</p>
+<p>			virtual String^ get() = 0</p>
+</dt>
+<dd><p>Unit of the value </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_genapi_nodemapref.html" class="btn btn-neutral float-right" title="NodeMapRef" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_genapi_ienumeration.html" class="btn btn-neutral" title="IEnumeration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

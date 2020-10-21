@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Global Functions &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C++" href="cpp_arena.html"/>
+        <link rel="next" title="ISystem" href="cpp_arena_isystem.html"/>
+        <link rel="prev" title="Definitions" href="cpp_arena_defs.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_arena.html">Arena C++</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Global Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_isystem.html">ISystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ichunkdata.html">IChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ibuffer.html">IBuffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_interfaceinfo.html">InterfaceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_iimage.html">IImage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_idevice.html">IDevice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_deviceinfo.html">DeviceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_einterfacetypeclass.html">EInterfaceTypeClass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_eincmodeclass.html">EIncModeClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_save.html">Save C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_arena.html">Arena C++</a> &raquo;</li>
+        
+      <li>Global Functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="global-functions">
+<h1>Global Functions<a class="headerlink" href="#global-functions" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="calculatecrc32">
+<h2>CalculateCRC32<a class="headerlink" href="#calculatecrc32" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena14CalculateCRC32EPK7uint8_t6size_t">
+<span id="_CPPv2N5Arena14CalculateCRC32EPK7uint8_t6size_t"></span><span id="Arena::CalculateCRC32__uint8_tCP.s"></span><span class="target" id="include_2_i_buffer_8h_1a6f9b23164ecc27cf2e48356737814a3d"></span>int64_t <code class="descclassname">Arena<code class="descclassname">::</code></code><code class="descname">CalculateCRC32</code><span class="sig-paren">(</span><em class="property">const</em> uint8_t *<em>pData</em>, size_t <em>nBytes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena14CalculateCRC32EPK7uint8_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> CalculateCRC32 </strong> calculates a CRC value (cyclical redundancy check) on a dataset. This is used to check whether the dataset has been sent in its entirety.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: int64_t</li>
+<li>The calculated CRC value</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pData</span></code>: <ul>
+<li>Type: const uint8_t</li>
+<li>A pointer to the data to use to calculate the CRC</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">nBytes</span></code>: <ul>
+<li>Type: size_t</li>
+<li>The size of the data</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>A CRC is performed by running a set of calculations on a dataset both before and after a transmission. The two calculated values are then compared for equality. If the values are the same, then the transmission is deemed successful; if different, then something in the transmission went wrong.</p>
+<p>A device can be set to send a CRC value by enabling its chunk data setting.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Enable chunk data and the CRC chunk</span>
+<span class="p">{</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">INodeMap</span><span class="o">*</span> <span class="n">pNodeMap</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">();</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CBooleanPtr</span> <span class="n">pChunkModeActive</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;ChunkModeActive&quot;</span><span class="p">);</span>
+    <span class="n">pChunkModeActive</span><span class="o">-&gt;</span><span class="n">SetValue</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CEnumerationPtr</span> <span class="n">pChunkSelector</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;ChunkSelector&quot;</span><span class="p">);</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CEnumEntryPtr</span> <span class="n">pCRC</span> <span class="o">=</span> <span class="n">pChunkSelector</span><span class="o">-&gt;</span><span class="n">GetEntryByname</span><span class="p">(</span><span class="s">&quot;CRC&quot;</span><span class="p">);</span>
+    <span class="n">pChunkSelector</span><span class="o">-&gt;</span><span class="n">SetIntValue</span><span class="p">(</span><span class="n">pCRC</span><span class="o">-&gt;</span><span class="n">GetValue</span><span class="p">());</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CBooleanPtr</span> <span class="n">pChunkEnable</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;ChunkEnable&quot;</span><span class="p">);</span>
+    <span class="n">pChunkEnable</span><span class="o">-&gt;</span><span class="n">SetValue</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>The CRC value can then be retrieved from a device.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Retrieving CRC from chunk data, calculating it on the data, and comparing the two</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">IChunkData</span><span class="o">*</span> <span class="n">pChunkData</span> <span class="o">=</span> <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">AsChunkData</span><span class="p">();</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CIntegerPtr</span> <span class="n">pChunkCRC</span> <span class="o">=</span> <span class="n">pChunkData</span><span class="o">-&gt;</span><span class="n">GetChunk</span><span class="p">(</span><span class="s">&quot;ChunkCRC&quot;</span><span class="p">);</span>
+    <span class="kt">int32_t</span> <span class="n">crcFromDevice</span> <span class="o">=</span> <span class="n">pChunkCRC</span><span class="o">-&gt;</span><span class="n">GetValue</span><span class="p">();</span>
+    
+    <span class="kt">int32_t</span> <span class="n">crcCalculated</span> <span class="o">=</span> <span class="n">CalculateCRC32</span><span class="p">(</span><span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetData</span><span class="p">(),</span> <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">SizeFilled</span><span class="p">());</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">crcFromDevice</span> <span class="o">==</span> <span class="n">crcCalculated</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Image data is complete</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>May throw GenICam::GenericException or other derived exception</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="opensystem">
+<h2>OpenSystem<a class="headerlink" href="#opensystem" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena10OpenSystemEv">
+<span id="_CPPv2N5Arena10OpenSystemEv"></span><span id="Arena::OpenSystem"></span><span class="target" id="_arena_8h_1a1039b107639dd5bc96f4d8bf3aff06b6"></span><a class="reference internal" href="cpp_arena_isystem.html#_CPPv3N5Arena7ISystemE" title="Arena::ISystem">ISystem</a> *<code class="descclassname">Arena<code class="descclassname">::</code></code><code class="descname">OpenSystem</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena10OpenSystemEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> OpenSystem </strong> initializes the Arena SDK and retrieves the system object (<a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system"><span class="std std-ref">Arena::ISystem</span></a>). The system must be closed or memory will leak.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: ISystem*</li>
+<li>The system object</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// opening and closing a system</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">ISystem</span><span class="o">*</span> <span class="n">pSystem</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">OpenSystem</span><span class="p">();</span>
+    <span class="c1">// ...</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">CloseSystem</span><span class="p">(</span><span class="n">pSystem</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Only one system may be opened at a time</li>
+<li>System must be closed</li>
+<li>May throw GenICam::GenericException or other derived exception</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system"><span class="std std-ref">Arena::ISystem</span></a></li>
+<li>Arena::OpenSystem</li>
+<li>Arena::CloseSystem </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="closesystem">
+<h2>CloseSystem<a class="headerlink" href="#closesystem" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena11CloseSystemEP7ISystem">
+<span id="_CPPv2N5Arena11CloseSystemEP7ISystem"></span><span id="Arena::CloseSystem__ISystemP"></span><span class="target" id="_arena_8h_1af797b1a49c43d04104016c7fec374a94"></span>void <code class="descclassname">Arena<code class="descclassname">::</code></code><code class="descname">CloseSystem</code><span class="sig-paren">(</span><a class="reference internal" href="cpp_arena_isystem.html#_CPPv3N5Arena7ISystemE" title="Arena::ISystem">ISystem</a> *<em>pSystem</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena11CloseSystemEP7ISystem" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> CloseSystem </strong> cleans up the system (<a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system"><span class="std std-ref">Arena::ISystem</span></a>) and deinitializes the Arena SDK, deallocating all memory.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pSystem</span></code>: <ul>
+<li>Type: ISystem*</li>
+<li>The system object</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>The system must be closed</li>
+<li>May throw GenICam::GenericException or other derived exception</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system"><span class="std std-ref">Arena::ISystem</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getbitsperpixel">
+<h2>GetBitsPerPixel<a class="headerlink" href="#getbitsperpixel" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena15GetBitsPerPixelE8uint64_t">
+<span id="_CPPv2N5Arena15GetBitsPerPixelE8uint64_t"></span><span id="Arena::GetBitsPerPixel__uint64_t"></span><span class="target" id="_p_f_n_c_custom_8h_1a707479108e5d34ef3df9a209132ca1d0"></span>size_t <code class="descclassname">Arena<code class="descclassname">::</code></code><code class="descname">GetBitsPerPixel</code><span class="sig-paren">(</span>uint64_t <em>pixelFormat</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena15GetBitsPerPixelE8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetBitsPerPixel </strong> get the number of bits per pixel of the image from the integer value of the pixel format (PfncFormat).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: size_t</li>
+<li>Number of bits per pixel for given pixel format</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pixelFormat</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>Represents: PfncFormat</li>
+<li>Pixel format to get bits per pixel</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Pixel format values are determined by the PFNC (Pixel Format Naming Convention) specification. The PFNC assigns a name and number to each pixel format helping to standardize pixel formats. The number of bits per pixel can be found in each integer at bytes 5 and 6 (mask 0x00FF0000). The pixel format can be determined by the integer using the GetPixelFormatName function provided by the PFNC. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="getnodevalue">
+<h2>GetNodeValue<a class="headerlink" href="#getnodevalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3I0EN5Arena12GetNodeValueEPN6GenApi8INodeMapERKN7GenICam8gcstringE">
+<span id="_CPPv2I0EN5Arena12GetNodeValueEPN6GenApi8INodeMapERKN7GenICam8gcstringE"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="_gen_api_custom_8h_1a2d5bbc1f90c7206124d8cec5a640aeab"></span>template&lt;typename <code class="descname">T</code>&gt;<br /><a class="reference internal" href="#_CPPv3I0EN5Arena12GetNodeValueEPN6GenApi8INodeMapERKN7GenICam8gcstringE" title="Arena::GetNodeValue::T">T</a> <code class="descclassname">Arena<code class="descclassname">::</code></code><code class="descname">GetNodeValue</code><span class="sig-paren">(</span>GenApi::INodeMap *<em>pNodeMap</em>, <em class="property">const</em> GenICam::gcstring &amp;<em>Name</em><span class="sig-paren">)</span><br /></dt>
+<dd><p><strong> GetNodeValue </strong> retrieves a node and gets its value.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: template&lt;typename T&gt; T</li>
+<li>Value of the node</li>
+<li>Template type representation</li>
+<li>Accepts int64_t, double, bool, GenICam::gcstring<ul>
+<li>Integer nodes use int64_t</li>
+<li>Float nodes use double</li>
+<li>Boolean nodes use bool</li>
+<li>String, enumeration nodes use GenICam::gcstring</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pNodeMap</span></code>: <ul>
+<li>Type: GenApi::INodeMap*</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">Name</span></code>: <ul>
+<li>Type: const GenICam::gcstring&amp;</li>
+<li>Node name</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>appropriate for integer, float, boolean, string, and enumeration nodes</li>
+<li>accepts int64_t for integer nodes</li>
+<li>accepts double for float nodes</li>
+<li>accepts bool for boolean nodes</li>
+<li>accepts GenICam::gcstring for string, enumeration nodes </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setnodevalue">
+<h2>SetNodeValue<a class="headerlink" href="#setnodevalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3I0EN5Arena12SetNodeValueEPN6GenApi8INodeMapERKN7GenICam8gcstringERK1T">
+<span id="_CPPv2I0EN5Arena12SetNodeValueEPN6GenApi8INodeMapERKN7GenICam8gcstringERK1T"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="_gen_api_custom_8h_1a14868a70848162769969609ff1ec387c"></span>template&lt;typename <code class="descname">T</code>&gt;<br />void <code class="descclassname">Arena<code class="descclassname">::</code></code><code class="descname">SetNodeValue</code><span class="sig-paren">(</span>GenApi::INodeMap *<em>pNodeMap</em>, <em class="property">const</em> GenICam::gcstring &amp;<em>Name</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I0EN5Arena12SetNodeValueEPN6GenApi8INodeMapERKN7GenICam8gcstringERK1T" title="Arena::SetNodeValue::T">T</a> &amp;<em>Value</em><span class="sig-paren">)</span><br /></dt>
+<dd><p><strong> SetNodeValue </strong> retrieves a node from a node map and sets its value.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pNodeMap</span></code>: <ul>
+<li>Type: GenApi::INodeMap*</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">Name</span></code>: <ul>
+<li>Type: const GenICam::gcstring&amp;</li>
+<li>Node name</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">Value</span></code>: <ul>
+<li>Type: const template&lt;typename T&gt; T&amp;</li>
+<li>Value to set</li>
+<li>Template type representation</li>
+<li>Accepts int64_t, double, bool, GenICam::gcstring:<ul>
+<li>Integer nodes use int64_t</li>
+<li>Float nodes use double</li>
+<li>Boolean nodes use bool</li>
+<li>String, enumeration nodes use GenICam::gcstring*</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>appropriate for integer, float, boolean, string, and enumeration nodes</li>
+<li>accepts int64_t for integer nodes</li>
+<li>accepts double for float nodes</li>
+<li>accepts bool for boolean nodes</li>
+<li>accepts GenICam::gcstring for string, enumeration nodes </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="executenode">
+<h2>ExecuteNode<a class="headerlink" href="#executenode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena11ExecuteNodeEPN6GenApi8INodeMapERKN7GenICam8gcstringE">
+<span id="_CPPv2N5Arena11ExecuteNodeEPN6GenApi8INodeMapERKN7GenICam8gcstringE"></span><span id="Arena::ExecuteNode__GenApi::INodeMapP.GenICam::gcstringCR"></span><span class="target" id="_gen_api_custom_8h_1af7552bd660bc78d69ec6bd0ca5407c7f"></span>void <code class="descclassname">Arena<code class="descclassname">::</code></code><code class="descname">ExecuteNode</code><span class="sig-paren">(</span>GenApi::INodeMap *<em>pNodeMap</em>, <em class="property">const</em> GenICam::gcstring &amp;<em>iCommandNodeName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena11ExecuteNodeEPN6GenApi8INodeMapERKN7GenICam8gcstringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> ExecuteNode </strong> retrieves a node from a node map and executes it.<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pNodeMap</span></code>: <ul>
+<li>Type: GenApi::INodeMap*</li>
+<li>A node map</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">iCommandNodeName</span></code>: <ul>
+<li>Type: const GenICam::gcstring&amp;</li>
+<li>Node name</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>only appropriate for command nodes </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_arena_isystem.html" class="btn btn-neutral float-right" title="ISystem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_arena_defs.html" class="btn btn-neutral" title="Definitions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,632 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Integer &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Nodes" href="c_arena_nodes.html"/>
+        <link rel="next" title="Register" href="c_arena_register.html"/>
+        <link rel="prev" title="Float" href="c_arena_float.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_device.html">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodemap.html">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena_nodes.html">Nodes</a> &raquo;</li>
+        
+      <li>Integer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="integer">
+<h1>Integer<a class="headerlink" href="#integer" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acintegergetinc">
+<h2>acIntegerGetInc<a class="headerlink" href="#acintegergetinc" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_integer_8h_1a0e22f1452bf57a837be65c8a77b3ccc3"></span><code class="descname">AC_ERROR AC_API acIntegerGetInc(acNode hNode, int64_t * pIncrement)</code></dt>
+<dd><p><strong> acIntegerGetInc </strong> retrieves the increment between valid values. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts integer nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIncrement</span></code>: <ul>
+<li>Type: int64_t*</li>
+<li>[Out] parameter</li>
+<li>Value increment</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acintegergetincmode">
+<h2>acIntegerGetIncMode<a class="headerlink" href="#acintegergetincmode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_integer_8h_1a5e4cd0c4153410c1c5996491b0925c3f"></span><code class="descname">AC_ERROR AC_API acIntegerGetIncMode(acNode hNode, AC_INC_MODE * pIncrementMode)</code></dt>
+<dd><p><strong> acIntegerGetIncMode </strong> retrieves the increment mode. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts integer nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pIncrementMode</span></code>: <ul>
+<li>Type: AC_INC_MODE*</li>
+<li>[Out] parameter</li>
+<li>Increment mode</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acintegergetmax">
+<h2>acIntegerGetMax<a class="headerlink" href="#acintegergetmax" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_integer_8h_1a6aa36a3b8dbdb9a0cebaa70412563b25"></span><code class="descname">AC_ERROR AC_API acIntegerGetMax(acNode hNode, int64_t * pMaximum)</code></dt>
+<dd><p><strong> acIntegerGetMax </strong> retrieves the maximum value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts integer nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pMaximum</span></code>: <ul>
+<li>Type: int64_t*</li>
+<li>[Out] parameter</li>
+<li>Maximum value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acintegergetmin">
+<h2>acIntegerGetMin<a class="headerlink" href="#acintegergetmin" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_integer_8h_1a130c0f38e1e3ce458a6d2aea87508d05"></span><code class="descname">AC_ERROR AC_API acIntegerGetMin(acNode hNode, int64_t * pMinimum)</code></dt>
+<dd><p><strong> acIntegerGetMin </strong> retrieves the minimum value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts integer nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pMinimum</span></code>: <ul>
+<li>Type: int64_t*</li>
+<li>[Out] parameter</li>
+<li>Minimum value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acintegergetrepresentation">
+<h2>acIntegerGetRepresentation<a class="headerlink" href="#acintegergetrepresentation" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_integer_8h_1ad3a1aa932d7a7e6a61f1ef0e031602e5"></span><code class="descname">AC_ERROR AC_API acIntegerGetRepresentation(acNode hNode, AC_REPRESENTATION * pRepresentation)</code></dt>
+<dd><p><strong> acIntegerGetRepresentation </strong> retrieves the value representation. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts integer nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pRepresentation</span></code>: <ul>
+<li>Type: AC_REPRESENTATION*</li>
+<li>[Out] parameter</li>
+<li>Numeric representation</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acintegergetunit">
+<h2>acIntegerGetUnit<a class="headerlink" href="#acintegergetunit" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_integer_8h_1a398f5765bd9bd429be91a28211f8ffc9"></span><code class="descname">AC_ERROR AC_API acIntegerGetUnit(acNode hNode, char * pUnitBuf, size_t * pBufLen)</code></dt>
+<dd><p><strong> acIntegerGetValue </strong> represents the units of the value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts integer nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pUnitBuf</span></code>: <ul>
+<li>Type: char*</li>
+<li>[Out] parameter</li>
+<li>Unit of the value</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBufLen</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[In/out] parameter</li>
+<li>(In) Length of the buffer</li>
+<li>(Out) Length of the value</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acintegergetvalue">
+<h2>acIntegerGetValue<a class="headerlink" href="#acintegergetvalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_integer_8h_1a64f3ecc1744d23c61ce0f5752af720cc"></span><code class="descname">AC_ERROR AC_API acIntegerGetValue(acNode hNode, int64_t * pValue)</code></dt>
+<dd><p><strong> acIntegerGetValue </strong> retrieves the current value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts integer nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pValue</span></code>: <ul>
+<li>Type: int64_t*</li>
+<li>[Out] parameter</li>
+<li>Value of the node</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acintegerimposemin">
+<h2>acIntegerImposeMin<a class="headerlink" href="#acintegerimposemin" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_integer_8h_1acbeafa44bf47630d623f7d936b8c0336"></span><code class="descname">AC_ERROR AC_API acIntegerImposeMin(acNode hNode, int64_t imposedMinimum)</code></dt>
+<dd><p><strong> acIntegerImposeMin </strong> imposes a minimum. New minimum must be greater than the actual minimum. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts integer nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">imposedMinimum</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>[In] parameter</li>
+<li>Minimum to impose</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acintegerimposemax">
+<h2>acIntegerImposeMax<a class="headerlink" href="#acintegerimposemax" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_integer_8h_1abb1a1ff00330c4d51e03c85bb28aed58"></span><code class="descname">AC_ERROR AC_API acIntegerImposeMax(acNode hNode, int64_t imposedMaximum)</code></dt>
+<dd><p><strong> acIntegerImposeMax </strong> imposes a maximum. New maximum msut be less than the actual maximum. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts integer nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">imposedMaximum</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>[In] parameter</li>
+<li>Maximum to impose</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acintegersetvalue">
+<h2>acIntegerSetValue<a class="headerlink" href="#acintegersetvalue" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_integer_8h_1abd312c8bde6794b81541f7b51712577a"></span><code class="descname">AC_ERROR AC_API acIntegerSetValue(acNode hNode, int64_t value)</code></dt>
+<dd><p><strong> acIntegerSetValue </strong> sets a new value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hNode</span></code>: <ul>
+<li>Type: acNode</li>
+<li>[In] parameter</li>
+<li>A node</li>
+<li>Accepts integer nodes</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">value</span></code>: <ul>
+<li>Type: int64_t</li>
+<li>[In] parameter</li>
+<li>Value to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_register.html" class="btn btn-neutral float-right" title="Register" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_float.html" class="btn btn-neutral" title="Float" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

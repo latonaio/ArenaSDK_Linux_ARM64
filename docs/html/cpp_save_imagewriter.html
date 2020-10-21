@@ -1,0 +1,1276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ImageWriter &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Save C++" href="cpp_save.html"/>
+        <link rel="next" title="C++ Code Samples" href="cpp_examples.html"/>
+        <link rel="prev" title="ImageReader" href="cpp_save_imagereader.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cpp_arena.html">Arena C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_save.html">Save C++</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_videorecorder.html">VideoRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_imageparams.html">ImageParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_videoparams.html">VideoParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_save_imagereader.html">ImageReader</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ImageWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_save.html">Save C++</a> &raquo;</li>
+        
+      <li>ImageWriter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="imagewriter">
+<h1>ImageWriter<a class="headerlink" href="#imagewriter" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="id1">
+<h2>ImageWriter<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv3N4Save11ImageWriterE">
+<span id="_CPPv2N4Save11ImageWriterE"></span><span id="Save::ImageWriter"></span><span class="target" id="class_save_1_1_image_writer"></span><em class="property">class </em><code class="descname">ImageWriter</code><a class="headerlink" href="#_CPPv3N4Save11ImageWriterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The image writer facilitates the saving of image data to files. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>ImageWriter<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter11ImageWriterEv">
+<span id="_CPPv2N4Save11ImageWriter11ImageWriterEv"></span><span id="Save::ImageWriter::ImageWriter"></span><span class="target" id="class_save_1_1_image_writer_1ae33829ee02ed282fb14eece07ba9d36f"></span><code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">ImageWriter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>An empty constructor.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Must set image parameters before saving </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>ImageWriter<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter11ImageWriterE11ImageParamsPKc">
+<span id="_CPPv2N4Save11ImageWriter11ImageWriterE11ImageParamsPKc"></span><span id="Save::ImageWriter::ImageWriter__ImageParams.cCP"></span><span class="target" id="class_save_1_1_image_writer_1a67be74ac95bd2221b144e544945ca84e"></span><code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">ImageWriter</code><span class="sig-paren">(</span><a class="reference internal" href="cpp_save_imageparams.html#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a> <em>imageParams</em>, <em class="property">const</em> char *<em>pFileNamePattern</em> = &quot;savedimages/image&lt;count&gt;.jpg&quot;<span class="sig-paren">)</span><br /></dt>
+<dd><p><p>A constructor. </p>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">imageParams</span></code>: <ul>
+<li>Type: <a class="reference internal" href="cpp_save_imageparams.html#class_save_1_1_image_params"><span class="std std-ref">Save::ImageParams</span></a></li>
+<li>The parameters of the image(s) to save</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pFileNamePattern</span></code>: <ul>
+<li>Type: const char*</li>
+<li>File name pattern to use for file names</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h2>ImageWriter<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter11ImageWriterERK11ImageWriter">
+<span id="_CPPv2N4Save11ImageWriter11ImageWriterERK11ImageWriter"></span><span id="Save::ImageWriter::ImageWriter__ImageWriterCR"></span><span class="target" id="class_save_1_1_image_writer_1aa3955357b2fb360a71744329be1c5671"></span><code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">ImageWriter</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N4Save11ImageWriter11ImageWriterEv" title="Save::ImageWriter::ImageWriter">ImageWriter</a> &amp;<em>imageWriter</em><span class="sig-paren">)</span><br /></dt>
+<dd><p><p>A copy constructor. </p>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">imageWriter</span></code>: <ul>
+<li>Type: const <a class="reference internal" href="#class_save_1_1_image_writer"><span class="std std-ref">Save::ImageWriter</span></a>&amp;</li>
+<li>An image writer to copy</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="operator">
+<h2>Operator =<a class="headerlink" href="#operator" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriteraSE11ImageWriter">
+<span id="_CPPv2N4Save11ImageWriteraSE11ImageWriter"></span><span id="Save::ImageWriter::assign-operator__ImageWriter"></span><span class="target" id="class_save_1_1_image_writer_1ad4ae3a99bf0228aa957f86c638c4c157"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N4Save11ImageWriterE" title="Save::ImageWriter">ImageWriter</a> &amp;<code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N4Save11ImageWriterE" title="Save::ImageWriter">ImageWriter</a> <em>imageWriter</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriteraSE11ImageWriter" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><p>A copy assignment operator. </p>
+<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: const <a class="reference internal" href="#class_save_1_1_image_writer"><span class="std std-ref">Save::ImageWriter</span></a></li>
+<li>A copy of an image writer</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">imageWriter</span></code>: <ul>
+<li>Type: <a class="reference internal" href="#class_save_1_1_image_writer"><span class="std std-ref">Save::ImageWriter</span></a></li>
+<li>An image writer to copy</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h2>~ImageWriter<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriterD0Ev">
+<span id="_CPPv2N4Save11ImageWriterD0Ev"></span><span id="Save::ImageWriter::~ImageWriter"></span><span class="target" id="class_save_1_1_image_writer_1adb78f5319cd700cd3bc8c87dbfcb8e11"></span><code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">~ImageWriter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriterD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A destructor. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="setjpeg">
+<h2>SetJpeg<a class="headerlink" href="#setjpeg" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter7SetJpegEPKc6size_tb16EJpegSubsamplingb">
+<span id="_CPPv2N4Save11ImageWriter7SetJpegEPKc6size_tb16EJpegSubsamplingb"></span><span id="Save::ImageWriter::SetJpeg__cCP.s.b.EJpegSubsampling.b"></span><span class="target" id="class_save_1_1_image_writer_1ae8cf2781c93e2bc957174aa8f91f1102"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">SetJpeg</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pSetExtension</em> = &quot;.jpg&quot;, size_t <em>quality</em> = 75, bool <em>progressive</em> = false, <a class="reference internal" href="cpp_save_defs.html#_CPPv3N4Save16EJpegSubsamplingE" title="Save::EJpegSubsampling">EJpegSubsampling</a> <em>subsampling</em> = Subsampling420, bool <em>optimize</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter7SetJpegEPKc6size_tb16EJpegSubsamplingb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetJpeg </strong> sets the output file format of the image writer to JPEG.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pSetExtension</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Default: “.jpg”</li>
+<li>Extension to use for the files</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">quality</span></code>: <ul>
+<li>Type: size_t</li>
+<li>Default: 75</li>
+<li>Range: 1-100</li>
+<li>Image quality (1 lowest, 100 highest)</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">progressive</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: false</li>
+<li>If true, saves progressive</li>
+<li>Otherwise, saves baseline</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">subsampling</span></code>: <ul>
+<li>Type: EJpegSubsampling</li>
+<li>Default: Subsampling420</li>
+<li>The chroma subsampling to apply</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">optimize</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: false</li>
+<li>If true, calculates optimal Huffman coding tables</li>
+<li>Otherwise, does not</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>An image may be set to progressive, which encodes and decodes the image gradually so the entire image becomes sharper as the bytes arrive. Progressive images tend to have a smaller file size but take more CPU time and memory to encode and decode them. Otherwise, <strong> SetJpeg </strong> loads baseline by default. This encodes and decodes the image as the data is made available, top to bottom and left to right. Baseline tends to have a larger file size but takes less time and memory.</p>
+<p>Subsampling compresses the chroma (color information) of an image while retaining luminance (brightness). This reduces the bandwidth used to load an image. For example, setting <strong> SetJpeg </strong> subsampling to 4:2:0 (default Subsampling420) reduces the bandwidth by half with little visual difference compared to 4:4:4 (NoSubsampling).</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// setting jpeg image options</span>
+<span class="p">{</span>
+       <span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">sk_pimg</span> <span class="o">=</span> <span class="s">&quot;imageoptions&quot;</span><span class="p">;</span>
+
+   <span class="kt">void</span> <span class="nf">SetImageOptions</span><span class="p">(</span><span class="n">PluginController</span><span class="o">&amp;</span> <span class="n">ctrl</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">extension</span><span class="p">,</span> <span class="n">Save</span><span class="o">::</span><span class="n">ImageWriter</span><span class="o">*</span> <span class="n">pImgWrt</span><span class="p">)</span>
+   <span class="p">{</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">extension</span> <span class="o">==</span> <span class="s">&quot;.jpg&quot;</span><span class="p">)</span>
+       <span class="p">{</span>
+           <span class="n">Save</span><span class="o">::</span><span class="n">EJpegSubsampling</span> <span class="n">subsampling</span> <span class="o">=</span> <span class="n">Save</span><span class="o">::</span><span class="n">EJpegSubsampling</span><span class="o">::</span><span class="n">NoSubsampling</span><span class="p">;</span>
+
+           <span class="n">pImgWrt</span><span class="o">-&gt;</span><span class="n">SetJpeg</span><span class="p">(</span><span class="n">extension</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="n">ctrl</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">sk_pimg</span><span class="p">,</span> <span class="s">&quot;img_jpeg_quality&quot;</span><span class="p">)),</span> 
+           <span class="n">ctrl</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">sk_pimg</span><span class="p">,</span> <span class="s">&quot;img_jpeg_progressive&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s">&quot;1&quot;</span><span class="p">,</span> <span class="n">subsampling</span><span class="p">,</span> <span class="n">ctrl</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">sk_pimg</span><span class="p">,</span> <span class="s">&quot;img_jpeg_optimize&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s">&quot;1&quot;</span><span class="p">);</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+</div>
+<div class="section" id="setbmp">
+<h2>SetBmp<a class="headerlink" href="#setbmp" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter6SetBmpEPKc">
+<span id="_CPPv2N4Save11ImageWriter6SetBmpEPKc"></span><span id="Save::ImageWriter::SetBmp__cCP"></span><span class="target" id="class_save_1_1_image_writer_1ad2b2c1a45089b072f550924a13cfba29"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">SetBmp</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pSetExtension</em> = &quot;.bmp&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter6SetBmpEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetBmp </strong> sets the output file format of the image writer to BMP. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pSetExtension</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Default: “.bmp”</li>
+<li>Extension to use for saved files</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setraw">
+<h2>SetRaw<a class="headerlink" href="#setraw" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter6SetRawEPKc">
+<span id="_CPPv2N4Save11ImageWriter6SetRawEPKc"></span><span id="Save::ImageWriter::SetRaw__cCP"></span><span class="target" id="class_save_1_1_image_writer_1acc682084d11dabadf5948f46db4e989e"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">SetRaw</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pSetExtension</em> = &quot;.raw&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter6SetRawEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetRaw </strong> sets the output file format of the image writer to raw. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pSetExtension</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Default: “.raw”</li>
+<li>Extension to use for the saved files</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setply">
+<h2>SetPly<a class="headerlink" href="#setply" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter6SetPlyEPKcbbffff">
+<span id="_CPPv2N4Save11ImageWriter6SetPlyEPKcbbffff"></span><span id="Save::ImageWriter::SetPly__cCP.b.b.float.float.float.float"></span><span class="target" id="class_save_1_1_image_writer_1afbef52a36ff779b66e67de3bf98c9951"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">SetPly</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pSetExtension</em> = &quot;.ply&quot;, bool <em>filterPoints</em> = true, bool <em>isSigned</em> = false, float <em>scale</em> = 0.25f, float <em>offsetA</em> = 0.0f, float <em>offsetB</em> = 0.0f, float <em>offsetC</em> = 0.0f<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter6SetPlyEPKcbbffff" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetPly </strong> sets the output file format of the image writer to ply. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pSetExtension</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Default: “.ply”</li>
+<li>Extension to use for the saved files</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">filterPoints</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: true</li>
+<li>Filter NaN points (A = B = C = -32,678)</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">isSigned</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: false</li>
+<li>If true, interpret data as signed pixel format</li>
+<li>Otherwise, interpret as unsigned pixel format</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">scale</span></code>: <ul>
+<li>Type: float</li>
+<li>Default: 0.25f</li>
+<li>Data scaling</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">offsetA</span></code>: <ul>
+<li>Type: float</li>
+<li>Default: 0.0f</li>
+<li>X-axis (A) offset</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">offsetB</span></code>: <ul>
+<li>Type: float</li>
+<li>Default: 0.0f</li>
+<li>Y-axis (B) offset</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">offsetC</span></code>: <ul>
+<li>Type: float</li>
+<li>Default: 0.0f</li>
+<li>Z-axis (C) offset</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="settiff">
+<h2>SetTiff<a class="headerlink" href="#settiff" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter7SetTiffEPKc16ETiffCompressionb">
+<span id="_CPPv2N4Save11ImageWriter7SetTiffEPKc16ETiffCompressionb"></span><span id="Save::ImageWriter::SetTiff__cCP.ETiffCompression.b"></span><span class="target" id="class_save_1_1_image_writer_1a7943070dc4b4f95917a48cdd1cfa0a95"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">SetTiff</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pSetExtension</em> = &quot;.tiff&quot;, <a class="reference internal" href="cpp_save_defs.html#_CPPv3N4Save16ETiffCompressionE" title="Save::ETiffCompression">ETiffCompression</a> <em>compression</em> = NoCompression, bool <em>cmykTags</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter7SetTiffEPKc16ETiffCompressionb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetTiff </strong> sets the output file format of the image writer to TIFF. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pSetExtension</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Default: “.tiff”</li>
+<li>Extension to use for the files</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">compression</span></code>: <ul>
+<li>Type: ETiffCompression</li>
+<li>Default: NoCompression</li>
+<li>Compression algorithm</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">cmykTags</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: false</li>
+<li>If true, stores tags for separated CMYK</li>
+<li>Otherwise, does not</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setpng">
+<h2>SetPng<a class="headerlink" href="#setpng" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter6SetPngEPKc6size_tb">
+<span id="_CPPv2N4Save11ImageWriter6SetPngEPKc6size_tb"></span><span id="Save::ImageWriter::SetPng__cCP.s.b"></span><span class="target" id="class_save_1_1_image_writer_1a95585ff4e136d9d409df4c58238c9a3d"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">SetPng</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pSetExtension</em> = &quot;.png&quot;, size_t <em>compression</em> = 0, bool <em>interlaced</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter6SetPngEPKc6size_tb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetPng </strong> sets the output file format of the image writer to PNG. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pSetExtension</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Default: “.png”</li>
+<li>Extension to use for the files</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">compression</span></code>: <ul>
+<li>Type: size_t</li>
+<li>Default: 0</li>
+<li>Range: 0-9</li>
+<li>Compression level</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">interlaced</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: false</li>
+<li>If true, uses Adam7 interlacing</li>
+<li>Otherwise, does not</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setextension">
+<h2>SetExtension<a class="headerlink" href="#setextension" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter12SetExtensionEPKc">
+<span id="_CPPv2N4Save11ImageWriter12SetExtensionEPKc"></span><span id="Save::ImageWriter::SetExtension__cCP"></span><span class="target" id="class_save_1_1_image_writer_1a9bdfb31777460aad759f7624e75c8f5b"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">SetExtension</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pExt</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter12SetExtensionEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetExtension </strong> sets a new extension on the file name. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pExt</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Extension to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setparams">
+<h2>SetParams<a class="headerlink" href="#setparams" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter9SetParamsE11ImageParams">
+<span id="_CPPv2N4Save11ImageWriter9SetParamsE11ImageParams"></span><span id="Save::ImageWriter::SetParams__ImageParams"></span><span class="target" id="class_save_1_1_image_writer_1a4e6550d79083c0cd918f18a03225b58f"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">SetParams</code><span class="sig-paren">(</span><a class="reference internal" href="cpp_save_imageparams.html#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a> <em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter9SetParamsE11ImageParams" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetParams </strong> sets the image parameters of the images to save. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">params</span></code>: <ul>
+<li>Type: <a class="reference internal" href="cpp_save_imageparams.html#class_save_1_1_image_params"><span class="std std-ref">Save::ImageParams</span></a></li>
+<li>Image parameters of the image data to save</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setfilenamepattern">
+<h2>SetFileNamePattern<a class="headerlink" href="#setfilenamepattern" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter18SetFileNamePatternEPKc">
+<span id="_CPPv2N4Save11ImageWriter18SetFileNamePatternEPKc"></span><span id="Save::ImageWriter::SetFileNamePattern__cCP"></span><span class="target" id="class_save_1_1_image_writer_1a519e5e872efbe3001db8fba1020fd08c"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">SetFileNamePattern</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pFileNamePattern</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter18SetFileNamePatternEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetFileNamePattern </strong> sets a new file name or pattern for upcoming image(s) to save.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pFileNamePattern</span></code>: <ul>
+<li>Type: const char*</li>
+<li>File name pattern to use for file names</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><strong> SetFileNamePattern </strong> uses special tags to specify the file name to save. &lt;datetime&gt; uses the system clock to set the file name pattern to include the timestamp of the created image. &lt;datetime&gt; accepts a format string, and defaults to &lt;datetime:yyMMdd_hhmmss_fff&gt; (fff is milliseconds) &lt;count&gt; can be specified in three ways: &lt;count:local&gt; is the defaul value and counts according to a specific image writer or video recorder object. &lt;count:path&gt; counts the same file name pattern across all image writers and video recorders objects. This means that multiple objects that share a file name pattern will share their count. &lt;count:global&gt; shares a count across all image writers and video recorders.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// setting file name pattern and saving image</span>
+<span class="kt">void</span> <span class="nf">SaveFiles</span><span class="p">(</span><span class="n">Arena</span><span class="o">::</span><span class="n">IDevice</span><span class="o">*</span> <span class="n">pDevice</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">serial</span><span class="p">,</span> <span class="n">Save</span><span class="o">::</span><span class="n">ImageWriter</span><span class="o">*</span> <span class="n">pImgWrt</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">pImgWrt</span><span class="o">-&gt;</span><span class="n">UpdateTag</span><span class="p">(</span><span class="s">&quot;&lt;serial&gt;&quot;</span><span class="p">,</span> <span class="n">serial</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numImages</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_pImgWrt</span><span class="o">-&gt;</span><span class="n">SetFileNamePattern</span><span class="p">(</span><span class="s">&quot;Images/&lt;serial&gt;_image&lt;count&gt;-&lt;datetime:yyMMdd_hhmmss_fff&gt;.bmp&quot;</span><span class="p">);</span>
+
+        <span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*</span> <span class="n">pImage</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetImage</span><span class="p">(</span><span class="n">TIMEOUT</span><span class="p">);</span>
+        <span class="n">m_pImgWrt</span><span class="o">-&gt;</span><span class="n">Save</span><span class="p">(</span><span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetData</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+</div>
+<div class="section" id="updatetag">
+<h2>UpdateTag<a class="headerlink" href="#updatetag" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter9UpdateTagEPKcPKc">
+<span id="_CPPv2N4Save11ImageWriter9UpdateTagEPKcPKc"></span><span id="Save::ImageWriter::UpdateTag__cCP.cCP"></span><span class="target" id="class_save_1_1_image_writer_1aec9c11bc29c611d53f0fa177a014c772"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">UpdateTag</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pTag</em>, <em class="property">const</em> char *<em>pValue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter9UpdateTagEPKcPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> UpdateTag </strong> updates the value to replace a given tag when an image is saved.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pTag</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Tag to replace</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pValue</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Value to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// updating serial, width, height, and bits per pixel tags and setting as filename pattern to save images</span>
+<span class="kt">void</span> <span class="nf">UpdateTags</span><span class="p">(</span><span class="n">Arena</span><span class="o">::</span><span class="n">IDevice</span><span class="o">*</span> <span class="n">pDevice</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">serial</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">w</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">h</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">bpp</span><span class="p">,</span> <span class="n">Save</span><span class="o">::</span><span class="n">ImageWriter</span><span class="o">*</span> <span class="n">pImgWrt</span><span class="p">,</span> <span class="n">PluginController</span><span class="o">&amp;</span> <span class="n">ctrl</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">pImgWrt</span><span class="o">-&gt;</span><span class="n">UpdateTag</span><span class="p">(</span><span class="s">&quot;&lt;serial&gt;&quot;</span><span class="p">,</span> <span class="n">serial</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="n">pImgWrt</span><span class="o">-&gt;</span><span class="n">UpdateTag</span><span class="p">(</span><span class="s">&quot;&lt;width&gt;&quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">w</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+<span class="n">pImgWrt</span><span class="o">-&gt;</span><span class="n">UpdateTag</span><span class="p">(</span><span class="s">&quot;&lt;height&gt;&quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">h</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+<span class="n">pImgWrt</span><span class="o">-&gt;</span><span class="n">UpdateTag</span><span class="p">(</span><span class="s">&quot;&lt;bitsperpixel&gt;&quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">bpp</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+
+<span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span> <span class="n">pixelFormat</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;PixelFormat&quot;</span><span class="p">);</span>
+
+<span class="n">pImgWrt</span><span class="o">-&gt;</span><span class="n">UpdateTag</span><span class="p">(</span><span class="s">&quot;&lt;pixelformat&gt;&quot;</span><span class="p">,</span> <span class="n">pixelFormat</span><span class="p">);</span>
+
+<span class="n">m_pImgWrt</span><span class="o">-&gt;</span><span class="n">SetFileNamePattern</span><span class="p">(</span><span class="n">Images</span><span class="o">/&lt;</span><span class="n">serial</span><span class="o">&gt;</span><span class="n">_image</span><span class="o">&lt;</span><span class="n">count</span><span class="o">&gt;-&lt;</span><span class="n">width</span><span class="o">&gt;</span><span class="n">x</span><span class="o">&lt;</span><span class="n">height</span><span class="o">&gt;-&lt;</span><span class="n">bitsperpixel</span><span class="o">&gt;</span><span class="n">bpp_format</span><span class="o">&lt;</span><span class="n">pixelformat</span><span class="o">&gt;-&lt;</span><span class="n">datetime</span><span class="o">&gt;</span><span class="p">.</span><span class="n">bmp</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+</div>
+<div class="section" id="setcount">
+<h2>SetCount<a class="headerlink" href="#setcount" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter8SetCountEy11ECountScope">
+<span id="_CPPv2N4Save11ImageWriter8SetCountEy11ECountScope"></span><span id="Save::ImageWriter::SetCount__unsigned-l-l.ECountScope"></span><span class="target" id="class_save_1_1_image_writer_1a218d709a3af47efbfedd7be04feeaf82"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">SetCount</code><span class="sig-paren">(</span>unsigned long long <em>count</em>, <a class="reference internal" href="cpp_save_defs.html#_CPPv3N4Save11ECountScopeE" title="Save::ECountScope">ECountScope</a> <em>scope</em> = Local<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter8SetCountEy11ECountScope" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetCount </strong> sets the value of one of the available counters.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">count</span></code>: <ul>
+<li>Type: unsigned long long</li>
+<li>Value to set</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">scope</span></code>: <ul>
+<li>Type: ECountScope</li>
+<li>Default: Local</li>
+<li>Counter to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// adding the counter value to saved images</span>
+<span class="p">{</span>
+    <span class="n">Save</span><span class="o">::</span><span class="n">ImageWriter</span> <span class="n">writer</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="s">&quot;savedimages/image&lt;count&gt;.jpg&quot;</span><span class="p">);</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numImages</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="n">writer</span><span class="p">.</span><span class="n">Save</span><span class="p">(</span><span class="n">pImageData</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+</div>
+<div class="section" id="settimestamp">
+<h2>SetTimestamp<a class="headerlink" href="#settimestamp" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter12SetTimestampEy">
+<span id="_CPPv2N4Save11ImageWriter12SetTimestampEy"></span><span id="Save::ImageWriter::SetTimestamp__unsigned-l-l"></span><span class="target" id="class_save_1_1_image_writer_1aa3b0908aa8447ec16a7c40cab91446ef"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">SetTimestamp</code><span class="sig-paren">(</span>unsigned long long <em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter12SetTimestampEy" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> SetTimestamp </strong> updates the timestamp to use in any file name patterns.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">timestamp</span></code>: <ul>
+<li>Type: unsigned long long</li>
+<li>Timestamp to set</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// using the timestamp to differentiate images</span>
+<span class="p">{</span>
+    <span class="n">Save</span><span class="o">::</span><span class="n">ImageWriter</span> <span class="n">writer</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="s">&quot;savedimages/image&lt;timestamp&gt;.jpg&quot;</span><span class="p">);</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numImages</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="n">writer</span><span class="p">.</span><span class="n">SetTimestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">);</span>
+        <span class="n">writer</span><span class="p">.</span><span class="n">Save</span><span class="p">(</span><span class="n">pImageData</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p></p>
+</dd></dl>
+
+</div>
+<div class="section" id="getparams">
+<h2>GetParams<a class="headerlink" href="#getparams" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter9GetParamsEv">
+<span id="_CPPv2N4Save11ImageWriter9GetParamsEv"></span><span id="Save::ImageWriter::GetParams"></span><span class="target" id="class_save_1_1_image_writer_1a198c8f40ec3fc757944981cac4889107"></span><a class="reference internal" href="cpp_save_imageparams.html#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a> <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">GetParams</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter9GetParamsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetParams </strong> retrieves the image parameters used to save images. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="cpp_save_imageparams.html#class_save_1_1_image_params"><span class="std std-ref">Save::ImageParams</span></a></li>
+<li>Image parameters</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getfilenamepattern">
+<h2>GetFileNamePattern<a class="headerlink" href="#getfilenamepattern" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter18GetFileNamePatternEbb">
+<span id="_CPPv2N4Save11ImageWriter18GetFileNamePatternEbb"></span><span id="Save::ImageWriter::GetFileNamePattern__b.b"></span><span class="target" id="class_save_1_1_image_writer_1a574ac9aed2acf6e532eb2be0a59c66ab"></span>std::string <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">GetFileNamePattern</code><span class="sig-paren">(</span>bool <em>withPath</em> = false, bool <em>withExt</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter18GetFileNamePatternEbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetFileNamePattern </strong> gets the file name pattern currently being used to save images. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: std::string</li>
+<li>File name pattern</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">withPath</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: false</li>
+<li>If true, directories included in returned file name pattern</li>
+<li>Otherwise, not</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">withExt</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: true</li>
+<li>If true, extension included in returned file name pattern</li>
+<li>Otherwise, not</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getpath">
+<h2>GetPath<a class="headerlink" href="#getpath" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter7GetPathEv">
+<span id="_CPPv2N4Save11ImageWriter7GetPathEv"></span><span id="Save::ImageWriter::GetPath"></span><span class="target" id="class_save_1_1_image_writer_1a0ae8a18989abf36ed3c07c9e0f860859"></span>std::string <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">GetPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter7GetPathEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetPath </strong> retrieves the path portion of the file name pattern. Tags ‘&lt;count&gt;’ and ‘&lt;timestamp&gt;’ are not replaced. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: std::string</li>
+<li>Path</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getextension">
+<h2>GetExtension<a class="headerlink" href="#getextension" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter12GetExtensionEv">
+<span id="_CPPv2N4Save11ImageWriter12GetExtensionEv"></span><span id="Save::ImageWriter::GetExtension"></span><span class="target" id="class_save_1_1_image_writer_1a0d703e4bf758dd04ebd8059610e52227"></span>std::string <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">GetExtension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter12GetExtensionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetExtension </strong> retrieves the extension portion of the file name pattern. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: std::string</li>
+<li>Extension to save</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="peekfilename">
+<h2>PeekFileName<a class="headerlink" href="#peekfilename" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter12PeekFileNameEbb">
+<span id="_CPPv2N4Save11ImageWriter12PeekFileNameEbb"></span><span id="Save::ImageWriter::PeekFileName__b.b"></span><span class="target" id="class_save_1_1_image_writer_1a69132104dcd3491d1cdb37b07473a015"></span>std::string <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">PeekFileName</code><span class="sig-paren">(</span>bool <em>withPath</em> = false, bool <em>withExt</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter12PeekFileNameEbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> PeekFileName </strong> provides a look at the file name that the next image will be saved as. Tags ‘&lt;count&gt;’ and ‘&lt;timestamp&gt;’ are replaced with their respective values. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: std::string</li>
+<li>Next file name to save</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">withPath</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: false</li>
+<li>If true, directories included in returned file name pattern</li>
+<li>Otherwise, not</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">withExt</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: true</li>
+<li>If true, extension included in returned file name pattern</li>
+<li>Otherwise, not</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="peekcount">
+<h2>PeekCount<a class="headerlink" href="#peekcount" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter9PeekCountE11ECountScope">
+<span id="_CPPv2N4Save11ImageWriter9PeekCountE11ECountScope"></span><span id="Save::ImageWriter::PeekCount__ECountScope"></span><span class="target" id="class_save_1_1_image_writer_1a50d6458a7356f52f4bd9302fdf30fc28"></span>unsigned long long <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">PeekCount</code><span class="sig-paren">(</span><a class="reference internal" href="cpp_save_defs.html#_CPPv3N4Save11ECountScopeE" title="Save::ECountScope">ECountScope</a> <em>scope</em> = Local<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter9PeekCountE11ECountScope" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> PeekCount </strong> retrieves a peek at the value of one of the available counters. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: unsigned long long</li>
+<li>Current count value</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">scope</span></code>: <ul>
+<li>Type: ECountScope</li>
+<li>Default: Local</li>
+<li>Counter to peek</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getlastfilename">
+<h2>GetLastFileName<a class="headerlink" href="#getlastfilename" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter15GetLastFileNameEbb">
+<span id="_CPPv2N4Save11ImageWriter15GetLastFileNameEbb"></span><span id="Save::ImageWriter::GetLastFileName__b.b"></span><span class="target" id="class_save_1_1_image_writer_1a5d2834f1443d8eaefb59d63f9906f68e"></span>std::string <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">GetLastFileName</code><span class="sig-paren">(</span>bool <em>withPath</em> = false, bool <em>withExt</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4Save11ImageWriter15GetLastFileNameEbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetLastFileName </strong> provides a look at the last file name that an image was saved under. Tags ‘&lt;count&gt;’ and ‘&lt;timestamp&gt;’ are replaced with their respective values.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: std::string</li>
+<li>Last file name</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">withPath</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: false</li>
+<li>If true, directories included in returned file name pattern</li>
+<li>Otherwise, not</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">withExt</span></code>: <ul>
+<li>Type: bool</li>
+<li>Default: true</li>
+<li>If true, extension included in returned file name pattern</li>
+<li>Otherwise, not</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// retrieving an image and saving it to the writer, then printing the file</span>
+<span class="c1">// name of the most recently saved image.</span>
+<span class="p">{</span>
+<span class="n">Save</span><span class="o">::</span><span class="n">ImageWriter</span> <span class="n">writer</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="s">&quot;savedimages/image-&lt;count&gt;_&lt;timestamp&gt;.jpg&quot;</span><span class="p">);</span>
+<span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*</span> <span class="n">pImage</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetImage</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="n">writer</span> <span class="o">&lt;&lt;</span> <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetData</span><span class="p">();</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Save image at &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">writer</span><span class="p">.</span><span class="n">GetLastFileName</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RequeueBuffer</span><span class="p">(</span><span class="n">pImage</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+</div>
+<div class="section" id="save">
+<h2>Save<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb">
+<span id="_CPPv2N4Save11ImageWriter4SaveEPK7uint8_tb"></span><span id="Save::ImageWriter::Save__uint8_tCP.b"></span><span class="target" id="class_save_1_1_image_writer_1ad125be7569ce1f8d7ee3711deff246df"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">Save</code><span class="sig-paren">(</span><em class="property">const</em> uint8_t *<em>pData</em>, bool <em>createDirectories</em> = true<span class="sig-paren">)</span><br /></dt>
+<dd><p><strong> Save </strong> saves an image according to the file name pattern, image parameters, and image data. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pData</span></code>: <ul>
+<li>Type: const uint8_t*</li>
+<li>Pointer to the image data to save</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">createDirectories</span></code>: <ul>
+<li>Type: bool createDirectories</li>
+<li>Default: true</li>
+<li>If true, attempts to create any missing directories in the path</li>
+<li>Otherwise, does not create any directories</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id6">
+<h2>Save<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tPK7uint8_tb">
+<span id="_CPPv2N4Save11ImageWriter4SaveEPK7uint8_tPK7uint8_tb"></span><span id="Save::ImageWriter::Save__uint8_tCP.uint8_tCP.b"></span><span class="target" id="class_save_1_1_image_writer_1ac8446c7af2f57ff296356f5a040c274d"></span>void <code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">Save</code><span class="sig-paren">(</span><em class="property">const</em> uint8_t *<em>pData</em>, <em class="property">const</em> uint8_t *<em>pColor</em>, bool <em>createDirectories</em> = true<span class="sig-paren">)</span><br /></dt>
+<dd><p><strong> Save </strong> saves an image according to the file name pattern, image parameters, and image data. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pData</span></code>: <ul>
+<li>Type: const uint8_t*</li>
+<li>Pointer to the image data to save</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pColor</span></code>: <ul>
+<li>Type: const uint8_t*</li>
+<li>Pointer to RGB data for image coloring</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">createDirectories</span></code>: <ul>
+<li>Type: bool createDirectories</li>
+<li>Default: true</li>
+<li>If true, attempts to create any missing directories in the path</li>
+<li>Otherwise, does not create any directories</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id7">
+<h2>Operator &lt;&lt;<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriterlsEPKc">
+<span id="_CPPv2N4Save11ImageWriterlsEPKc"></span><span id="Save::ImageWriter::lshift-operator__cCP"></span><span class="target" id="class_save_1_1_image_writer_1a9df1fc1cab37cf5a57321e65a1755d2d"></span><a class="reference internal" href="#_CPPv3N4Save11ImageWriterE" title="Save::ImageWriter">ImageWriter</a> &amp;<code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">operator&lt;&lt;</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>pInput</em><span class="sig-paren">)</span><br /></dt>
+<dd><p><p>The cascading I/O operator allows for the setting of tags and their values on the fly.</p>
+<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="#class_save_1_1_image_writer"><span class="std std-ref">Save::ImageWriter</span></a>&amp;</li>
+<li>The object returns itself in order to cascade</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pInput</span></code>: <ul>
+<li>Type: const char*</li>
+<li>Accepts both tags and values</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// using the cascading I/O operator (&lt;&lt;) to replace tags with values</span>
+<span class="c1">// using the cascading I/O operator (&lt;&lt;) to save an image</span>
+<span class="p">{</span>
+    <span class="n">Save</span><span class="o">::</span><span class="n">ImageWriter</span> <span class="n">writer</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="s">&quot;path/img-&lt;model&gt;-&lt;serial&gt;.raw&quot;</span><span class="p">);</span>
+    
+    <span class="c1">// update file name and save</span>
+    <span class="n">writer</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&lt;model&gt;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">deviceModelName</span>
+    <span class="o">&lt;&lt;</span> <span class="s">&quot;&lt;serial&gt;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">deviceSerialNumber</span>
+    <span class="o">&lt;&lt;</span> <span class="n">pImageData</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+</div>
+<div class="section" id="id8">
+<h2>Operator &lt;&lt;<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriterlsEy">
+<span id="_CPPv2N4Save11ImageWriterlsEy"></span><span id="Save::ImageWriter::lshift-operator__unsigned-l-l"></span><span class="target" id="class_save_1_1_image_writer_1a69fd3b783d36108f93c04e2e63c34da0"></span><a class="reference internal" href="#_CPPv3N4Save11ImageWriterE" title="Save::ImageWriter">ImageWriter</a> &amp;<code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">operator&lt;&lt;</code><span class="sig-paren">(</span>unsigned long long <em>timestamp</em><span class="sig-paren">)</span><br /></dt>
+<dd><p><p>The cascading I/O operator sets the timestamp (</p>
+<a class="reference internal" href="#class_save_1_1_image_writer_1aa3b0908aa8447ec16a7c40cab91446ef"><span class="std std-ref">Save::ImageWriter::SetTimestamp</span></a>) when an unsigned 64-bit integer is passed in.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="#class_save_1_1_image_writer"><span class="std std-ref">Save::ImageWriter</span></a>&amp;</li>
+<li>The object returns itself in order to cascade</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">timestamp</span></code>: <ul>
+<li>Type: unsigned long long</li>
+<li>Timestamp</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// using timestamp tag to cascading I/O operator to save a set of images</span>
+<span class="p">{</span>
+    <span class="n">Save</span><span class="o">::</span><span class="n">ImageWriter</span> <span class="n">writer</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="s">&quot;savedimages/image&lt;timestamp&gt;.jpg&quot;</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numImages</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">timestamp</span><span class="p">;</span>
+        <span class="c1">// update timestamp</span>
+        <span class="n">writer</span> <span class="o">&lt;&lt;</span> <span class="n">timestamp</span> <span class="o">&lt;&lt;</span> <span class="n">pImageData</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p></p>
+</dd></dl>
+
+</div>
+<div class="section" id="id9">
+<h2>Operator &lt;&lt;<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriterlsEPK7uint8_t">
+<span id="_CPPv2N4Save11ImageWriterlsEPK7uint8_t"></span><span id="Save::ImageWriter::lshift-operator__uint8_tCP"></span><span class="target" id="class_save_1_1_image_writer_1ad451d586bc42b4112db42cfcacc94060"></span><a class="reference internal" href="#_CPPv3N4Save11ImageWriterE" title="Save::ImageWriter">ImageWriter</a> &amp;<code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">operator&lt;&lt;</code><span class="sig-paren">(</span><em class="property">const</em> uint8_t *<em>pData</em><span class="sig-paren">)</span><br /></dt>
+<dd><p><p>The cascading I/O operator saves an image (</p>
+<a class="reference internal" href="#class_save_1_1_image_writer_1ad125be7569ce1f8d7ee3711deff246df"><span class="std std-ref">Save::ImageWriter::Save</span></a>) when image data is passed in.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="#class_save_1_1_image_writer"><span class="std std-ref">Save::ImageWriter</span></a>&amp;</li>
+<li>The object returns itself in order to cascade</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pData</span></code>: <ul>
+<li>Type: const uint8_t*</li>
+<li>Pointer to the image data to save</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Creates any missing directories </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id10">
+<h2>Operator &lt;&lt;<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N4Save11ImageWriterlsE11ImageParams">
+<span id="_CPPv2N4Save11ImageWriterlsE11ImageParams"></span><span id="Save::ImageWriter::lshift-operator__ImageParams"></span><span class="target" id="class_save_1_1_image_writer_1aadf9bb4c9a549cf7779dc3c9294ba894"></span><a class="reference internal" href="#_CPPv3N4Save11ImageWriterE" title="Save::ImageWriter">ImageWriter</a> &amp;<code class="descclassname"><a class="reference internal" href="#_CPPv3N4Save11ImageWriter4SaveEPK7uint8_tb" title="Save::ImageWriter::Save">Save</a>::ImageWriter<code class="descclassname">::</code></code><code class="descname">operator&lt;&lt;</code><span class="sig-paren">(</span><a class="reference internal" href="cpp_save_imageparams.html#_CPPv3N4Save11ImageParamsE" title="Save::ImageParams">ImageParams</a> <em>params</em><span class="sig-paren">)</span><br /></dt>
+<dd><p><p>The cascading I/O operator updates the image parameters (</p>
+<a class="reference internal" href="#class_save_1_1_image_writer_1a4e6550d79083c0cd918f18a03225b58f"><span class="std std-ref">Save::ImageWriter::SetParams</span></a>) when an image parameters object is passed in. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="#class_save_1_1_image_writer"><span class="std std-ref">Save::ImageWriter</span></a>&amp;</li>
+<li>The object returns itself in order to cascade</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">params</span></code>: <ul>
+<li>Type: <a class="reference internal" href="cpp_save_imageparams.html#class_save_1_1_image_params"><span class="std std-ref">Save::ImageParams</span></a></li>
+<li>Parameters of the image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_examples.html" class="btn btn-neutral float-right" title="C++ Code Samples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_save_imagereader.html" class="btn btn-neutral" title="ImageReader" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

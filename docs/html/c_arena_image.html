@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Image &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C" href="c_arena.html"/>
+        <link rel="next" title="Arena" href="c_arena_arena.html"/>
+        <link rel="prev" title="ChunkData" href="c_arena_chunkdata.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_device.html">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodemap.html">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+      <li>Image</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="image">
+<h1>Image<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acimagegetwidth">
+<h2>acImageGetWidth<a class="headerlink" href="#acimagegetwidth" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_8h_1a1e7e7a29c4b4aacd921de53bf15f9c3c"></span><code class="descname">AC_ERROR AC_API acImageGetWidth(acBuffer hBuffer, size_t * pWidth)</code></dt>
+<dd><p><strong> acImageGetWidth </strong> gets the width of the image in pixels. Images are self-describing, so the device does not need to be queried to get this information. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pWidth</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Width of the image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagegetheight">
+<h2>acImageGetHeight<a class="headerlink" href="#acimagegetheight" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_8h_1a8ad5ae707daa55cd31fdea6333fb6bb4"></span><code class="descname">AC_ERROR AC_API acImageGetHeight(acBuffer hBuffer, size_t * pHeight)</code></dt>
+<dd><p><strong> acImageGetHeight </strong> gets the height of the image. Images are self-describing, so the device does not need to be queried to get this information. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pHeight</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Height of the image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagegetoffsetx">
+<h2>acImageGetOffsetX<a class="headerlink" href="#acimagegetoffsetx" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_8h_1ad7edcd85177162233de82a4e68920eff"></span><code class="descname">AC_ERROR AC_API acImageGetOffsetX(acBuffer hBuffer, size_t * pOffsetX)</code></dt>
+<dd><p><strong> acImageGetOffsetX </strong> gets the offset of the image along the X-axis. Images are self-describing, so the device does not need to be queried to get this information. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pOffsetX</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Offset X of the image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagegetoffsety">
+<h2>acImageGetOffsetY<a class="headerlink" href="#acimagegetoffsety" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_8h_1af4caba6422f6a449a0337195ac83f8e7"></span><code class="descname">AC_ERROR AC_API acImageGetOffsetY(acBuffer hBuffer, size_t * pOffsetY)</code></dt>
+<dd><p><strong> acImageGetOffsetY </strong> gets the offset of the image along the Y-axis. Images are self-describing, so the device does not need to be queried to get this information. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pOffsetY</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Offset Y of the image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagegetpaddingx">
+<h2>acImageGetPaddingX<a class="headerlink" href="#acimagegetpaddingx" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_8h_1a9e84f811190765ca5cd36e5a7e5b4586"></span><code class="descname">AC_ERROR AC_API acImageGetPaddingX(acBuffer hBuffer, size_t * pPaddingX)</code></dt>
+<dd><p><strong> acImageGetPaddingX </strong> gets the padding of the image along the X-axis. Images are self-describing, so the device does not need to be queried to get this information. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pPaddingX</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Padding X of the image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagegetpaddingy">
+<h2>acImageGetPaddingY<a class="headerlink" href="#acimagegetpaddingy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_8h_1addc0ac77ede845e8251b2302b872da29"></span><code class="descname">AC_ERROR AC_API acImageGetPaddingY(acBuffer hBuffer, size_t * pPaddingY)</code></dt>
+<dd><p><strong> acImageGetPaddingY </strong> gets the padding of the image along the Y-axis. Images are self-describing, so the device does not need to be queried to get this information. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pPaddingY</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Padding Y of the image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagegetpixelformat">
+<h2>acImageGetPixelFormat<a class="headerlink" href="#acimagegetpixelformat" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_8h_1aeea9ba4da58769ed4c49602ffbd6acc9"></span><code class="descname">AC_ERROR AC_API acImageGetPixelFormat(acBuffer hBuffer, uint64_t * pPixelFormat)</code></dt>
+<dd><p><strong> acImageGetPixelFormat </strong> gets the pixel format (PfncFormat) of the image, as defined by the PFNC (Pixel Format Naming Convention). Images are self-describing, so the device does not need to be queried to get this information. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pPixelFormat</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>[Out] parameter</li>
+<li>Pixel format of the image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagegetbitsperpixel">
+<h2>acImageGetBitsPerPixel<a class="headerlink" href="#acimagegetbitsperpixel" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_8h_1a06a57e10271428bbbc7f82c9d96c5c6c"></span><code class="descname">AC_ERROR AC_API acImageGetBitsPerPixel(acBuffer hBuffer, size_t * pBitsPerPixel)</code></dt>
+<dd><p><strong> acImageGetBitsPerPixel </strong> gets the number of bits per pixel of the image from the integer value of the pixel format (PfncFormat). Internally, a public helper funciton is called (acGetBitsPerPixel).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pBitsPerPixel</span></code>: <ul>
+<li>Type: size_t*</li>
+<li>[Out] parameter</li>
+<li>Bits per pixel of the image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>acGetBitsPerPixel </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagegetpixelendianness">
+<h2>acImageGetPixelEndianness<a class="headerlink" href="#acimagegetpixelendianness" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_8h_1a782d8f55c953fe4b03a13bf0fddd7c0b"></span><code class="descname">AC_ERROR AC_API acImageGetPixelEndianness(acBuffer hBuffer, AC_PIXEL_ENDIANNESS * pPixelEndianness)</code></dt>
+<dd><p><strong> acImageGetPixelEndianness </strong> gets the pixel endianness (AC_PIXEL_ENDIANNESS) of the image. Images are self-describing, so the device does not need to be queried to get this information. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pPixelEndianness</span></code>: <ul>
+<li>Type: AC_PIXEL_ENDIANNESS*</li>
+<li>[Out] parameter</li>
+<li>Endianness of the pixels of the image</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagegettimestamp">
+<h2>acImageGetTimestamp<a class="headerlink" href="#acimagegettimestamp" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_8h_1ada249dec9e43970371ff7175c62efb41"></span><code class="descname">AC_ERROR AC_API acImageGetTimestamp(acBuffer hBuffer, uint64_t * pTimestamp)</code></dt>
+<dd><p><strong> acImageGetTimestamp </strong> gets the timestamp of the image in nanoseconds. Images are self-describing, so the device does not need to be queried to get this information. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pTimestamp</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>Unit: nanoseconds</li>
+<li>[Out] parameter</li>
+<li>Timestamp of the image in nanoseconds</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagegettimestampns">
+<h2>acImageGetTimestampNs<a class="headerlink" href="#acimagegettimestampns" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_8h_1a7b292c193cdc1a772c11a7919a6b9190"></span><code class="descname">AC_ERROR AC_API acImageGetTimestampNs(acBuffer hBuffer, uint64_t * pTimestampNs)</code></dt>
+<dd><p><strong> acImageGetTimestampNs </strong> gets the timestamp of the image in nanoseconds. Images are self-describing, so the device does not need to be queried to get this information. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pTimestampNs</span></code>: <ul>
+<li>Type: uint64_t*</li>
+<li>Unit: nanoseconds</li>
+<li>[Out] parameter</li>
+<li>Timestamp of the image in nanoseconds</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="acimagegetdata">
+<h2>acImageGetData<a class="headerlink" href="#acimagegetdata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="_arena_c_image_8h_1a079fe26d7b5c662ded543e133f0b49f6"></span><code class="descname">AC_ERROR AC_API acImageGetData(acBuffer hBuffer, uint8_t ** ppData)</code></dt>
+<dd><p><strong> acImageGetData </strong> returns a pointer to the beginning of the image’s payload data. The payload may include chunk data. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: AC_ERROR</li>
+<li>Error code for the function</li>
+<li>Returns AC_ERR_SUCCESS (0) on success</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hBuffer</span></code>: <ul>
+<li>Type: acBuffer</li>
+<li>In parameter</li>
+<li>An image</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">ppData</span></code>: <ul>
+<li>Type: uint8_t**</li>
+<li>[Out] parameter</li>
+<li>Point to the payload data</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_arena.html" class="btn btn-neutral float-right" title="Arena" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_chunkdata.html" class="btn btn-neutral" title="ChunkData" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

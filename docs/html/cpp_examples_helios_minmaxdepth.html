@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Helios, Min Max Depth &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="C++ Code Samples" href="cpp_examples.html"/>
+        <link rel="next" title="Helios, Smooth Results" href="cpp_examples_helios_smoothresults.html"/>
+        <link rel="prev" title="Helios, HeatMap" href="cpp_examples_helios_heatmap.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cpp_arena.html">Arena C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_save.html">Save C++</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_simpleacquisition.html">Simple Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_acquisition.html">Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_acquisition_multidevice.html">Acquisition, Multi-Device Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_acquisition_rapidacquisition.html">Acquisition, Rapid Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_callbacks_onnodechange.html">Callbacks, On Node Change</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_callbacks_polling.html">Callbacks, Polling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_callbacks_onevent.html">Callbacks, On Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_callbacks_imagecallbacks.html">Callbacks, Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_callbacks_multithreadedimagecallbacks.html">Callbacks, Multithreaded Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_chunkdata.html">Chunk Data, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_chunkdata_crcvalidation.html">Chunk Data, CRC Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_enumeration.html">Enumeration, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_enumeration_handlingdisconnections.html">Enumeration, Handling Disconnections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_explore_nodemaps.html">Explore, Node Maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_explore_nodes.html">Explore, Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_explore_nodetypes.html">Explore, Node Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_exposure.html">Exposure, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_exposure_forhdr.html">Exposure, High Dynamic Range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_forceip.html">Force IP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_helios_heatmap.html">Helios, HeatMap</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Helios, Min Max Depth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_helios_smoothresults.html">Helios, Smooth Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_lut.html">Lookup Table, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_pixelcorrection.html">Pixel Correction, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_polarization_dolpaolp.html">Polarization, DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_polarization_colordolpaolp.html">Polarization, Color DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_record.html">Record, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_save.html">Save, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_save_filenamepattern.html">Save, File Name Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_save_ply.html">Save, Ply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_scheduledactioncommands.html">Scheduled Action Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_sequencer_hdr.html">Sequencer, HDR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_streamables.html">Streamables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_trigger.html">Trigger, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_trigger_overlappingtrigger.html">Trigger, Overlapping Trigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_usersets.html">User Sets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_examples.html">C++ Code Samples</a> &raquo;</li>
+        
+      <li>Helios, Min Max Depth</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="helios-min-max-depth">
+<h1>Helios, Min Max Depth<a class="headerlink" href="#helios-min-max-depth" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************************</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  Copyright (c) 2019, Lucid Vision Labs, Inc.                                    ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR     ***</span>
+<span class="cm"> ***  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,       ***</span>
+<span class="cm"> ***  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE    ***</span>
+<span class="cm"> ***  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER         ***</span>
+<span class="cm"> ***  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  ***</span>
+<span class="cm"> ***  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  ***</span>
+<span class="cm"> ***  SOFTWARE.                                                                      ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***************************************************************************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ArenaApi.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;SaveApi.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#define TAB1 &quot;  &quot;</span>
+<span class="cp">#define TAB2 &quot;    &quot;</span>
+<span class="cp">#define TAB3 &quot;      &quot;</span>
+
+<span class="c1">// Helios: Min/Max Depth</span>
+<span class="c1">//    This example captures a 3D image and interprets the ABCY data into</span>
+<span class="c1">//    their appropriate x, y and z coordinates and intensities. It converts</span>
+<span class="c1">//    this data into millimeters and then displays this data for points with</span>
+<span class="c1">//    both the largest and smallest values of z.</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- SETTINGS =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// file name</span>
+<span class="cp">#define FILE_NAME &quot;Images/Cpp_Helios_MinMaxDepth.ply&quot;</span>
+
+<span class="c1">// pixel format</span>
+<span class="cp">#define PIXEL_FORMAT &quot;Coord3D_ABCY16s&quot;</span>
+
+<span class="c1">// image timeout</span>
+<span class="cp">#define IMAGE_TIMEOUT 2000</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- EXAMPLE -=-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// store x, y, z data in mm and intesity for a given point</span>
+<span class="k">struct</span> <span class="n">PointData</span>
+<span class="p">{</span>
+        <span class="kt">int16_t</span> <span class="n">x</span><span class="p">;</span>
+        <span class="kt">int16_t</span> <span class="n">y</span><span class="p">;</span>
+        <span class="kt">int16_t</span> <span class="n">z</span><span class="p">;</span>
+        <span class="kt">int16_t</span> <span class="n">intensity</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// demonstrates acquiring 3D data for a specific point</span>
+<span class="c1">// (1) gets image</span>
+<span class="c1">// (2) interprets ABCY data to get x, y, z and intensity</span>
+<span class="c1">// (3) stores data for point with min and max z values</span>
+<span class="c1">// (4) displays 3D data for min and max points</span>
+<span class="kt">void</span> <span class="nf">AcquireImageAndInterpretData</span><span class="p">(</span><span class="n">Arena</span><span class="o">::</span><span class="n">IDevice</span><span class="o">*</span> <span class="n">pDevice</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">GenApi</span><span class="o">::</span><span class="n">INodeMap</span><span class="o">*</span> <span class="n">pNodeMap</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">();</span>
+
+        <span class="c1">// validate if Scan3dCoordinateSelector node exists. If not - probaly not Helios camera used running the example</span>
+        <span class="n">GenApi</span><span class="o">::</span><span class="n">CEnumerationPtr</span> <span class="n">checkpCoordSelector</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;Scan3dCoordinateSelector&quot;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">checkpCoordSelector</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Scan3dCoordinateSelector node is not found. Please make sure that Helios device is used for the example.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+                <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// validate if Scan3dCoordinateOffset node exists. If not - probaly Helios has an old firmware</span>
+        <span class="n">GenApi</span><span class="o">::</span><span class="n">CFloatPtr</span> <span class="n">checkpCoord</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;Scan3dCoordinateOffset&quot;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">checkpCoord</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Scan3dCoordinateOffset node is not found. Please update Helios firmware.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+                <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// get node values that will be changed in order to return their values at</span>
+        <span class="c1">// the end of the example</span>
+        <span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span> <span class="n">pixelFormatInitial</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;PixelFormat&quot;</span><span class="p">);</span>
+        <span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span> <span class="n">operatingModeInitial</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;Scan3dOperatingMode&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Set pixel format</span>
+        <span class="c1">//    This example demonstrates data interpretation for both a signed or unsigned</span>
+        <span class="c1">//    pixel format. Default PIXEL_FORMAT here is set to Coord3D_ABCY16s but this</span>
+        <span class="c1">//    can be modified to be an unsigned pixel format by changing it to Coord3D_ABCY16.</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Set &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">PIXEL_FORMAT</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; to pixel format</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;PixelFormat&quot;</span><span class="p">,</span> <span class="n">PIXEL_FORMAT</span><span class="p">);</span>
+
+        <span class="c1">// set operating mode distance</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Set 3D operating mode to Distance1500mm</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;Scan3dOperatingMode&quot;</span><span class="p">,</span> <span class="s">&quot;Distance1500mm&quot;</span><span class="p">);</span>
+
+        <span class="c1">// get the coordinate scale in order to convert x, y and z values to mm as well</span>
+        <span class="c1">// as the offset for x and y to correctly adjust values when in an unsigned pixel format</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Get xyz coordinate scales and offsets</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;Scan3dCoordinateSelector&quot;</span><span class="p">,</span> <span class="s">&quot;CoordinateA&quot;</span><span class="p">);</span>
+        <span class="c1">// getting scaleX as float by casting since SetPly() will expect it passed as float</span>
+        <span class="kt">float</span> <span class="n">scaleX</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;Scan3dCoordinateScale&quot;</span><span class="p">));</span>
+        <span class="c1">// getting offsetX as float by casting since SetPly() will expect it passed as float</span>
+        <span class="kt">float</span> <span class="n">offsetX</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;Scan3dCoordinateOffset&quot;</span><span class="p">));</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;Scan3dCoordinateSelector&quot;</span><span class="p">,</span> <span class="s">&quot;CoordinateB&quot;</span><span class="p">);</span>
+        <span class="kt">double</span> <span class="n">scaleY</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;Scan3dCoordinateScale&quot;</span><span class="p">);</span>
+        <span class="c1">// getting offsetY as float by casting since SetPly() will expect it passed as float</span>
+        <span class="kt">float</span> <span class="n">offsetY</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;Scan3dCoordinateOffset&quot;</span><span class="p">));</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;Scan3dCoordinateSelector&quot;</span><span class="p">,</span> <span class="s">&quot;CoordinateC&quot;</span><span class="p">);</span>
+        <span class="kt">double</span> <span class="n">scaleZ</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;Scan3dCoordinateScale&quot;</span><span class="p">);</span>
+
+        <span class="c1">// retrieve image</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB2</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Acquire image</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StartStream</span><span class="p">();</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*</span> <span class="n">pImage</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetImage</span><span class="p">(</span><span class="n">IMAGE_TIMEOUT</span><span class="p">);</span>
+
+        <span class="c1">// prepare info from input buffer</span>
+        <span class="kt">size_t</span> <span class="n">width</span> <span class="o">=</span> <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetWidth</span><span class="p">();</span>
+        <span class="kt">size_t</span> <span class="n">height</span> <span class="o">=</span> <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetHeight</span><span class="p">();</span>
+        <span class="kt">size_t</span> <span class="n">size</span> <span class="o">=</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
+        <span class="kt">size_t</span> <span class="n">srcBpp</span> <span class="o">=</span> <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetBitsPerPixel</span><span class="p">();</span>
+        <span class="kt">size_t</span> <span class="n">srcPixelSize</span> <span class="o">=</span> <span class="n">srcBpp</span> <span class="o">/</span> <span class="mi">8</span><span class="p">;</span>
+        <span class="k">const</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">pInput</span> <span class="o">=</span> <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetData</span><span class="p">();</span>
+        <span class="k">const</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">pIn</span> <span class="o">=</span> <span class="n">pInput</span><span class="p">;</span>
+
+        <span class="c1">// minDepth z value is set to 32767 to guarantee closer points exist</span>
+        <span class="c1">// as this is the largest value possible</span>
+        <span class="n">PointData</span> <span class="n">minDepth</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32767</span><span class="p">,</span> <span class="mi">0</span> <span class="p">};</span>
+        <span class="n">PointData</span> <span class="n">maxDepth</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">};</span>
+
+        <span class="c1">// find points with min and max z values</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB2</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Find points with min and max z values</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="c1">// using strcmp to avoid conversion issue</span>
+        <span class="kt">int</span> <span class="n">compareResult_ABCY16s</span> <span class="o">=</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">PIXEL_FORMAT</span><span class="p">,</span> <span class="s">&quot;Coord3D_ABCY16s&quot;</span><span class="p">);</span> <span class="c1">// if they are equal compareResult_ABCY16s = 0</span>
+        <span class="kt">int</span> <span class="n">compareResult_ABCY16</span> <span class="o">=</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">PIXEL_FORMAT</span><span class="p">,</span> <span class="s">&quot;Coord3D_ABCY16&quot;</span><span class="p">);</span>       <span class="c1">// if they are equal compareResult_ABCY16 = 0</span>
+
+        <span class="kt">bool</span> <span class="n">isSignedPixelFormat</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+        <span class="c1">// if PIXEL_FORMAT is equal to Coord3D_ABCY16s</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">compareResult_ABCY16s</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">isSignedPixelFormat</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+                <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="c1">// Extract point data to signed 16 bit integer</span>
+                        <span class="c1">//    The first channel is the x coordinate, second channel is the y coordinate,</span>
+                        <span class="c1">//    the third channel is the z coordinate and the fourth channel is intensity.</span>
+                        <span class="c1">//    We offset pIn by 2 for each channel because pIn is an 8 bit integer and we</span>
+                        <span class="c1">//    want to read it as a 16 bit integer.</span>
+                        <span class="kt">int16_t</span> <span class="n">x</span> <span class="o">=</span> <span class="o">*</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">int16_t</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pIn</span><span class="p">);</span>
+                        <span class="kt">int16_t</span> <span class="n">y</span> <span class="o">=</span> <span class="o">*</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">int16_t</span><span class="o">*&gt;</span><span class="p">((</span><span class="n">pIn</span> <span class="o">+</span> <span class="mi">2</span><span class="p">));</span>
+                        <span class="kt">int16_t</span> <span class="n">z</span> <span class="o">=</span> <span class="o">*</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">int16_t</span><span class="o">*&gt;</span><span class="p">((</span><span class="n">pIn</span> <span class="o">+</span> <span class="mi">4</span><span class="p">));</span>
+                        <span class="kt">int16_t</span> <span class="n">intensity</span> <span class="o">=</span> <span class="o">*</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">int16_t</span><span class="o">*&gt;</span><span class="p">((</span><span class="n">pIn</span> <span class="o">+</span> <span class="mi">6</span><span class="p">));</span>
+
+                        <span class="c1">// convert x, y and z values to mm using their coordinate scales</span>
+                        <span class="n">x</span> <span class="o">=</span> <span class="kt">int16_t</span><span class="p">(</span><span class="kt">double</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">scaleX</span><span class="p">);</span>
+                        <span class="n">y</span> <span class="o">=</span> <span class="kt">int16_t</span><span class="p">(</span><span class="kt">double</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">scaleY</span><span class="p">);</span>
+                        <span class="n">z</span> <span class="o">=</span> <span class="kt">int16_t</span><span class="p">(</span><span class="kt">double</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="n">scaleZ</span><span class="p">);</span>
+
+                        <span class="k">if</span> <span class="p">(</span><span class="n">z</span> <span class="o">&lt;</span> <span class="n">minDepth</span><span class="p">.</span><span class="n">z</span> <span class="o">&amp;&amp;</span> <span class="n">z</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="n">minDepth</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+                                <span class="n">minDepth</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+                                <span class="n">minDepth</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+                                <span class="n">minDepth</span><span class="p">.</span><span class="n">intensity</span> <span class="o">=</span> <span class="n">intensity</span><span class="p">;</span>
+                        <span class="p">}</span>
+                        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span> <span class="o">&gt;</span> <span class="n">maxDepth</span><span class="p">.</span><span class="n">z</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="n">maxDepth</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+                                <span class="n">maxDepth</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+                                <span class="n">maxDepth</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+                                <span class="n">maxDepth</span><span class="p">.</span><span class="n">intensity</span> <span class="o">=</span> <span class="n">intensity</span><span class="p">;</span>
+                        <span class="p">}</span>
+
+                        <span class="n">pIn</span> <span class="o">+=</span> <span class="n">srcPixelSize</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">// display data</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB3</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Minimum depth point found with z distance of &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">minDepth</span><span class="p">.</span><span class="n">z</span>
+                                  <span class="o">&lt;&lt;</span> <span class="s">&quot;mm and intensity &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">minDepth</span><span class="p">.</span><span class="n">intensity</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; at coordinates (&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">minDepth</span><span class="p">.</span><span class="n">x</span>
+                                  <span class="o">&lt;&lt;</span> <span class="s">&quot;mm, &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">minDepth</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;mm)&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB3</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Maximum depth point found with z distance of &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">maxDepth</span><span class="p">.</span><span class="n">z</span>
+                                  <span class="o">&lt;&lt;</span> <span class="s">&quot;mm and intensity &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">maxDepth</span><span class="p">.</span><span class="n">intensity</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; at coordinates (&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">maxDepth</span><span class="p">.</span><span class="n">x</span>
+                                  <span class="o">&lt;&lt;</span> <span class="s">&quot;mm, &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">maxDepth</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;mm)&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// if PIXEL_FORMAT is equal to Coord3D_ABCY16</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">compareResult_ABCY16</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="c1">// Extract point data to signed 16 bit integer</span>
+                        <span class="c1">//    The first channel is the x coordinate, second channel is the y coordinate,</span>
+                        <span class="c1">//    the third channel is the z coordinate and the fourth channel is intensity.</span>
+                        <span class="c1">//    We offset pIn by 2 for each channel because pIn is an 8 bit integer and we</span>
+                        <span class="c1">//    want to read it as a 16 bit integer.</span>
+                        <span class="kt">uint16_t</span> <span class="n">x</span> <span class="o">=</span> <span class="o">*</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">uint16_t</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pIn</span><span class="p">);</span>
+                        <span class="kt">uint16_t</span> <span class="n">y</span> <span class="o">=</span> <span class="o">*</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">uint16_t</span><span class="o">*&gt;</span><span class="p">((</span><span class="n">pIn</span> <span class="o">+</span> <span class="mi">2</span><span class="p">));</span>
+                        <span class="kt">uint16_t</span> <span class="n">z</span> <span class="o">=</span> <span class="o">*</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">uint16_t</span><span class="o">*&gt;</span><span class="p">((</span><span class="n">pIn</span> <span class="o">+</span> <span class="mi">4</span><span class="p">));</span>
+                        <span class="kt">uint16_t</span> <span class="n">intensity</span> <span class="o">=</span> <span class="o">*</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">uint16_t</span><span class="o">*&gt;</span><span class="p">((</span><span class="n">pIn</span> <span class="o">+</span> <span class="mi">6</span><span class="p">));</span>
+
+                        <span class="c1">// if z is less than max value, as invalid values get filtered to 65535</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">z</span> <span class="o">&lt;</span> <span class="mi">65535</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="c1">// Convert x, y and z to millimeters</span>
+                                <span class="c1">//    Using each coordinates&#39; appropriate scales, convert x, y and z values to mm.</span>
+                                <span class="c1">//    For the x and y coordinates in an unsigned pixel format, we must then add the</span>
+                                <span class="c1">//    offset to our converted values in order to get the correct position in millimeters.</span>
+                                <span class="n">x</span> <span class="o">=</span> <span class="kt">uint16_t</span><span class="p">(</span><span class="kt">double</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">scaleX</span> <span class="o">+</span> <span class="n">offsetX</span><span class="p">);</span>
+                                <span class="n">y</span> <span class="o">=</span> <span class="kt">uint16_t</span><span class="p">((</span><span class="kt">double</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">scaleY</span><span class="p">)</span> <span class="o">+</span> <span class="n">offsetY</span><span class="p">);</span>
+                                <span class="n">z</span> <span class="o">=</span> <span class="kt">uint16_t</span><span class="p">(</span><span class="kt">double</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="n">scaleZ</span><span class="p">);</span>
+
+                                <span class="k">if</span> <span class="p">(</span><span class="n">z</span> <span class="o">&lt;</span> <span class="n">minDepth</span><span class="p">.</span><span class="n">z</span> <span class="o">&amp;&amp;</span> <span class="n">z</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+                                <span class="p">{</span>
+                                        <span class="n">minDepth</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+                                        <span class="n">minDepth</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+                                        <span class="n">minDepth</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+                                        <span class="n">minDepth</span><span class="p">.</span><span class="n">intensity</span> <span class="o">=</span> <span class="n">intensity</span><span class="p">;</span>
+                                <span class="p">}</span>
+                                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span> <span class="o">&gt;</span> <span class="n">maxDepth</span><span class="p">.</span><span class="n">z</span><span class="p">)</span>
+                                <span class="p">{</span>
+                                        <span class="n">maxDepth</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+                                        <span class="n">maxDepth</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+                                        <span class="n">maxDepth</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+                                        <span class="n">maxDepth</span><span class="p">.</span><span class="n">intensity</span> <span class="o">=</span> <span class="n">intensity</span><span class="p">;</span>
+                                <span class="p">}</span>
+                        <span class="p">}</span>
+
+                        <span class="n">pIn</span> <span class="o">+=</span> <span class="n">srcPixelSize</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">// display data</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB3</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Minimum depth point found with z distance of &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">minDepth</span><span class="p">.</span><span class="n">z</span>
+                                  <span class="o">&lt;&lt;</span> <span class="s">&quot;mm and intensity &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">minDepth</span><span class="p">.</span><span class="n">intensity</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; at coordinates (&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">minDepth</span><span class="p">.</span><span class="n">x</span>
+                                  <span class="o">&lt;&lt;</span> <span class="s">&quot;mm, &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">minDepth</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;mm)&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB3</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Maximum depth point found with z distance of &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">maxDepth</span><span class="p">.</span><span class="n">z</span>
+                                  <span class="o">&lt;&lt;</span> <span class="s">&quot;mm and intensity &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">maxDepth</span><span class="p">.</span><span class="n">intensity</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; at coordinates (&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">maxDepth</span><span class="p">.</span><span class="n">x</span>
+                                  <span class="o">&lt;&lt;</span> <span class="s">&quot;mm, &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">maxDepth</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;mm)&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;This example requires the camera to be in either 3D image format Coord3D_ABCY16 or Coord3D_ABCY16s</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// prepare image parameters and writer</span>
+        <span class="n">Save</span><span class="o">::</span><span class="n">ImageParams</span> <span class="n">params</span><span class="p">(</span>
+                <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetWidth</span><span class="p">(),</span>
+                <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetHeight</span><span class="p">(),</span>
+                <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetBitsPerPixel</span><span class="p">());</span>
+
+        <span class="n">Save</span><span class="o">::</span><span class="n">ImageWriter</span> <span class="n">writer</span><span class="p">(</span>
+                <span class="n">params</span><span class="p">,</span>
+                <span class="n">FILE_NAME</span><span class="p">);</span>
+
+        <span class="c1">// set parameters for SetPly()</span>
+        <span class="kt">bool</span> <span class="n">filterPoints</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// default</span>
+        <span class="kt">float</span> <span class="n">offsetZ</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span>     <span class="c1">// default</span>
+
+        <span class="c1">// set the output file format of the image writer to .ply</span>
+        <span class="n">writer</span><span class="p">.</span><span class="n">SetPly</span><span class="p">(</span><span class="s">&quot;.ply&quot;</span><span class="p">,</span>
+                                  <span class="n">filterPoints</span><span class="p">,</span>
+                                  <span class="n">isSignedPixelFormat</span><span class="p">,</span>
+                                  <span class="n">scaleX</span><span class="p">,</span> <span class="c1">// using scaleX as scale since all scales = 0.25f</span>
+                                  <span class="n">offsetX</span><span class="p">,</span>
+                                  <span class="n">offsetY</span><span class="p">,</span>
+                                  <span class="n">offsetZ</span><span class="p">);</span>
+
+        <span class="c1">// save image</span>
+        <span class="n">writer</span> <span class="o">&lt;&lt;</span> <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetData</span><span class="p">();</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB2</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Save image to &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">writer</span><span class="p">.</span><span class="n">GetLastFileName</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="c1">// clean up</span>
+        <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RequeueBuffer</span><span class="p">(</span><span class="n">pImage</span><span class="p">);</span>
+        <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StopStream</span><span class="p">();</span>
+
+        <span class="c1">// return nodes to their initial values</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;Scan3dOperatingMode&quot;</span><span class="p">,</span> <span class="n">operatingModeInitial</span><span class="p">);</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pNodeMap</span><span class="p">,</span> <span class="s">&quot;PixelFormat&quot;</span><span class="p">,</span> <span class="n">pixelFormatInitial</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Nodes were set back to initial values</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =- PREPARATION -=-</span>
+<span class="c1">// =- &amp; CLEAN UP =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="c1">// flag to track when an exception has been thrown</span>
+        <span class="kt">bool</span> <span class="n">exceptionThrown</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Cpp_Helios_MinMaxDepth</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="k">try</span>
+        <span class="p">{</span>
+                <span class="c1">// prepare example</span>
+                <span class="n">Arena</span><span class="o">::</span><span class="n">ISystem</span><span class="o">*</span> <span class="n">pSystem</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">OpenSystem</span><span class="p">();</span>
+                <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">UpdateDevices</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Arena</span><span class="o">::</span><span class="n">DeviceInfo</span><span class="o">&gt;</span> <span class="n">deviceInfos</span> <span class="o">=</span> <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">GetDevices</span><span class="p">();</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">deviceInfos</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">No camera connected</span><span class="se">\n</span><span class="s">Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+                        <span class="n">std</span><span class="o">::</span><span class="n">getchar</span><span class="p">();</span>
+                        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">Arena</span><span class="o">::</span><span class="n">IDevice</span><span class="o">*</span> <span class="n">pDevice</span> <span class="o">=</span> <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">CreateDevice</span><span class="p">(</span><span class="n">deviceInfos</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Commence example</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+                <span class="c1">// run example</span>
+                <span class="n">AcquireImageAndInterpretData</span><span class="p">(</span><span class="n">pDevice</span><span class="p">);</span>
+
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Example complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+                <span class="c1">// clean up example</span>
+                <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">DestroyDevice</span><span class="p">(</span><span class="n">pDevice</span><span class="p">);</span>
+                <span class="n">Arena</span><span class="o">::</span><span class="n">CloseSystem</span><span class="p">(</span><span class="n">pSystem</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="n">GenICam</span><span class="o">::</span><span class="n">GenericException</span><span class="o">&amp;</span> <span class="n">ge</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">GenICam exception thrown: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ge</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+                <span class="n">exceptionThrown</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">ex</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Standard exception thrown: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ex</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+                <span class="n">exceptionThrown</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(...)</span>
+        <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Unexpected exception thrown</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+                <span class="n">exceptionThrown</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">getchar</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">exceptionThrown</span><span class="p">)</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span>
+                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_examples_helios_smoothresults.html" class="btn btn-neutral float-right" title="Helios, Smooth Results" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_examples_helios_heatmap.html" class="btn btn-neutral" title="Helios, HeatMap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

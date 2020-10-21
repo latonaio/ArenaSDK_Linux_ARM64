@@ -1,0 +1,851 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IBuffer &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C++" href="cpp_arena.html"/>
+        <link rel="next" title="InterfaceInfo" href="cpp_arena_interfaceinfo.html"/>
+        <link rel="prev" title="IChunkData" href="cpp_arena_ichunkdata.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_arena.html">Arena C++</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_global.html">Global Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_isystem.html">ISystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ichunkdata.html">IChunkData</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">IBuffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_interfaceinfo.html">InterfaceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_iimage.html">IImage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_idevice.html">IDevice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_deviceinfo.html">DeviceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_einterfacetypeclass.html">EInterfaceTypeClass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_eincmodeclass.html">EIncModeClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_save.html">Save C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_arena.html">Arena C++</a> &raquo;</li>
+        
+      <li>IBuffer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ibuffer">
+<h1>IBuffer<a class="headerlink" href="#ibuffer" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="id1">
+<h2>IBuffer<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv3N5Arena7IBufferE">
+<span id="_CPPv2N5Arena7IBufferE"></span><span id="Arena::IBuffer"></span><span class="target" id="class_arena_1_1_i_buffer"></span><em class="property">class </em><code class="descname">IBuffer</code><a class="headerlink" href="#_CPPv3N5Arena7IBufferE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>An interface to a buffer object</p>
+<p>Buffers are the most generic form of acquisition engine data retrieved from a device. They are acquired and requeued via devices (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a>).</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// retrieving a buffer after starting the stream</span>
+<span class="c1">// requeuing it before stopping the stream</span>
+<span class="p">{</span>
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StartStream</span><span class="p">();</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">IBuffer</span><span class="o">*</span> <span class="n">pBuffer</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetBuffer</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RequeueBuffer</span><span class="p">(</span><span class="n">pBuffer</span><span class="p">);</span>
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StopStream</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>Buffers are the base class of images (<a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>) and chunk data (<a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a>). Information shared between both can be accessed in the buffer class:<ul class="simple">
+<li>buffer and payload information like payload (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a606401eb4f017a15f767bfe371197ec2"><span class="std std-ref">Arena::IBuffer::GetData</span></a>), payload and buffer size (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a35903c6e5efd95052d29d1abaa6d07c1"><span class="std std-ref">Arena::IBuffer::GetSizeFilled</span></a>, <a class="reference internal" href="#class_arena_1_1_i_buffer_1a3e8f8041360305085ba30f7ecbd7c5c2"><span class="std std-ref">Arena::IBuffer::GetSizeOfBuffer</span></a>), and frame ID (Arena::IBuffer::GetFrameID)</li>
+<li>type information like payload type (<a class="reference internal" href="#class_arena_1_1_i_buffer_1acb478c804043bd99c389e9f0c364495d"><span class="std std-ref">Arena::IBuffer::GetPayloadType</span></a>) and whether the payload has image and/or chunk data (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a5311fdc30b40be01c5d09aa02b4e4b3f"><span class="std std-ref">Arena::IBuffer::HasImageData</span></a>, <a class="reference internal" href="#class_arena_1_1_i_buffer_1a13e85d81492f826ed4b62aa3b7e52458"><span class="std std-ref">Arena::IBuffer::HasChunkData</span></a>)</li>
+<li>casting helpers (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a2ef920b72cdb41eae43288cc23e780e4"><span class="std std-ref">Arena::IBuffer::AsImage</span></a>, <a class="reference internal" href="#class_arena_1_1_i_buffer_1a7e8ed70a5a6a42d22a676f553dd80698"><span class="std std-ref">Arena::IBuffer::AsChunkData</span></a>)</li>
+<li>error information (<a class="reference internal" href="#class_arena_1_1_i_buffer_1ad06c830004dd97834cc77278435c9fe5"><span class="std std-ref">Arena::IBuffer::IsIncomplete</span></a>,</li>
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer_1ad22763bfe643d861edc42b15f8f1f138"><span class="std std-ref">Arena::IBuffer::DataLargerThanBuffer</span></a>)</li>
+</ul>
+</p>
+<p>Retrieving data as a buffer can be preferable to an image or chunk data, as it can allow data to be received and treated generically before further processing.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// processing image and chunk data only if they exist</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">IBuffer</span><span class="o">*</span> <span class="n">pBuffer</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetBuffer</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">HasImageData</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*</span> <span class="n">pImage</span> <span class="o">=</span> <span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">AsImage</span><span class="p">();</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">HasChunkData</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">IChunkData</span><span class="o">*</span> <span class="n">pChunkData</span> <span class="o">=</span> <span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">AsChunkData</span><span class="p">();</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RequeueBuffer</span><span class="p">(</span><span class="n">pBuffer</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Should be requeued; otherwise, acquisition engine may starve</li>
+<li>Properties are lazily instantiated from acquisition engine</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a></li>
+<li><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></li>
+<li><a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Subclassed by <a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a>, <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="getdata">
+<h2>GetData<a class="headerlink" href="#getdata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer7GetDataEv">
+<span id="_CPPv2N5Arena7IBuffer7GetDataEv"></span><span id="Arena::IBuffer::GetData"></span><span class="target" id="class_arena_1_1_i_buffer_1a606401eb4f017a15f767bfe371197ec2"></span><em class="property">const</em> uint8_t *<code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">GetData</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer7GetDataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetData </strong> retrieves a pointer to the buffer’s payload data. This data may include image data, chunk data, or both.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: const uint8_t*</li>
+<li>Pointer to the beginning of the payload data</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>To check the type of data returned, image (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a5311fdc30b40be01c5d09aa02b4e4b3f"><span class="std std-ref">Arena::IBuffer::HasImageData</span></a>) and chunk data (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a13e85d81492f826ed4b62aa3b7e52458"><span class="std std-ref">Arena::IBuffer::HasChunkData</span></a>) can be checked for specifically, or the payload type (Arena::EBufferPayloadType) can be retrieved.</p>
+<p>The returned data only includes payload data, not transport layer protocol leaders, which is handled internally. The pointer can be used in conjunction with size getters (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a35903c6e5efd95052d29d1abaa6d07c1"><span class="std std-ref">Arena::IBuffer::GetSizeFilled</span></a>) to read, process, and pass the data around.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer requeued</li>
+<li>Properties lazily instantiated if buffer retrieved from device</li>
+<li>May throw GenICam::GenericException or other derived exception</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer_1a5311fdc30b40be01c5d09aa02b4e4b3f"><span class="std std-ref">Arena::IBuffer::HasImageData</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer_1a13e85d81492f826ed4b62aa3b7e52458"><span class="std std-ref">Arena::IBuffer::HasChunkData</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer_1a35903c6e5efd95052d29d1abaa6d07c1"><span class="std std-ref">Arena::IBuffer::GetSizeFilled</span></a></li>
+<li>Arena::EBufferPayloadType </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getsizefilled">
+<h2>GetSizeFilled<a class="headerlink" href="#getsizefilled" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer13GetSizeFilledEv">
+<span id="_CPPv2N5Arena7IBuffer13GetSizeFilledEv"></span><span id="Arena::IBuffer::GetSizeFilled"></span><span class="target" id="class_arena_1_1_i_buffer_1a35903c6e5efd95052d29d1abaa6d07c1"></span>size_t <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">GetSizeFilled</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer13GetSizeFilledEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetSizeFilled </strong> retrieves the size of the payload data, excluding transport layer protocol leaders. The payload data may include image data, chunk data, or both.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: size_t</li>
+<li>Unit: bytes</li>
+<li>Size of the received payload</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The size filled is often same as the size of the buffer (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a3e8f8041360305085ba30f7ecbd7c5c2"><span class="std std-ref">Arena::IBuffer::GetSizeOfBuffer</span></a>), but not because they are one and the same. <strong> GetSizeFilled </strong> returns the number of bytes received whereas <strong> GetSizeOfBuffer </strong> returns the size of the buffer, which can either be allocated by the user or calculated by Arena (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a>, ‘PayloadSize’).</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer requeued</li>
+<li>Properties lazily instantiated if buffer retrieved from device</li>
+<li>May throw GenICam::GenericException or other derived exception</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer_1a3e8f8041360305085ba30f7ecbd7c5c2"><span class="std std-ref">Arena::IBuffer::GetSizeOfBuffer</span></a></li>
+<li><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getpayloadsize">
+<h2>GetPayloadSize<a class="headerlink" href="#getpayloadsize" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer14GetPayloadSizeEv">
+<span id="_CPPv2N5Arena7IBuffer14GetPayloadSizeEv"></span><span id="Arena::IBuffer::GetPayloadSize"></span><span class="target" id="class_arena_1_1_i_buffer_1a72c3f312c7fd6ad6bf7374854b5af62c"></span>size_t <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">GetPayloadSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer14GetPayloadSizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetPayloadSize </strong> retrieves the intended size of the payload. This is similar to the retrieved payload size (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a35903c6e5efd95052d29d1abaa6d07c1"><span class="std std-ref">Arena::IBuffer::GetSizeFilled</span></a>), but different in that missed data is included. This returns the same as the SFNC feature by the same name (‘PayloadSize’).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: size_t</li>
+<li>Unit: bytes</li>
+<li>Size of the intended payload</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer requeued</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer_1a35903c6e5efd95052d29d1abaa6d07c1"><span class="std std-ref">Arena::IBuffer::GetSizeFilled</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getsizeofbuffer">
+<h2>GetSizeOfBuffer<a class="headerlink" href="#getsizeofbuffer" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer15GetSizeOfBufferEv">
+<span id="_CPPv2N5Arena7IBuffer15GetSizeOfBufferEv"></span><span id="Arena::IBuffer::GetSizeOfBuffer"></span><span class="target" id="class_arena_1_1_i_buffer_1a3e8f8041360305085ba30f7ecbd7c5c2"></span>size_t <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">GetSizeOfBuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer15GetSizeOfBufferEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetSizeOfBuffer </strong> retrieves the size of a buffer.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: size_t</li>
+<li>Unit: bytes</li>
+<li>Size of the buffer</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The size filled is often same as the size of the buffer (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a3e8f8041360305085ba30f7ecbd7c5c2"><span class="std std-ref">Arena::IBuffer::GetSizeOfBuffer</span></a>), but not because they are one and the same. <strong> GetSizeFilled </strong> returns the number of bytes received whereas <strong> GetSizeOfBuffer </strong> returns the size of the buffer, which can either be allocated by the user or calculated by Arena (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a>, ‘PayloadSize’).</p>
+<p>The payload size is calculated at the beginning of the stream and cannot be recalculated until the stream has stopped. Because of this, features that can affect payload size (‘Width’, ‘Height’, ‘PixelFormat’) become unwritable when the stream has started.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer requeued</li>
+<li>Properties lazily instantiated if buffer retrieved from device</li>
+<li>May throw GenICam::GenericException or other derived exception</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer_1a3e8f8041360305085ba30f7ecbd7c5c2"><span class="std std-ref">Arena::IBuffer::GetSizeOfBuffer</span></a></li>
+<li><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getframeid">
+<h2>GetFrameId<a class="headerlink" href="#getframeid" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer10GetFrameIdEv">
+<span id="_CPPv2N5Arena7IBuffer10GetFrameIdEv"></span><span id="Arena::IBuffer::GetFrameId"></span><span class="target" id="class_arena_1_1_i_buffer_1ae7142e25d0e53cd0b9dd2f8590514b05"></span>uint64_t <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">GetFrameId</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer10GetFrameIdEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetFrameId </strong> gets the frame ID, a sequential identifier for buffers.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: uint64_t</li>
+<li>Frame ID</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Frame IDs start at ‘1’ and continue until either 65535 (16-bit) or 2^64-1 (64-bit), at which point they roll over back to ‘1’. The frame ID should never be ‘0’. In order to use 64-bit frame IDs, the device must support GigE Vision 2.0. Simply enable the extended ID mode feature (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a>, ‘GevGVSPExtendedIDMode’).</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer requeued</li>
+<li>Properties lazily instantiated if buffer retrieved from device</li>
+<li>May throw GenICam::GenericException or other derived exception</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getpayloadtype">
+<h2>GetPayloadType<a class="headerlink" href="#getpayloadtype" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer14GetPayloadTypeEv">
+<span id="_CPPv2N5Arena7IBuffer14GetPayloadTypeEv"></span><span id="Arena::IBuffer::GetPayloadType"></span><span class="target" id="class_arena_1_1_i_buffer_1acb478c804043bd99c389e9f0c364495d"></span>size_t <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">GetPayloadType</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer14GetPayloadTypeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetPayloadType </strong> returns a buffer’s payload type (Arena::EBufferPayloadType), as defined by the GigE Vision specification.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: size_t</li>
+<li>Represents: enum Arena::EBufferPayloadType</li>
+<li>Type of payload data</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The payload type indicates how to interpret the data stored in the buffer (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a606401eb4f017a15f767bfe371197ec2"><span class="std std-ref">Arena::IBuffer::GetData</span></a>). Lucid devices may provide three ways to interpret the data:<ul class="simple">
+<li>as an image (Arena::EBufferPayloadType::BufferPayloadTypeImage)</li>
+<li>as an image with chunk data appended to the end (Arena::EBufferPayloadType::BufferPayloadTypeImageExtended)</li>
+<li>as chunk data, which may or may not include image data as a chunk</li>
+<li>(Arena::EBufferPayloadType::BufferPayloadTypeChunkData)</li>
+<li>as chunk data, which may or may not include image data as a chunk (Arena::EBufferPayloadType::BufferPayloadTypeChunkData)</li>
+</ul>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer requeued</li>
+<li>Properties lazily instantiated if buffer retrieved from device</li>
+<li>May throw GenICam::GenericException or other derived exception</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer_1a606401eb4f017a15f767bfe371197ec2"><span class="std std-ref">Arena::IBuffer::GetData</span></a></li>
+<li>Arena::EBufferPayloadType </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="hasimagedata">
+<h2>HasImageData<a class="headerlink" href="#hasimagedata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer12HasImageDataEv">
+<span id="_CPPv2N5Arena7IBuffer12HasImageDataEv"></span><span id="Arena::IBuffer::HasImageData"></span><span class="target" id="class_arena_1_1_i_buffer_1a5311fdc30b40be01c5d09aa02b4e4b3f"></span>bool <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">HasImageData</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer12HasImageDataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> HasImageData </strong> returns whether or not a buffer’s payload has data that may be interpreted as image data.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: bool</li>
+<li>True if the payload has image data</li>
+<li>False if the payload has image data packaged as chunk data</li>
+<li>Otherwise, false</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><strong> HasImageData </strong> returns true if the payload type is:<ul class="simple">
+<li>Arena::EBufferPayloadType::BufferPayloadTypeImage</li>
+<li>Arena::EBufferPayloadType::BufferPayloadTypeImageExtendedChunk</li>
+</ul>
+</p>
+<p>It returns false if the payload type is:<ul class="simple">
+<li>Arena::EBufferPayloadType::BufferPayloadTypeChunkData</li>
+</ul>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer requeued</li>
+<li>Properties lazily instantiated if buffer retrieved from device</li>
+<li>May throw GenICam::GenericException or other derived exception</li>
+<li>Returns false if image data is packaged as chunk data</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>Arena::EBufferPayloadType </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="haschunkdata">
+<h2>HasChunkData<a class="headerlink" href="#haschunkdata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer12HasChunkDataEv">
+<span id="_CPPv2N5Arena7IBuffer12HasChunkDataEv"></span><span id="Arena::IBuffer::HasChunkData"></span><span class="target" id="class_arena_1_1_i_buffer_1a13e85d81492f826ed4b62aa3b7e52458"></span>bool <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">HasChunkData</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer12HasChunkDataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> HasChunkData </strong> returns whether or not a buffer’s payload that may be interpreted as chunk data.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: bool</li>
+<li>True if the payload has chunk data</li>
+<li>Otherwise, false</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><strong> HasChunkData </strong> returns true if the payload type is:<ul class="simple">
+<li>Arena::EBufferPayloadType::BufferPayloadTypeChunkData</li>
+<li>Arena::EBufferPayloadType::BufferPayloadTypeImageExtendedChunk</li>
+</ul>
+</p>
+<p>It returns false if the payload type is:<ul class="simple">
+<li>Arena::EBufferPayloadType::BufferPayloadTypeImage</li>
+</ul>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer requeued</li>
+<li>Properties lazily instantiated if buffer retrieved from device</li>
+<li>May throw GenICam::GenericException or other derived exception</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>Arena::EBufferPayloadType </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="asimage">
+<h2>AsImage<a class="headerlink" href="#asimage" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer7AsImageEv">
+<span id="_CPPv2N5Arena7IBuffer7AsImageEv"></span><span id="Arena::IBuffer::AsImage"></span><span class="target" id="class_arena_1_1_i_buffer_1a2ef920b72cdb41eae43288cc23e780e4"></span><a class="reference internal" href="cpp_arena_iimage.html#_CPPv3N5Arena6IImageE" title="Arena::IImage">IImage</a> *<code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">AsImage</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer7AsImageEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> AsImage </strong> casts the buffer to an image (<a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>). This is only possible if the payload contains image data.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>*</li>
+<li>Pointer to the original object cast to an image</li>
+<li>Null on failure</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer requeued</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="aschunkdata">
+<h2>AsChunkData<a class="headerlink" href="#aschunkdata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer11AsChunkDataEv">
+<span id="_CPPv2N5Arena7IBuffer11AsChunkDataEv"></span><span id="Arena::IBuffer::AsChunkData"></span><span class="target" id="class_arena_1_1_i_buffer_1a7e8ed70a5a6a42d22a676f553dd80698"></span><a class="reference internal" href="cpp_arena_ichunkdata.html#_CPPv3N5Arena10IChunkDataE" title="Arena::IChunkData">IChunkData</a> *<code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">AsChunkData</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer11AsChunkDataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> AsChunkData </strong> casts the buffer to a chunk data (<a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a>). This is only possible if the payload contains chunk data.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a>*</li>
+<li>Pointer to the original object cast to chunk data</li>
+<li>Null on failure</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer requeued</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="isincomplete">
+<h2>IsIncomplete<a class="headerlink" href="#isincomplete" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer12IsIncompleteEv">
+<span id="_CPPv2N5Arena7IBuffer12IsIncompleteEv"></span><span id="Arena::IBuffer::IsIncomplete"></span><span class="target" id="class_arena_1_1_i_buffer_1ad06c830004dd97834cc77278435c9fe5"></span>bool <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">IsIncomplete</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer12IsIncompleteEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> IsIncomplete </strong> returns whether or not the payload is complete.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: bool</li>
+<li>True if the data is incomplete</li>
+<li>Otherwise, false</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Error handling may be required in the case that the data is incomplete. An incomplete image signifies that the data size (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a35903c6e5efd95052d29d1abaa6d07c1"><span class="std std-ref">Arena::IBuffer::GetSizeFilled</span></a>) does not match the expected data size (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>, ‘PayloadSize’). This is either due to missed packets or a small buffer.</p>
+<p>The number of missed packets may be discovered through the stream node map (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>). The missed packet count feature (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>, ‘StreamMissedPacketCount’) is a cumulative count of all missed packets, and does not necessarily reflect the number of missed packets for any given buffer.</p>
+<p>A buffer may be missing data if the buffer to hold the data is too small. This happens when the size of the buffer (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a3e8f8041360305085ba30f7ecbd7c5c2"><span class="std std-ref">Arena::IBuffer::GetSizeOfBuffer</span></a>) does not match the expected data size (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>, ‘PayloadSize’). This function will also return true when checking whether the data is larger than the buffer (<a class="reference internal" href="#class_arena_1_1_i_buffer_1ad22763bfe643d861edc42b15f8f1f138"><span class="std std-ref">Arena::IBuffer::DataLargerThanBuffer</span></a>).</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer requeued</li>
+<li>Properties lazily instantiated if buffer retrieved from device</li>
+<li>May throw GenICam::GenericException or other derived exception</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer_1a35903c6e5efd95052d29d1abaa6d07c1"><span class="std std-ref">Arena::IBuffer::GetSizeFilled</span></a></li>
+<li><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer_1a3e8f8041360305085ba30f7ecbd7c5c2"><span class="std std-ref">Arena::IBuffer::GetSizeOfBuffer</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer_1ad22763bfe643d861edc42b15f8f1f138"><span class="std std-ref">Arena::IBuffer::DataLargerThanBuffer</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="datalargerthanbuffer">
+<h2>DataLargerThanBuffer<a class="headerlink" href="#datalargerthanbuffer" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer20DataLargerThanBufferEv">
+<span id="_CPPv2N5Arena7IBuffer20DataLargerThanBufferEv"></span><span id="Arena::IBuffer::DataLargerThanBuffer"></span><span class="target" id="class_arena_1_1_i_buffer_1ad22763bfe643d861edc42b15f8f1f138"></span>bool <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">DataLargerThanBuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer20DataLargerThanBufferEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> DataLargerThanBuffer </strong> returns whether or not a buffer’s payload data is too larger for the buffer.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: bool</li>
+<li>True if the payload is larger than the buffer</li>
+<li>Otherwise, false</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>A buffer may be missing data if the buffer to hold the data is too small. This happens when the size of the buffer (<a class="reference internal" href="#class_arena_1_1_i_buffer_1a3e8f8041360305085ba30f7ecbd7c5c2"><span class="std std-ref">Arena::IBuffer::GetSizeOfBuffer</span></a>) does not match the expected data size (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>, ‘PayloadSize’). This function will also return true when checking whether the data is larger than the buffer.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Causes undefined behavior if buffer requeued</li>
+<li>Properties lazily instantiated if buffer retrieved from device</li>
+<li>May throw GenICam::GenericException or other derived exception</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer_1a3e8f8041360305085ba30f7ecbd7c5c2"><span class="std std-ref">Arena::IBuffer::GetSizeOfBuffer</span></a></li>
+<li><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="verifycrc">
+<h2>VerifyCRC<a class="headerlink" href="#verifycrc" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBuffer9VerifyCRCEv">
+<span id="_CPPv2N5Arena7IBuffer9VerifyCRCEv"></span><span id="Arena::IBuffer::VerifyCRC"></span><span class="target" id="class_arena_1_1_i_buffer_1ae5cab9be096659c753d376542e87e4f5"></span>bool <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">VerifyCRC</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5Arena7IBuffer9VerifyCRCEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> VerifyCRC </strong> calculates the CRC of a buffer’s data and verifies it against the CRC value sent from the device. This helps verify that no data has been changed or missed during a transmission. This function calls a global helper function to calculate the CRC (Arena::CalculateCRC32).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: bool</li>
+<li>True if the calculated CRC value equals the one sent from the device</li>
+<li>Otherwise, false</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>A CRC is performed by running a set of calculations on a dataset both before and after a transmission. The two calculated values are then compared for equality. If the values are the same, then the transmission is deemed successful; if different, then something in the transmission went wrong.</p>
+<p>A device can be set to send a CRC value by enabling its chunk data setting.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Enable chunk data and the CRC chunk</span>
+<span class="p">{</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">INodeMap</span><span class="o">*</span> <span class="n">pNodeMap</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">();</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CBooleanPtr</span> <span class="n">pChunkModeActive</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;ChunkModeActive&quot;</span><span class="p">);</span>
+    <span class="n">pChunkModeActive</span><span class="o">-&gt;</span><span class="n">SetValue</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CEnumerationPtr</span> <span class="n">pChunkSelector</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;ChunkSelector&quot;</span><span class="p">);</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CEnumEntryPtr</span> <span class="n">pCRC</span> <span class="o">=</span> <span class="n">pChunkSelector</span><span class="o">-&gt;</span><span class="n">GetEntryByname</span><span class="p">(</span><span class="s">&quot;CRC&quot;</span><span class="p">);</span>
+    <span class="n">pChunkSelector</span><span class="o">-&gt;</span><span class="n">SetIntValue</span><span class="p">(</span><span class="n">pCRC</span><span class="o">-&gt;</span><span class="n">GetValue</span><span class="p">());</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CBooleanPtr</span> <span class="n">pChunkEnable</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;ChunkEnable&quot;</span><span class="p">);</span>
+    <span class="n">pChunkEnable</span><span class="o">-&gt;</span><span class="n">SetValue</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>The data can then be checked by verifying the CRC.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Verifying a buffer&#39;s data</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">IBuffer</span><span class="o">*</span> <span class="n">pBuffer</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetBuffer</span><span class="p">(</span><span class="n">timeout</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">VerifyCRC</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// data not complete</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>May throw GenICam::GenericException or other derived exception</li>
+<li>Throws if chunk data disabled or not present, or CRC chunk disabled</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li>Arena::CalculateCRC</li>
+<li><a class="reference internal" href="#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>~IBuffer<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena7IBufferD0Ev">
+<span id="_CPPv2N5Arena7IBufferD0Ev"></span><span id="Arena::IBuffer::~IBuffer"></span><span class="target" id="class_arena_1_1_i_buffer_1a61b83e688712af31a3c9eb2ff8905fd8"></span><code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena7IBufferE" title="Arena::IBuffer">IBuffer</a><code class="descclassname">::</code></code><code class="descname">~IBuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena7IBufferD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A destructor </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_arena_interfaceinfo.html" class="btn btn-neutral float-right" title="InterfaceInfo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_arena_ichunkdata.html" class="btn btn-neutral" title="IChunkData" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

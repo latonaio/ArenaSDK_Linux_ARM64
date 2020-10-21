@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Definitions &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C++" href="cpp_arena.html"/>
+        <link rel="next" title="Global Functions" href="cpp_arena_global.html"/>
+        <link rel="prev" title="Arena C++" href="cpp_arena.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_arena.html">Arena C++</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_global.html">Global Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_isystem.html">ISystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ichunkdata.html">IChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ibuffer.html">IBuffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_interfaceinfo.html">InterfaceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_iimage.html">IImage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_idevice.html">IDevice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_deviceinfo.html">DeviceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_einterfacetypeclass.html">EInterfaceTypeClass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_eincmodeclass.html">EIncModeClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_save.html">Save C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_arena.html">Arena C++</a> &raquo;</li>
+        
+      <li>Definitions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="definitions">
+<h1>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="enumbufferflags">
+<h2>ENumBufferFlags<a class="headerlink" href="#enumbufferflags" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv3N5Arena15ENumBufferFlagsE">
+<span id="_CPPv2N5Arena15ENumBufferFlagsE"></span><span id="Arena::ENumBufferFlags"></span><span class="target" id="_arena_defs_8h_1a335275ee6954db38c64d3b93f55a68d5"></span><em class="property">typedef </em><code class="descclassname">Arena<code class="descclassname">::</code></code><code class="descname">ENumBufferFlags</code><a class="headerlink" href="#_CPPv3N5Arena15ENumBufferFlagsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <strong> ENumBufferFlags </strong> predefined number of buffers options for the stream.</p>
+<p>The enum values and their descriptions:<ul class="simple">
+<li>NumBuffersAuto<ul>
+<li>Value: 0xFFFFFFFF</li>
+<li>Description: Auto calculate numBuffers based on max throughput </li>
+</ul>
+</li>
+</ul>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ebufferpayloadtype">
+<h2>EBufferPayloadType<a class="headerlink" href="#ebufferpayloadtype" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv3N5Arena18EBufferPayloadTypeE">
+<span id="_CPPv2N5Arena18EBufferPayloadTypeE"></span><span id="Arena::EBufferPayloadType"></span><span class="target" id="_arena_defs_8h_1a9d96a16211a3776c8dc76d7fc9c7c401"></span><em class="property">typedef </em><code class="descclassname">Arena<code class="descclassname">::</code></code><code class="descname">EBufferPayloadType</code><a class="headerlink" href="#_CPPv3N5Arena18EBufferPayloadTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <strong> EBufferPayloadType </strong> enum represents the different types of GVSP data that can be acquired by the acquisition engine. This enum is returned from:<ul class="simple">
+<li>buffers (<a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer_1acb478c804043bd99c389e9f0c364495d"><span class="std std-ref">Arena::IBuffer::GetPayloadType</span></a>)</li>
+<li>images (<a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image_1a86fd42b1c55d8a9a3018183f6ed554e4"><span class="std std-ref">Arena::IImage::GetPayloadType</span></a>)</li>
+<li>chunk data (<a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data_1a090cb1b9c3f8ebcf31ce8d957f5917d4"><span class="std std-ref">Arena::IChunkData::GetPayloadType</span></a>)</li>
+</ul>
+</p>
+<p>The enum values and their descriptions:<ul class="simple">
+<li>BufferPayloadTypeImage<ul>
+<li>Value: 0x0001</li>
+<li>Description: Image data only</li>
+</ul>
+</li>
+<li>BufferPayloadTypeImageExtendedChunk<ul>
+<li>Value: 0x4001</li>
+<li>Description: Image data extended with chunk data</li>
+</ul>
+</li>
+<li>BufferPayloadTypeChunkData<ul>
+<li>Value: 0x0004</li>
+<li>Description: Chunk data only; image data may be present as chunk</li>
+</ul>
+</li>
+</ul>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer_1acb478c804043bd99c389e9f0c364495d"><span class="std std-ref">Arena::IBuffer::GetPayloadType</span></a></li>
+<li><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image_1a86fd42b1c55d8a9a3018183f6ed554e4"><span class="std std-ref">Arena::IImage::GetPayloadType</span></a></li>
+<li><a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data_1a090cb1b9c3f8ebcf31ce8d957f5917d4"><span class="std std-ref">Arena::IChunkData::GetPayloadType</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="epixelendianness">
+<h2>EPixelEndianness<a class="headerlink" href="#epixelendianness" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv3N5Arena16EPixelEndiannessE">
+<span id="_CPPv2N5Arena16EPixelEndiannessE"></span><span id="Arena::EPixelEndianness"></span><span class="target" id="_arena_defs_8h_1a2c7924d489b973f42403f964e9c8047d"></span><em class="property">typedef </em><code class="descclassname">Arena<code class="descclassname">::</code></code><code class="descname">EPixelEndianness</code><a class="headerlink" href="#_CPPv3N5Arena16EPixelEndiannessE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <strong> EPixelEndianness </strong> enum represents the endianness of an image’s multi-byte pixels. This enum is returned from images (<a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image_1a7010692204fa7f16c4962d1ddb23becd"><span class="std std-ref">Arena::IImage::GetPixelEndianness</span></a>).</p>
+<p>The enum values and their descriptions:<ul class="simple">
+<li>PixelEndiannessUnknown<ul>
+<li>Value: 0</li>
+<li>Description: Unknown pixel endianness</li>
+</ul>
+</li>
+<li>PixelEndiannessLittle<ul>
+<li>Value: 1</li>
+<li>Description: Little endian</li>
+</ul>
+</li>
+<li>PixelEndiannessBig<ul>
+<li>Value: 2</li>
+<li>Description: Big endian</li>
+</ul>
+</li>
+</ul>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image_1a7010692204fa7f16c4962d1ddb23becd"><span class="std std-ref">Arena::IImage::GetPixelEndianness</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ebayeralgorithm">
+<h2>EBayerAlgorithm<a class="headerlink" href="#ebayeralgorithm" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv3N5Arena15EBayerAlgorithmE">
+<span id="_CPPv2N5Arena15EBayerAlgorithmE"></span><span id="Arena::EBayerAlgorithm"></span><span class="target" id="_arena_defs_8h_1ae3329473c3c8bde4bb07649e82114b89"></span><em class="property">typedef </em><code class="descclassname">Arena<code class="descclassname">::</code></code><code class="descname">EBayerAlgorithm</code><a class="headerlink" href="#_CPPv3N5Arena15EBayerAlgorithmE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <strong> EBayerAlgorithm </strong> enum represents different algorithms for interpreting bayer patterns. Provide this enum when converting an image from any bayer pattern (<a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a>).</p>
+<p>The enum values and their descriptions<ul class="simple">
+<li>DirectionalInterpolation<ul>
+<li>Description: Algorithm that averages nearest neighbours (faster)</li>
+</ul>
+</li>
+<li>AdaptiveHomogeneityDirected<ul>
+<li>Description: Adaptive algorithm that uses directional data (slower, more accurate coloring)</li>
+</ul>
+</li>
+<li>_UndefinedAlgorithm<ul>
+<li>Description: Object not yet initialized</li>
+</ul>
+</li>
+</ul>
+</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_arena_global.html" class="btn btn-neutral float-right" title="Global Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_arena.html" class="btn btn-neutral" title="Arena C++" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

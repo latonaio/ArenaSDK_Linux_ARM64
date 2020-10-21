@@ -1,0 +1,631 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Trigger, Overlapping Trigger &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="C++ Code Samples" href="cpp_examples.html"/>
+        <link rel="next" title="User Sets" href="cpp_examples_usersets.html"/>
+        <link rel="prev" title="Trigger, Introduction" href="cpp_examples_trigger.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cpp_arena.html">Arena C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_save.html">Save C++</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_simpleacquisition.html">Simple Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_acquisition.html">Acquisition, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_acquisition_multidevice.html">Acquisition, Multi-Device Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_acquisition_rapidacquisition.html">Acquisition, Rapid Acquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_callbacks_onnodechange.html">Callbacks, On Node Change</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_callbacks_polling.html">Callbacks, Polling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_callbacks_onevent.html">Callbacks, On Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_callbacks_imagecallbacks.html">Callbacks, Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_callbacks_multithreadedimagecallbacks.html">Callbacks, Multithreaded Image Callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_chunkdata.html">Chunk Data, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_chunkdata_crcvalidation.html">Chunk Data, CRC Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_enumeration.html">Enumeration, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_enumeration_handlingdisconnections.html">Enumeration, Handling Disconnections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_explore_nodemaps.html">Explore, Node Maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_explore_nodes.html">Explore, Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_explore_nodetypes.html">Explore, Node Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_exposure.html">Exposure, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_exposure_forhdr.html">Exposure, High Dynamic Range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_forceip.html">Force IP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_helios_heatmap.html">Helios, HeatMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_helios_minmaxdepth.html">Helios, Min Max Depth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_helios_smoothresults.html">Helios, Smooth Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_lut.html">Lookup Table, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_pixelcorrection.html">Pixel Correction, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_polarization_dolpaolp.html">Polarization, DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_polarization_colordolpaolp.html">Polarization, Color DoLP AoLP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_record.html">Record, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_save.html">Save, Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_save_filenamepattern.html">Save, File Name Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_save_ply.html">Save, Ply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_scheduledactioncommands.html">Scheduled Action Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_sequencer_hdr.html">Sequencer, HDR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_streamables.html">Streamables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_trigger.html">Trigger, Introduction</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Trigger, Overlapping Trigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_examples_usersets.html">User Sets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_examples.html">C++ Code Samples</a> &raquo;</li>
+        
+      <li>Trigger, Overlapping Trigger</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trigger-overlapping-trigger">
+<h1>Trigger, Overlapping Trigger<a class="headerlink" href="#trigger-overlapping-trigger" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************************</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  Copyright (c) 2019, Lucid Vision Labs, Inc.                                    ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR     ***</span>
+<span class="cm"> ***  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,       ***</span>
+<span class="cm"> ***  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE    ***</span>
+<span class="cm"> ***  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER         ***</span>
+<span class="cm"> ***  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  ***</span>
+<span class="cm"> ***  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  ***</span>
+<span class="cm"> ***  SOFTWARE.                                                                      ***</span>
+<span class="cm"> ***                                                                                 ***</span>
+<span class="cm"> ***************************************************************************************/</span>
+<span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;GenTL.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt; // for std::setw</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;chrono&gt;  // for std::chrono</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;thread&gt;  // for std::this_thread</span><span class="cp"></span>
+
+<span class="cp">#ifdef __linux__</span>
+<span class="cp">#pragma GCC diagnostic push</span>
+<span class="cp">#pragma GCC diagnostic ignored &quot;-Wunused-but-set-variable&quot;</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;GenICam.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#ifdef __linux__</span>
+<span class="cp">#pragma GCC diagnostic pop</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;ArenaApi.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#define TAB1 &quot;  &quot;</span>
+<span class="cp">#define TAB2 &quot;    &quot;</span>
+
+<span class="c1">// Trigger: Overlapping Trigger on Exposure End Events</span>
+<span class="c1">//    This example demonstrates the use of trigger and exposure end events to</span>
+<span class="c1">//    minimize the amount of unused exposure time between images. This is done by</span>
+<span class="c1">//    setting the device to start exposing (or trigger) right when the last</span>
+<span class="c1">//    exposure has just finished (or exposure end event). After receiving each</span>
+<span class="c1">//    exposure end event notification, the next trigger is executed to acquire</span>
+<span class="c1">//    the next image. Once all triggers have executed, the images are retrieved</span>
+<span class="c1">//    from the output queue. This example shows that there is little time between</span>
+<span class="c1">//    triggering images, and that the exposure time is close to the time between</span>
+<span class="c1">//    triggers.</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- SETTINGS =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// Number of images to grab</span>
+<span class="cp">#define NUM_IMAGES 10</span>
+
+<span class="c1">// Event timeout</span>
+<span class="cp">#define EVENT_TIMEOUT 3000</span>
+
+<span class="c1">// image timeout</span>
+<span class="cp">#define IMAGE_TIMEOUT 2000</span>
+
+<span class="c1">// system timeout</span>
+<span class="cp">#define SYSTEM_TIMEOUT 100</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =-=- EXAMPLE -=-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="c1">// demonstrates basic trigger configuration and use</span>
+<span class="c1">// (1) sets trigger mode, source, and selector</span>
+<span class="c1">// (2) sets acquisition mode, event selector, and turns on event notifications</span>
+<span class="c1">// (3) starts stream</span>
+<span class="c1">// (4) waits on trigger armed, executes trigger, and waits on exposureEnd event for all images</span>
+<span class="c1">// (5) grabs each image and requeues image buffer for all images</span>
+<span class="c1">// (6) stops stream</span>
+<span class="kt">void</span> <span class="nf">OverlapTriggerOnExposureEndEvent</span><span class="p">(</span><span class="n">Arena</span><span class="o">::</span><span class="n">IDevice</span><span class="o">*</span> <span class="n">pDevice</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="c1">// Initialize events</span>
+        <span class="c1">//    Events nodes aren&#39;t available until the events engine has been</span>
+        <span class="c1">//    initialized.</span>
+        <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">InitializeEvents</span><span class="p">();</span>
+
+        <span class="c1">// get node values that will be changed in order to return their values at</span>
+        <span class="c1">// the end of the example</span>
+        <span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span> <span class="n">triggerSelectorInitial</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;TriggerSelector&quot;</span><span class="p">);</span>
+        <span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span> <span class="n">triggerModeInitial</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;TriggerMode&quot;</span><span class="p">);</span>
+        <span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span> <span class="n">triggerSourceInitial</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;TriggerSource&quot;</span><span class="p">);</span>
+        <span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span> <span class="n">triggerOverlapInitial</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;TriggerOverlap&quot;</span><span class="p">);</span>
+        <span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span> <span class="n">acquisitionModeInitial</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;AcquisitionMode&quot;</span><span class="p">);</span>
+        <span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span> <span class="n">eventSelectorInitial</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;EventSelector&quot;</span><span class="p">);</span>
+        <span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span> <span class="n">eventNotificationInitial</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;EventNotification&quot;</span><span class="p">);</span>
+        <span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span> <span class="n">exposureAutoInitial</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;ExposureAuto&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Set trigger selector</span>
+        <span class="c1">//    Set the trigger selector to FrameStart. When triggered, the device will</span>
+        <span class="c1">//    start acquiring a single frame. This can also be set to</span>
+        <span class="c1">//    AcquisitionStart or FrameBurstStart.</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Set trigger selector to FrameStart</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span>
+                <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span>
+                <span class="s">&quot;TriggerSelector&quot;</span><span class="p">,</span>
+                <span class="s">&quot;FrameStart&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Set trigger mode</span>
+        <span class="c1">//    Enable trigger mode before setting the source and selector and before</span>
+        <span class="c1">//    starting the stream. Trigger mode cannot be turned on and off while the</span>
+        <span class="c1">//    device is streaming.</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Enable trigger mode</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span>
+                <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span>
+                <span class="s">&quot;TriggerMode&quot;</span><span class="p">,</span>
+                <span class="s">&quot;On&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Set trigger source</span>
+        <span class="c1">//    Set the trigger source to software in order to trigger images without</span>
+        <span class="c1">//    the use of any additional hardware. Lines of the GPIO can also be used</span>
+        <span class="c1">//    to trigger.</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Set trigger source to Software</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span>
+                <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span>
+                <span class="s">&quot;TriggerSource&quot;</span><span class="p">,</span>
+                <span class="s">&quot;Software&quot;</span><span class="p">);</span>
+
+        <span class="n">GenApi</span><span class="o">::</span><span class="n">CCommandPtr</span> <span class="n">pTriggerSoftwareNode</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;TriggerSoftware&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Set trigger overlap</span>
+        <span class="c1">//    Trigger overlap defines when a trigger can start accepting a new frame.</span>
+        <span class="c1">//    Setting trigger to overlap with the previous frame allows the camera to</span>
+        <span class="c1">//    being exposing the new frame while the camera is still reading out the</span>
+        <span class="c1">//    sensor data acquired from the previous frame.</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Set trigger overlap to PreviousFrame</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span>
+                <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span>
+                <span class="s">&quot;TriggerOverlap&quot;</span><span class="p">,</span>
+                <span class="s">&quot;PreviousFrame&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Set acquisition mode</span>
+        <span class="c1">//    When trigger mode is off and the acquisition mode is set to stream</span>
+        <span class="c1">//    continuously, starting the stream will have the camera begin acquiring</span>
+        <span class="c1">//    a steady stream of images. However, with trigger mode enabled, the</span>
+        <span class="c1">//    device will wait for the trigger before acquiring any.</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Set acquisition mode to: </span><span class="se">\&quot;</span><span class="s">Continuous</span><span class="se">\&quot;\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span>
+                <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span>
+                <span class="s">&quot;AcquisitionMode&quot;</span><span class="p">,</span>
+                <span class="s">&quot;Continuous&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Set event selector</span>
+        <span class="c1">//    We want to trigger and wait to be notified as soon as a certain event</span>
+        <span class="c1">//    occurs while making the image. Here we choose to be notified at the end</span>
+        <span class="c1">//    of the exposure of an image.</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Set event selector to: </span><span class="se">\&quot;</span><span class="s">ExposureEnd</span><span class="se">\&quot;\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span>
+                <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span>
+                <span class="s">&quot;EventSelector&quot;</span><span class="p">,</span>
+                <span class="s">&quot;ExposureEnd&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Set event notification</span>
+        <span class="c1">//    After choosing which event to be notified about, enabling the</span>
+        <span class="c1">//    EventNotification node will turn on the notification for the event</span>
+        <span class="c1">//    selected in the EventSelector node.</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Enable event notifications for </span><span class="se">\&quot;</span><span class="s">ExposureEnd</span><span class="se">\&quot;\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span>
+                <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span>
+                <span class="s">&quot;EventNotification&quot;</span><span class="p">,</span>
+                <span class="s">&quot;On&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Retrieve exposure time</span>
+        <span class="c1">//    The exposure time is similar to the time between triggering images.</span>
+        <span class="c1">//    This is shown by turning off automatic exposure, retrieving the</span>
+        <span class="c1">//    exposure time and converting to nanoseconds.</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Exposure time: &quot;</span><span class="p">;</span>
+
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span>
+                <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span>
+                <span class="s">&quot;ExposureAuto&quot;</span><span class="p">,</span>
+                <span class="s">&quot;Off&quot;</span><span class="p">);</span>
+
+        <span class="kt">double</span> <span class="n">exposureTime</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;ExposureTime&quot;</span><span class="p">);</span>
+
+        <span class="c1">// convert to nanoseconds</span>
+        <span class="kt">double</span> <span class="n">exposureTimeNs</span> <span class="o">=</span> <span class="n">exposureTime</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">exposureTimeNs</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; ns</span><span class="se">\n</span><span class="s"> &quot;</span><span class="p">;</span>
+
+        <span class="c1">// start stream</span>
+        <span class="k">const</span> <span class="kt">size_t</span> <span class="n">numberOfImages</span> <span class="o">=</span> <span class="n">NUM_IMAGES</span><span class="p">;</span>
+        <span class="k">const</span> <span class="kt">int64_t</span> <span class="n">waitOnEventTimeout</span> <span class="o">=</span> <span class="n">EVENT_TIMEOUT</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Start stream with &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">numberOfImages</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; buffers</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StartStream</span><span class="p">(</span><span class="n">numberOfImages</span><span class="p">);</span>
+
+        <span class="c1">// Trigger an image</span>
+        <span class="c1">//    Trigger an image manually, since trigger mode is enabled. This triggers</span>
+        <span class="c1">//    the camera to acquire a single image. A buffer is then filled and moved</span>
+        <span class="c1">//    to the output queue, where it will wait to be retrieved.</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numberOfImages</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB2</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\r</span><span class="s">Image &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">setw</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">flush</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; triggered&quot;</span><span class="p">;</span>
+
+                <span class="c1">// Trigger Armed</span>
+                <span class="c1">//    Continually check until trigger is armed. Once the trigger is</span>
+                <span class="c1">//    armed, it is ready to be executed.</span>
+                <span class="kt">bool</span> <span class="n">isTriggerArmed</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+                <span class="k">do</span>
+                <span class="p">{</span>
+                        <span class="n">isTriggerArmed</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">GetNodeValue</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;TriggerArmed&quot;</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">isTriggerArmed</span> <span class="o">==</span> <span class="nb">false</span><span class="p">);</span>
+
+                <span class="n">pTriggerSoftwareNode</span><span class="o">-&gt;</span><span class="n">Execute</span><span class="p">();</span>
+
+                <span class="c1">// Wait on event</span>
+                <span class="c1">//    Wait on event to process before continuing. The data is created</span>
+                <span class="c1">//    from the event generation, not from waiting on it.</span>
+                <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">WaitOnEvent</span><span class="p">(</span><span class="n">waitOnEventTimeout</span><span class="p">);</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; and ExposureEnd Event notification arrived&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+                          <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Done grabbing &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">setw</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">numberOfImages</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; images</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="c1">// retrieve images and timestamps</span>
+        <span class="kt">uint64_t</span> <span class="n">numberOfImages_64_t</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="n">numberOfImages</span><span class="p">;</span>
+        <span class="k">const</span> <span class="kt">int64_t</span> <span class="n">imageTimeout</span> <span class="o">=</span> <span class="n">IMAGE_TIMEOUT</span><span class="p">;</span>
+        <span class="kt">uint64_t</span> <span class="n">timestampNs</span><span class="p">[</span><span class="n">NUM_IMAGES</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">uint64_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numberOfImages_64_t</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*</span> <span class="n">pImage</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetImage</span><span class="p">(</span><span class="n">imageTimeout</span><span class="p">);</span>
+                <span class="n">timestampNs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetTimestampNs</span><span class="p">();</span>
+
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB2</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Image &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">setw</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; timestamp: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pImage</span><span class="o">-&gt;</span><span class="n">GetTimestampNs</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; ns&quot;</span><span class="p">;</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="c1">// calculate time between triggers</span>
+                        <span class="kt">uint64_t</span> <span class="n">triggerTimestampDifference</span> <span class="o">=</span> <span class="n">timestampNs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">timestampNs</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+
+                        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; (&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">triggerTimestampDifference</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; ns since last trigger)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+                <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RequeueBuffer</span><span class="p">(</span><span class="n">pImage</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// stop stream</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">TAB1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Stop stream</span><span class="se">\n</span><span class="s">&quot;</span>
+                          <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+        <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StopStream</span><span class="p">();</span>
+
+        <span class="c1">// Deinitialize events</span>
+        <span class="c1">//    Deinitialize the events engine in order to deallocate memory and stop</span>
+        <span class="c1">//    processing events. Failing to deinitialize events results in a memory</span>
+        <span class="c1">//    leak.</span>
+        <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">DeinitializeEvents</span><span class="p">();</span>
+
+        <span class="c1">// return nodes to their initial values</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;ExposureAuto&quot;</span><span class="p">,</span> <span class="n">exposureAutoInitial</span><span class="p">);</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;EventNotification&quot;</span><span class="p">,</span> <span class="n">eventNotificationInitial</span><span class="p">);</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;EventSelector&quot;</span><span class="p">,</span> <span class="n">eventSelectorInitial</span><span class="p">);</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;AcquisitionMode&quot;</span><span class="p">,</span> <span class="n">acquisitionModeInitial</span><span class="p">);</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;TriggerOverlap&quot;</span><span class="p">,</span> <span class="n">triggerOverlapInitial</span><span class="p">);</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;TriggerSource&quot;</span><span class="p">,</span> <span class="n">triggerSourceInitial</span><span class="p">);</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;TriggerMode&quot;</span><span class="p">,</span> <span class="n">triggerModeInitial</span><span class="p">);</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">SetNodeValue</span><span class="o">&lt;</span><span class="n">GenICam</span><span class="o">::</span><span class="n">gcstring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">(),</span> <span class="s">&quot;TriggerSelector&quot;</span><span class="p">,</span> <span class="n">triggerSelectorInitial</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+<span class="c1">// =- PREPARATION -=-</span>
+<span class="c1">// =- &amp; CLEAN UP =-=-</span>
+<span class="c1">// =-=-=-=-=-=-=-=-=-</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="c1">// flag to track when an exception has been thrown</span>
+        <span class="kt">bool</span> <span class="n">exceptionThrown</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Cpp_Trigger_OverlappingTrigger</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="k">try</span>
+        <span class="p">{</span>
+                <span class="c1">// prepare example</span>
+                <span class="n">Arena</span><span class="o">::</span><span class="n">ISystem</span><span class="o">*</span> <span class="n">pSystem</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">OpenSystem</span><span class="p">();</span>
+                <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">UpdateDevices</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Arena</span><span class="o">::</span><span class="n">DeviceInfo</span><span class="o">&gt;</span> <span class="n">deviceInfos</span> <span class="o">=</span> <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">GetDevices</span><span class="p">();</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">deviceInfos</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">No camera connected</span><span class="se">\n</span><span class="s">Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+                        <span class="n">std</span><span class="o">::</span><span class="n">getchar</span><span class="p">();</span>
+                        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">Arena</span><span class="o">::</span><span class="n">IDevice</span><span class="o">*</span> <span class="n">pDevice</span> <span class="o">=</span> <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">CreateDevice</span><span class="p">(</span><span class="n">deviceInfos</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+
+                <span class="c1">// run example</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Commence example</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">;</span>
+                <span class="n">OverlapTriggerOnExposureEndEvent</span><span class="p">(</span><span class="n">pDevice</span><span class="p">);</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Example complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+                <span class="c1">// clean up example</span>
+                <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">DestroyDevice</span><span class="p">(</span><span class="n">pDevice</span><span class="p">);</span>
+                <span class="n">Arena</span><span class="o">::</span><span class="n">CloseSystem</span><span class="p">(</span><span class="n">pSystem</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="n">GenICam</span><span class="o">::</span><span class="n">GenericException</span><span class="o">&amp;</span> <span class="n">ge</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">GenICam exception thrown: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ge</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+                <span class="n">exceptionThrown</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">ex</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Standard exception thrown: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ex</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+                <span class="n">exceptionThrown</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(...)</span>
+        <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Unexpected exception thrown</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+                <span class="n">exceptionThrown</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Press enter to complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">getchar</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">exceptionThrown</span><span class="p">)</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span>
+                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_examples_usersets.html" class="btn btn-neutral float-right" title="User Sets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_examples_trigger.html" class="btn btn-neutral" title="Trigger, Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

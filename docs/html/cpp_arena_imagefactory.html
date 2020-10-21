@@ -1,0 +1,547 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ImageFactory &mdash; Arena 0.1.24.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.24.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C++" href="cpp_arena.html"/>
+        <link rel="next" title="IChunkData" href="cpp_arena_ichunkdata.html"/>
+        <link rel="prev" title="ISystem" href="cpp_arena_isystem.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!--
+            
+            <img src="_static/lucid-white.png" class="logo" />
+          -->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.24
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_arena.html">Arena C++</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_global.html">Global Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_isystem.html">ISystem</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ichunkdata.html">IChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ibuffer.html">IBuffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_interfaceinfo.html">InterfaceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_iimage.html">IImage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_idevice.html">IDevice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_deviceinfo.html">DeviceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_einterfacetypeclass.html">EInterfaceTypeClass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_eincmodeclass.html">EIncModeClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_save.html">Save C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_arena.html">Arena C++</a> &raquo;</li>
+        
+      <li>ImageFactory</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="imagefactory">
+<h1>ImageFactory<a class="headerlink" href="#imagefactory" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="id1">
+<h2>ImageFactory<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv3N5Arena12ImageFactoryE">
+<span id="_CPPv2N5Arena12ImageFactoryE"></span><span id="Arena::ImageFactory"></span><span class="target" id="class_arena_1_1_image_factory"></span><em class="property">class </em><code class="descname">ImageFactory</code><a class="headerlink" href="#_CPPv3N5Arena12ImageFactoryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> <a class="reference internal" href="#class_arena_1_1_image_factory"><span class="std std-ref">ImageFactory</span></a> </strong> is a static class responsible for the creation, copying, conversion, and destruction of images (<a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>).</p>
+<p>The image factory allocates and deallocates memory for its images. Memory is allocated when an image is created (<a class="reference internal" href="#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a>) or converted (<a class="reference internal" href="#class_arena_1_1_image_factory_1acfbf4dd5da90195173474cab1346b154"><span class="std std-ref">Arena::ImageFactory::Convert</span></a>). To clean up memory, all images created by the image factory must be destroyed (<a class="reference internal" href="#class_arena_1_1_image_factory_1a772c024ae2279e65bb80d7f8bd74aa29"><span class="std std-ref">Arena::ImageFactory::Destroy</span></a>).</p>
+<p>Images from the image factory are treated noticeably different from those from a device (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a>). Retrieving an image from a device grabs a buffer that had its memory preallocated when the device started streaming; retrieving and requeuing does not allocate or deallocate memory, but simply moves buffers around the acquisition engine. Creating, copying, and converting an image with the image factory allocates and deallocates memory as needed. This is why images from a device must be requeued (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a978bd841ed2818fc717e706aac8218f6"><span class="std std-ref">Arena::IDevice::RequeueBuffer</span></a>) while images from the image factory must be destroyed (<a class="reference internal" href="#class_arena_1_1_image_factory_1a772c024ae2279e65bb80d7f8bd74aa29"><span class="std std-ref">Arena::ImageFactory::Destroy</span></a>).</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Images from the image factory must be destroyed</li>
+<li>Images from a device must be requeued</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></li>
+<li><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="create">
+<h2>Create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena12ImageFactory6CreateEPK7uint8_t6size_t6size_t6size_t8uint64_t">
+<span id="_CPPv2N5Arena12ImageFactory6CreateEPK7uint8_t6size_t6size_t6size_t8uint64_t"></span><span id="Arena::ImageFactory::Create__uint8_tCP.s.s.s.uint64_t"></span><span class="target" id="class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"></span><em class="property">static</em> <a class="reference internal" href="cpp_arena_iimage.html#_CPPv3N5Arena6IImageE" title="Arena::IImage">IImage</a> *<code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena12ImageFactoryE" title="Arena::ImageFactory">ImageFactory</a><code class="descclassname">::</code></code><code class="descname">Create</code><span class="sig-paren">(</span><em class="property">const</em> uint8_t *<em>pData</em>, size_t <em>dataSize</em>, size_t <em>width</em>, size_t <em>height</em>, uint64_t <em>pixelFormat</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena12ImageFactory6CreateEPK7uint8_t6size_t6size_t6size_t8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> Create </strong> creates an image (<a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>) from a minimal set of parameters. Images created with the image factory must be destroyed (<a class="reference internal" href="#class_arena_1_1_image_factory_1a772c024ae2279e65bb80d7f8bd74aa29"><span class="std std-ref">Arena::ImageFactory::Destroy</span></a>) when no longer needed.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>*</li>
+<li>Pointer to the image created from the parameters</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pData</span></code>: <ul>
+<li>Type: const uint8_t</li>
+<li>Pointer to the beginning of the payload data</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">dataSize</span></code>: <ul>
+<li>Type: size_t</li>
+<li>Size of the data</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">width</span></code>: <ul>
+<li>Type: size_t</li>
+<li>Unit: pixels</li>
+<li>Width of the image to create</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">height</span></code>: <ul>
+<li>Type: size_t</li>
+<li>Unit: pixels</li>
+<li>Height of the image to create</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pixelFormat</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>Represents: enum PfncFormat</li>
+<li>Pixel format of the image to create</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><strong> Create </strong> can create images from any raw image data. It has been designed to be generic in order to integrate image data from a variety of sources.</p>
+<p>When creating an image, the image factory allocates memory for the new image. As such, images created by the image factory must be destroyed; otherwise, memory will leak.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// creating and destroying an image</span>
+<span class="p">{</span>
+    <span class="n">IImage</span><span class="o">*</span> <span class="n">pCreate</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">ImageFactory</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">pData</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">pixelFormat</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">ImageFactory</span><span class="o">::</span><span class="n">Destroy</span><span class="p">(</span><span class="n">pCreate</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Images from the image factory must be destroyed</li>
+<li>Images from a device must be requeued</li>
+<li>Incorrect data size may result in application crash</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_image_factory_1a772c024ae2279e65bb80d7f8bd74aa29"><span class="std std-ref">Arena::ImageFactory::Destroy</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="copy">
+<h2>Copy<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena12ImageFactory4CopyEP6IImage">
+<span id="_CPPv2N5Arena12ImageFactory4CopyEP6IImage"></span><span id="Arena::ImageFactory::Copy__IImageP"></span><span class="target" id="class_arena_1_1_image_factory_1ac4afabdb8619eafc3d94fef25c8f74eb"></span><em class="property">static</em> <a class="reference internal" href="cpp_arena_iimage.html#_CPPv3N5Arena6IImageE" title="Arena::IImage">IImage</a> *<code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena12ImageFactoryE" title="Arena::ImageFactory">ImageFactory</a><code class="descclassname">::</code></code><code class="descname">Copy</code><span class="sig-paren">(</span><a class="reference internal" href="cpp_arena_iimage.html#_CPPv3N5Arena6IImageE" title="Arena::IImage">IImage</a> *<em>pBuffer</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena12ImageFactory4CopyEP6IImage" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><p>Creates a deep copy of an image</p>
+<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>*</li>
+<li>Pointer to a deep copy of the image</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pBuffer</span></code>: <ul>
+<li>Type: <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>*</li>
+<li>Pointer to the image to copy</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><strong> Copy </strong> creates a deep copy of an image (<a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>) from another image. Images created with the image factory must be destroyed (<a class="reference internal" href="#class_arena_1_1_image_factory_1a772c024ae2279e65bb80d7f8bd74aa29"><span class="std std-ref">Arena::ImageFactory::Destroy</span></a>) when no longer needed.</p>
+<p>When copying an image, the image factory allocates memory for the new image. As such, images created by copying an image with the image factory must be destroyed; otherwise, memory will leak.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// creating and destroying an image</span>
+<span class="p">{</span>
+    <span class="n">IImage</span><span class="o">*</span> <span class="n">pCopy</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">ImageFactory</span><span class="o">::</span><span class="n">Copy</span><span class="p">(</span><span class="n">pImage</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">ImageFactory</span><span class="o">::</span><span class="n">Destroy</span><span class="p">(</span><span class="n">pCopy</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Images from the image factory must be destroyed</li>
+<li>Images from a device should be requeued</li>
+<li>Instantiates all lazy properties of the original image</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_image_factory_1a772c024ae2279e65bb80d7f8bd74aa29"><span class="std std-ref">Arena::ImageFactory::Destroy</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_image_factory_1ac4afabdb8619eafc3d94fef25c8f74eb"><span class="std std-ref">Arena::ImageFactory::Copy</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="convert">
+<h2>Convert<a class="headerlink" href="#convert" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena12ImageFactory7ConvertEP6IImage8uint64_t15EBayerAlgorithm">
+<span id="_CPPv2N5Arena12ImageFactory7ConvertEP6IImage8uint64_t15EBayerAlgorithm"></span><span id="Arena::ImageFactory::Convert__IImageP.uint64_t.EBayerAlgorithm"></span><span class="target" id="class_arena_1_1_image_factory_1acfbf4dd5da90195173474cab1346b154"></span><em class="property">static</em> <a class="reference internal" href="cpp_arena_iimage.html#_CPPv3N5Arena6IImageE" title="Arena::IImage">IImage</a> *<code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena12ImageFactoryE" title="Arena::ImageFactory">ImageFactory</a><code class="descclassname">::</code></code><code class="descname">Convert</code><span class="sig-paren">(</span><a class="reference internal" href="cpp_arena_iimage.html#_CPPv3N5Arena6IImageE" title="Arena::IImage">IImage</a> *<em>pImage</em>, uint64_t <em>pixelFormat</em>, <a class="reference internal" href="cpp_arena_defs.html#_CPPv3N5Arena15EBayerAlgorithmE" title="Arena::EBayerAlgorithm">EBayerAlgorithm</a> <em>bayerAlgorithm</em> = DirectionalInterpolation<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena12ImageFactory7ConvertEP6IImage8uint64_t15EBayerAlgorithm" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> Convert </strong> converts an image (<a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>) to a select pixel format. In doing so, it creates a completely new image, similar to a deep copy but with a different pixel format. Images created with the image factory must be destroyed (<a class="reference internal" href="#class_arena_1_1_image_factory_1a772c024ae2279e65bb80d7f8bd74aa29"><span class="std std-ref">Arena::ImageFactory::Destroy</span></a>) when no longer needed; otherwise, memory will leak.<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>Type: <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>*</li>
+<li>Pointer to the converted image</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pImage</span></code>: <ul>
+<li>Type: <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></li>
+<li>Pointer to the image to convert</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">pixelFormat</span></code>: <ul>
+<li>Type: uint64_t</li>
+<li>Represents: enum PfncFormat</li>
+<li>Pixel format to convert to</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">bayerAlgorithm</span></code>: <ul>
+<li>Type: Arena::EBayerAlgorithm</li>
+<li>Bayer conversion algorithm to use</li>
+<li>Only applicable when converting from bayer</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// creating and destroying an image</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*</span> <span class="n">pConvert</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">ImageFactory</span><span class="o">::</span><span class="n">Convert</span><span class="p">(</span><span class="n">pImage</span><span class="p">,</span> <span class="n">BGRa8</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">ImageFactory</span><span class="o">::</span><span class="n">Destroy</span><span class="p">(</span><span class="n">pConvert</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>The list of supported pixel formats can be found in the software node map (Arena::ISystem::GetNodeMap, ‘SupportedPixelFormats’). The list of supported conversion pixel formats is difference from a device’s pixel formats (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a>, ‘PixelFormat’). In order for conversion to succeed, both the source and destination pixel formats must be supported. Bayer formats are supported as source formats only.</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Images from the image factory must be destroyed</li>
+<li>Images from a device should be requeued</li>
+<li>Cannot convert to bayer formats</li>
+<li>Bayer conversion algorithm only necessary when converting from bayer formats</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_image_factory_1a772c024ae2279e65bb80d7f8bd74aa29"><span class="std std-ref">Arena::ImageFactory::Destroy</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_image_factory_1acfbf4dd5da90195173474cab1346b154"><span class="std std-ref">Arena::ImageFactory::Convert</span></a></li>
+<li>Arena::ISystem::GetNodeMap</li>
+<li><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a></li>
+<li>Arena::EBayerAlgorithm </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="destroy">
+<h2>Destroy<a class="headerlink" href="#destroy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv3N5Arena12ImageFactory7DestroyEP6IImage">
+<span id="_CPPv2N5Arena12ImageFactory7DestroyEP6IImage"></span><span id="Arena::ImageFactory::Destroy__IImageP"></span><span class="target" id="class_arena_1_1_image_factory_1a772c024ae2279e65bb80d7f8bd74aa29"></span><em class="property">static</em> void <code class="descclassname">Arena::<a class="reference internal" href="#_CPPv3N5Arena12ImageFactoryE" title="Arena::ImageFactory">ImageFactory</a><code class="descclassname">::</code></code><code class="descname">Destroy</code><span class="sig-paren">(</span><a class="reference internal" href="cpp_arena_iimage.html#_CPPv3N5Arena6IImageE" title="Arena::IImage">IImage</a> *<em>pImage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5Arena12ImageFactory7DestroyEP6IImage" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> Destroy </strong> cleans up an image (<a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>) and deallocates its memory. It must be called on any image created by the image factory (<a class="reference internal" href="#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a>, <a class="reference internal" href="#class_arena_1_1_image_factory_1ac4afabdb8619eafc3d94fef25c8f74eb"><span class="std std-ref">Arena::ImageFactory::Copy</span></a>, <a class="reference internal" href="#class_arena_1_1_image_factory_1acfbf4dd5da90195173474cab1346b154"><span class="std std-ref">Arena::ImageFactory::Convert</span></a>).<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><ul class="simple">
+<li>none</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pImage</span></code>: <ul>
+<li>Type: <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>*</li>
+<li>Pointer to the image to destroy</li>
+<li>Image must be from image factory</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>All images from the image factory, whether created (<a class="reference internal" href="#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a>), copied (<a class="reference internal" href="#class_arena_1_1_image_factory_1ac4afabdb8619eafc3d94fef25c8f74eb"><span class="std std-ref">Arena::ImageFactory::Copy</span></a>), or converted (<a class="reference internal" href="#class_arena_1_1_image_factory_1acfbf4dd5da90195173474cab1346b154"><span class="std std-ref">Arena::ImageFactory::Convert</span></a>), must be destroyed to deallocate their memory; otherwise, memory will leak. It is important that <strong> Destroy </strong> only be called on images from the image factory, and not on those retrieved from a device (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a>).</p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd><ul class="simple">
+<li>Images from the image factory must be destroyed</li>
+<li>Images from a device should be requeued</li>
+</ul>
+</dd>
+<dt><strong>See</strong></dt>
+<dd><ul class="simple">
+<li><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></li>
+<li><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_image_factory_1ac4afabdb8619eafc3d94fef25c8f74eb"><span class="std std-ref">Arena::ImageFactory::Copy</span></a></li>
+<li><a class="reference internal" href="#class_arena_1_1_image_factory_1acfbf4dd5da90195173474cab1346b154"><span class="std std-ref">Arena::ImageFactory::Convert</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_arena_ichunkdata.html" class="btn btn-neutral float-right" title="IChunkData" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_arena_isystem.html" class="btn btn-neutral" title="ISystem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.24.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
